@@ -39,7 +39,8 @@
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
 }
 
 /* ========================================
@@ -207,4 +208,19 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1280px) {
   .section-headline { font-size: 48px; }
+}
+
+/* ========================================
+   HERO ANIMATION
+   ======================================== */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

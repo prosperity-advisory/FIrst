@@ -45,169 +45,170 @@
 
 /* ========================================
    BASE STYLES
+   In @layer base so Tailwind utilities
+   (like text-white) can override them.
    ======================================== */
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--color-slate);
-  background: var(--color-white);
-  overflow-x: hidden;
-}
+  body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-slate);
+    background: var(--color-white);
+    overflow-x: hidden;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--color-navy);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+  @media (min-width: 480px) {
+    body { font-size: 16px; }
+  }
 }
 
 /* ========================================
    COMPONENT CLASSES
+   In @layer components so they sit between
+   base and utilities in the cascade.
    ======================================== */
 
-/* Eyebrow label */
-.eyebrow {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 12px;
-  display: block;
-}
+@layer components {
+  /* Eyebrow label */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 12px;
+    display: block;
+  }
 
-/* Section headline — responsive sizing */
-.section-headline {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
+  /* Section headline — responsive sizing */
+  .section-headline {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
 
-/* Section subtitle */
-.section-sub {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--color-slate-light);
-  max-width: 640px;
-}
+  /* Section subtitle */
+  .section-sub {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-slate-light);
+    max-width: 640px;
+  }
 
-/* ========================================
-   BUTTON VARIANTS
-   ======================================== */
+  /* ---- Buttons ---- */
 
-.btn {
-  display: inline-block;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  padding: 14px 28px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.01em;
-  text-align: center;
-}
+  .btn {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
 
-.btn-gold {
-  background: var(--color-gold);
-  color: var(--color-navy);
-}
-.btn-gold:hover,
-.btn-gold:focus-visible {
-  background: var(--color-gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
-}
+  .btn-gold {
+    background: var(--color-gold);
+    color: var(--color-navy);
+  }
+  .btn-gold:hover,
+  .btn-gold:focus-visible {
+    background: var(--color-gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
+  }
 
-.btn-navy {
-  background: var(--color-navy);
-  color: var(--color-white);
-}
-.btn-navy:hover,
-.btn-navy:focus-visible {
-  background: var(--color-navy-deep);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(11, 42, 30, 0.35);
-}
+  .btn-navy {
+    background: var(--color-navy);
+    color: var(--color-white);
+  }
+  .btn-navy:hover,
+  .btn-navy:focus-visible {
+    background: var(--color-navy-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(11, 42, 30, 0.35);
+  }
 
-.btn-outline {
-  background: transparent;
-  color: var(--color-gold);
-  border: 2px solid var(--color-gold);
-}
-.btn-outline:hover,
-.btn-outline:focus-visible {
-  background: var(--color-gold);
-  color: var(--color-navy);
-}
+  .btn-outline {
+    background: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+  }
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--color-gold);
+    color: var(--color-navy);
+  }
 
-/* ========================================
-   FOCUS VISIBLE (accessibility)
-   ======================================== */
+  /* ---- Scroll Animations ---- */
 
-:focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 3px;
-}
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
 
-/* ========================================
-   SCROLL ANIMATIONS
-   ======================================== */
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+  .fade-up-delay-1 { transition-delay: 0.1s; }
+  .fade-up-delay-2 { transition-delay: 0.2s; }
+  .fade-up-delay-3 { transition-delay: 0.3s; }
+  .fade-up-delay-4 { transition-delay: 0.4s; }
+  .fade-up-delay-5 { transition-delay: 0.5s; }
 
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+  /* ---- Responsive component sizing ---- */
 
-.fade-up-delay-1 { transition-delay: 0.1s; }
-.fade-up-delay-2 { transition-delay: 0.2s; }
-.fade-up-delay-3 { transition-delay: 0.3s; }
-.fade-up-delay-4 { transition-delay: 0.4s; }
-.fade-up-delay-5 { transition-delay: 0.5s; }
+  @media (min-width: 480px) {
+    .eyebrow { font-size: 12px; }
+    .section-headline { font-size: 32px; }
+    .btn { width: auto; padding: 14px 32px; font-size: 14px; }
+  }
 
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-   ======================================== */
+  @media (min-width: 640px) {
+    .section-headline { font-size: 36px; }
+    .btn { font-size: 15px; padding: 16px 36px; }
+  }
 
-@media (min-width: 480px) {
-  body { font-size: 16px; }
-  .eyebrow { font-size: 12px; }
-  .section-headline { font-size: 32px; }
-  .btn { width: auto; padding: 14px 32px; font-size: 14px; }
-}
+  @media (min-width: 768px) {
+    .section-headline { font-size: 40px; margin-bottom: 20px; }
+    .section-sub { font-size: 17px; }
+    .eyebrow { font-size: 13px; margin-bottom: 16px; }
+  }
 
-@media (min-width: 640px) {
-  .section-headline { font-size: 36px; }
-  .btn { font-size: 15px; padding: 16px 36px; }
-}
+  @media (min-width: 1024px) {
+    .section-headline { font-size: 44px; }
+    .section-sub { font-size: 18px; }
+  }
 
-@media (min-width: 768px) {
-  .section-headline { font-size: 40px; margin-bottom: 20px; }
-  .section-sub { font-size: 17px; }
-  .eyebrow { font-size: 13px; margin-bottom: 16px; }
-}
-
-@media (min-width: 1024px) {
-  .section-headline { font-size: 44px; }
-  .section-sub { font-size: 18px; }
-}
-
-@media (min-width: 1280px) {
-  .section-headline { font-size: 48px; }
+  @media (min-width: 1280px) {
+    .section-headline { font-size: 48px; }
+  }
 }
 
 /* ========================================

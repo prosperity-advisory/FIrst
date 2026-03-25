@@ -19,9 +19,6 @@
 
   /* Derived / UI-specific */
   --color-nav-scrolled-bg: rgba(244, 246, 240, 0.97);
-  --color-hero-from: #1A3328;
-  --color-hero-to: #0E2118;
-  --color-footer-bg: #0E2118;
 
   /* Fonts */
   --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;

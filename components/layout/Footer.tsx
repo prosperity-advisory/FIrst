@@ -11,7 +11,7 @@ const FOOTER_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-footer-bg pt-12 md:pt-14 lg:pt-16 px-4 md:px-6">
+    <footer className="bg-navy-deep pt-12 md:pt-14 lg:pt-16 px-4 md:px-6">
       <div className="mx-auto max-w-[1200px]">
         {/* Top row: brand + links */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-7 md:gap-10 lg:gap-12 pb-8 md:pb-10 lg:pb-12 border-b border-white/[0.08]">

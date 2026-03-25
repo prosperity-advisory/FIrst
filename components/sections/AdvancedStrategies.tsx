@@ -20,7 +20,7 @@ export function AdvancedStrategies({
   ctaHref = "https://calendly.com/prosperityplanningandadvisory/clarity-session",
 }: AdvancedStrategiesProps) {
   return (
-    <section className="relative bg-linear-to-[160deg] from-hero-from to-hero-to py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
+    <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
       {/* Decorative circle */}
       <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
 

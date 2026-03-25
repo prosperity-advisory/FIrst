@@ -136,7 +136,7 @@ export function Header() {
       <div
         role="navigation"
         aria-label="Mobile navigation"
-        className={`fixed top-0 z-[999] flex flex-col w-[min(300px,80vw)] h-dvh bg-footer-bg pt-[88px] px-8 pb-10 transition-[right] duration-[350ms] ease-in-out overflow-y-auto ${
+        className={`fixed top-0 z-[999] flex flex-col w-[min(300px,80vw)] h-dvh bg-navy-deep pt-[88px] px-8 pb-10 transition-[right] duration-[350ms] ease-in-out overflow-y-auto ${
           menuOpen ? "right-0" : "-right-full"
         }`}
       >

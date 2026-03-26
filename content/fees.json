@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Fees & How We're Paid | Prosperity Planning & Advisory",
+    "description": "Transparent fee structure from a fiduciary financial adviser. Learn how we're compensated, what's included, and why fee-only advisory matters.",
+    "ogTitle": "Fees & How We're Paid | Prosperity Planning & Advisory",
+    "ogDescription": "Transparent, fee-only fiduciary financial planning. No commissions, no hidden costs — just advice in your best interest."
+  },
+  "hero": {
+    "eyebrow": "Fees & Compensation",
+    "headline": "How We're Paid — And Why It Matters",
+    "subheadline": "Transparency is the foundation of trust. We believe you deserve to know exactly how your adviser is compensated — and that our interests are fully aligned with yours.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "fiduciary": {
+    "heading": "What It Means to Be a Fiduciary",
+    "body": "As a fiduciary, we are legally and ethically required to act in your best interest at all times. This means every recommendation we make is based on what's right for you — not what generates the highest fee or commission for us. It's a higher standard of care, and it's the only way we operate.",
+    "points": [
+      "We are legally obligated to put your interests first",
+      "We disclose all fees, costs, and potential conflicts of interest",
+      "We do not earn commissions on products we recommend",
+      "Our advice is independent and objective"
+    ]
+  },
+  "feeTypes": {
+    "heading": "Our Fee Structure",
+    "body": "We offer straightforward, transparent fee arrangements so you always know what you're paying and what you're receiving in return.",
+    "types": [
+      {
+        "title": "Assets Under Management (AUM)",
+        "description": "A percentage-based fee applied to the investment assets we manage on your behalf. This fee is assessed quarterly and covers ongoing portfolio management, monitoring, and rebalancing.",
+        "details": "AUM fees align our incentives with yours — as your portfolio grows, we both benefit. Fee schedules are provided in our Form ADV Part 2A and discussed in detail before any engagement begins."
+      },
+      {
+        "title": "Financial Planning Fees",
+        "description": "For clients seeking comprehensive financial planning without investment management, we offer flat-fee or project-based planning engagements. These cover the full scope of our planning process — from discovery through implementation.",
+        "details": "Planning fees are discussed and agreed upon before any work begins, so there are never surprises."
+      },
+      {
+        "title": "Hourly Consultation",
+        "description": "For clients who need focused guidance on a specific topic — such as a second opinion on a retirement strategy, a review of an existing portfolio, or help evaluating a financial decision — we offer hourly consultation at a pre-agreed rate.",
+        "details": "This option is ideal for individuals who don't need ongoing advisory services but want professional, fiduciary-level insight on a particular question."
+      }
+    ]
+  },
+  "whatsIncluded": {
+    "heading": "What's Included",
+    "body": "Regardless of fee arrangement, every client relationship includes:",
+    "items": [
+      "A comprehensive financial plan tailored to your goals",
+      "Ongoing portfolio monitoring and rebalancing (for AUM clients)",
+      "Regular review meetings (in-person or virtual)",
+      "Access to our secure Financial Planning Portal",
+      "Coordination with your CPA, attorney, and other professionals",
+      "Proactive communication about market conditions and planning opportunities",
+      "No hidden fees, no product commissions, no sales pressure"
+    ]
+  },
+  "advisoryVsInsurance": {
+    "heading": "Advisory Services vs. Insurance Products",
+    "body": "It's important to understand the distinction between fiduciary advisory services and insurance product sales. Many financial firms earn commissions by selling insurance and annuity products — creating a potential conflict of interest.",
+    "distinction": "Prosperity Planning and Advisory, LLC is a fee-only registered investment adviser and does not sell insurance products or receive insurance commissions. When we discuss insurance or annuity concepts, it is solely for educational and planning purposes as part of your comprehensive financial plan. If you choose to purchase an insurance product, that transaction occurs outside of our advisory relationship through a separate, non-advisory arrangement.",
+    "disclaimer": "Clients are under no obligation to purchase any insurance products."
+  },
+  "faq": [
+    {
+      "question": "Do you have account minimums?",
+      "answer": "We work with clients across a range of asset levels. Minimums may apply for certain advisory services. We're happy to discuss this during your complimentary Clarity Session."
+    },
+    {
+      "question": "When are fees charged?",
+      "answer": "AUM fees are assessed quarterly in arrears based on the average daily balance of your managed accounts. Planning and consultation fees are billed as agreed upon in your advisory agreement."
+    },
+    {
+      "question": "Are there any additional costs?",
+      "answer": "Our advisory fees are separate from any underlying fund expenses (such as ETF expense ratios), custodial fees, or transaction costs charged by third parties. We use low-cost ETFs to help minimize these expenses."
+    }
+  ],
+  "ctaBand": {
+    "heading": "Transparent Advice Starts With a Conversation",
+    "body": "Schedule your complimentary Clarity Session to learn more about our services and fee structure — with no obligation.",
+    "cta": {
+      "text": "Schedule Your Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "Prosperity Pathways™ Portfolios | Investment Portfolio Management",
+    "description": "Explore our Prosperity Pathways™ portfolios — six investment strategies designed to match your goals, risk tolerance, and stage of life. Fiduciary-guided portfolio management.",
+    "ogTitle": "Prosperity Pathways™ Portfolios | Prosperity Planning & Advisory",
+    "ogDescription": "Six investment pathways guided by fiduciary advice, disciplined strategy, and a clear plan designed just for you."
+  },
+  "hero": {
+    "headline": "Investment Portfolio Management",
+    "body": "Your journey to financial freedom begins with the right path — guided by fiduciary advice, disciplined strategy, and a clear plan designed just for you. Every client's financial journey is unique — but the destination is the same: lasting prosperity.",
+    "intro": "Our Prosperity Pathways™ portfolios are designed to meet you where you are and guide you toward where you want to be. Each pathway balances growth, income, and risk in a way that aligns with your goals, timeline, and comfort level.",
+    "cta": {
+      "text": "Schedule Your Complimentary Investment Strategy Consultation",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "portfolios": [
+    {
+      "id": "stability",
+      "name": "The Stability Path",
+      "summary": "Seek steadier returns, manage downside risk, and grow with confidence.",
+      "goal": "Preserve what you've built.",
+      "purpose": "For investors who prioritize protection and consistency.",
+      "description": "The Stability Path focuses on high-quality bonds and conservative equities to pursue steady returns over time. It's designed for those nearing or in retirement, or anyone seeking a smoother ride through market cycles.",
+      "tagline": "Grow with confidence, manage risk with purpose."
+    },
+    {
+      "id": "momentum",
+      "name": "The Momentum Path",
+      "summary": "Balance growth and security with steady forward motion.",
+      "goal": "Balance growth and security.",
+      "purpose": "For investors seeking a middle ground between risk and return.",
+      "description": "The Momentum Path blends diversified equities and fixed-income assets to pursue sustainable long-term returns while aiming to reduce volatility versus all-equity portfolios. Ideal for clients transitioning from accumulation to preservation — a portfolio that moves with you.",
+      "tagline": "Balanced momentum toward your goals."
+    },
+    {
+      "id": "prosperity",
+      "name": "The Prosperity Path",
+      "summary": "Pursue long-term growth through disciplined compounding.",
+      "goal": "Grow your wealth with discipline.",
+      "purpose": "For clients focused on long-term expansion and financial independence.",
+      "description": "The Prosperity Path emphasizes diversified equity exposure and strategic asset allocation aimed at pursuing growth over time. Perfect for investors with longer horizons who can stay the course through short-term market swings.",
+      "tagline": "Grow intentionally. Prosper sustainably."
+    },
+    {
+      "id": "freedom",
+      "name": "The Freedom Path",
+      "summary": "Pursue higher long-term growth and financial independence.",
+      "goal": "Seek stronger long-term capital growth through greater equity exposure.",
+      "purpose": "For investors comfortable with higher market volatility in pursuit of greater long-term returns.",
+      "description": "The Freedom Path emphasizes diversified exposure to U.S. and global equities while maintaining a disciplined asset allocation framework. With a higher allocation to stocks and a reduced reliance on bonds, this portfolio is designed for investors with longer time horizons who are seeking meaningful portfolio growth. The strategy focuses on broad market exposure complemented by selective growth and quality tilts while maintaining diversification and periodic rebalancing to manage risk over time. Ideal for investors pursuing financial independence, building wealth over the long term, or positioning their portfolio for greater future opportunity.",
+      "tagline": "Take confident steps toward your financial freedom."
+    },
+    {
+      "id": "legacy",
+      "name": "The Legacy Path",
+      "summary": "Pursue lasting wealth and multigenerational prosperity.",
+      "goal": "Build long-term growth that endures beyond your lifetime.",
+      "purpose": "For investors with high risk tolerance and long horizons who want to maximize compounding and leave a meaningful financial legacy.",
+      "description": "The Legacy Path emphasizes global equity diversification and disciplined growth to expand wealth over decades. It's designed for investors focused on building, preserving, and transferring prosperity across generations.",
+      "tagline": "Grow for tomorrow's legacy — not just today's gains."
+    },
+    {
+      "id": "purpose",
+      "name": "The Purpose Path",
+      "summary": "Align your investments with your values while maintaining a diversified, risk-aware approach.",
+      "goal": "Invest with meaning.",
+      "purpose": "For clients who want their money to reflect their values.",
+      "description": "The Purpose Path integrates environmental, social, and governance (ESG) principles, along with thematic opportunities in innovation and sustainability. It seeks to align your portfolio with your values while maintaining diversification and disciplined oversight.",
+      "tagline": "Invest in the future you believe in."
+    }
+  ],
+  "management": {
+    "heading": "How We Manage Each Pathway",
+    "body": "Our portfolios are actively monitored and rebalanced using institutional-grade research, diversified ETFs, and strategic models that reflect market conditions and your evolving goals.",
+    "detail": "You'll receive regular updates and can review progress anytime through your secure client dashboard."
+  },
+  "fiduciary": {
+    "heading": "Our Fiduciary Commitment",
+    "body": "Every Prosperity Pathways™ portfolio is managed with your best interests first — always.",
+    "detail": "We are a fee-based fiduciary advisory firm, and we disclose all costs, risks, and recommendations with full transparency."
+  },
+  "foundation": {
+    "heading": "Your Path. Your Plan. Your Prosperity.",
+    "intro": "Each Prosperity Pathway™ portfolio is built on a disciplined foundation of:",
+    "items": [
+      "Strategic diversification across asset classes",
+      "Continuous risk management",
+      "Personalized allocation aligned with your goals",
+      "Regular review and optimization by our advisory team"
+    ],
+    "body": "We don't chase trends. We chart paths — and walk them with you. Start your Prosperity Pathway today.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Call",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "disclosures": [
+    "Prosperity Planning and Advisory, LLC is a Registered Investment Adviser in the State of California. Registration does not imply a certain level of skill or training. The information presented on this page is for educational purposes only and does not constitute personalized investment advice. Clients should consult with an investment adviser representative to determine which portfolio approach aligns with their specific goals and risk tolerance. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results. Each Prosperity Pathway™ portfolio represents a strategic approach tailored to client goals, not a guarantee of performance. ESG or values-based constraints may limit diversification and could cause portfolio performance to differ from broader market benchmarks. This content is for informational purposes only and does not constitute an offer to buy or sell any security or to participate in any investment strategy. Advisory services are offered only after a client signs a written agreement and receives all required disclosures, including Form ADV Part 2A and 2B.",
+    "Each Prosperity Pathway™ portfolio represents a strategic model designed for a range of time horizons (typically 1–5 years, 5–10 years, and 10+ years). Actual portfolio allocations and investment selections are customized based on each client's objectives, risk tolerance, and investment timeline. Our model portfolios are structured around long-term investment principles, but each client's allocation may differ depending on whether their goals are short-term, intermediate, or long-term. We tailor each strategy to your personal plan before implementation."
+  ]
+}

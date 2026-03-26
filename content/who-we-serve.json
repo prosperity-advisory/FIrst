@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Who We Serve | Prosperity Planning & Advisory",
+    "description": "We serve pre-retirees, business owners, high-income professionals, families, and attorneys with fiduciary financial planning in Woodland Hills, CA.",
+    "ogTitle": "Who We Serve | Prosperity Planning & Advisory",
+    "ogDescription": "Fiduciary financial planning for pre-retirees, business owners, professionals, families, and attorneys."
+  },
+  "hero": {
+    "eyebrow": "Who We Serve",
+    "headline": "Financial Planning Built Around Your Life",
+    "subheadline": "Every client's journey is unique. Our planning process adapts to your specific needs, goals, and stage of life.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "intro": {
+    "heading": "We Work With People Like You",
+    "body": "At Prosperity Planning & Advisory, we don't believe in one-size-fits-all solutions. Our clients come from different backgrounds, careers, and life stages — but they share a common goal: building a financial future they can feel confident about. Whether you're preparing for retirement, growing a business, or protecting your family's legacy, we tailor every recommendation to your unique situation."
+  },
+  "audiences": [
+    {
+      "id": "pre-retirees",
+      "title": "Pre-Retirees & Recent Retirees",
+      "subtitle": "Transitioning from saving to spending with confidence",
+      "body": "You've spent decades building wealth — now it's time to make sure it lasts. We help pre-retirees and recent retirees navigate the critical transition from accumulation to distribution, addressing Social Security timing, Medicare coordination, tax-efficient withdrawal strategies, and sustainable income planning.",
+      "highlights": [
+        "Retirement income and cash-flow planning",
+        "Social Security optimization strategies",
+        "Tax-aware withdrawal sequencing",
+        "Healthcare and Medicare planning considerations",
+        "Portfolio transition from growth to income"
+      ]
+    },
+    {
+      "id": "business-owners",
+      "title": "Business Owners & Entrepreneurs",
+      "subtitle": "Aligning your business success with personal financial goals",
+      "body": "Running a business means your personal and professional finances are deeply connected. We help business owners build retirement plans, evaluate exit and succession strategies, optimize tax efficiency, and create a financial plan that supports both the business and the owner's long-term goals.",
+      "highlights": [
+        "Retirement plan design (401(k), SEP IRA, Defined Benefit)",
+        "Business succession and exit planning",
+        "Tax-efficient compensation strategies",
+        "Buy-sell agreement coordination",
+        "Cash flow optimization for business and personal finances"
+      ]
+    },
+    {
+      "id": "professionals",
+      "title": "High-Income Professionals",
+      "subtitle": "Making the most of what you earn",
+      "body": "High earnings create unique financial challenges — from managing tax exposure to maximizing retirement contributions and building wealth beyond your career. We help physicians, executives, engineers, and other professionals develop strategies that turn high income into lasting financial security.",
+      "highlights": [
+        "Advanced tax-efficient planning",
+        "Stock option and equity compensation strategies",
+        "Backdoor Roth IRA and mega backdoor strategies",
+        "Deferred compensation planning",
+        "Wealth accumulation and investment management"
+      ]
+    },
+    {
+      "id": "families",
+      "title": "Families & Multigenerational Planning",
+      "subtitle": "Protecting what matters most — today and for generations ahead",
+      "body": "Family financial planning goes beyond budgets and savings accounts. We help families coordinate education planning, estate strategies, risk management, and wealth transfer — so your values and your wealth endure across generations.",
+      "highlights": [
+        "Education savings (529 plans, funding strategies)",
+        "Estate and legacy planning coordination",
+        "Life insurance and risk management review",
+        "Family budgeting and cash-flow planning",
+        "Multigenerational wealth transfer strategies"
+      ]
+    },
+    {
+      "id": "tax-legacy",
+      "title": "Tax & Legacy Planning Clients",
+      "subtitle": "Proactive strategies for complex financial situations",
+      "body": "When your financial life becomes more complex, you need a planning partner who can help you coordinate across tax, estate, and investment decisions. We work alongside your CPA and attorney to design strategies that minimize tax exposure, protect assets, and create a purposeful legacy.",
+      "highlights": [
+        "Charitable Remainder Trust (CRT) planning education",
+        "Irrevocable Life Insurance Trust (ILIT) coordination",
+        "Tax-loss harvesting and gain management",
+        "Beneficiary and estate document review",
+        "Coordinated planning with your tax and legal team"
+      ]
+    },
+    {
+      "id": "attorneys",
+      "title": "Attorney Advisory Clients",
+      "subtitle": "Financial clarity for professionals with variable income and complex needs",
+      "body": "Attorneys face unique financial challenges — from managing variable income (especially in litigation and contingency-based practices) to navigating partnership buy-ins, deferred compensation, and retirement planning. We provide the disciplined, strategic guidance that helps legal professionals build long-term financial stability.",
+      "highlights": [
+        "Variable income and cash-flow management",
+        "Partnership buy-in and equity planning",
+        "Retirement planning for solo and firm attorneys",
+        "Tax-efficient strategies for high earners",
+        "Coordination with your existing legal and tax professionals"
+      ]
+    }
+  ],
+  "ctaBand": {
+    "heading": "See Yourself Here?",
+    "body": "No matter where you are on your financial journey, we're here to help you take the next step with clarity and confidence.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

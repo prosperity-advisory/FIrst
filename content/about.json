@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Our Mission & Who We Are | Prosperity Planning & Advisory",
+    "description": "Learn about Prosperity Planning & Advisory — a fiduciary financial planning firm in Woodland Hills, CA dedicated to guiding your financial journey with expertise and integrity.",
+    "ogTitle": "Our Mission & Who We Are | Prosperity Planning & Advisory",
+    "ogDescription": "Where trust takes root and your goals take shape. Fiduciary financial planning with integrity."
+  },
+  "hero": {
+    "headline": "Where Trust Takes Root and Your Goals Take Shape",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "mission": {
+    "heading": "Dedicated to guiding your financial journey with expertise",
+    "body": "At Prosperity Planning and Advisory, our mission is to empower individuals, families, and business owners to pursue financial clarity, confidence, and lasting prosperity. We believe true wealth goes beyond numbers — it is measured in peace of mind, freedom of choice, and the ability to live life on your terms. Through comprehensive financial planning, customized portfolio strategies, and practical day-to-day guidance, we help our clients make informed decisions at every stage of life. Whether building a strong financial foundation, preparing for retirement, or navigating complex challenges, we serve as a dedicated partner committed to supporting your long-term goals. Our purpose is rooted in integrity, education, and personal connection. We deliver advice that blends time tested strategies with a deep understanding of your goals and values, with the aim that every plan reflects not only financial objectives but also the life you want to create. By helping turn uncertainty into confidence and possibility into opportunity, we seek to transform financial planning from a task into a lifelong advantage."
+  },
+  "ourServices": {
+    "heading": "Our Services",
+    "body": "At Prosperity Planning & Advisory, we provide a comprehensive suite of services designed to support every stage of your financial life. As a fiduciary, our guidance is rooted in clarity, integrity, and a commitment to helping you build lasting prosperity with confidence and intention.",
+    "items": [
+      "Comprehensive Financial Planning",
+      "Retirement Planning",
+      "Portfolio Management",
+      "Family Financial Planning",
+      "Education Planning",
+      "Cash Flow & Budgeting",
+      "Risk Management & Insurance Planning",
+      "Investment Strategies",
+      "Tax-Efficient Strategies",
+      "Estate & Legacy Planning",
+      "Small Business & Entrepreneur Planning",
+      "One-Time Consultations & Second Opinions",
+      "ESG / Values-Based Investing"
+    ],
+    "outro": "No matter where you are on your financial journey, we are here to provide thoughtful, personalized support so you can move forward with clarity and peace of mind today and for the future."
+  },
+  "trustedPartner": {
+    "heading": "Your Trusted Financial Partner",
+    "body": "As your financial partner, we combine professional insight with genuine care. We're here with strategies designed to provide clarity, confidence, and a plan that adapts as life and markets change — so you can focus on what matters most."
+  },
+  "features": [
+    "Our Fiduciary Duty to Clients",
+    "Professional Financial Guidance",
+    "Comprehensive Services",
+    "Personalized Planning",
+    "Ongoing Support",
+    "Goal-Based Focus"
+  ],
+  "tailored": {
+    "heading": "Tailored Financial Solutions for You",
+    "body": "Prosperity Planning and Advisory offers professional insights tailored specifically to your financial situation. As a fiduciary, we prioritize your interests and provide transparent advice. Our services include investment management, retirement planning strategies, estate and legacy strategies, and small business planning strategies."
+  },
+  "ctaBand": {
+    "heading": "Start Your Financial Journey Today",
+    "body": "Contact us for personalized advice & planning.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

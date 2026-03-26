@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "title": "Home - Prosperity Planning & Advisory | Fiduciary Financial Planner",
+    "description": "Work with a fiduciary financial planner committed to clarity, confidence, and your best interests. Personalized planning for individuals and business owners.",
+    "ogTitle": "Prosperity Planning & Advisory | Fiduciary Financial Planner",
+    "ogDescription": "Work with a fiduciary financial planner committed to clarity, confidence, and your best interests. Personalized planning for individuals and business owners."
+  },
+  "hero": {
+    "headline": "Your Financial Plan Starts Here.",
+    "subheadline": "Clarity. Confidence. Control",
+    "body": "Your Fiduciary Partner. A Financial Planner & Adviser proudly serving with integrity, where your best interest isn't just a commitment, it's our standard.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "process": {
+    "intro": "At Prosperity Planning & Advisory, we believe financial confidence comes from clarity, collaboration, and trust. That's why we guide every client through a structured six-step process: beginning with an initial meeting to understand your goals, followed by discovery to uncover your full financial picture. We then design tailored strategies and recommend a path forward that aligns with your objectives. Once you're ready, we help you implement those strategies with care and provide ongoing follow-up to keep you aligned as life evolves. This structured approach is designed to help make decisions intentional, keep each step supported, and build confidence as you pursue long-term financial goals.",
+    "steps": [
+      { "number": 1, "title": "Initial Meeting" },
+      { "number": 2, "title": "Discovery" },
+      { "number": 3, "title": "Design" },
+      { "number": 4, "title": "Recommend" },
+      { "number": 5, "title": "Implement" },
+      { "number": 6, "title": "Follow-Up" }
+    ]
+  },
+  "welcome": {
+    "heading": "Welcome to Prosperity Planning",
+    "body": "At Prosperity Planning & Advisory, we partner with individuals and small business owners to work toward their financial goals with achievable strategies. As a fiduciary firm, we are legally and ethically committed to putting your best interests first in every recommendation we make. Our services include comprehensive financial planning, investment planning, retirement planning strategies, tax-efficient strategies (in coordination with your tax professional), and small business planning, all tailored to your unique situation. Whether you're preparing for retirement, building wealth, or strengthening your business, we deliver professional guidance and ongoing support. With a clear process and a focus on your long-term goals, we work to help keep every decision intentional and aligned, building confidence and supporting your financial future."
+  },
+  "roadToProsperity": {
+    "heading": "The Road To Prosperity",
+    "subheading": "Your journey to financial clarity begins with fiduciary guidance."
+  },
+  "services": {
+    "eyebrow": "Professional Financial Services",
+    "heading": "Comprehensive Financial Planning Solutions",
+    "body": "At Prosperity Planning and Advisory, we partner with individuals and business owners to build strategies aimed at supporting long-term stability. From investment and retirement planning to estate and legacy strategies and small business planning, every solution is designed with your future in mind.",
+    "cta": { "text": "Learn More", "href": "/services" },
+    "cards": [
+      {
+        "title": "Investment Management",
+        "body": "Our priority is to develop strategies aimed at growing your wealth while managing risk, helping your portfolio stay aligned with your long-term financial goals.",
+        "cta": { "text": "See Portfolios", "href": "/portfolios" }
+      },
+      {
+        "title": "Insurance & Annuity Education",
+        "subtitle": "(Non-Advisory)",
+        "body": "We provide education and planning guidance on life insurance concepts, fixed annuities, and retirement income strategies, including considerations for 401(k) and IRA rollovers. These discussions help clients understand how insurance-based tools may fit within a broader financial plan.",
+        "disclaimer": "These discussions are educational in nature and provided as part of a comprehensive financial planning process. Prosperity Planning & Advisory, LLC does not sell insurance products.",
+        "cta": { "text": "Learn More", "href": "/services" }
+      },
+      {
+        "title": "Strategic Retirement",
+        "body": "Retirement is about more than saving, it's about making confident decisions around income, risk, and long-term flexibility. That's why our approach focuses on helping clients plan for sustainable cash flow, manage uncertainty, and make informed, tax-aware choices so their retirement strategy can adapt as life evolves.",
+        "detail": "Explore how thoughtful retirement planning can help support long-term income, flexibility, and peace of mind.",
+        "cta": { "text": "Learn More", "href": "/services" }
+      },
+      {
+        "title": "Estate Planning Strategies",
+        "body": "We help you protect your wealth and work to align it with your wishes for the future. Through estate and legacy planning, we work alongside you and, when needed, your attorney, tax specialist, or other trusted professionals to design strategies that reflect your values, provide for loved ones, and consider potential tax implications. Our goal is to create a thoughtful plan that helps preserve your assets, safeguards your legacy, and gives you confidence knowing your financial future and your family's future is supported."
+      },
+      {
+        "title": "Personalized Financial Planning",
+        "body": "We work with you to create a clear, practical financial plan, covering spending strategy (budgeting), cost-management, college savings and long-term strategies, tailored to support your personal goals and financial life.",
+        "cta": { "text": "Start Your Financial Plan", "href": "/planning" }
+      },
+      {
+        "title": "Future-Ready Strategies for Your Business",
+        "body": "We support small business owners with strategies that strengthen both business and personal financial health. Our approach focuses on improving cash flow, enhancing operational efficiency, and aligning financial decisions with your long-term goals.",
+        "detail": "We also help business owners evaluate tax-efficient retirement plan strategies, including SEP IRAs, SIMPLE IRAs, Solo 401(k)s, traditional 401(k) plans, and advanced options such as Defined Benefit and Cash Balance plans. Our role is to help you compare these plans, understand potential tax advantages, and determine which structure best supports your business needs, savings goals, and employee-benefit objectives.",
+        "detail2": "Beyond protecting what you've built, we help you identify opportunities for sustainable growth and improved financial resilience. Every plan is personalized to your goals, helping keep your business strong today and better prepared for the future.",
+        "disclaimer": "Prosperity Planning and Advisory, LLC provides advisory guidance only and does not provide tax advice; clients should consult their tax professional for personalized tax determinations."
+      },
+      {
+        "title": "Spending Strategy",
+        "body": "Take control of your cash flow with a clear, personalized spending strategy. We help you organize your finances, prioritize what matters most, and stay on track using a zero-based budgeting approach combined with a \"bank bucket\" system that keeps every dollar working with purpose."
+      }
+    ]
+  },
+  "advancedStrategies": {
+    "heading": "Strategic Planning for Business Owners & Investors with Complex Financial Decisions",
+    "subheading": "Education for complex decisions, designed to support long-term clarity and flexibility.",
+    "intro": "We provide educational planning guidance to help business owners and executives evaluate strategies related to:",
+    "items": [
+      {
+        "title": "Tax-aware income and exit planning",
+        "body": "Exploring strategies intended to help manage and reduce the tax impact of business income or a future exit."
+      },
+      {
+        "title": "Ownership transition & succession planning",
+        "body": "Helping evaluate internal, family, or third-party transition strategies."
+      },
+      {
+        "title": "Executive retention & incentive strategies",
+        "body": "Education on approaches used to attract, retain, and reward key executives."
+      },
+      {
+        "title": "Structured Installment Sale strategies",
+        "body": "Understanding installment-based sale structures and planning considerations."
+      },
+      {
+        "title": "Charitable Remainder Trusts (CRTs)",
+        "body": "Education on charitable planning strategies that may support income, tax efficiency, and legacy goals."
+      },
+      {
+        "title": "DST 1031 Exchange Strategies",
+        "body": "Understanding Delaware Statutory Trust (DST) structures as a potential 1031 exchange replacement option."
+      },
+      {
+        "title": "Qualified retirement & benefit plans",
+        "body": "Reviewing options such as 401(k)s, Defined Benefit, pension, and Cash Balance plans."
+      },
+      {
+        "title": "Non-qualified deferred compensation & executive bonus arrangements",
+        "body": "Evaluating supplemental retirement and compensation strategies for executives."
+      },
+      {
+        "title": "Business continuity & buy-sell planning",
+        "body": "Helping clarify planning considerations and coordination for buy-sell agreements."
+      }
+    ],
+    "disclaimer": "Our role is to help you understand your options, trade-offs, and planning considerations as part of a comprehensive financial plan, while coordinating with your qualified tax and legal professionals. We do not provide legal or tax advice."
+  },
+  "location": {
+    "address": "21255 Burbank Boulevard, Suite 120",
+    "city": "Woodland Hills",
+    "state": "CA",
+    "zip": "91367",
+    "country": "USA",
+    "cta": { "text": "Contact Us", "href": "/contact" }
+  },
+  "ctaBand": {
+    "heading": "Create your financial plan with us now!",
+    "body": "No question is too small when it comes to your future. Talk to an adviser today and make confident financial decisions.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

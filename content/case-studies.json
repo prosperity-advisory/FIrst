@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "title": "Case Studies | Prosperity Planning & Advisory",
+    "description": "See how fiduciary financial planning helps real people. Anonymized case studies showing retirement, business, family, and career planning in action.",
+    "ogTitle": "Case Studies | Prosperity Planning & Advisory",
+    "ogDescription": "Anonymized planning scenarios showing how fiduciary financial guidance helps clients navigate complex financial decisions."
+  },
+  "hero": {
+    "eyebrow": "Case Studies",
+    "headline": "Real Planning. Real Results.",
+    "subheadline": "Every financial plan tells a story. These anonymized scenarios illustrate how our planning process helps clients navigate complex decisions and build lasting confidence.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "disclaimer": "All case studies are hypothetical illustrations based on common planning scenarios. They do not represent actual clients or guarantee specific outcomes. Individual results will vary based on personal circumstances, market conditions, and other factors. These examples are for educational purposes only and do not constitute investment advice.",
+  "cases": [
+    {
+      "id": "business-owner-retiring",
+      "title": "The Business Owner Ready to Step Away",
+      "subtitle": "Coordinating a business exit with personal retirement goals",
+      "profile": {
+        "description": "A 62-year-old small business owner preparing to retire within three years",
+        "situation": "Built a successful professional services firm over 25 years. Most of their wealth is tied up in the business. No formal succession plan in place. Concerned about tax impact of a sale and whether retirement savings are sufficient."
+      },
+      "challenges": [
+        "Business value concentrated in a single illiquid asset",
+        "No succession or exit plan in place",
+        "Uncertainty about retirement readiness without business income",
+        "Significant tax exposure from a potential business sale",
+        "Retirement plan (SEP IRA) may be underfunded for desired lifestyle"
+      ],
+      "approach": [
+        "Conducted a comprehensive financial analysis including business valuation coordination",
+        "Evaluated succession options: internal transition, family transfer, and third-party sale",
+        "Designed a tax-efficient exit timeline in coordination with their CPA",
+        "Modeled retirement income scenarios with and without business sale proceeds",
+        "Explored Defined Benefit plan strategies to accelerate pre-retirement savings",
+        "Reviewed estate plan to align with post-sale asset structure"
+      ],
+      "outcome": "With a structured exit timeline and coordinated tax strategy, the business owner gained clarity on their retirement readiness and a step-by-step plan to transition out of the business on their terms — with confidence that their financial future was secure."
+    },
+    {
+      "id": "family-balancing-priorities",
+      "title": "The Family Balancing College and Retirement",
+      "subtitle": "Prioritizing competing financial goals without sacrificing either",
+      "profile": {
+        "description": "A dual-income couple in their mid-40s with two children approaching college age",
+        "situation": "Combined household income of $250,000+. Both contribute to employer 401(k) plans but feel behind on retirement savings. Two children will start college within three years. Uncertain how to fund education without derailing retirement goals."
+      },
+      "challenges": [
+        "Competing priorities: college funding vs. retirement savings",
+        "No 529 plan or dedicated education savings in place",
+        "Feeling behind on retirement contributions relative to goals",
+        "Unclear how to optimize tax-advantaged accounts across both goals",
+        "Need for a coordinated cash-flow strategy to fund both priorities"
+      ],
+      "approach": [
+        "Built a comprehensive financial plan integrating both college and retirement timelines",
+        "Established 529 plans with a strategic funding approach balancing current savings capacity",
+        "Maximized employer 401(k) matches and evaluated Roth contribution strategies",
+        "Created a cash-flow plan that allocated dollars intentionally across competing goals",
+        "Modeled scenarios showing the long-term impact of different funding splits",
+        "Reviewed insurance coverage and estate documents for family protection"
+      ],
+      "outcome": "The family gained a clear understanding of how to fund both goals without sacrificing one for the other. By optimizing tax-advantaged accounts and implementing a disciplined savings strategy, they moved forward with confidence that both their children's education and their own retirement were on track."
+    },
+    {
+      "id": "attorney-variable-income",
+      "title": "The Attorney With Variable Income",
+      "subtitle": "Building stability and long-term wealth on an unpredictable income stream",
+      "profile": {
+        "description": "A 50-year-old litigation attorney with a contingency-based practice",
+        "situation": "Annual income ranges from $180,000 to $500,000+ depending on case outcomes. High earnings in some years, minimal in others. No consistent savings strategy. Approaching 50 with retirement planning concerns and significant tax exposure in high-income years."
+      },
+      "challenges": [
+        "Highly variable annual income makes budgeting and planning difficult",
+        "No structured retirement savings plan despite high earning potential",
+        "Significant tax liability in high-income years with no proactive strategy",
+        "Desire to build long-term wealth but unsure where to start",
+        "Partnership buy-in opportunity requiring capital allocation decisions"
+      ],
+      "approach": [
+        "Designed a variable-income cash-flow system using a bank-bucket spending strategy",
+        "Established a Solo 401(k) with profit-sharing to maximize retirement contributions in high-income years",
+        "Evaluated Roth conversion opportunities in lower-income years for tax diversification",
+        "Created a tax-aware investment strategy to manage capital gains and income timing",
+        "Analyzed the partnership buy-in opportunity within the context of overall financial goals",
+        "Built an emergency reserve strategy sized for income volatility"
+      ],
+      "outcome": "With a flexible planning framework designed for income variability, the attorney now has a system that maximizes savings in strong years, manages tax exposure proactively, and provides stability and structure regardless of annual income fluctuations."
+    },
+    {
+      "id": "late-career-catch-up",
+      "title": "The Late-Career Professional Playing Catch-Up",
+      "subtitle": "Accelerating retirement readiness in the final working years",
+      "profile": {
+        "description": "A 55-year-old corporate executive who prioritized career growth over retirement planning",
+        "situation": "Strong current income ($300,000+) but retirement savings significantly behind target. Recently divorced, requiring a reassessment of financial goals and asset division. Wants to retire by 65 but unsure if it's realistic."
+      },
+      "challenges": [
+        "Retirement savings well below target for desired retirement age and lifestyle",
+        "Post-divorce asset restructuring and updated financial goals",
+        "Need to maximize contributions in remaining working years",
+        "Uncertainty about Social Security timing and retirement income sources",
+        "No updated estate plan or beneficiary designations post-divorce"
+      ],
+      "approach": [
+        "Conducted a full financial reset — updated goals, assets, and projections post-divorce",
+        "Maximized 401(k) contributions including catch-up contributions",
+        "Evaluated supplemental savings strategies including taxable brokerage and backdoor Roth IRA",
+        "Modeled multiple retirement scenarios at ages 62, 65, and 67 with varying spending levels",
+        "Optimized Social Security claiming strategy based on updated marital status",
+        "Rebuilt estate plan with updated beneficiaries, powers of attorney, and healthcare directives"
+      ],
+      "outcome": "By maximizing every available savings vehicle and building a realistic, phased retirement timeline, the executive gained clarity on a viable path to retirement by 65 — with a contingency plan and the confidence that every remaining working year was being fully optimized."
+    }
+  ],
+  "ctaBand": {
+    "heading": "Your Story Is Next",
+    "body": "Every financial plan is unique. Schedule a complimentary Clarity Session and let's start writing yours.",
+    "cta": {
+      "text": "Schedule Your Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

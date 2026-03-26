@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "FAQs | Prosperity Planning & Advisory",
+    "description": "Frequently asked questions about working with Prosperity Planning & Advisory — minimums, virtual availability, fees, fiduciary duty, and more.",
+    "ogTitle": "Frequently Asked Questions | Prosperity Planning & Advisory",
+    "ogDescription": "Answers to common questions about fiduciary financial planning, fees, minimums, and how we work with clients."
+  },
+  "hero": {
+    "eyebrow": "Frequently Asked Questions",
+    "headline": "Questions? We Have Answers.",
+    "subheadline": "We believe in transparency at every step. Here are answers to the questions we hear most often.",
+    "cta": {
+      "text": "Schedule Your Complimentary Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "questions": [
+    {
+      "question": "Do you have account or asset minimums?",
+      "answer": "We work with clients across a range of asset levels and financial situations. While certain advisory services may have minimum thresholds, we encourage you to reach out regardless — during your complimentary Clarity Session, we'll determine the best way we can help based on your specific needs and goals."
+    },
+    {
+      "question": "Do you work with clients virtually, or only in person?",
+      "answer": "We work with clients both in-person at our Woodland Hills, CA office and virtually via secure video conferencing. Many of our clients prefer a mix of both. Whether you're local to the Los Angeles area or located elsewhere, we're set up to provide the same high level of service and personal attention."
+    },
+    {
+      "question": "Do you only work with clients in California?",
+      "answer": "Prosperity Planning & Advisory, LLC is a California state-registered investment adviser. While many of our clients are based in California, we may be able to work with clients in other states depending on applicable regulations. Contact us to discuss your situation, and we'll let you know how we can help."
+    },
+    {
+      "question": "What happens during the first meeting?",
+      "answer": "Your first meeting is a complimentary Clarity Session — a 30–45 minute conversation where we get to know you, understand your goals and concerns, and explain how our planning process works. There's no cost, no obligation, and no sales pressure. It's simply a chance to see if we're the right fit to help you build your financial plan."
+    },
+    {
+      "question": "What does it mean that you're a fiduciary?",
+      "answer": "As a fiduciary, we are legally and ethically obligated to act in your best interest at all times. This means our recommendations are based solely on what's right for you — not on commissions, sales incentives, or product quotas. It's the highest standard of care in financial planning, and it's the only way we operate."
+    },
+    {
+      "question": "Do you provide tax or legal advice?",
+      "answer": "We do not provide tax or legal advice. However, tax-efficient planning is a core part of what we do. We design strategies with tax implications in mind and coordinate directly with your CPA, tax professional, or attorney to ensure your plan is fully aligned. If you don't currently have a tax or legal professional, we're happy to provide referrals."
+    },
+    {
+      "question": "Do you work with my CPA or attorney?",
+      "answer": "Absolutely. Coordinated planning is one of the most valuable things we offer. We regularly collaborate with our clients' CPAs, attorneys, and other trusted professionals to ensure every aspect of your financial plan — from tax strategy to estate documents — is working together. We believe the best outcomes come from a team approach."
+    },
+    {
+      "question": "How are you compensated? Do you earn commissions?",
+      "answer": "We are a fee-only registered investment adviser. Our compensation comes directly from our clients through advisory fees — not from commissions, product sales, or third-party incentives. This structure ensures our advice is always objective, independent, and aligned with your best interests. Prosperity Planning and Advisory, LLC does not sell insurance products or receive insurance commissions."
+    },
+    {
+      "question": "How often will we meet to review my plan?",
+      "answer": "We typically conduct formal review meetings at least annually, with additional check-ins as needed based on your situation. Many clients meet with us semi-annually or quarterly. Between meetings, you have ongoing access to your Financial Planning Portal and can reach your advisor directly at any time."
+    },
+    {
+      "question": "Can I get a second opinion on my current financial plan?",
+      "answer": "Yes. We offer one-time consultations and second opinions for individuals who want an independent, fiduciary-level review of their existing financial plan, investment portfolio, or retirement strategy. There's no obligation to become an ongoing client — we're happy to provide objective insight on where you stand."
+    }
+  ],
+  "ctaBand": {
+    "heading": "Still Have Questions?",
+    "body": "We're here to help. Schedule a complimentary Clarity Session and we'll answer any questions you have — with no obligation.",
+    "cta": {
+      "text": "Schedule Your Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

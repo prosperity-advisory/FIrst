@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Our Process | Prosperity Planning & Advisory",
+    "description": "Our structured six-step financial planning process — from your initial clarity session through ongoing support. See how we build your personalized financial plan.",
+    "ogTitle": "Our Six-Step Financial Planning Process",
+    "ogDescription": "From your first clarity session to ongoing support — a structured approach to building your personalized financial plan."
+  },
+  "hero": {
+    "eyebrow": "Our Process",
+    "headline": "A Clear Path to Financial Confidence",
+    "subheadline": "Our structured six-step process is designed to bring clarity, purpose, and confidence to every financial decision you make.",
+    "cta": {
+      "text": "Start With a Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "intro": {
+    "heading": "How We Work With You",
+    "body": "Financial planning shouldn't feel overwhelming. Our process is built to guide you step by step — from understanding your goals to implementing and maintaining a plan that evolves with your life. Every step is collaborative, transparent, and designed around your unique situation."
+  },
+  "steps": [
+    {
+      "number": 1,
+      "title": "Clarity Session",
+      "subtitle": "Your complimentary introductory meeting",
+      "body": "Everything begins with a conversation. In your Clarity Session, we get to know you — your goals, concerns, and what financial confidence looks like for you. This is a no-obligation meeting where we listen, ask thoughtful questions, and determine whether we're the right fit to help you move forward.",
+      "whatToExpect": [
+        "A 30–45 minute conversation (in-person or virtual)",
+        "Discussion of your financial goals and current situation",
+        "An overview of our planning process and how we work",
+        "An honest assessment of whether our services align with your needs"
+      ],
+      "outcome": "You'll leave with a clear understanding of the next steps and what working together looks like — with no pressure or obligation."
+    },
+    {
+      "number": 2,
+      "title": "Document Gathering",
+      "subtitle": "Building your complete financial picture",
+      "body": "Before we can design a plan, we need to understand the full picture. We'll provide you with a clear checklist of documents and information we need to begin the planning process. Our team makes this step as simple and organized as possible.",
+      "documentsNeeded": [
+        "Recent tax returns (2–3 years)",
+        "Investment and retirement account statements",
+        "Insurance policies (life, disability, property)",
+        "Estate planning documents (wills, trusts, powers of attorney)",
+        "Employee benefits summaries",
+        "Social Security statements",
+        "Mortgage and debt statements",
+        "Monthly income and expense overview"
+      ],
+      "outcome": "With your documents in hand, we have everything we need to conduct a thorough analysis and begin building your personalized plan."
+    },
+    {
+      "number": 3,
+      "title": "Discovery & Analysis",
+      "subtitle": "Understanding your full financial landscape",
+      "body": "This is where the deep work begins. We analyze every aspect of your financial life — income, expenses, assets, liabilities, insurance coverage, tax situation, estate documents, and retirement projections. Our goal is to identify strengths, uncover gaps, and understand the opportunities available to you.",
+      "whatWeAnalyze": [
+        "Cash flow and spending patterns",
+        "Investment allocation and risk exposure",
+        "Retirement readiness and income projections",
+        "Tax efficiency across accounts and strategies",
+        "Insurance coverage gaps and risk management",
+        "Estate plan alignment with current goals"
+      ],
+      "outcome": "A comprehensive understanding of where you stand today — the foundation for every recommendation that follows."
+    },
+    {
+      "number": 4,
+      "title": "Recommendations & Strategy",
+      "subtitle": "Your personalized financial roadmap",
+      "body": "Based on our analysis, we present clear, prioritized recommendations tailored to your goals, values, and timeline. We walk through each recommendation together, explain the reasoning behind it, and answer every question. Nothing moves forward until you fully understand and agree with the plan.",
+      "whatYouReceive": [
+        "A written financial plan with prioritized recommendations",
+        "Retirement income and spending projections",
+        "Investment strategy aligned with your risk tolerance and goals",
+        "Tax-efficient strategies coordinated with your CPA",
+        "Estate and legacy planning considerations",
+        "A clear action plan with defined next steps"
+      ],
+      "outcome": "You'll have a clear, documented roadmap — and the confidence to move forward knowing every recommendation is grounded in your best interest."
+    },
+    {
+      "number": 5,
+      "title": "Implementation",
+      "subtitle": "Putting your plan into action",
+      "body": "A plan only works if it's executed. We help you implement each recommendation with care and coordination — opening accounts, adjusting allocations, coordinating with your CPA or attorney, and ensuring every piece of the plan is properly set in motion.",
+      "whatWeHandle": [
+        "Account setup and portfolio implementation",
+        "Beneficiary designation updates",
+        "Insurance and risk management coordination",
+        "Retirement plan enrollment or rollover execution",
+        "Coordination with your tax and legal professionals",
+        "Timeline management for multi-step strategies"
+      ],
+      "outcome": "Your plan is fully activated — with every piece coordinated and working together toward your goals."
+    },
+    {
+      "number": 6,
+      "title": "Ongoing Support & Review",
+      "subtitle": "A plan that grows with you",
+      "body": "Financial planning isn't a one-time event. Life changes, markets shift, and goals evolve. We provide continuous monitoring and regular reviews to ensure your plan stays aligned with where you are — and where you want to go. You'll always have a partner in your corner.",
+      "whatsCovered": [
+        "Regular portfolio reviews and rebalancing",
+        "Annual financial plan updates",
+        "Life-event planning (marriage, home purchase, career change, inheritance)",
+        "Tax-planning coordination ahead of each tax year",
+        "Ongoing access to your financial planning portal",
+        "Direct communication with your advisor anytime"
+      ],
+      "outcome": "A living, evolving financial plan — and an ongoing relationship built on trust, transparency, and your continued confidence."
+    }
+  ],
+  "ctaBand": {
+    "heading": "Ready to Start?",
+    "body": "Your six-step journey begins with a single conversation. Schedule your complimentary Clarity Session today.",
+    "cta": {
+      "text": "Schedule Your Clarity Session",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "company": {
+    "name": "Prosperity Planning & Advisory, LLC",
+    "phone": "(888) 427-5240",
+    "email": "Help@prosperityadvisory.net",
+    "address": {
+      "street": "21255 Burbank Boulevard, Suite 120",
+      "city": "Woodland Hills",
+      "state": "CA",
+      "zip": "91367",
+      "country": "USA"
+    },
+    "calendly": "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+    "logo": "https://prosperityadvisory.net/wp-content/uploads/2025/09/cropped-Logo-JPG.webp"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Prosperity Pathways™ Portfolios", "href": "/portfolios" },
+      { "label": "Personal Prosperity Planning™", "href": "/planning" },
+      { "label": "Our Mission & Who We Are", "href": "/about" },
+      { "label": "Who We Serve", "href": "/who-we-serve" },
+      { "label": "Our Process", "href": "/process" },
+      { "label": "Fees", "href": "/fees" },
+      { "label": "FAQs", "href": "/faqs" },
+      { "label": "Resources", "href": "/resources" },
+      { "label": "Case Studies", "href": "/case-studies" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "footer": {
+    "links": [
+      { "label": "Information", "href": "/about" },
+      { "label": "Privacy Policy", "href": "/privacy-policy" }
+    ],
+    "disclosures": {
+      "regulatory": "Prosperity Planning & Advisory, LLC is a California state-registered investment adviser. Advisory services are provided by a registered investment adviser representative of the Firm.",
+      "insurance": "Prosperity Planning and Advisory, LLC is a fee-only registered investment adviser and does not sell insurance products or receive insurance commissions. Insurance products, if discussed, are offered outside of the advisory relationship through a separate, non-advisory business. Clients are under no obligation to purchase any insurance products.",
+      "website": "Information on this website is for general informational and educational purposes only and does not constitute individualized investment advice, a recommendation, or an offer to buy or sell any security. Past performance is not indicative of future results. Any planning strategies discussed are based on general principles and may not be suitable for all individuals. Investment strategies involve risk, including the potential loss of principal. Prosperity Planning and Advisory, LLC is a registered investment adviser in the State of California. Registration does not imply a certain level of skill or training. Services may not be available to persons in jurisdictions where we are not appropriately licensed or exempt. We do not provide tax or legal advice. Hyperlinks to third-party content are provided for convenience and do not imply endorsement; we are not responsible for the accuracy or content of third-party sites. For our current Form ADV or additional information, please contact us at help@prosperityadvisory.net or 888-427-5240."
+    },
+    "copyright": "© 2026 Prosperity Planning & Advisory"
+  }
+}

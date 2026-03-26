@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Personal Prosperity Planning™ | Prosperity Planning & Advisory",
+    "description": "Comprehensive personal financial planning — retirement, family, risk management, tax-smart strategies, and wealth-building — tailored to your unique goals and values.",
+    "ogTitle": "Personal Prosperity Planning™ | Prosperity Planning & Advisory",
+    "ogDescription": "Your goals are unique, your plan should be too. Comprehensive financial planning tailored to your life."
+  },
+  "hero": {
+    "eyebrow": "Personal Financial Planning",
+    "body": "At Prosperity Planning & Advisory, we believe true financial success is more than numbers, it's about creating a life aligned with your values, goals, and purpose. Our comprehensive financial planning process brings every part of your financial world together, investments, retirement, taxes, insurance, and estate strategy into one coordinated plan designed around you.",
+    "detail": "As a fiduciary, state-registered investment adviser, we act solely in your best interest. Every recommendation is personalized, transparent, and grounded in a clear understanding of where you are today and where you want to be tomorrow. Whether you're building wealth, preparing for retirement, or planning a lasting legacy, we help you make confident, informed decisions at every stage of life.",
+    "tagline": "Your goals are unique, your plan should be too. Let's build your roadmap to financial independence, step by step, with clarity, purpose, and peace of mind.",
+    "cta": {
+      "text": "Schedule Your Complimentary Financial Planning Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "serviceCards": [
+    {
+      "title": "Retirement Planning",
+      "body": "You've worked hard to earn your freedom, now it's time to enjoy it. Our retirement planning process coordinates income, tax strategy, and risk management so you can retire with clarity, confidence, and peace of mind.",
+      "cta": { "text": "Learn More", "href": "/services" }
+    },
+    {
+      "title": "Family Financial Planning",
+      "tagline": "Protecting your family's future, today and for generations ahead.",
+      "body": "From education to estate planning, we help you provide for loved ones and preserve your legacy — so your values live on through every generation."
+    },
+    {
+      "title": "Personal Financial Planning",
+      "tagline": "Strategies built around your life, not someone else's.",
+      "body": "Your plan is personal. We help you build wealth, manage cash flow, and protect what matters most, bringing structure and clarity to every financial choice."
+    },
+    {
+      "title": "Risk Management Plans",
+      "tagline": "Because life happens and preparation matters.",
+      "body": "We assess your financial risks and recommend strategies to help protect your income, assets, and peace of mind from life's unexpected turns."
+    },
+    {
+      "title": "Tax-Smart Strategies",
+      "tagline": "Keep more of what you earn, today and in retirement.",
+      "body": "We help you make informed, tax-efficient decisions on investing, withdrawals, and income so more of your money works toward your goals, not away from them."
+    },
+    {
+      "title": "Wealth-Building Strategies",
+      "tagline": "Turn opportunity into long-term growth.",
+      "body": "Through disciplined investing and smart planning, we help you grow your wealth with purpose, building a future that reflects your goals and values.",
+      "cta": { "text": "See Portfolios", "href": "/portfolios" }
+    }
+  ],
+  "portal": {
+    "heading": "A Financial Plan Tailored for You",
+    "body": "Your life changes, your plan should too. Our financial plans are designed to grow with you: flexible, transparent, and always within reach. Through our secure Financial Planning Portal, you'll have real-time access to your financial world and the ability to make informed adjustments as life evolves. It's clarity, confidence, and control all in one place.",
+    "accessHeading": "Access Your Financial Plan Anytime",
+    "accessBody": "Your financial life doesn't stand still and neither should your plan. Our Financial Planning Portal gives you secure, on-demand access to your entire financial picture, empowering you to stay informed and in control every step of the way.",
+    "features": [
+      {
+        "title": "Review Your Plan",
+        "body": "View your financial plan anytime, anywhere."
+      },
+      {
+        "title": "See Results To What-If Scenarios",
+        "body": "Explore how major life changes, like buying a home, switching careers, or funding education — could impact your goals."
+      },
+      {
+        "title": "Run Goal Simulations",
+        "body": "See how your plan performs under different assumptions and make confident, informed decisions."
+      },
+      {
+        "title": "Stay Connected",
+        "body": "Communicate directly with your advisor, update goals, and collaborate in real time as your life evolves."
+      }
+    ]
+  }
+}

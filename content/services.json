@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "title": "Services - Financial Planning Services | Prosperity Planning & Advisory",
+    "description": "Explore our comprehensive financial planning services including retirement planning, investment strategies, tax-efficient planning, and small business support.",
+    "ogTitle": "Financial Planning Services | Prosperity Planning & Advisory",
+    "ogDescription": "Personalized planning, disciplined strategy, and fiduciary guidance — built around your life, goals, and values."
+  },
+  "hero": {
+    "headline": "How We Help You Build Prosperity",
+    "subheadline": "Prosperity Begins With a Plan",
+    "body": "Personalized planning, disciplined strategy, and fiduciary guidance, built around your life, goals, and values.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  },
+  "sections": [
+    {
+      "type": "retirement",
+      "heading": "Retirement Planning Strategies for Your Future",
+      "body": "Retirement planning is about more than reaching a certain age, it's about creating confidence in your future and clarity around the decisions that shape it. We design retirement planning strategies focused on long-term financial stability, thoughtful decision-making, and adaptability as life evolves. Our process begins with a clear understanding of your lifestyle goals and financial resources, followed by disciplined planning designed to help your money support you throughout retirement.",
+      "items": [
+        "Tax diversification and tax-aware planning strategies, helping clients understand the role of taxable, tax-deferred, and tax-free accounts, including education on Roth conversions and backdoor Roth IRA strategies, as well as high-level education on the tax characteristics of certain annuity and life insurance structures, where appropriate and coordinated with tax professionals.",
+        "Risk and cash-flow planning conversations, including education on reducing over-concentration in portfolios and balancing growth-oriented investments with strategies designed to support retirement spending needs",
+        "401(k) and retirement account rollover considerations, evaluating how rollovers may fit within a broader retirement income and planning strategy",
+        "Retirement income and distribution planning, focused on creating sustainable cash-flow approaches designed to support spending needs over time while adapting to changing markets and personal circumstances",
+        "Education on advanced retirement planning concepts, including discussions around guaranteed income features available through certain annuity structures, educational conversations on how specific life insurance policy features may provide living benefits as part of a broader plan, and high-level education on Charitable Remainder Trusts (CRTs) as a potential way to provide an income stream while supporting charitable goals."
+      ],
+      "outro": "Whether your priority is dependable income, thoughtful tax-aware withdrawal planning, or a balanced approach between growth and preservation, we help you understand your options and develop a retirement strategy that is reviewed over time and designed to evolve as your needs change, so you can move forward with greater confidence and peace of mind.",
+      "cta": { "text": "Learn More", "href": "/planning" }
+    },
+    {
+      "type": "comprehensive",
+      "heading": "Comprehensive Financial Planning",
+      "body": "Our comprehensive financial planning brings clarity and structure to your entire financial life. We help you create practical budgets, manage debt effectively, and build emergency savings to prepare for life's uncertainties. From cost-cutting strategies to planning for major milestones such as retirement or college funding, we coordinate key aspects of your finances into a personalized roadmap. The goal is to help reduce financial stress, support your lifestyle, and keep you progressing with confidence toward the future you envision."
+    },
+    {
+      "type": "business",
+      "heading": "Business & Retirement Strategy Support",
+      "body": "We help business owners and professionals strengthen their financial foundation with clear, customized planning in areas such as:",
+      "subsections": [
+        {
+          "heading": "Retirement Plan Strategy & Design",
+          "items": [
+            "401(k) Plan Design & Guidance",
+            "Owner-Only / Solo 401(k) Strategies",
+            "SEP IRA Strategies",
+            "SIMPLE IRA Strategies",
+            "Profit-Sharing Plan Structuring",
+            "Defined Benefit & Cash Balance Plan Considerations",
+            "Non-Qualified Deferred Compensation Planning"
+          ]
+        },
+        {
+          "heading": "Business Continuity & Talent Planning",
+          "items": [
+            "Succession & Continuity Planning",
+            "Buy-Sell Agreement Coordination (strategy guidance only)",
+            "Executive Bonus Strategy Analysis (non-product advisory)",
+            "Key Person Risk Planning (analysis only — not product sales)",
+            "Competitive Benefits Strategy for Talent Retention"
+          ]
+        }
+      ],
+      "disclaimer": "Prosperity Planning and Advisory, LLC provides advisory guidance only and does not provide tax advice; clients should consult their tax professional for personalized tax determinations."
+    },
+    {
+      "type": "investment",
+      "heading": "Investment & Portfolio Strategies",
+      "body": "We provide personalized investment guidance designed to help ensure your portfolio remains appropriate for your goals, risk tolerance, and long-term strategy.",
+      "detail": "Our process begins with a comprehensive review of your existing investments, where we evaluate asset allocation, diversification, risk exposure, and overall portfolio structure. From there, we provide disciplined, principle-based recommendations focused on improving alignment with your objectives, whether that involves refining your current approach or developing a new strategy.",
+      "detail2": "Using asset allocation principles and modern portfolio theory, we design portfolios ranging from conservative income-focused strategies to growth-oriented solutions. Portfolios are primarily implemented using ETFs to support broad diversification, cost efficiency, and long-term investment discipline.",
+      "detail3": "Ongoing reviews help ensure your investment strategy evolves as markets change and life circumstances shift, providing clarity, consistency, and confidence over time.",
+      "cta": { "text": "See Portfolios", "href": "/portfolios" }
+    },
+    {
+      "type": "tax",
+      "heading": "Tax-Efficient Strategies",
+      "body": "We design strategies intended to help you retain more of what you earn through thoughtful, tax-aware planning. Our approach focuses on managing tax liabilities while identifying opportunities for growth across your investments, retirement plans, and estate. By coordinating with your tax professionals when needed, we work to keep your financial plan aligned and operating as efficiently as possible. The goal is a proactive approach that helps reduce surprises, supports wealth preservation, and keeps you on track toward your long-term goals."
+    },
+    {
+      "type": "insurance",
+      "heading": "Insurance & Retirement Education",
+      "body": "Insurance and annuity decisions can have a lasting impact on your financial security — yet they're often among the most confusing and misunderstood areas of planning. Our role is to bring clarity, context, and confidence to these decisions so you can move forward with understanding, not uncertainty.",
+      "detail": "As part of our comprehensive financial planning process, we provide education and planning guidance on life insurance concepts, fixed annuities, and retirement income strategies. This includes helping clients evaluate 401(k) and IRA rollover considerations, and understanding how guaranteed income tools may support long-term retirement goals.",
+      "detail2": "Rather than viewing insurance decisions in isolation, we help you understand how these strategies fit within your broader financial picture — alongside investments, cash flow, taxes, and risk management. Our focus is on helping you weigh trade-offs, understand benefits and limitations, and make informed decisions aligned with your goals and values.",
+      "detail3": "These discussions are designed to support thoughtful, well-informed planning — so any decisions you make are intentional, confident, and grounded in a clear understanding of how each piece works together.",
+      "disclaimer": "Prosperity Planning & Advisory, LLC does not sell insurance products or receive insurance commissions. Insurance and annuity considerations are evaluated solely as part of the financial planning process."
+    },
+    {
+      "type": "legacy",
+      "heading": "Advanced Tax & Legacy Planning Strategies",
+      "body": "As life and wealth become more complex, planning extends beyond investment performance to tax awareness, asset structure, and intentional legacy design.",
+      "intro": "Our Advanced Tax & Legacy Planning services help bring clarity to important financial decisions by educating clients on key considerations, evaluating trade-offs, and coordinating strategies that align with long-term personal, family, and charitable goals.",
+      "subheading": "We provide education and planning guidance on:",
+      "items": [
+        {
+          "title": "Structural tax planning considerations",
+          "body": "Including how income sources, asset ownership, and the timing of financial decisions may affect long-term tax exposure."
+        },
+        {
+          "title": "Asset concentration and liquidity planning",
+          "body": "Helping clients understand the tax and legacy implications of significant equity positions, closely held business interests, or real estate holdings."
+        },
+        {
+          "title": "Major financial transitions and liquidity events",
+          "body": "Such as business sales, inheritances, or large transactions, with an emphasis on thoughtful tax and legacy alignment."
+        },
+        {
+          "title": "Legacy coordination",
+          "body": "Including beneficiary reviews and education on how assets may integrate with wills, living trusts, and other estate planning documents prepared by your attorney."
+        },
+        {
+          "title": "Advanced planning concepts",
+          "body": "Including Irrevocable Life Insurance Trusts (ILITs) and Charitable Remainder Trusts (CRTs), and education on how charitable strategies may be paired with insurance concepts to support family, philanthropic, or multigenerational legacy objectives."
+        }
+      ],
+      "disclaimers": [
+        "Prosperity Planning & Advisory, LLC does not sell insurance or annuity products. Any discussion of insurance-based strategies is provided solely for educational and planning purposes.",
+        "All planning is conducted in coordination with your legal and tax professionals. Prosperity Planning & Advisory does not provide legal or tax advice."
+      ]
+    },
+    {
+      "type": "spending",
+      "heading": "Spending Strategy",
+      "body": "Our Spending Strategy service gives you deeper clarity and control over your financial life. We start by helping you understand where your money is going today, then build a personalized zero-based budgeting framework that assigns every dollar a purpose. To make the system simple and sustainable, we pair it with a modern \"bank-bucket\" structure separating essentials, savings, and lifestyle spending into easy, organized accounts. This approach supports more confident decision-making and helps you stay consistently aligned with your goals. And because we guide you through each step, your spending system becomes natural, efficient, and built for long-term financial clarity.",
+      "cta": { "text": "Learn More", "href": "/planning" }
+    }
+  ],
+  "quickLinks": [
+    { "title": "Retirement Planning Strategies", "href": "/services#retirement" },
+    { "title": "Estate & Legacy Planning", "href": "/services#legacy" },
+    { "title": "Small Business Strategies", "href": "/services#business" }
+  ],
+  "ctaBand": {
+    "heading": "Start Your Financial Journey Today",
+    "body": "Contact us for personalized advice.",
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
+    }
+  }
+}

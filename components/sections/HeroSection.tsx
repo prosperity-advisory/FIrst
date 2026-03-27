@@ -28,7 +28,7 @@ export function HeroSection({
       <div className="hidden lg:block absolute bottom-[30%] right-[20%] w-3 h-3 border border-gold/15 rounded-full" />
 
       <div className="relative z-[2] max-w-[800px] 2xl:max-w-[860px]">
-        <p className="font-sans text-[11px] xs:text-xs sm:text-xs md:text-[13px] font-semibold tracking-[0.25em] uppercase text-gold mb-5 xl:mb-7 animate-[heroFadeIn_0.8s_ease_0.3s_both] opacity-0">
+        <p className="font-sans text-xs md:text-[13px] font-semibold tracking-[0.25em] uppercase text-gold mb-5 xl:mb-7 animate-[heroFadeIn_0.8s_ease_0.3s_both] opacity-0">
           {eyebrow}
         </p>
         <h1

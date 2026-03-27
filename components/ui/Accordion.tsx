@@ -32,7 +32,7 @@ export function Accordion({ items }: AccordionProps) {
                 {item.question}
               </span>
               <span
-                className={`w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-gold flex items-center justify-center shrink-0 transition-all duration-300 ${
+                className={`w-10 h-10 md:w-9 md:h-9 rounded-full border-2 border-gold flex items-center justify-center shrink-0 transition-all duration-300 ${
                   isOpen ? "bg-gold" : "bg-transparent"
                 }`}
               >

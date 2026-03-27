@@ -34,7 +34,7 @@ export function ProcessSection({
         </FadeUp>
 
         {/* Process grid with connector line */}
-        <div className="relative grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-7 xs:gap-6 md:gap-7 lg:gap-5 xl:gap-6 mb-10 md:mb-12 lg:mb-14">
+        <div className="relative grid grid-cols-2 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 xs:gap-5 md:gap-7 lg:gap-5 xl:gap-6 mb-10 md:mb-12 lg:mb-14">
           {/* Connector line — desktop only */}
           <div className="hidden lg:block absolute top-[30px] left-[8%] right-[8%] h-px bg-border z-0" />
 
@@ -47,7 +47,7 @@ export function ProcessSection({
                 className="relative z-[1] text-center group"
               >
                 {/* Numbered circle */}
-                <div className="w-14 h-14 md:w-[60px] md:h-[60px] xl:w-16 xl:h-16 rounded-full bg-white border-2 border-gold flex items-center justify-center mx-auto mb-3.5 md:mb-[18px] xl:mb-5 transition-all duration-300 group-hover:bg-gold group-hover:text-white">
+                <div className="w-12 h-12 xs:w-14 xs:h-14 md:w-[60px] md:h-[60px] xl:w-16 xl:h-16 rounded-full bg-white border-2 border-gold flex items-center justify-center mx-auto mb-3.5 md:mb-[18px] xl:mb-5 transition-all duration-300 group-hover:bg-gold group-hover:text-white">
                   <span className="font-serif text-xl md:text-[21px] xl:text-[22px] font-bold text-gold group-hover:text-white transition-colors duration-300">
                     {i + 1}
                   </span>

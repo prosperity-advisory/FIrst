@@ -20,7 +20,7 @@ export function InteriorHero({
 
       <div className="relative z-[2] mx-auto max-w-[800px]">
         {eyebrow && (
-          <p className="font-sans text-[11px] xs:text-xs md:text-[13px] font-semibold tracking-[0.25em] uppercase text-gold mb-4 animate-[heroFadeIn_0.8s_ease_0.2s_both] opacity-0">
+          <p className="font-sans text-xs md:text-[13px] font-semibold tracking-[0.25em] uppercase text-gold mb-4 animate-[heroFadeIn_0.8s_ease_0.2s_both] opacity-0">
             {eyebrow}
           </p>
         )}

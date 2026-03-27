@@ -27,7 +27,7 @@ export function ContactSection({
 }: ContactSectionProps) {
   return (
     <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
-      <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-2 gap-9 sm:gap-12 lg:gap-14 xl:gap-16 items-center">
+      <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-9 lg:gap-14 xl:gap-16 items-center">
         {/* Contact info */}
         <FadeUp>
           <span className="eyebrow">{eyebrow}</span>
@@ -60,7 +60,7 @@ export function ContactSection({
 
         {/* Map placeholder */}
         <FadeUp delay={1}>
-          <div className="relative bg-cream rounded-xl border border-border h-60 xs:h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] flex flex-col items-center justify-center gap-3 overflow-hidden">
+          <div className="relative bg-cream rounded-xl border border-border h-56 xs:h-[260px] sm:h-[300px] md:h-[360px] lg:h-[400px] flex flex-col items-center justify-center gap-3 overflow-hidden">
             {/* Grid pattern */}
             <div
               className="absolute inset-0 opacity-40"

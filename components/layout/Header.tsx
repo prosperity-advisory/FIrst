@@ -239,25 +239,25 @@ export function Header() {
 
           {/* Hamburger — visible below xl */}
           <button
-            className="flex xl:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer w-11 h-11 items-center justify-center z-[1001]"
+            className="relative xl:hidden bg-transparent border-none cursor-pointer w-11 h-11 z-[1001]"
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
           >
             <span
-              className={`block w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
+              className={`absolute left-[10px] w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
-              } ${menuOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
+              } ${menuOpen ? "top-[21px] rotate-45" : "top-[14px]"}`}
             />
             <span
-              className={`block w-6 h-0.5 rounded-sm transition-all duration-300 ${
+              className={`absolute left-[10px] top-[21px] w-6 h-0.5 rounded-sm transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
               } ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
             />
             <span
-              className={`block w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
+              className={`absolute left-[10px] w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
-              } ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`}
+              } ${menuOpen ? "top-[21px] -rotate-45" : "top-[28px]"}`}
             />
           </button>
         </div>

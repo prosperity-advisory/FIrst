@@ -19,19 +19,39 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://prosperityadvisory.net"),
   title: {
-    default: "Prosperity Planning & Advisory — Your Fiduciary Financial Partner",
+    default:
+      "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
     template: "%s | Prosperity Planning & Advisory",
   },
   description:
-    "Prosperity Planning & Advisory is a fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies.",
+    "Prosperity Planning & Advisory is a fee-only fiduciary financial planning firm in Woodland Hills, CA serving individuals and business owners with investment management, retirement planning, and comprehensive financial strategies.",
+  keywords: [
+    "fiduciary financial planner",
+    "Woodland Hills financial advisor",
+    "fee-only financial planner",
+    "retirement planning",
+    "investment management",
+    "financial planning Woodland Hills CA",
+    "Prosperity Planning Advisory",
+  ],
+  authors: [{ name: "Prosperity Planning & Advisory, LLC" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Prosperity Planning & Advisory",
-    title: "Prosperity Planning & Advisory — Your Fiduciary Financial Partner",
+    title:
+      "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
     description:
-      "Fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies.",
+      "Fee-only fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies for individuals and business owners.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 

@@ -245,19 +245,19 @@ export function Header() {
             aria-expanded={menuOpen}
           >
             <span
-              className={`block w-6 h-0.5 rounded-sm transition-all duration-300 ${
+              className={`block w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
-              } ${menuOpen ? "rotate-45 translate-x-[5px] translate-y-[5px]" : ""}`}
+              } ${menuOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
             />
             <span
               className={`block w-6 h-0.5 rounded-sm transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
-              } ${menuOpen ? "opacity-0" : ""}`}
+              } ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
             />
             <span
-              className={`block w-6 h-0.5 rounded-sm transition-all duration-300 ${
+              className={`block w-6 h-0.5 rounded-sm origin-center transition-all duration-300 ${
                 scrolled && !menuOpen ? "bg-navy" : "bg-white"
-              } ${menuOpen ? "-rotate-45 translate-x-[5px] -translate-y-[5px]" : ""}`}
+              } ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`}
             />
           </button>
         </div>

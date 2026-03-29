@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
-import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getResourcesContent } from "@/lib/content";
 
@@ -15,104 +15,375 @@ export const metadata: Metadata = {
   },
 };
 
-const categoryIcons: Record<string, React.ReactNode> = {
-  articles: (
-    <svg viewBox="0 0 24 24">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
-    </svg>
-  ),
-  guides: (
-    <svg viewBox="0 0 24 24">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-    </svg>
-  ),
-  videos: (
-    <svg viewBox="0 0 24 24">
-      <polygon points="5 3 19 12 5 21 5 3" />
-    </svg>
-  ),
-  tools: (
-    <svg viewBox="0 0 24 24">
-      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-      <line x1="3" y1="9" x2="21" y2="9" />
-      <line x1="9" y1="21" x2="9" y2="9" />
-    </svg>
-  ),
-};
+interface CalculatorTool {
+  id?: string;
+  title: string;
+  href: string;
+  helpsWith: string;
+  whyMatters: string;
+  usedWhen: string;
+  note: string;
+}
+
+interface ToolGroup {
+  id: string;
+  heading: string;
+  tools: CalculatorTool[];
+}
+
+interface ResourceTopic {
+  title: string;
+  description: string;
+}
 
 export default function ResourcesPage() {
   return (
     <main>
+      {/* Hero */}
       <InteriorHero
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
+        backgroundImage="/images/services google.jpg"
       />
 
-      {content.categories.map((category, catIdx) => {
-        const isEven = catIdx % 2 === 0;
-        return (
-          <section
-            key={category.id}
-            className={`${isEven ? "bg-white" : "bg-cream"} py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6`}
-          >
-            <div className="mx-auto max-w-[1200px]">
-              <FadeUp>
-                <div className="flex items-center gap-3.5 mb-2">
-                  <span className="w-8 h-8 text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                    {categoryIcons[category.id]}
+      {/* Hero extended body */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          {content.hero.body.map((p: string, i: number) => (
+            <FadeUp key={i} delay={Math.min(i, 2) as 0 | 1 | 2}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
+          <FadeUp delay={3}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8]">
+              {content.hero.cta.prefix}{" "}
+              <Link
+                href={content.hero.cta.href}
+                className="font-semibold text-gold hover:text-gold-light transition-colors"
+              >
+                {content.hero.cta.text}
+              </Link>
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Start Here */}
+      <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="section-headline">{content.startHere.heading}</h2>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+              {content.startHere.intro}
+            </p>
+          </FadeUp>
+          <FadeUp delay={1}>
+            <ul className="space-y-3 md:space-y-4">
+              {content.startHere.items.map((item: { trigger: string; action: string; href: string }) => (
+                <li key={item.trigger} className="flex items-start gap-3">
+                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                    <span className="font-semibold text-navy">{item.trigger}</span>{" "}
+                    →{" "}
+                    <a href={item.href} className="text-gold hover:text-gold-light font-medium transition-colors">
+                      {item.action}
+                    </a>
                   </span>
-                  <h2 className="font-serif text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-navy">
-                    {category.title}
-                  </h2>
-                </div>
-                <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light leading-relaxed mb-8 md:mb-10 max-w-[600px]">
-                  {category.description}
-                </p>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* How to Use This Page */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="section-headline">{content.howToUse.heading}</h2>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+              {content.howToUse.intro}
+            </p>
+          </FadeUp>
+          <FadeUp delay={1}>
+            <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
+              {content.howToUse.listHeading}
+            </p>
+            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              {content.howToUse.items.map((item: string) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+          <FadeUp delay={2}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8]">
+              {content.howToUse.footnote}
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Featured Financial Calculators & Planning Tools */}
+      <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[1000px]">
+          <FadeUp>
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="section-headline">{content.calculators.heading}</h2>
+            </div>
+          </FadeUp>
+
+          {content.calculators.groups.map((group: ToolGroup, gIdx: number) => (
+            <div key={group.id} id={group.id} className={gIdx > 0 ? "mt-14 md:mt-16 lg:mt-20" : ""}>
+              <FadeUp>
+                <h3 className="font-serif text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-navy mb-8 md:mb-10">
+                  {group.heading}
+                </h3>
               </FadeUp>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-                {category.items.map((item, i) => {
-                  const delay = ((i % 3) + 1) as 1 | 2 | 3;
-                  return (
-                    <FadeUp key={item.title} delay={delay}>
-                      <div className="bg-white p-6 sm:p-7 lg:p-8 rounded-lg border border-border border-t-[3px] border-t-transparent transition-all duration-[400ms] hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(20,57,43,0.08)] hover:border-t-gold h-full flex flex-col">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs font-semibold text-gold uppercase tracking-[0.12em]">
-                            {item.category}
-                          </span>
-                          {item.comingSoon && (
-                            <span className="text-[10px] font-semibold text-white bg-navy/70 rounded-full px-2.5 py-0.5 uppercase tracking-wider">
-                              Coming Soon
-                            </span>
-                          )}
-                        </div>
+              <div className="space-y-6 md:space-y-8">
+                {group.tools.map((tool: CalculatorTool) => (
+                  <FadeUp key={tool.title} delay={1}>
+                    <div
+                      id={tool.id}
+                      className="bg-white p-6 sm:p-7 lg:p-8 rounded-lg border border-border"
+                    >
+                      <h4 className="font-sans text-[17px] sm:text-lg font-semibold text-navy mb-1.5">
+                        {tool.title}
+                      </h4>
+                      <a
+                        href={tool.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gold hover:text-gold-light font-medium transition-colors inline-flex items-center gap-1.5 mb-4"
+                      >
+                        Open Calculator
+                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-2">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
+                        <span className="text-slate-light text-xs">(Opens external website)</span>
+                      </a>
 
-                        <h3 className="font-sans text-[16px] sm:text-[17px] font-semibold text-navy mb-2 leading-snug">
-                          {item.title}
-                        </h3>
-
-                        <p className="text-sm text-slate-light leading-relaxed flex-1">
-                          {item.summary}
+                      <div className="space-y-2.5">
+                        <p className="text-sm md:text-[15px] text-slate leading-relaxed">
+                          <span className="font-semibold text-navy">What it helps with:</span>{" "}
+                          {tool.helpsWith}
+                        </p>
+                        <p className="text-sm md:text-[15px] text-slate leading-relaxed">
+                          <span className="font-semibold text-navy">Why it matters:</span>{" "}
+                          {tool.whyMatters}
+                        </p>
+                        <p className="text-sm md:text-[15px] text-slate leading-relaxed">
+                          <span className="font-semibold text-navy">Commonly used when:</span>{" "}
+                          {tool.usedWhen}
                         </p>
                       </div>
-                    </FadeUp>
-                  );
-                })}
+
+                      <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mt-4 pt-4 border-t border-border">
+                        <span className="font-semibold not-italic">Important note:</span>{" "}
+                        {tool.note}
+                      </p>
+                    </div>
+                  </FadeUp>
+                ))}
               </div>
             </div>
-          </section>
-        );
-      })}
+          ))}
+        </div>
+      </section>
 
-      <CtaBand
-        headline={content.ctaBand.heading}
-        subtext={content.ctaBand.body}
-      />
+      {/* Prosperity Insight */}
+      <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 px-4 sm:px-6 overflow-hidden">
+        <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
+        <div className="relative z-[1] mx-auto max-w-[800px] text-center">
+          <FadeUp>
+            <h2 className="section-headline text-white">{content.prosperityInsight.heading}</h2>
+          </FadeUp>
+          {content.prosperityInsight.paragraphs.map((p: string, i: number) => (
+            <FadeUp key={i} delay={1}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-cream/80 leading-[1.8] mb-5 last:mb-0">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* How and Why to Use These Tools */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="section-headline">{content.howAndWhy.heading}</h2>
+          </FadeUp>
+          {content.howAndWhy.paragraphs.map((p: string, i: number) => (
+            <FadeUp key={i} delay={1}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 md:mb-6">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
+          <FadeUp delay={2}>
+            <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
+              {content.howAndWhy.listHeading}
+            </p>
+            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              {content.howAndWhy.items.map((item: string) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+          <FadeUp delay={3}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate font-semibold leading-[1.8] mb-5">
+              {content.howAndWhy.closing}
+            </p>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8]">
+              {content.howAndWhy.cta.replace("schedule a Clarity Call", "")}{" "}
+              <Link
+                href="https://calendly.com/prosperityplanningandadvisory/clarity-session"
+                className="font-semibold text-gold hover:text-gold-light transition-colors"
+              >
+                schedule a Clarity Call
+              </Link>
+              .
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Resource Library by Planning Topic */}
+      <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[1000px]">
+          <FadeUp>
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="section-headline">{content.resourceLibrary.heading}</h2>
+            </div>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {content.resourceLibrary.topics.map((topic: ResourceTopic, i: number) => (
+              <FadeUp key={topic.title} delay={Math.min((i % 3) + 1, 3) as 1 | 2 | 3}>
+                <div className="bg-white p-6 sm:p-7 rounded-lg border border-border border-t-[3px] border-t-gold h-full">
+                  <h3 className="font-sans text-[16px] sm:text-[17px] font-semibold text-navy mb-2">
+                    {topic.title}
+                  </h3>
+                  <p className="text-sm text-slate-light leading-relaxed">
+                    {topic.description}
+                  </p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Downloadable Guides */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="section-headline">{content.downloadableGuides.heading}</h2>
+          </FadeUp>
+          <FadeUp delay={1}>
+            <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10">
+              {content.downloadableGuides.items.map((item: string) => (
+                <li key={item} className="flex items-start gap-3">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 mt-0.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+          <FadeUp delay={2}>
+            <span className="btn btn-gold opacity-60 cursor-default">
+              {content.downloadableGuides.cta} — Coming Soon
+            </span>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Short Educational Videos */}
+      <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="section-headline">{content.videos.heading}</h2>
+          </FadeUp>
+          <FadeUp delay={1}>
+            <ul className="space-y-3 md:space-y-4">
+              {content.videos.items.map((item: string) => (
+                <li key={item} className="flex items-start gap-3">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 mt-0.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Important Educational Note */}
+      <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
+              Important Educational Note
+            </h3>
+            {content.educationalNote.split("\n\n").map((p: string, i: number) => (
+              <p key={i} className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-3 last:mb-0">
+                {p}
+              </p>
+            ))}
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Closing Call to Action */}
+      <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
+        <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
+        <div className="relative z-[1] mx-auto max-w-[800px] text-center">
+          <FadeUp>
+            <h2 className="section-headline text-white">{content.closing.heading}</h2>
+          </FadeUp>
+          {content.closing.paragraphs.map((p: string, i: number) => (
+            <FadeUp key={i} delay={1}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-cream/80 leading-[1.8] mb-5 md:mb-6">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
+          <FadeUp delay={2}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-cream/80 leading-[1.8] mb-6">
+              {content.closing.cta.prefix}{" "}
+              <Link
+                href={content.closing.cta.href}
+                className="btn btn-gold inline-block"
+              >
+                {content.closing.cta.text}
+              </Link>
+            </p>
+          </FadeUp>
+        </div>
+      </section>
     </main>
   );
 }

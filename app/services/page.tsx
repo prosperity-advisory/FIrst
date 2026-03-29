@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { ServiceDetail } from "@/components/sections/ServiceDetail";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { getServicesContent } from "@/lib/content";
 
 const content = getServicesContent();
@@ -16,93 +18,138 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const sections = content.sections;
+  const { intro, sections, approach, disclosures } = content;
 
   return (
     <main>
       <InteriorHero
-        eyebrow={content.hero.subheadline}
+        eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.body}
+        backgroundImage="/images/services 2.0.JPG"
       />
 
-      {/* Retirement Planning */}
-      <ServiceDetail
-        id="retirement"
-        heading={sections[0].heading}
-        body={sections[0].body}
-        items={sections[0].items as string[] | undefined}
-        outro={sections[0].outro as string | undefined}
-        ctaText="Learn More →"
-        ctaHref="/planning"
-        variant="white"
-      />
+      {/* Intro Section */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          {intro.paragraphs.map((p: string, i: number) => (
+            <FadeUp key={i} delay={Math.min(i, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
 
-      {/* Comprehensive Financial Planning */}
-      <ServiceDetail
-        heading={sections[1].heading}
-        body={sections[1].body}
-        variant="cream"
-      />
+          <FadeUp delay={2}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-8 md:mb-10">
+              <Link
+                href={intro.cta.href}
+                className="font-semibold text-gold hover:text-gold-light transition-colors"
+              >
+                {intro.cta.text}
+              </Link>{" "}
+              {intro.cta.prefix}
+            </p>
+          </FadeUp>
 
-      {/* Business & Retirement Strategy */}
-      <ServiceDetail
-        id="business"
-        heading={sections[2].heading}
-        body={sections[2].body}
-        subsections={sections[2].subsections}
-        disclaimers={sections[2].disclaimer ? [sections[2].disclaimer] : undefined}
-        variant="white"
-      />
+          <FadeUp delay={3}>
+            <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-4 md:mb-5">
+              {intro.exploreHeading}
+            </h2>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5">
+              {intro.exploreBody}
+            </p>
+          </FadeUp>
 
-      {/* Investment & Portfolio Strategies */}
-      <ServiceDetail
-        heading={sections[3].heading}
-        body={`${sections[3].body} ${sections[3].detail ?? ""} ${sections[3].detail2 ?? ""} ${sections[3].detail3 ?? ""}`}
-        ctaText="See Portfolios →"
-        ctaHref="/portfolios"
-        variant="cream"
-      />
+          <FadeUp delay={4}>
+            <ul className="space-y-3 mb-8">
+              {intro.exploreLinks.map((link: { title: string; href: string }) => (
+                <li key={link.href} className="flex items-start gap-3">
+                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                  <a
+                    href={link.href}
+                    className="text-[15px] md:text-base text-gold hover:text-gold-light font-medium transition-colors"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </FadeUp>
 
-      {/* Tax-Efficient Strategies */}
-      <ServiceDetail
-        heading={sections[4].heading}
-        body={sections[4].body}
-        variant="white"
-      />
+          <FadeUp delay={5}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8]">
+              {intro.exploreNote}
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
-      {/* Insurance & Retirement Education */}
-      <ServiceDetail
-        heading={sections[5].heading}
-        body={`${sections[5].body} ${sections[5].detail ?? ""} ${sections[5].detail2 ?? ""} ${sections[5].detail3 ?? ""}`}
-        disclaimers={sections[5].disclaimer ? [sections[5].disclaimer] : undefined}
-        variant="cream"
-      />
+      {/* Service Category Sections */}
+      {sections.map((section: Record<string, unknown>, i: number) => (
+        <ServiceDetail
+          key={section.id as string}
+          id={section.id as string}
+          heading={section.heading as string}
+          body={section.body as string}
+          bodyExtra={section.bodyExtra as string | undefined}
+          subsections={section.subsections as { heading: string; body?: string; bodyExtra?: string; bodyExtra2?: string; items?: string[]; disclaimer?: string }[] | undefined}
+          disclaimers={section.disclaimers as string[] | undefined}
+          planningAreasHeading={section.planningAreasHeading as string | undefined}
+          planningAreas={section.planningAreas as string[] | undefined}
+          transition={section.transition as string | undefined}
+          variant={i % 2 === 0 ? "cream" : "white"}
+        />
+      ))}
 
-      {/* Advanced Tax & Legacy Planning */}
-      <ServiceDetail
-        id="legacy"
-        heading={sections[6].heading}
-        body={`${sections[6].body} ${sections[6].intro ?? ""}`}
-        items={(sections[6].items as { title: string; body: string }[] | undefined)?.map(
-          (item) => `${item.title}: ${item.body}`
-        )}
-        disclaimers={sections[6].disclaimers as string[] | undefined}
-        variant="white"
-      />
+      {/* Our Planning Approach */}
+      <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] font-semibold text-navy mb-5 md:mb-6">
+              {approach.heading}
+            </h2>
+          </FadeUp>
 
-      {/* Spending Strategy */}
-      <ServiceDetail
-        heading={sections[7].heading}
-        body={sections[7].body}
-        ctaText="Learn More →"
-        ctaHref="/planning"
-        variant="cream"
-      />
+          {approach.paragraphs.map((p: string, i: number) => (
+            <FadeUp key={i} delay={Math.min(i + 1, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                {p}
+              </p>
+            </FadeUp>
+          ))}
+
+          <FadeUp delay={3}>
+            <h3 className="font-sans text-lg md:text-[19px] font-semibold text-navy mb-3">
+              {approach.cta.heading}
+            </h3>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6">
+              {approach.cta.body}
+            </p>
+            <Link href={approach.cta.href} className="btn btn-gold">
+              {approach.cta.text}
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Important Disclosures */}
+      <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
+        <div className="mx-auto max-w-[800px]">
+          <FadeUp>
+            <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
+              Important Disclosures
+            </h3>
+            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
+              {disclosures}
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
       <CtaBand
-        headline={content.ctaBand.heading}
-        subtext={content.ctaBand.body}
+        headline="Start Your Financial Journey Today"
+        subtext="Contact us for personalized advice."
       />
     </main>
   );

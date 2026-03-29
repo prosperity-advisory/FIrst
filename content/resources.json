@@ -1,120 +1,202 @@
 {
   "meta": {
     "title": "Resources & Learning Center | Prosperity Planning & Advisory",
-    "description": "Financial planning articles, guides, videos, and tools from Prosperity Planning & Advisory in Woodland Hills, CA. Build your financial knowledge with fiduciary-quality resources.",
+    "description": "Financial tools, guides, calculators, and educational resources from Prosperity Planning & Advisory in Woodland Hills, CA. Explore retirement, tax, investment, and planning resources.",
     "ogTitle": "Resources & Learning Center | Prosperity Planning & Advisory",
-    "ogDescription": "Articles, guides, videos, and tools to help you make confident financial decisions."
+    "ogDescription": "Financial tools, guides, and educational resources to help you make more confident financial decisions."
   },
   "hero": {
     "eyebrow": "Resources & Learning Center",
-    "headline": "Build Your Financial Knowledge",
-    "subheadline": "We believe informed clients make better decisions. Explore our library of articles, guides, and tools designed to help you navigate your financial life with confidence.",
+    "headline": "Financial Tools, Guides & Educational Resources",
+    "body": [
+      "At Prosperity Planning and Advisory, we believe informed decisions lead to better outcomes — but clarity comes from understanding how those decisions fit into your full financial life.",
+      "This Resources & Learning Center is designed to give individuals, families, small business owners, and professionals practical tools and educational resources to help you explore important financial decisions with greater confidence.",
+      "These tools are not just here to provide numbers — they are here to help you think more clearly, ask better questions, and take the next step with purpose. These materials are provided for general educational purposes only and are not personalized investment, tax, or legal advice."
+    ],
     "cta": {
-      "text": "Schedule Your Complimentary Strategy Review",
+      "text": "Schedule a Clarity Call",
+      "prefix": "If you'd like personalized guidance,",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   },
-  "categories": [
-    {
-      "id": "articles",
-      "title": "Articles & Insights",
-      "description": "Timely perspectives on financial planning, market trends, and strategies that matter to you.",
-      "items": [
-        {
-          "title": "5 Questions to Ask Before You Retire",
-          "summary": "Retirement readiness goes beyond your account balance. Here are the critical questions to answer before you make the transition.",
-          "category": "Retirement Planning",
-          "comingSoon": true
-        },
-        {
-          "title": "Understanding Roth Conversions: Is It Right for You?",
-          "summary": "Roth conversions can be a powerful tax strategy — but timing and execution matter. Here's what you need to know.",
-          "category": "Tax Strategy",
-          "comingSoon": true
-        },
-        {
-          "title": "What Does 'Fiduciary' Actually Mean?",
-          "summary": "The word gets used a lot in financial services. Here's what it really means and why it matters when choosing an adviser.",
-          "category": "Financial Planning",
-          "comingSoon": true
-        }
-      ]
-    },
-    {
-      "id": "guides",
-      "title": "Planning Guides",
-      "description": "In-depth guides that walk you through key financial planning topics step by step.",
-      "items": [
-        {
-          "title": "The Business Owner's Guide to Retirement Plan Options",
-          "summary": "SEP IRA, SIMPLE IRA, Solo 401(k), Defined Benefit — which plan is right for your business? A comprehensive comparison.",
-          "category": "Business Planning",
-          "comingSoon": true
-        },
-        {
-          "title": "Your First Year of Retirement: A Financial Checklist",
-          "summary": "The decisions you make in your first year of retirement set the tone for decades. Use this checklist to stay on track.",
-          "category": "Retirement Planning",
-          "comingSoon": true
-        },
-        {
-          "title": "Estate Planning Essentials: What Every Family Should Have in Place",
-          "summary": "Wills, trusts, beneficiary designations, and powers of attorney — the foundational documents every family needs.",
-          "category": "Estate Planning",
-          "comingSoon": true
-        }
-      ]
-    },
-    {
-      "id": "videos",
-      "title": "Videos & Webinars",
-      "description": "Watch and learn — short videos and recorded webinars on the topics that matter most to your financial future.",
-      "items": [
-        {
-          "title": "How Our Six-Step Process Works",
-          "summary": "A quick overview of how we guide clients from their first Clarity Session through ongoing support.",
-          "category": "About Us",
-          "comingSoon": true
-        },
-        {
-          "title": "Prosperity Pathways™ Portfolios Explained",
-          "summary": "Learn about our six portfolio pathways and how we match your investments to your goals and risk tolerance.",
-          "category": "Investment Management",
-          "comingSoon": true
-        }
-      ]
-    },
-    {
-      "id": "tools",
-      "title": "Financial Tools & Calculators",
-      "description": "Interactive tools to help you explore your financial questions and run quick scenarios.",
-      "items": [
-        {
-          "title": "Retirement Readiness Calculator",
-          "summary": "Get a quick snapshot of where you stand relative to your retirement income goals.",
-          "category": "Retirement Planning",
-          "comingSoon": true
-        },
-        {
-          "title": "College Savings Estimator",
-          "summary": "Estimate how much you may need to save for your child's education and explore 529 plan strategies.",
-          "category": "Education Planning",
-          "comingSoon": true
-        },
-        {
-          "title": "Spending Strategy Worksheet",
-          "summary": "Build your zero-based budget and organize your finances using our bank-bucket system framework.",
-          "category": "Cash Flow",
-          "comingSoon": true
-        }
-      ]
-    }
-  ],
-  "ctaBand": {
-    "heading": "Want Personalized Guidance?",
-    "body": "Resources are a great starting point — but nothing replaces a plan built around your specific goals. Let's talk.",
+  "startHere": {
+    "heading": "Start Here",
+    "intro": "Not sure where to begin? Use this quick guide:",
+    "items": [
+      { "trigger": "Selling an asset or investment?", "action": "Start with the Capital Gains Calculator", "href": "#capital-gains" },
+      { "trigger": "Planning for retirement?", "action": "Use the Investment or Roth IRA Calculator", "href": "#investment-retirement-tools" },
+      { "trigger": "Buying a home?", "action": "Explore the Mortgage Calculator", "href": "#family-lifestyle-tools" },
+      { "trigger": "Planning for college?", "action": "Review the Net Price Calculator", "href": "#family-lifestyle-tools" },
+      { "trigger": "Thinking about long-term care?", "action": "Use the Cost of Care Tool", "href": "#family-lifestyle-tools" }
+    ]
+  },
+  "howToUse": {
+    "heading": "How to Use This Page",
+    "intro": "These resources are designed to help you explore financial decisions — not replace a comprehensive plan.",
+    "listHeading": "To get the most value from these tools:",
+    "items": [
+      "Use realistic assumptions",
+      "Run multiple scenarios",
+      "Focus on what the results mean, not just the numbers",
+      "Think about how each decision connects to your overall plan"
+    ],
+    "footnote": "Calculators are most powerful when used as part of a coordinated strategy across investments, taxes, retirement, and cash flow. Use of this page does not create an advisory relationship, and the information here is not tailored to your individual circumstances."
+  },
+  "calculators": {
+    "heading": "Featured Financial Calculators & Planning Tools",
+    "groups": [
+      {
+        "id": "tax-wealth-tools",
+        "heading": "Tax & Wealth Transfer Tools",
+        "tools": [
+          {
+            "id": "capital-gains",
+            "title": "Capital Gains Tax Calculator",
+            "href": "https://smartasset.com/investing/capital-gains-tax-calculator",
+            "helpsWith": "Estimate taxes when selling appreciated assets",
+            "whyMatters": "Understand how taxes may affect net proceeds before acting",
+            "usedWhen": "Evaluating asset sales, comparing scenarios, and preparing for conversations with your tax and financial professionals",
+            "note": "Results are hypothetical estimates based on your inputs and should not be relied on alone for tax decisions. Strategies involving capital gains should be coordinated with your CPA or tax professional."
+          },
+          {
+            "title": "Charitable Remainder Unitrust Calculator",
+            "href": "https://americanheart.planyourlegacy.org/calc-crut.php",
+            "helpsWith": "Estimates income and charitable outcomes of a CRUT strategy",
+            "whyMatters": "Helps explore charitable, income, and legacy planning concepts",
+            "usedWhen": "Reviewing highly appreciated asset scenarios and charitable planning ideas",
+            "note": "A charitable remainder unitrust is an advanced strategy involving legal and tax considerations. Results are hypothetical estimates and should be reviewed with your attorney, CPA, and financial advisor before implementation."
+          }
+        ]
+      },
+      {
+        "id": "investment-retirement-tools",
+        "heading": "Investment & Retirement Tools",
+        "tools": [
+          {
+            "title": "Investment Calculator",
+            "href": "https://www.calculator.net/investment-calculator.html?ctype=contributeamount&ctargetamountv=1000000&cstartingprinciplev=80000&cyearsv=20&cinterestratev=6&ccompound=annually&ccontributeamountv=10000&cadditionat1=end&ciadditionat1=annually&printit=0&x=84&y=31",
+            "helpsWith": "Projects investment growth over time",
+            "whyMatters": "Illustrates the impact of compounding and consistent saving",
+            "usedWhen": "Goal setting, contribution planning, and long-term projections",
+            "note": "Calculator outputs are hypothetical projections based on assumptions you enter and are not guarantees of future investment performance or results."
+          },
+          {
+            "title": "Roth IRA Calculator",
+            "href": "https://www.bankrate.com/retirement/roth-ira-plan-calculator/",
+            "helpsWith": "Estimates potential Roth IRA growth and future tax-free income concepts",
+            "whyMatters": "Helps evaluate retirement savings and tax diversification ideas",
+            "usedWhen": "Comparing retirement account strategies and long-term income planning",
+            "note": "Results are hypothetical estimates only. Eligibility, tax treatment, and contribution strategies depend on your individual circumstances and should be reviewed with your tax professional."
+          },
+          {
+            "title": "Annuity Calculator",
+            "href": "https://www.annuity.org/annuities/annuity-calculator/",
+            "helpsWith": "Estimates income or value from annuity scenarios",
+            "whyMatters": "Helps explore one possible approach to retirement income planning",
+            "usedWhen": "Reviewing longevity income needs and comparing income approaches",
+            "note": "Annuities are one option among many and should be evaluated in light of fees, liquidity, surrender terms, guarantees, and your broader financial plan. Calculator results are estimates only and are not a recommendation or endorsement of any product."
+          }
+        ]
+      },
+      {
+        "id": "family-lifestyle-tools",
+        "heading": "Family, Lifestyle & Major Decision Tools",
+        "tools": [
+          {
+            "title": "Net Price Calculator",
+            "href": "https://college.harvard.edu/financial-aid/net-price-calculator",
+            "helpsWith": "Estimates net college costs after aid",
+            "whyMatters": "Helps families plan more realistically for education expenses",
+            "usedWhen": "Beginning college funding strategy discussions",
+            "note": "Actual aid packages, school policies, and institutional calculations can vary. This tool provides an estimate only."
+          },
+          {
+            "title": "Mortgage Calculator",
+            "href": "https://www.mortgagecalculator.org/",
+            "helpsWith": "Estimates monthly mortgage payments",
+            "whyMatters": "Helps evaluate affordability and cash flow impact",
+            "usedWhen": "Reviewing home purchase and refinancing scenarios",
+            "note": "Actual loan terms, taxes, insurance, rates, and lender requirements will vary. This calculator provides an estimate only and should be reviewed alongside your full financial picture."
+          },
+          {
+            "title": "Cost of Long-Term Care Calculator",
+            "href": "https://www.carescout.com/cost-of-care",
+            "helpsWith": "Estimates long-term care costs by location",
+            "whyMatters": "Highlights potential future care-related financial risks",
+            "usedWhen": "Starting retirement protection and aging-planning discussions",
+            "note": "Costs and care needs vary widely by region, provider, and level of care. This tool is intended as a general estimate only."
+          }
+        ]
+      }
+    ]
+  },
+  "prosperityInsight": {
+    "heading": "Prosperity Insight",
+    "paragraphs": [
+      "Many financial mistakes happen when decisions are made in isolation rather than as part of a coordinated plan.",
+      "These tools are most powerful when used together — as part of a coordinated financial plan that considers taxes, investments, income, and long-term goals."
+    ]
+  },
+  "howAndWhy": {
+    "heading": "How and Why to Use These Tools",
+    "paragraphs": [
+      "Financial calculators provide estimates, but they don't account for the full picture.",
+      "Most tools focus on one decision at a time, while real financial planning connects multiple areas together."
+    ],
+    "listHeading": "To use these tools effectively:",
+    "items": [
+      "Look beyond the headline number",
+      "Consider taxes, inflation, and risk",
+      "Compare multiple scenarios",
+      "Use results to guide better decisions, not replace them"
+    ],
+    "closing": "A calculator gives you data. A financial plan helps put that data into context.",
+    "cta": "Need help interpreting your results? If you'd like personalized guidance, schedule a Clarity Call."
+  },
+  "resourceLibrary": {
+    "heading": "Resource Library by Planning Topic",
+    "topics": [
+      { "title": "Retirement Planning", "description": "Guidance on retirement readiness, income strategies, and long-term planning." },
+      { "title": "Tax-Efficient Planning", "description": "Resources focused on capital gains, charitable strategies, and coordinated tax planning." },
+      { "title": "Budgeting & Cash Flow", "description": "Tools and education to improve spending alignment and financial organization." },
+      { "title": "Family & Education Planning", "description": "Support for college planning, savings strategies, and family financial decisions." },
+      { "title": "Estate & Legacy Planning", "description": "Educational content around wealth transfer, beneficiary alignment, and legacy goals." },
+      { "title": "Small Business Planning", "description": "Resources for business owners focused on cash flow, retirement, and tax-aware strategies." },
+      { "title": "Attorney-Specific Planning Resources", "description": "Focused planning considerations for attorneys and high-income professionals." }
+    ]
+  },
+  "downloadableGuides": {
+    "heading": "Featured Downloadable Guides",
+    "items": [
+      "Retirement Readiness Checklist",
+      "Budgeting & Cash Flow Guide",
+      "Small Business Financial Planning Guide",
+      "College Funding Planning Guide",
+      "Tax Planning Questions to Discuss With Your CPA",
+      "Estate Planning Starter Checklist"
+    ],
+    "cta": "Download the Guide"
+  },
+  "videos": {
+    "heading": "Short Educational Videos",
+    "items": [
+      "How Capital Gains Can Affect a Sale",
+      "Roth IRA Basics and When They May Matter",
+      "What Retirement Income Planning Really Means",
+      "College Planning Mistakes Families Should Avoid",
+      "Financial Planning Considerations for Small Business Owners"
+    ]
+  },
+  "educationalNote": "These calculators and third-party resources are provided for general educational purposes only and are intended to help you explore financial concepts. They are not personalized recommendations, are not based on your individual circumstances, and should not be relied upon as the sole basis for any financial decision.\n\nResults are hypothetical estimates based on the assumptions entered and are not guarantees of future outcomes, investment performance, lending terms, tax treatment, insurance results, or eligibility for any program or benefit. Actual outcomes will vary.\n\nLinks to third-party websites are provided as a convenience only. They do not imply Prosperity Planning and Advisory's endorsement, approval, affiliation, or responsibility for the content, calculations, privacy practices, or accuracy of any external site.\n\nUse of these resources does not create an advisory relationship. Prosperity Planning and Advisory does not provide legal or tax advice. You should consult your CPA, attorney, or other qualified professional regarding tax, legal, or other specialized matters.",
+  "closing": {
+    "heading": "Turn Information Into a Personalized Plan",
+    "paragraphs": [
+      "Online tools are a great starting point — but clarity comes from understanding how each decision fits into your full financial life.",
+      "If appropriate for your situation, personalized guidance can help you evaluate tradeoffs, avoid costly mistakes, and build a strategy aligned with your goals."
+    ],
     "cta": {
-      "text": "Schedule Your Complimentary Clarity Session",
+      "text": "Schedule a Clarity Call",
+      "prefix": "If you'd like personalized guidance,",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   }

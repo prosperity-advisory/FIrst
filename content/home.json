@@ -34,94 +34,57 @@
     "subheading": "Your journey to financial clarity begins with fiduciary guidance."
   },
   "services": {
-    "eyebrow": "Professional Financial Services",
-    "heading": "Comprehensive Financial Planning Solutions",
-    "body": "At Prosperity Planning and Advisory, we partner with individuals and business owners to build strategies aimed at supporting long-term stability. From investment and retirement planning to estate and legacy strategies and small business planning, every solution is designed with your future in mind.",
-    "cta": { "text": "Learn More", "href": "/services" },
-    "cards": [
+    "eyebrow": "Our Services",
+    "heading": "Our Services",
+    "body": "Helping you make more confident, informed financial decisions by aligning your resources with your long-term goals, lifestyle, and priorities.",
+    "categories": [
       {
-        "title": "Investment Management",
-        "body": "Our priority is to develop strategies aimed at growing your wealth while managing risk, helping your portfolio stay aligned with your long-term financial goals.",
-        "cta": { "text": "See Portfolios", "href": "/portfolios" }
+        "title": "Comprehensive Financial Planning",
+        "description": "Bringing clarity and structure to your everyday financial decisions so your plan supports both your current lifestyle and future goals.",
+        "href": "/services#comprehensive",
+        "items": [
+          { "title": "Spending Strategy", "description": "Helping you align saving, spending, and cash flow decisions so your day-to-day finances support long-term financial independence." },
+          { "title": "Education Planning", "description": "Helping you prepare for future education costs while balancing other financial priorities and long-term goals." },
+          { "title": "Insurance Planning", "description": "Evaluating protection needs and integrating insurance considerations into your broader financial strategy." },
+          { "title": "Personal Planning Coordination", "description": "Coordinating the key areas of your financial life into one cohesive strategy that evolves as your goals and circumstances change." }
+        ]
       },
       {
-        "title": "Insurance & Annuity Education",
-        "subtitle": "(Non-Advisory)",
-        "body": "We provide education and planning guidance on life insurance concepts, fixed annuities, and retirement income strategies, including considerations for 401(k) and IRA rollovers. These discussions help clients understand how insurance-based tools may fit within a broader financial plan.",
-        "disclaimer": "These discussions are educational in nature and provided as part of a comprehensive financial planning process. Prosperity Planning & Advisory, LLC does not sell insurance products.",
-        "cta": { "text": "Learn More", "href": "/services" }
+        "title": "Investment & Retirement Planning",
+        "description": "Turning your investments into a coordinated strategy designed to support growth, manage risk, and create sustainable income over time.",
+        "href": "/services#investment-retirement",
+        "items": [
+          { "title": "Retirement Planning", "description": "Helping you prepare for retirement with a clear strategy focused on accumulation, transition, and long-term sustainability." },
+          { "title": "Investment Management", "description": "Ongoing portfolio guidance aligned with your goals, time horizon, and risk tolerance." },
+          { "title": "Retirement Income Planning", "description": "Structuring income sources in retirement to support your lifestyle while maintaining long-term financial stability." },
+          { "title": "Tax-Efficient Investment Positioning", "description": "Incorporating tax considerations into investment decisions to help improve long-term portfolio efficiency." }
+        ]
       },
       {
-        "title": "Strategic Retirement",
-        "body": "Retirement is about more than saving, it's about making confident decisions around income, risk, and long-term flexibility. That's why our approach focuses on helping clients plan for sustainable cash flow, manage uncertainty, and make informed, tax-aware choices so their retirement strategy can adapt as life evolves.",
-        "detail": "Explore how thoughtful retirement planning can help support long-term income, flexibility, and peace of mind.",
-        "cta": { "text": "Learn More", "href": "/services" }
+        "title": "Estate & Legacy Planning",
+        "description": "Helping ensure your wealth, values, and intentions are thoughtfully carried forward through coordinated planning strategies.",
+        "href": "/services#estate-legacy",
+        "items": [
+          { "title": "Estate Planning Coordination", "description": "Working alongside your legal and tax professionals to align estate planning strategies with your overall financial plan." },
+          { "title": "Legacy Planning", "description": "Clarifying long-term intentions for family, heirs, and charitable goals within a multigenerational framework." },
+          { "title": "Beneficiary & Transfer Review", "description": "Reviewing beneficiary designations and transfer strategies to support efficient and coordinated wealth transfer." },
+          { "title": "Charitable Planning Coordination", "description": "Integrating charitable goals into your broader financial, tax, and legacy planning discussions." }
+        ]
       },
       {
-        "title": "Estate Planning Strategies",
-        "body": "We help you protect your wealth and work to align it with your wishes for the future. Through estate and legacy planning, we work alongside you and, when needed, your attorney, tax specialist, or other trusted professionals to design strategies that reflect your values, provide for loved ones, and consider potential tax implications. Our goal is to create a thoughtful plan that helps preserve your assets, safeguards your legacy, and gives you confidence knowing your financial future and your family's future is supported."
-      },
-      {
-        "title": "Personalized Financial Planning",
-        "body": "We work with you to create a clear, practical financial plan, covering spending strategy (budgeting), cost-management, college savings and long-term strategies, tailored to support your personal goals and financial life.",
-        "cta": { "text": "Start Your Financial Plan", "href": "/planning" }
-      },
-      {
-        "title": "Future-Ready Strategies for Your Business",
-        "body": "We support small business owners with strategies that strengthen both business and personal financial health. Our approach focuses on improving cash flow, enhancing operational efficiency, and aligning financial decisions with your long-term goals.",
-        "detail": "We also help business owners evaluate tax-efficient retirement plan strategies, including SEP IRAs, SIMPLE IRAs, Solo 401(k)s, traditional 401(k) plans, and advanced options such as Defined Benefit and Cash Balance plans. Our role is to help you compare these plans, understand potential tax advantages, and determine which structure best supports your business needs, savings goals, and employee-benefit objectives.",
-        "detail2": "Beyond protecting what you've built, we help you identify opportunities for sustainable growth and improved financial resilience. Every plan is personalized to your goals, helping keep your business strong today and better prepared for the future.",
-        "disclaimer": "Prosperity Planning and Advisory, LLC provides advisory guidance only and does not provide tax advice; clients should consult their tax professional for personalized tax determinations."
-      },
-      {
-        "title": "Spending Strategy",
-        "body": "Take control of your cash flow with a clear, personalized spending strategy. We help you organize your finances, prioritize what matters most, and stay on track using a zero-based budgeting approach combined with a \"bank bucket\" system that keeps every dollar working with purpose."
-      }
-    ]
-  },
-  "advancedStrategies": {
-    "heading": "Strategic Planning for Business Owners & Investors with Complex Financial Decisions",
-    "subheading": "Education for complex decisions, designed to support long-term clarity and flexibility.",
-    "intro": "We provide educational planning guidance to help business owners and executives evaluate strategies related to:",
-    "items": [
-      {
-        "title": "Tax-aware income and exit planning",
-        "body": "Exploring strategies intended to help manage and reduce the tax impact of business income or a future exit."
-      },
-      {
-        "title": "Ownership transition & succession planning",
-        "body": "Helping evaluate internal, family, or third-party transition strategies."
-      },
-      {
-        "title": "Executive retention & incentive strategies",
-        "body": "Education on approaches used to attract, retain, and reward key executives."
-      },
-      {
-        "title": "Structured Installment Sale strategies",
-        "body": "Understanding installment-based sale structures and planning considerations."
-      },
-      {
-        "title": "Charitable Remainder Trusts (CRTs)",
-        "body": "Education on charitable planning strategies that may support income, tax efficiency, and legacy goals."
-      },
-      {
-        "title": "DST 1031 Exchange Strategies",
-        "body": "Understanding Delaware Statutory Trust (DST) structures as a potential 1031 exchange replacement option."
-      },
-      {
-        "title": "Qualified retirement & benefit plans",
-        "body": "Reviewing options such as 401(k)s, Defined Benefit, pension, and Cash Balance plans."
-      },
-      {
-        "title": "Non-qualified deferred compensation & executive bonus arrangements",
-        "body": "Evaluating supplemental retirement and compensation strategies for executives."
-      },
-      {
-        "title": "Business continuity & buy-sell planning",
-        "body": "Helping clarify planning considerations and coordination for buy-sell agreements."
+        "title": "Business Owner & Advanced Planning",
+        "description": "Supporting business owners and high-income households with complex financial decisions, competing priorities, and major financial transitions.",
+        "href": "/services#business-advanced",
+        "items": [
+          { "title": "Business Planning", "description": "Helping evaluate personal and business financial decisions within one coordinated planning framework." },
+          { "title": "Business Retirement Plan Strategies", "description": "Reviewing retirement plan options and planning considerations for business owners and key employees." },
+          { "title": "Succession & Transition Planning", "description": "Preparing for future ownership changes and long-term business continuity through structured planning." },
+          { "title": "Advanced Planning Coordination", "description": "Coordinating complex financial decisions such as concentrated wealth, liquidity events, and tax-sensitive strategies within a comprehensive plan." },
+          { "title": "Cost Segregation Planning (Coordination)", "description": "Coordinating with tax professionals to evaluate cost segregation strategies for real estate holdings, with the goal of improving tax efficiency and cash flow." }
+        ]
       }
     ],
-    "disclaimer": "Our role is to help you understand your options, trade-offs, and planning considerations as part of a comprehensive financial plan, while coordinating with your qualified tax and legal professionals. We do not provide legal or tax advice."
+    "nextSteps": "Explore each area to better understand how these planning strategies may apply to your situation and long-term goals."
   },
   "location": {
     "address": "21255 Burbank Boulevard, Suite 120",

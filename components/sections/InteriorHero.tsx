@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 interface InteriorHeroProps {
   eyebrow?: string;
   headline: string;
   subtitle?: string;
   ctaText?: string;
   ctaHref?: string;
+  backgroundImage?: string;
 }
 
 export function InteriorHero({
@@ -12,9 +15,22 @@ export function InteriorHero({
   subtitle,
   ctaText,
   ctaHref = "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+  backgroundImage,
 }: InteriorHeroProps) {
   return (
     <section className="relative bg-linear-[160deg] from-navy to-navy-deep overflow-hidden text-center px-4 pt-[120px] pb-12 sm:px-6 sm:pt-[140px] sm:pb-14 md:pt-[150px] md:pb-16 lg:pt-[160px] lg:pb-20">
+      {/* Background image */}
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover opacity-[0.10]"
+          priority
+          sizes="100vw"
+        />
+      )}
+
       {/* Decorative circle — desktop only */}
       <div className="hidden lg:block absolute -top-[15%] -right-[8%] w-[450px] h-[450px] border border-gold/[0.07] rounded-full pointer-events-none" />
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
 
 interface ProcessStep {
@@ -12,6 +13,8 @@ interface ProcessSectionProps {
   steps: ProcessStep[];
   ctaText: string;
   ctaHref?: string;
+  bannerImage?: string;
+  bannerAlt?: string;
 }
 
 export function ProcessSection({
@@ -21,6 +24,8 @@ export function ProcessSection({
   steps,
   ctaText,
   ctaHref = "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+  bannerImage,
+  bannerAlt = "The six-step financial planning process",
 }: ProcessSectionProps) {
   return (
     <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
@@ -32,6 +37,21 @@ export function ProcessSection({
             {subtitle}
           </p>
         </FadeUp>
+
+        {bannerImage && (
+          <FadeUp delay={1}>
+            <div className="relative rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(20,57,43,0.10)] mb-10 sm:mb-12 lg:mb-14 max-w-[900px] mx-auto max-h-[180px] xs:max-h-[220px] sm:max-h-[280px] md:max-h-[340px] lg:max-h-none">
+              <Image
+                src={bannerImage}
+                alt={bannerAlt}
+                width={1024}
+                height={377}
+                className="w-full h-full object-cover"
+                sizes="(max-width: 768px) 100vw, 900px"
+              />
+            </div>
+          </FadeUp>
+        )}
 
         {/* Process grid with connector line */}
         <div className="relative grid grid-cols-2 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 xs:gap-5 md:gap-7 lg:gap-5 xl:gap-6 mb-10 md:mb-12 lg:mb-14">

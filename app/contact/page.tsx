@@ -33,6 +33,7 @@ export default function ContactPage() {
         headline={content.hero.headline}
         subtitle="We&rsquo;re here to help you take the next step toward financial confidence."
         ctaText={content.hero.cta.text + " →"}
+        backgroundImage="/images/Front building.jpg"
       />
 
       {/* Contact details + map */}
@@ -96,6 +97,8 @@ export default function ContactPage() {
         ctaText="Schedule a Consultation →"
         mapLabel={`${content.location.city}, ${content.location.state}`}
         mapSublabel={content.location.address}
+        image="/images/Front building.jpg"
+        imageAlt="Prosperity Planning & Advisory office building in Woodland Hills, CA"
       />
 
       {/* Service Cards */}

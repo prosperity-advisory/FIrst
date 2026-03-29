@@ -1,19 +1,29 @@
 import Link from "next/link";
 import { FadeUp } from "@/components/ui/FadeUp";
 
+interface Subsection {
+  heading: string;
+  body?: string;
+  bodyExtra?: string;
+  bodyExtra2?: string;
+  items?: string[];
+  disclaimer?: string;
+}
+
 interface ServiceDetailProps {
   id?: string;
   heading: string;
   body: string;
+  bodyExtra?: string;
   items?: string[];
   outro?: string;
   disclaimers?: string[];
   ctaText?: string;
   ctaHref?: string;
-  subsections?: {
-    heading: string;
-    items: string[];
-  }[];
+  subsections?: Subsection[];
+  planningAreasHeading?: string;
+  planningAreas?: string[];
+  transition?: string;
   variant?: "white" | "cream";
 }
 
@@ -21,12 +31,16 @@ export function ServiceDetail({
   id,
   heading,
   body,
+  bodyExtra,
   items,
   outro,
   disclaimers,
   ctaText,
   ctaHref,
   subsections,
+  planningAreasHeading,
+  planningAreas,
+  transition,
   variant = "white",
 }: ServiceDetailProps) {
   const bg = variant === "cream" ? "bg-cream" : "bg-white";
@@ -49,6 +63,14 @@ export function ServiceDetail({
           </p>
         </FadeUp>
 
+        {bodyExtra && (
+          <FadeUp delay={1}>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+              {bodyExtra}
+            </p>
+          </FadeUp>
+        )}
+
         {items && items.length > 0 && (
           <FadeUp delay={2}>
             <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
@@ -65,25 +87,67 @@ export function ServiceDetail({
         )}
 
         {subsections && subsections.length > 0 && (
-          <FadeUp delay={2}>
-            <div className="space-y-8 mb-6 md:mb-8">
-              {subsections.map((sub) => (
-                <div key={sub.heading}>
+          <div className="space-y-10 md:space-y-12 mb-8 md:mb-10">
+            {subsections.map((sub, idx) => (
+              <FadeUp key={sub.heading} delay={idx < 4 ? 2 : 0}>
+                <div>
                   <h3 className="font-sans text-lg md:text-[19px] font-semibold text-navy mb-3">
                     {sub.heading}
                   </h3>
-                  <ul className="space-y-2.5">
-                    {sub.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="w-[6px] h-[6px] bg-gold rounded-full shrink-0 mt-[9px]" />
-                        <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {sub.body && (
+                    <p className="text-[15px] md:text-base text-slate leading-[1.8] mb-3">
+                      {sub.body}
+                    </p>
+                  )}
+                  {sub.bodyExtra && (
+                    <p className="text-[15px] md:text-base text-slate leading-[1.8] mb-3">
+                      {sub.bodyExtra}
+                    </p>
+                  )}
+                  {sub.bodyExtra2 && (
+                    <p className="text-[15px] md:text-base text-slate leading-[1.8] mb-3">
+                      {sub.bodyExtra2}
+                    </p>
+                  )}
+                  {sub.items && (
+                    <ul className="space-y-2.5">
+                      {sub.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-[6px] h-[6px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                          <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {sub.disclaimer && (
+                    <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mt-3">
+                      Note: {sub.disclaimer}
+                    </p>
+                  )}
                 </div>
-              ))}
+              </FadeUp>
+            ))}
+          </div>
+        )}
+
+        {planningAreasHeading && planningAreas && planningAreas.length > 0 && (
+          <FadeUp delay={3}>
+            <div className="mb-6 md:mb-8">
+              <p className="text-[15px] sm:text-base md:text-[17px] font-semibold text-navy mb-4">
+                {planningAreasHeading}
+              </p>
+              <ul className="space-y-3 md:space-y-4">
+                {planningAreas.map((area, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                    <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                      {area}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </FadeUp>
         )}
@@ -107,6 +171,14 @@ export function ServiceDetail({
               </p>
             ))}
           </div>
+        )}
+
+        {transition && (
+          <FadeUp>
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8] mt-6">
+              {transition}
+            </p>
+          </FadeUp>
         )}
 
         {ctaText && ctaHref && (

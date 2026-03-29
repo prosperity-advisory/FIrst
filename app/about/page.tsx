@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
@@ -36,20 +37,35 @@ export default function AboutPage() {
       <InteriorHero
         eyebrow="Our Mission & Who We Are"
         headline={content.hero.headline}
+        backgroundImage="/images/Hero Image- jpg.JPG"
       />
 
       {/* Mission */}
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
-        <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <div className="w-12 sm:w-14 lg:w-[60px] h-[3px] bg-gold mx-auto mb-4" />
-            <span className="eyebrow">Our Mission</span>
-            <h2 className="section-headline">{content.mission.heading}</h2>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
-              {content.mission.body}
-            </p>
+        <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-[1fr_0.9fr] gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-center">
+          <div className="text-center md:text-left">
+            <FadeUp>
+              <div className="w-12 sm:w-14 lg:w-[60px] h-[3px] bg-gold mx-auto md:mx-0 mb-4" />
+              <span className="eyebrow">Our Mission</span>
+              <h2 className="section-headline">{content.mission.heading}</h2>
+            </FadeUp>
+            <FadeUp delay={1}>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
+                {content.mission.body}
+              </p>
+            </FadeUp>
+          </div>
+          <FadeUp delay={2}>
+            <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(20,57,43,0.12)] max-h-[280px] xs:max-h-[320px] sm:max-h-[360px] md:max-h-none">
+              <Image
+                src="/images/Our Mission 2.0 JPG.JPG"
+                alt="We help you see the bigger picture — and walk with you toward it"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover rounded-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 45vw"
+              />
+            </div>
           </FadeUp>
         </div>
       </section>

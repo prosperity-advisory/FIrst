@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 interface HeroSectionProps {
   eyebrow: string;
   headline: string;
   subheadline: string;
   ctaText: string;
   ctaHref?: string;
+  backgroundImage?: string;
 }
 
 export function HeroSection({
@@ -12,9 +15,22 @@ export function HeroSection({
   subheadline,
   ctaText,
   ctaHref = "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+  backgroundImage,
 }: HeroSectionProps) {
   return (
     <section className="relative min-h-dvh flex items-center justify-center bg-linear-[160deg] from-navy to-navy-deep overflow-hidden text-center px-4 pt-[88px] pb-14 sm:px-6 sm:pt-[100px] sm:pb-16 md:pt-[100px] md:pb-[72px] lg:pt-[120px] lg:pb-20">
+      {/* Background image */}
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover opacity-[0.12]"
+          priority
+          sizes="100vw"
+        />
+      )}
+
       {/* Decorative circles — desktop only */}
       <div className="hidden lg:block absolute -top-[10%] -right-[5%] w-[500px] h-[500px] xl:w-[600px] xl:h-[600px] border border-gold/[0.08] rounded-full pointer-events-none" />
       <div className="hidden lg:block absolute -bottom-[15%] -left-[8%] w-[650px] h-[650px] xl:w-[800px] xl:h-[800px] border border-gold/[0.06] rounded-full pointer-events-none" />

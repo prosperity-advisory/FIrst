@@ -1,143 +1,211 @@
 {
   "meta": {
     "title": "Services - Financial Planning Services | Prosperity Planning & Advisory",
-    "description": "Comprehensive financial planning services in Woodland Hills, CA — retirement planning, investment strategies, tax-efficient planning, estate planning, and small business support from a fiduciary adviser.",
+    "description": "Comprehensive financial planning services in Woodland Hills, CA — retirement planning, investment strategies, tax-efficient planning, estate planning, and business owner support from a fiduciary adviser.",
     "ogTitle": "Financial Planning Services | Prosperity Planning & Advisory",
     "ogDescription": "Personalized planning, disciplined strategy, and fiduciary guidance — built around your life, goals, and values."
   },
   "hero": {
+    "eyebrow": "Services",
     "headline": "How We Help You Build Prosperity",
-    "subheadline": "Prosperity Begins With a Plan",
-    "body": "Personalized planning, disciplined strategy, and fiduciary guidance, built around your life, goals, and values.",
+    "body": "Financial planning is most effective when each part of your financial life works together. Our services are designed to help individuals, families, business owners, and investors pursue greater clarity, confidence, and control over significant financial decisions through a coordinated planning process.",
     "cta": {
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   },
+  "intro": {
+    "paragraphs": [
+      "Whether you are preparing for retirement, refining your investment strategy, planning for your family, or navigating more complex financial transitions, our role is to help bring structure to the planning process and help evaluate how your strategy may align with your goals, values, and long-term vision.",
+      "For many of the clients we serve, the real value is not simply in addressing one isolated need. It is in coordinating the full financial picture so that investment decisions, retirement strategy, tax-aware planning, legacy priorities, and business considerations can be evaluated together in a more intentional way."
+    ],
+    "cta": {
+      "text": "Schedule Your Complimentary Strategy Review",
+      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+      "prefix": "to discuss your goals and explore how these planning areas may apply to your situation."
+    },
+    "exploreHeading": "Explore Our Services",
+    "exploreBody": "Use the sections below to explore the planning areas we help coordinate:",
+    "exploreLinks": [
+      { "title": "Comprehensive Financial Planning", "href": "#comprehensive" },
+      { "title": "Investment & Retirement Planning", "href": "#investment-retirement" },
+      { "title": "Estate & Legacy Planning", "href": "#estate-legacy" },
+      { "title": "Business Owner & Advanced Planning", "href": "#business-advanced" }
+    ],
+    "exploreNote": "We primarily work with individuals nearing or in retirement, business owners, and high-income professionals seeking a more coordinated, fiduciary, and strategic approach to financial planning."
+  },
   "sections": [
     {
-      "type": "retirement",
-      "heading": "Retirement Planning Strategies for Your Future",
-      "body": "Retirement planning is about more than reaching a certain age, it's about creating confidence in your future and clarity around the decisions that shape it. We design retirement planning strategies focused on long-term financial stability, thoughtful decision-making, and adaptability as life evolves. Our process begins with a clear understanding of your lifestyle goals and financial resources, followed by disciplined planning designed to help your money support you throughout retirement.",
-      "items": [
-        "Tax diversification and tax-aware planning strategies, helping clients understand the role of taxable, tax-deferred, and tax-free accounts, including education on Roth conversions and backdoor Roth IRA strategies, as well as high-level education on the tax characteristics of certain annuity and life insurance structures, where appropriate and coordinated with tax professionals.",
-        "Risk and cash-flow planning conversations, including education on reducing over-concentration in portfolios and balancing growth-oriented investments with strategies designed to support retirement spending needs",
-        "401(k) and retirement account rollover considerations, evaluating how rollovers may fit within a broader retirement income and planning strategy",
-        "Retirement income and distribution planning, focused on creating sustainable cash-flow approaches designed to support spending needs over time while adapting to changing markets and personal circumstances",
-        "Education on advanced retirement planning concepts, including discussions around guaranteed income features available through certain annuity structures, educational conversations on how specific life insurance policy features may provide living benefits as part of a broader plan, and high-level education on Charitable Remainder Trusts (CRTs) as a potential way to provide an income stream while supporting charitable goals."
-      ],
-      "outro": "Whether your priority is dependable income, thoughtful tax-aware withdrawal planning, or a balanced approach between growth and preservation, we help you understand your options and develop a retirement strategy that is reviewed over time and designed to evolve as your needs change, so you can move forward with greater confidence and peace of mind.",
-      "cta": { "text": "Learn More", "href": "/planning" }
-    },
-    {
-      "type": "comprehensive",
+      "id": "comprehensive",
+      "type": "category",
       "heading": "Comprehensive Financial Planning",
-      "body": "Our comprehensive financial planning brings clarity and structure to your entire financial life. We help you create practical budgets, manage debt effectively, and build emergency savings to prepare for life's uncertainties. From cost-cutting strategies to planning for major milestones such as retirement or college funding, we coordinate key aspects of your finances into a personalized roadmap. The goal is to help reduce financial stress, support your lifestyle, and keep you progressing with confidence toward the future you envision."
-    },
-    {
-      "type": "business",
-      "heading": "Business & Retirement Strategy Support",
-      "body": "We help business owners and professionals strengthen their financial foundation with clear, customized planning in areas such as:",
+      "body": "Comprehensive financial planning serves as the foundation of a well-coordinated financial strategy. It brings together the core areas of your financial life so decisions are made within one integrated framework rather than in isolation. This planning area is designed to help create alignment between your income, spending, savings, protection, and long-term priorities.",
+      "bodyExtra": "For many households, the challenge is not simply having financial goals, but making sure everyday decisions consistently support those goals over time. A thoughtful planning process can help organize competing priorities, identify gaps, and support a more intentional path forward. Depending on the situation, this broader planning process may also involve addressing debt management, emergency savings priorities, cost-management opportunities, and other foundational financial decisions that support long-term stability.",
       "subsections": [
         {
-          "heading": "Retirement Plan Strategy & Design",
-          "items": [
-            "401(k) Plan Design & Guidance",
-            "Owner-Only / Solo 401(k) Strategies",
-            "SEP IRA Strategies",
-            "SIMPLE IRA Strategies",
-            "Profit-Sharing Plan Structuring",
-            "Defined Benefit & Cash Balance Plan Considerations",
-            "Non-Qualified Deferred Compensation Planning"
-          ]
+          "heading": "Spending Strategy",
+          "body": "Spending strategy focuses on helping you align saving, spending, and cash flow decisions with your long-term financial objectives. This may include evaluating monthly cash flow patterns, identifying opportunities to improve financial decision-making efficiency, and building a framework intended to support both current lifestyle needs and future goals.",
+          "bodyExtra": "Rather than viewing budgeting as a narrow exercise, spending strategy looks at how money moves through your household and how those decisions affect larger planning priorities such as retirement readiness, debt reduction, education funding, and overall financial independence. Depending on the needs of the household, this may also include discussion of structured cash-flow systems, zero-based budgeting concepts, account organization, bank-bucket style cash-flow frameworks, and other spending systems designed to help provide greater clarity, control, and intentional decision-making.",
+          "bodyExtra2": "This area is often especially relevant for households seeking to bring more consistency to day-to-day financial decisions while building toward longer-term goals."
         },
         {
-          "heading": "Business Continuity & Talent Planning",
-          "items": [
-            "Succession & Continuity Planning",
-            "Buy-Sell Agreement Coordination (strategy guidance only)",
-            "Executive Bonus Strategy Analysis (non-product advisory)",
-            "Key Person Risk Planning (analysis only — not product sales)",
-            "Competitive Benefits Strategy for Talent Retention"
-          ]
+          "heading": "Education Planning",
+          "body": "Education planning helps families evaluate how future education costs may fit into a broader financial plan. This may involve balancing college funding goals with retirement savings, cash flow needs, and other household priorities.",
+          "bodyExtra": "The purpose of this planning area is to help families evaluate education funding strategies without losing sight of the broader financial picture."
+        },
+        {
+          "heading": "Insurance Planning",
+          "body": "Insurance planning involves reviewing protection needs and considering how insurance-related decisions fit within your broader financial strategy. This may include evaluating existing coverage, identifying potential gaps, and discussing how risk-management tools may fit within overall financial stability planning.",
+          "bodyExtra": "Insurance planning is considered within the context of your overall financial plan so that protection strategies are evaluated in the context of, rather than in isolation from, your long-term goals."
+        },
+        {
+          "heading": "Personal Planning Coordination",
+          "body": "Personal planning coordination brings together the many moving parts of your financial life into one cohesive strategy. This may include coordinating priorities across cash flow, savings, insurance, retirement goals, family needs, and other planning decisions as your circumstances evolve.",
+          "bodyExtra": "This planning area is intended to help clients evaluate major financial decisions in a coordinated way, rather than in isolation, as part of a broader long-term strategy."
         }
       ],
-      "disclaimer": "Prosperity Planning and Advisory, LLC provides advisory guidance only and does not provide tax advice; clients should consult their tax professional for personalized tax determinations."
+      "planningAreasHeading": "Planning areas may include:",
+      "planningAreas": [
+        "Cash flow and spending coordination",
+        "Debt management and emergency savings priorities",
+        "Education funding and college planning considerations",
+        "Insurance and risk planning review",
+        "Cost-management opportunities and ongoing financial plan alignment"
+      ],
+      "transition": "As foundational planning decisions become more coordinated, many individuals and families begin to focus more closely on how investments and retirement strategies support long-term financial independence."
     },
     {
-      "type": "investment",
-      "heading": "Investment & Portfolio Strategies",
-      "body": "We provide personalized investment guidance designed to help ensure your portfolio remains appropriate for your goals, risk tolerance, and long-term strategy.",
-      "detail": "Our process begins with a comprehensive review of your existing investments, where we evaluate asset allocation, diversification, risk exposure, and overall portfolio structure. From there, we provide disciplined, principle-based recommendations focused on improving alignment with your objectives, whether that involves refining your current approach or developing a new strategy.",
-      "detail2": "Using asset allocation principles and modern portfolio theory, we design portfolios ranging from conservative income-focused strategies to growth-oriented solutions. Portfolios are primarily implemented using ETFs to support broad diversification, cost efficiency, and long-term investment discipline.",
-      "detail3": "Ongoing reviews help ensure your investment strategy evolves as markets change and life circumstances shift, providing clarity, consistency, and confidence over time.",
-      "cta": { "text": "See Portfolios", "href": "/portfolios" }
-    },
-    {
-      "type": "tax",
-      "heading": "Tax-Efficient Strategies",
-      "body": "We design strategies intended to help you retain more of what you earn through thoughtful, tax-aware planning. Our approach focuses on managing tax liabilities while identifying opportunities for growth across your investments, retirement plans, and estate. By coordinating with your tax professionals when needed, we work to keep your financial plan aligned and operating as efficiently as possible. The goal is a proactive approach that helps reduce surprises, supports wealth preservation, and keeps you on track toward your long-term goals."
-    },
-    {
-      "type": "insurance",
-      "heading": "Insurance & Retirement Education",
-      "body": "Insurance and annuity decisions can have a lasting impact on your financial security — yet they're often among the most confusing and misunderstood areas of planning. Our role is to bring clarity, context, and confidence to these decisions so you can move forward with understanding, not uncertainty.",
-      "detail": "As part of our comprehensive financial planning process, we provide education and planning guidance on life insurance concepts, fixed annuities, and retirement income strategies. This includes helping clients evaluate 401(k) and IRA rollover considerations, and understanding how guaranteed income tools may support long-term retirement goals.",
-      "detail2": "Rather than viewing insurance decisions in isolation, we help you understand how these strategies fit within your broader financial picture — alongside investments, cash flow, taxes, and risk management. Our focus is on helping you weigh trade-offs, understand benefits and limitations, and make informed decisions aligned with your goals and values.",
-      "detail3": "These discussions are designed to support thoughtful, well-informed planning — so any decisions you make are intentional, confident, and grounded in a clear understanding of how each piece works together.",
-      "disclaimer": "Prosperity Planning & Advisory, LLC does not sell insurance products or receive insurance commissions. Insurance and annuity considerations are evaluated solely as part of the financial planning process."
-    },
-    {
-      "type": "legacy",
-      "heading": "Advanced Tax & Legacy Planning Strategies",
-      "body": "As life and wealth become more complex, planning extends beyond investment performance to tax awareness, asset structure, and intentional legacy design.",
-      "intro": "Our Advanced Tax & Legacy Planning services help bring clarity to important financial decisions by educating clients on key considerations, evaluating trade-offs, and coordinating strategies that align with long-term personal, family, and charitable goals.",
-      "subheading": "We provide education and planning guidance on:",
-      "items": [
+      "id": "investment-retirement",
+      "type": "category",
+      "heading": "Investment & Retirement Planning",
+      "body": "Investment and retirement planning are closely connected. Building wealth is only one part of the process. The broader objective is to help evaluate how investment decisions, retirement goals, tax considerations, and future income needs may work together in a disciplined and sustainable way.",
+      "bodyExtra": "This planning area is designed for individuals and families who want a more coordinated approach to portfolio strategy, retirement preparation, and long-term income planning. It is often particularly relevant for those who want investment decisions evaluated not only for growth potential, but also for their role in supporting retirement readiness, income sustainability, and broader financial flexibility.",
+      "subsections": [
         {
-          "title": "Structural tax planning considerations",
-          "body": "Including how income sources, asset ownership, and the timing of financial decisions may affect long-term tax exposure."
+          "heading": "Retirement Planning",
+          "body": "Retirement planning focuses on helping you prepare for the transition from working years to retirement and the financial decisions that come with it. This may involve evaluating retirement readiness, identifying future income needs, coordinating savings strategies, and considering how different assets may support your long-term goals.",
+          "bodyExtra": "Planning considerations may also include tax diversification, Roth conversion education, backdoor Roth education where appropriate, 401(k) and IRA rollover discussions, cash-flow coordination in retirement, concentration-risk awareness, and broader strategies intended to help support flexibility and long-term sustainability."
         },
         {
-          "title": "Asset concentration and liquidity planning",
-          "body": "Helping clients understand the tax and legacy implications of significant equity positions, closely held business interests, or real estate holdings."
+          "heading": "Investment Management",
+          "body": "Investment management includes ongoing portfolio guidance designed to align your investment strategy with your goals, time horizon, and tolerance for risk. This may include reviewing existing investments, evaluating asset allocation, diversification, portfolio structure, risk exposure, exchange-traded fund implementation where appropriate, and ongoing portfolio reviews as market conditions and personal circumstances change."
         },
         {
-          "title": "Major financial transitions and liquidity events",
-          "body": "Such as business sales, inheritances, or large transactions, with an emphasis on thoughtful tax and legacy alignment."
+          "heading": "Retirement Income Planning",
+          "body": "Retirement income planning focuses on how retirement assets may be coordinated to support spending needs during retirement. Depending on the situation, this may involve evaluating withdrawal sequencing, income layering approaches, guaranteed-income education, lifestyle spending needs, tax-aware distribution considerations, and educational discussions of Charitable Remainder Trusts (CRTs/CRUTs) where relevant to income and charitable planning objectives.",
+          "bodyExtra": "This area is often especially relevant for individuals approaching retirement, recently retired households, and those seeking greater confidence around how retirement resources may work together over time."
         },
         {
-          "title": "Legacy coordination",
-          "body": "Including beneficiary reviews and education on how assets may integrate with wills, living trusts, and other estate planning documents prepared by your attorney."
+          "heading": "Tax-Efficient Investment Positioning",
+          "body": "Tax-efficient investment positioning considers how tax treatment may affect portfolio decisions over time. This may include asset location, investment placement, gain recognition awareness, distribution planning considerations, and coordination with tax professionals regarding broader tax-sensitive investment decisions where appropriate."
         },
         {
-          "title": "Advanced planning concepts",
-          "body": "Including Irrevocable Life Insurance Trusts (ILITs) and Charitable Remainder Trusts (CRTs), and education on how charitable strategies may be paired with insurance concepts to support family, philanthropic, or multigenerational legacy objectives."
+          "heading": "Insurance & Retirement Income Education",
+          "body": "Educational discussions may include annuity concepts, life insurance policy features, guaranteed-income approaches, rollover-related considerations, and other retirement income tools where appropriate. The purpose of these conversations is to provide general education and help clients better understand how different strategies function within the broader retirement planning process.",
+          "disclaimer": "Insurance products and related strategies are discussed for educational purposes where relevant. Insurance products are separate from the advisory relationship and may be implemented outside of advisory services where applicable."
         }
       ],
-      "disclaimers": [
-        "Prosperity Planning & Advisory, LLC does not sell insurance or annuity products. Any discussion of insurance-based strategies is provided solely for educational and planning purposes.",
-        "All planning is conducted in coordination with your legal and tax professionals. Prosperity Planning & Advisory does not provide legal or tax advice."
+      "planningAreasHeading": "Planning areas may include:",
+      "planningAreas": [
+        "Retirement income and distribution planning",
+        "Roth conversion, backdoor Roth, and tax diversification education",
+        "Portfolio review, allocation, diversification, and ETF implementation",
+        "401(k) and IRA rollover considerations",
+        "Guaranteed-income, insurance feature, and CRT/CRUT education where appropriate"
+      ],
+      "transition": "As wealth grows and planning becomes more sophisticated, many families begin to focus more intentionally on legacy goals, wealth transfer, and the long-term impact of financial decisions across generations."
+    },
+    {
+      "id": "estate-legacy",
+      "type": "category",
+      "heading": "Estate & Legacy Planning",
+      "body": "Estate and legacy planning is about more than documents. It is about helping ensure that your intentions, family priorities, and long-term values are reflected in a coordinated planning strategy.",
+      "bodyExtra": "This section focuses on planning coordination related to wealth transfer, beneficiary decisions, family objectives, and charitable intentions, while working alongside your legal and tax professionals where appropriate. For many families, this planning area becomes increasingly important as wealth grows, family dynamics evolve, and long-term legacy considerations become more central to the overall financial picture.",
+      "subsections": [
+        {
+          "heading": "Estate Planning Coordination",
+          "body": "Estate planning coordination involves helping align your broader financial strategy with your estate planning objectives. This may include reviewing asset titling, beneficiary designations, coordination with wills and trusts prepared by your attorney, and how estate planning decisions fit within your broader financial and family goals."
+        },
+        {
+          "heading": "Legacy Planning",
+          "body": "Legacy planning focuses on the long-term impact of your wealth and how you want it to benefit your family, heirs, or charitable causes. Depending on the situation, legacy discussions may include multigenerational planning goals, wealth transfer priorities, and educational conversations around advanced concepts such as Irrevocable Life Insurance Trusts (ILITs) when coordinated with legal and tax professionals."
+        },
+        {
+          "heading": "Beneficiary & Transfer Review",
+          "body": "Beneficiary and transfer review focuses on how assets may pass to heirs or other recipients. Because beneficiary designations, account structure, and transfer pathways can significantly affect outcomes, this area emphasizes thoughtful coordination across retirement accounts, insurance-related assets, and estate planning intentions."
+        },
+        {
+          "heading": "Charitable Planning Coordination",
+          "body": "Charitable planning coordination helps incorporate charitable goals into a broader financial and legacy planning framework, including educational discussions of Charitable Remainder Trusts (CRTs/CRUTs) and other charitable planning concepts where appropriate. These conversations are intended to provide general education and help clients evaluate how charitable intentions may intersect with income, tax, legacy, and family planning priorities."
+        }
+      ],
+      "disclaimers": ["Prosperity Planning & Advisory does not provide legal or tax advice. Estate and legacy planning strategies are coordinated with your legal and tax professionals as appropriate."],
+      "planningAreasHeading": "Planning areas may include:",
+      "planningAreas": [
+        "Beneficiary and asset-transfer coordination",
+        "Legacy and multigenerational planning considerations",
+        "Charitable planning discussions, including CRT/CRUT education where appropriate",
+        "Estate plan alignment with wills, trusts, and broader family objectives",
+        "ILIT education in coordination with legal and tax professionals when relevant"
+      ],
+      "transition": "For individuals with business interests, concentrated assets, or more complex financial situations, additional layers of planning coordination are often required across business, tax-aware, and personal planning decisions."
+    },
+    {
+      "id": "business-advanced",
+      "type": "category",
+      "heading": "Business Owner & Advanced Planning",
+      "body": "Business owners and higher-income households often face financial decisions that involve multiple layers of complexity and coordination across advisors. These may include business planning, retirement design, succession, liquidity events, tax-sensitive strategies, and the integration of business decisions with personal wealth planning.",
+      "bodyExtra": "This planning area is designed to support high-impact decision-making through a coordinated and strategic approach, with general education and planning coordination tailored to individual circumstances where appropriate. It is often especially relevant for clients whose planning needs extend beyond traditional investment management and require thoughtful alignment across business, retirement, estate, and tax-aware considerations.",
+      "subsections": [
+        {
+          "heading": "Business Planning",
+          "body": "Evaluating how business decisions and personal financial goals interact. This may include business cash-flow coordination, owner compensation discussions, reinvestment priorities, and planning considerations for owners whose personal wealth and family goals are closely tied to business performance."
+        },
+        {
+          "heading": "Business Retirement Plan Strategies",
+          "body": "Includes education around 401(k), solo 401(k), SEP IRA, SIMPLE IRA, profit-sharing, defined benefit, and cash balance plans. Where relevant, this area may also include non-qualified deferred compensation education and broader plan-design discussions for business owners and key employees."
+        },
+        {
+          "heading": "Succession & Transition Planning",
+          "body": "Preparing for ownership changes and long-term business continuity. This may also include buy-sell agreement coordination, ownership transfer considerations, leadership transition planning, and discussions related to future sale or transfer events."
+        },
+        {
+          "heading": "Executive Benefit & Retention Planning",
+          "body": "Includes executive bonus strategy education, key person risk planning, competitive benefit concepts, and retention-focused strategies intended to support leadership continuity and talent retention."
+        },
+        {
+          "heading": "Advanced Planning Coordination",
+          "body": "Includes general educational discussion around structured installment sale strategies, Deferred Sales Trust concepts, liquidity events, concentrated asset planning, structural tax planning considerations, real estate-related planning, and other complex tax-aware strategies. This section is intended to help clients better understand, at a conceptual level, how major financial transitions may affect investment, retirement, estate, and business planning decisions. These topics are discussed for general education and evaluation purposes and do not constitute specific tax or legal recommendations.",
+          "bodyExtra": "This area is often relevant for clients preparing for a sale, evaluating a large gain, managing concentrated positions, or seeking a more integrated approach to high-stakes financial decisions."
+        },
+        {
+          "heading": "Cost Segregation Planning (Coordination)",
+          "body": "Working with tax professionals to evaluate, at a general planning level, whether cost segregation strategies may be relevant for certain real estate holdings. These discussions are intended to help assess whether accelerated depreciation concepts may play a role in broader tax-efficiency and cash-flow planning, while any analysis or implementation remains with qualified tax professionals."
+        }
+      ],
+      "disclaimers": ["Advanced planning strategies are discussed in coordination with your legal, tax, and other professional advisors where appropriate. Prosperity Planning & Advisory does not provide legal or tax advice."],
+      "planningAreasHeading": "Planning areas may include:",
+      "planningAreas": [
+        "Business retirement plan design and qualified plan education",
+        "Non-qualified deferred compensation concepts",
+        "Succession, buy-sell, and exit planning considerations",
+        "Executive bonus, key person, and talent retention strategies",
+        "Liquidity event coordination, concentration planning, and advanced tax-aware discussions"
       ]
-    },
-    {
-      "type": "spending",
-      "heading": "Spending Strategy",
-      "body": "Our Spending Strategy service gives you deeper clarity and control over your financial life. We start by helping you understand where your money is going today, then build a personalized zero-based budgeting framework that assigns every dollar a purpose. To make the system simple and sustainable, we pair it with a modern \"bank-bucket\" structure separating essentials, savings, and lifestyle spending into easy, organized accounts. This approach supports more confident decision-making and helps you stay consistently aligned with your goals. And because we guide you through each step, your spending system becomes natural, efficient, and built for long-term financial clarity.",
-      "cta": { "text": "Learn More", "href": "/planning" }
     }
   ],
-  "quickLinks": [
-    { "title": "Retirement Planning Strategies", "href": "/services#retirement" },
-    { "title": "Estate & Legacy Planning", "href": "/services#legacy" },
-    { "title": "Small Business Strategies", "href": "/services#business" }
-  ],
-  "ctaBand": {
-    "heading": "Start Your Financial Journey Today",
-    "body": "Contact us for personalized advice.",
+  "approach": {
+    "heading": "Our Planning Approach",
+    "paragraphs": [
+      "Every client situation is different. Some individuals need help refining retirement readiness or investment strategy. Others are navigating family priorities, business decisions, estate considerations, real estate-related opportunities, or more complex financial transitions.",
+      "Our approach is designed to help bring these decisions together through a coordinated planning process that emphasizes clarity, fiduciary guidance, thoughtful alignment, and communication across the areas that matter most. Rather than treating financial decisions in separate silos, we seek to help clients evaluate how each major choice fits within the broader strategy over time."
+    ],
     "cta": {
+      "heading": "Start the Conversation",
+      "body": "Whether you are looking for a more coordinated financial plan, deeper retirement and investment guidance, or support for more complex planning decisions, we invite you to start the conversation.",
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
-  }
+  },
+  "disclosures": "Prosperity Planning & Advisory, LLC is a registered investment adviser. Advisory services are offered only where properly licensed or exempt. This content is provided for informational and educational purposes only and should not be construed as personalized investment, tax, legal, or insurance advice. Any references to insurance, tax-related strategies, estate planning, charitable planning, Charitable Remainder Trusts (CRTs/CRUTs), Irrevocable Life Insurance Trusts (ILITs), retirement plan concepts, Deferred Sales Trust concepts, structured installment sale strategies, cost segregation discussions, or other advanced planning topics are general and educational in nature and, where appropriate, are discussed in coordination with outside professionals. These topics may require individualized legal, tax, insurance, or other specialized analysis before implementation."
 }

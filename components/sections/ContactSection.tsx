@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
 
 interface ContactDetail {
@@ -14,6 +15,8 @@ interface ContactSectionProps {
   ctaHref?: string;
   mapLabel: string;
   mapSublabel: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export function ContactSection({
@@ -24,6 +27,8 @@ export function ContactSection({
   ctaHref = "/contact",
   mapLabel,
   mapSublabel,
+  image,
+  imageAlt = "Prosperity Planning & Advisory office",
 }: ContactSectionProps) {
   return (
     <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
@@ -58,35 +63,53 @@ export function ContactSection({
           </a>
         </FadeUp>
 
-        {/* Map placeholder */}
+        {/* Office image or map placeholder */}
         <FadeUp delay={1}>
-          <div className="relative bg-cream rounded-xl border border-border h-56 xs:h-[260px] sm:h-[300px] md:h-[360px] lg:h-[400px] flex flex-col items-center justify-center gap-3 overflow-hidden">
-            {/* Grid pattern */}
-            <div
-              className="absolute inset-0 opacity-40"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, transparent calc(100% - 1px), var(--color-border) calc(100% - 1px)), linear-gradient(0deg, transparent calc(100% - 1px), var(--color-border) calc(100% - 1px))",
-                backgroundSize: "60px 60px",
-              }}
-            />
-
-            {/* Pin */}
-            <div className="relative z-[1]">
-              <svg
-                viewBox="0 0 24 24"
-                className="w-10 h-10 md:w-12 md:h-12 fill-gold drop-shadow-[0_4px_8px_rgba(201,168,76,0.3)]"
-              >
-                <path d="M12 0C7.03 0 3 4.03 3 9c0 7.5 9 15 9 15s9-7.5 9-15c0-4.97-4.03-9-9-9zm0 12.75a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5z" />
-              </svg>
+          {image ? (
+            <div className="relative rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(20,57,43,0.10)] max-h-[240px] xs:max-h-[280px] sm:max-h-[320px] md:max-h-none">
+              <Image
+                src={image}
+                alt={imageAlt}
+                width={680}
+                height={453}
+                className="w-full h-full object-cover rounded-xl"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-navy/60 to-transparent p-4 sm:p-5">
+                <span className="font-semibold text-white text-sm sm:text-[15px]">
+                  {mapLabel}
+                </span>
+                <span className="block text-xs text-white/80 mt-0.5">
+                  {mapSublabel}
+                </span>
+              </div>
             </div>
-            <span className="relative z-[1] font-semibold text-navy text-[15px] lg:text-base">
-              {mapLabel}
-            </span>
-            <span className="relative z-[1] text-xs lg:text-[13px] text-slate-light">
-              {mapSublabel}
-            </span>
-          </div>
+          ) : (
+            <div className="relative bg-cream rounded-xl border border-border h-56 xs:h-[260px] sm:h-[300px] md:h-[360px] lg:h-[400px] flex flex-col items-center justify-center gap-3 overflow-hidden">
+              <div
+                className="absolute inset-0 opacity-40"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, transparent calc(100% - 1px), var(--color-border) calc(100% - 1px)), linear-gradient(0deg, transparent calc(100% - 1px), var(--color-border) calc(100% - 1px))",
+                  backgroundSize: "60px 60px",
+                }}
+              />
+              <div className="relative z-[1]">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-10 h-10 md:w-12 md:h-12 fill-gold drop-shadow-[0_4px_8px_rgba(201,168,76,0.3)]"
+                >
+                  <path d="M12 0C7.03 0 3 4.03 3 9c0 7.5 9 15 9 15s9-7.5 9-15c0-4.97-4.03-9-9-9zm0 12.75a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5z" />
+                </svg>
+              </div>
+              <span className="relative z-[1] font-semibold text-navy text-[15px] lg:text-base">
+                {mapLabel}
+              </span>
+              <span className="relative z-[1] text-xs lg:text-[13px] text-slate-light">
+                {mapSublabel}
+              </span>
+            </div>
+          )}
         </FadeUp>
       </div>
     </section>

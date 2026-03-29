@@ -1,67 +1,160 @@
 {
   "meta": {
     "title": "FAQs | Prosperity Planning & Advisory",
-    "description": "Frequently asked questions about working with Prosperity Planning & Advisory in Woodland Hills, CA — minimums, virtual availability, fees, fiduciary duty, and what to expect at your first meeting.",
+    "description": "Frequently asked questions about working with Prosperity Planning & Advisory in Woodland Hills, CA — fees, services, planning approach, and what to expect.",
     "ogTitle": "Frequently Asked Questions | Prosperity Planning & Advisory",
-    "ogDescription": "Answers to common questions about fiduciary financial planning, fees, minimums, and how we work with clients."
+    "ogDescription": "Answers to common questions about fiduciary financial planning, fees, services, and how we work with clients."
   },
   "hero": {
     "eyebrow": "Frequently Asked Questions",
     "headline": "Questions? We Have Answers.",
-    "subheadline": "We believe in transparency at every step. Here are answers to the questions we hear most often.",
+    "subheadline": "Have questions about how we work, who we serve, and what to expect? Below are answers to some of the most common questions we receive.",
     "cta": {
-      "text": "Schedule Your Complimentary Clarity Session",
+      "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   },
-  "questions": [
+  "intro": {
+    "paragraphs": [
+      "At Prosperity Planning and Advisory, we take a comprehensive, fiduciary approach to financial planning built around a structured process designed to bring greater clarity, organization, and long-term direction to your financial life. Our planning may include consideration of tax-related factors as part of your overall strategy, and we coordinate with your CPA and attorney where appropriate. We do not provide tax or legal advice.",
+      "This page is designed for individuals, families, and business owners evaluating whether our approach is the right fit, especially those approaching retirement, already retired, or seeking more intentional financial direction."
+    ]
+  },
+  "categories": [
     {
-      "question": "Do you have account or asset minimums?",
-      "answer": "We work with clients across a range of asset levels and financial situations. While certain advisory services may have minimum thresholds, we encourage you to reach out regardless — during your complimentary Clarity Session, we'll determine the best way we can help based on your specific needs and goals."
+      "heading": "Getting Started",
+      "questions": [
+        {
+          "question": "What happens in the first meeting?",
+          "answer": "Your first meeting is a discovery conversation focused on understanding your goals, current financial picture, and key concerns. There is no pressure — our goal is simply to determine whether there is a good fit and provide initial clarity on possible next steps."
+        },
+        {
+          "question": "How do I get started?",
+          "answer": "Getting started is simple. You can schedule an initial consultation through our website, and we will guide you through the next steps based on your situation and goals."
+        },
+        {
+          "question": "Is there a cost for the initial consultation?",
+          "answer": "We offer an introductory consultation designed to help determine fit and provide clarity on how we may be able to help."
+        },
+        {
+          "question": "What should I bring to the first meeting?",
+          "answer": "You do not need to have everything perfectly organized. Helpful items may include recent statements, income information, and any existing financial plans — but the goal is simply to begin the conversation."
+        }
+      ]
     },
     {
-      "question": "Do you work with clients virtually, or only in person?",
-      "answer": "We work with clients both in-person at our Woodland Hills, CA office and virtually via secure video conferencing. Many of our clients prefer a mix of both. Whether you're local to the Los Angeles area or located elsewhere, we're set up to provide the same high level of service and personal attention."
+      "heading": "Who We Work With",
+      "questions": [
+        {
+          "question": "Who do you typically work with?",
+          "answer": "We primarily work with pre-retirees, retirees, and small business owners who are looking for a more structured, intentional, and coordinated approach to their financial lives."
+        },
+        {
+          "question": "Do you work with small business owners?",
+          "answer": "Yes. We work with business owners to help integrate personal and business planning, including cash flow strategy, retirement planning, and coordinated planning that may include consideration of tax-related matters in alignment with their CPA or tax professional."
+        },
+        {
+          "question": "Do you only serve clients in California?",
+          "answer": "While we are based in California, we may work with clients in other states depending on applicable registration and regulatory requirements."
+        },
+        {
+          "question": "Do you work virtually?",
+          "answer": "Yes. We offer both virtual and in-person meetings, allowing us to work with clients regardless of location."
+        }
+      ]
     },
     {
-      "question": "Do you only work with clients in California?",
-      "answer": "Prosperity Planning & Advisory, LLC is a California state-registered investment adviser. While many of our clients are based in California, we may be able to work with clients in other states depending on applicable regulations. Contact us to discuss your situation, and we'll let you know how we can help."
+      "heading": "Services & Planning Approach",
+      "questions": [
+        {
+          "question": "What's the difference between financial planning and investment management?",
+          "answer": "Financial planning is the foundation. It may include retirement planning, cash flow strategy, risk management, and coordination with other professionals. Investment management is one component of that broader plan and is used to support your overall strategy rather than drive it."
+        },
+        {
+          "question": "Do you offer one-time plans or ongoing advice?",
+          "answer": "We primarily focus on ongoing advisory relationships so your plan can be reviewed and adjusted as your life and financial circumstances change over time."
+        },
+        {
+          "question": "Do you help with budgeting and cash flow?",
+          "answer": "Yes. We refer to this as Strategy Spending — a structured approach to managing cash flow, aligning spending with your priorities, and helping align your financial decisions with your long-term goals."
+        },
+        {
+          "question": "What areas of planning do you cover?",
+          "answer": "Depending on your needs, planning may include retirement planning, investment strategy, risk management, college planning, and other financial planning considerations. Where appropriate, we also coordinate with your CPA or tax professional regarding tax-related planning considerations."
+        }
+      ]
     },
     {
-      "question": "What happens during the first meeting?",
-      "answer": "Your first meeting is a complimentary Clarity Session — a 30–45 minute conversation where we get to know you, understand your goals and concerns, and explain how our planning process works. There's no cost, no obligation, and no sales pressure. It's simply a chance to see if we're the right fit to help you build your financial plan."
+      "heading": "Coordination With Other Professionals",
+      "questions": [
+        {
+          "question": "Do you provide tax or legal advice?",
+          "answer": "No. We do not provide tax or legal advice. However, we may incorporate tax-related considerations into your financial planning and coordinate with your CPA, tax professional, or attorney as needed."
+        },
+        {
+          "question": "How do you work with CPAs, attorneys, or estate planners?",
+          "answer": "We collaborate with your existing professionals to help improve alignment across your overall financial plan, including areas involving tax considerations and estate planning coordination."
+        },
+        {
+          "question": "Can you work with my current CPA or attorney?",
+          "answer": "Absolutely. We are happy to work alongside your trusted professionals as part of a coordinated planning approach."
+        }
+      ]
     },
     {
-      "question": "What does it mean that you're a fiduciary?",
-      "answer": "As a fiduciary, we are legally and ethically obligated to act in your best interest at all times. This means our recommendations are based solely on what's right for you — not on commissions, sales incentives, or product quotas. It's the highest standard of care in financial planning, and it's the only way we operate."
+      "heading": "Fees, Accounts & Logistics",
+      "questions": [
+        {
+          "question": "Do I need a minimum portfolio size?",
+          "answer": "We focus on working with individuals and families who are serious about building and maintaining a long-term financial strategy. Certain services may have minimums, but the most important factor is whether there is a strong fit for our planning approach."
+        },
+        {
+          "question": "How are you compensated?",
+          "answer": "We are a fee-based advisory firm. Compensation may include advisory fees for investment management and planning services. In certain situations outside of the advisory relationship, insurance products may be recommended through a separate, non-advisory capacity, and any associated compensation would be fully disclosed. Clients are under no obligation to implement any recommendation or purchase any product through us."
+        },
+        {
+          "question": "Do you manage investment accounts?",
+          "answer": "Yes, investment management can be part of an ongoing advisory relationship when appropriate for your plan."
+        },
+        {
+          "question": "How often will we meet?",
+          "answer": "Meeting frequency depends on your needs, but we maintain ongoing communication and periodic reviews to help keep your plan aligned with your goals."
+        },
+        {
+          "question": "Can I work with you if I only need planning and not investment management?",
+          "answer": "In some cases, yes. We can discuss the most appropriate structure based on your situation and what you are looking to accomplish."
+        },
+        {
+          "question": "Can I stop services at any time?",
+          "answer": "Termination rights and any applicable fee treatment are governed by your client agreement. We are happy to walk through those terms with you before you move forward."
+        }
+      ]
     },
     {
-      "question": "Do you provide tax or legal advice?",
-      "answer": "We do not provide tax or legal advice. However, tax-efficient planning is a core part of what we do. We design strategies with tax implications in mind and coordinate directly with your CPA, tax professional, or attorney to ensure your plan is fully aligned. If you don't currently have a tax or legal professional, we're happy to provide referrals."
-    },
-    {
-      "question": "Do you work with my CPA or attorney?",
-      "answer": "Absolutely. Coordinated planning is one of the most valuable things we offer. We regularly collaborate with our clients' CPAs, attorneys, and other trusted professionals to ensure every aspect of your financial plan — from tax strategy to estate documents — is working together. We believe the best outcomes come from a team approach."
-    },
-    {
-      "question": "How are you compensated? Do you earn commissions?",
-      "answer": "We are a fee-only registered investment adviser. Our compensation comes directly from our clients through advisory fees — not from commissions, product sales, or third-party incentives. This structure ensures our advice is always objective, independent, and aligned with your best interests. Prosperity Planning and Advisory, LLC does not sell insurance products or receive insurance commissions."
-    },
-    {
-      "question": "How often will we meet to review my plan?",
-      "answer": "We typically conduct formal review meetings at least annually, with additional check-ins as needed based on your situation. Many clients meet with us semi-annually or quarterly. Between meetings, you have ongoing access to your Financial Planning Portal and can reach your advisor directly at any time."
-    },
-    {
-      "question": "Can I get a second opinion on my current financial plan?",
-      "answer": "Yes. We offer one-time consultations and second opinions for individuals who want an independent, fiduciary-level review of their existing financial plan, investment portfolio, or retirement strategy. There's no obligation to become an ongoing client — we're happy to provide objective insight on where you stand."
+      "heading": "Additional Questions",
+      "questions": [
+        {
+          "question": "How are you different from other financial advisors?",
+          "answer": "Our approach is centered on comprehensive planning first — not just investments. We focus on coordinating multiple areas of your financial life, including cash flow, retirement planning, and other long-term planning considerations, rather than looking at investments in isolation."
+        },
+        {
+          "question": "Do you sell products or earn commissions?",
+          "answer": "Our primary focus is providing advice through a fiduciary advisory relationship. In certain situations, insurance products may be offered through a separate, non-advisory capacity, and any associated compensation would be fully disclosed. Clients are never obligated to purchase any recommended product."
+        },
+        {
+          "question": "What does working together look like over time?",
+          "answer": "Our relationship is designed to be ongoing and to evolve with your life. We provide structured planning, regular reviews, and continuing guidance to help you make informed decisions as your circumstances change."
+        }
+      ]
     }
   ],
   "ctaBand": {
     "heading": "Still Have Questions?",
-    "body": "We're here to help. Schedule a complimentary Clarity Session and we'll answer any questions you have — with no obligation.",
+    "body": "If you have additional questions or would like to explore whether this is the right fit, we invite you to schedule a conversation.",
     "cta": {
-      "text": "Schedule Your Clarity Session",
+      "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
-  }
+  },
+  "disclosures": "Prosperity Planning and Advisory does not provide tax or legal advice. All tax-related matters should be reviewed with a qualified tax professional, and legal matters should be addressed with an attorney. Insurance products, if offered, are provided outside of the advisory relationship through a separate, non-advisory capacity, and any associated compensation would be disclosed separately."
 }

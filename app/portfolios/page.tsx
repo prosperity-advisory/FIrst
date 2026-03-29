@@ -23,6 +23,7 @@ export default function PortfoliosPage() {
         eyebrow="Prosperity Pathways™ Portfolios"
         headline={content.hero.headline}
         subtitle={content.hero.intro}
+        backgroundImage="/images/invest page.png"
       />
 
       {/* Portfolio Grid */}

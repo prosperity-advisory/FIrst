@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -46,6 +47,7 @@ export default function PlanningPage() {
         headline="Personal Prosperity Planning™"
         subtitle={content.hero.tagline}
         ctaText={content.hero.cta.text + " →"}
+        backgroundImage="/images/Hero Image 2 -JPG.JPG"
       />
 
       {/* Intro body */}
@@ -142,9 +144,19 @@ export default function PlanningPage() {
               <h3 className="font-serif text-[22px] sm:text-[26px] md:text-[28px] font-semibold text-navy mb-4 text-center">
                 {content.portal.accessHeading}
               </h3>
-              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] text-center">
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] text-center mb-8 md:mb-10">
                 {content.portal.accessBody}
               </p>
+              <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(20,57,43,0.10)] border border-border max-w-[600px] mx-auto">
+                <Image
+                  src="/images/Dashboard.JPG"
+                  alt="Financial planning dashboard showing portfolio analysis, projections, and asset allocation"
+                  width={824}
+                  height={871}
+                  className="w-full h-auto"
+                  sizes="(max-width: 600px) 100vw, 600px"
+                />
+              </div>
             </div>
           </FadeUp>
 

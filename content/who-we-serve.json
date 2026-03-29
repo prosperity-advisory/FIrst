@@ -1,108 +1,186 @@
 {
   "meta": {
     "title": "Who We Serve | Prosperity Planning & Advisory",
-    "description": "Fiduciary financial planning for pre-retirees, business owners, high-income professionals, families, and attorneys in Woodland Hills, CA and the greater Los Angeles area.",
+    "description": "Financial planning that connects your decisions, taxes, and long-term goals. Serving pre-retirees, business owners, high-income professionals, families, and more in Woodland Hills, CA.",
     "ogTitle": "Who We Serve | Prosperity Planning & Advisory",
-    "ogDescription": "Fiduciary financial planning for pre-retirees, business owners, professionals, families, and attorneys."
+    "ogDescription": "Financial planning that connects your decisions, taxes, and long-term goals for pre-retirees, business owners, professionals, families, and more."
   },
   "hero": {
     "eyebrow": "Who We Serve",
-    "headline": "Financial Planning Built Around Your Life",
-    "subheadline": "Every client's journey is unique. Our planning process adapts to your specific needs, goals, and stage of life.",
+    "headline": "Financial Planning That Connects Your Decisions, Taxes, and Long-Term Goals",
+    "subheadline": "At Prosperity Planning and Advisory, financial planning is not one-size-fits-all. Every client has different priorities, challenges, and opportunities. Our approach is designed to help you make financial decisions with clarity, integrating your income, investments, taxes, and long-term goals into one coordinated strategy.",
+    "heroBody": "Whether you're preparing for retirement, growing a business, building wealth, or planning for your family's future, our process is built to help you move forward with purpose and confidence.",
     "cta": {
-      "text": "Schedule Your Complimentary Strategy Review",
+      "text": "Start a Conversation",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   },
-  "intro": {
-    "heading": "We Work With People Like You",
-    "body": "At Prosperity Planning & Advisory, we don't believe in one-size-fits-all solutions. Our clients come from different backgrounds, careers, and life stages — but they share a common goal: building a financial future they can feel confident about. Whether you're preparing for retirement, growing a business, or protecting your family's legacy, we tailor every recommendation to your unique situation."
+  "builtAroundYou": {
+    "heading": "Financial Planning Built Around You",
+    "body": "Different stages of life and financial situations require different strategies. Below are some of the individuals and families we commonly work with."
+  },
+  "quickOverview": {
+    "heading": "Who This Is For (Quick Overview)",
+    "items": [
+      { "label": "Pre-Retirees & Retirees", "desc": "Planning the transition from savings to income" },
+      { "label": "Small Business Owners", "desc": "Aligning business success with personal wealth" },
+      { "label": "High-Income Professionals", "desc": "Using your income more intentionally and efficiently" },
+      { "label": "Families", "desc": "Balancing today's needs with long-term goals" },
+      { "label": "Tax & Legacy-Focused Clients", "desc": "Planning beyond just investments" }
+    ]
   },
   "audiences": [
     {
       "id": "pre-retirees",
-      "title": "Pre-Retirees & Recent Retirees",
-      "subtitle": "Transitioning from saving to spending with confidence",
-      "body": "You've spent decades building wealth — now it's time to make sure it lasts. We help pre-retirees and recent retirees navigate the critical transition from accumulation to distribution, addressing Social Security timing, Medicare coordination, tax-efficient withdrawal strategies, and sustainable income planning.",
-      "highlights": [
-        "Retirement income and cash-flow planning",
-        "Social Security optimization strategies",
-        "Tax-aware withdrawal sequencing",
-        "Healthcare and Medicare planning considerations",
-        "Portfolio transition from growth to income"
-      ]
+      "title": "Pre-Retirees and Retirees",
+      "intro": "As you approach retirement, the decisions you make now can significantly impact the next 20–30 years of your financial life.",
+      "focusedOn": [
+        "Transitioning from accumulation to income",
+        "Structuring retirement income",
+        "Planning with tax implications in mind during retirement",
+        "Navigating key financial decisions during critical years"
+      ],
+      "howWeHelp": "We help you transition into retirement with a clear plan designed to coordinate income strategy, tax-aware withdrawal planning, and investment decisions with your long-term needs.",
+      "planningAreas": [
+        "Retirement income planning",
+        "Tax-efficient withdrawal strategies",
+        "Roth conversion analysis",
+        "Social Security timing",
+        "Investment alignment with income needs"
+      ],
+      "ctaText": "Explore your retirement planning options",
+      "ctaHref": "/process"
     },
     {
       "id": "business-owners",
-      "title": "Business Owners & Entrepreneurs",
-      "subtitle": "Aligning your business success with personal financial goals",
-      "body": "Running a business means your personal and professional finances are deeply connected. We help business owners build retirement plans, evaluate exit and succession strategies, optimize tax efficiency, and create a financial plan that supports both the business and the owner's long-term goals.",
-      "highlights": [
-        "Retirement plan design (401(k), SEP IRA, Defined Benefit)",
-        "Business succession and exit planning",
-        "Tax-efficient compensation strategies",
-        "Buy-sell agreement coordination",
-        "Cash flow optimization for business and personal finances"
-      ]
+      "title": "Small Business Owners",
+      "intro": "As a business owner, your financial life often involves balancing business success with personal financial goals.",
+      "focusedOn": [
+        "Balancing business growth with personal wealth",
+        "Managing cash flow between business and personal life",
+        "Improving tax efficiency",
+        "Preparing for a future transition or exit"
+      ],
+      "howWeHelp": "We help business owners align their personal and business financial strategies. Our planning incorporates tax-aware strategies that consider income, capital gains, and long-term opportunities, implemented in coordination with your CPA.",
+      "planningAreas": [
+        "Personal and business cash flow alignment",
+        "Strategy Spending: a more intentional approach to cash flow and budgeting",
+        "Retirement plan strategy",
+        "Tax-aware planning in coordination with your CPA",
+        "Long-term business and personal wealth planning",
+        "Exit and transition considerations"
+      ],
+      "ctaText": "Learn how we work with business owners",
+      "ctaHref": "/process"
     },
     {
       "id": "professionals",
       "title": "High-Income Professionals",
-      "subtitle": "Making the most of what you earn",
-      "body": "High earnings create unique financial challenges — from managing tax exposure to maximizing retirement contributions and building wealth beyond your career. We help physicians, executives, engineers, and other professionals develop strategies that turn high income into lasting financial security.",
-      "highlights": [
-        "Advanced tax-efficient planning",
-        "Stock option and equity compensation strategies",
-        "Backdoor Roth IRA and mega backdoor strategies",
-        "Deferred compensation planning",
-        "Wealth accumulation and investment management"
-      ]
+      "intro": "With a demanding career and strong income, the challenge is often not earning more—but using what you earn more efficiently.",
+      "focusedOn": [
+        "Maximizing income efficiency",
+        "Reducing tax drag on earnings and investments",
+        "Building wealth while managing limited time",
+        "Making confident financial decisions"
+      ],
+      "howWeHelp": "We provide structured, tax-aware planning designed to help you use your income more intentionally by coordinating investment strategy, savings, and tax considerations into a cohesive plan.",
+      "planningAreas": [
+        "Income and savings optimization",
+        "Tax-aware investment strategies",
+        "Capital gains planning",
+        "Long-term wealth accumulation planning"
+      ],
+      "ctaText": "Start building a more intentional financial strategy",
+      "ctaHref": "/process"
     },
     {
       "id": "families",
-      "title": "Families & Multigenerational Planning",
-      "subtitle": "Protecting what matters most — today and for generations ahead",
-      "body": "Family financial planning goes beyond budgets and savings accounts. We help families coordinate education planning, estate strategies, risk management, and wealth transfer — so your values and your wealth endure across generations.",
-      "highlights": [
-        "Education savings (529 plans, funding strategies)",
-        "Estate and legacy planning coordination",
-        "Life insurance and risk management review",
-        "Family budgeting and cash-flow planning",
-        "Multigenerational wealth transfer strategies"
-      ]
+      "title": "Families",
+      "intro": "Balancing your current lifestyle with long-term goals requires clarity, structure, and intentional decision-making.",
+      "focusedOn": [
+        "Managing household cash flow and spending",
+        "Protecting your family financially",
+        "Planning for education and future goals",
+        "Aligning today's decisions with long-term priorities"
+      ],
+      "howWeHelp": "We help families create structure and clarity through Strategy Spending—guiding more intentional decisions around cash flow while integrating protection planning and long-term goal alignment.",
+      "planningAreas": [
+        "Strategy Spending: a more intentional approach to cash flow and budgeting",
+        "Risk management and protection planning",
+        "Education planning",
+        "Long-term financial goal planning"
+      ],
+      "ctaText": "Start creating more clarity in your financial life",
+      "ctaHref": "/process"
     },
     {
       "id": "tax-legacy",
-      "title": "Tax & Legacy Planning Clients",
-      "subtitle": "Proactive strategies for complex financial situations",
-      "body": "When your financial life becomes more complex, you need a planning partner who can help you coordinate across tax, estate, and investment decisions. We work alongside your CPA and attorney to design strategies that minimize tax exposure, protect assets, and create a purposeful legacy.",
-      "highlights": [
-        "Charitable Remainder Trust (CRT) planning education",
-        "Irrevocable Life Insurance Trust (ILIT) coordination",
-        "Tax-loss harvesting and gain management",
-        "Beneficiary and estate document review",
-        "Coordinated planning with your tax and legal team"
-      ]
+      "title": "Tax-Aware and Legacy-Focused Clients",
+      "intro": "For many clients, financial decisions are not just about growth, but also about efficiency, preservation, and long-term impact.",
+      "focusedOn": [
+        "Reducing long-term tax exposure",
+        "Preserving wealth across generations",
+        "Coordinating financial, tax, and estate strategies",
+        "Making intentional legacy decisions"
+      ],
+      "howWeHelp": "We integrate tax-aware strategies into your broader financial plan by considering income taxes, capital gains, and long-term planning decisions. We coordinate with your CPA and estate planning attorney to help ensure alignment across your strategy.",
+      "planningAreas": [
+        "Tax-aware investment and distribution strategies",
+        "Capital gains planning",
+        "Legacy and wealth transfer planning",
+        "Coordination with CPA and estate planning professionals"
+      ],
+      "ctaText": "Explore planning for long-term goals",
+      "ctaHref": "/process"
     },
     {
       "id": "attorneys",
-      "title": "Attorney Advisory Clients",
-      "subtitle": "Financial clarity for professionals with variable income and complex needs",
-      "body": "Attorneys face unique financial challenges — from managing variable income (especially in litigation and contingency-based practices) to navigating partnership buy-ins, deferred compensation, and retirement planning. We provide the disciplined, strategic guidance that helps legal professionals build long-term financial stability.",
-      "highlights": [
-        "Variable income and cash-flow management",
-        "Partnership buy-in and equity planning",
-        "Retirement planning for solo and firm attorneys",
-        "Tax-efficient strategies for high earners",
-        "Coordination with your existing legal and tax professionals"
-      ]
+      "title": "Clients Working with Attorneys or Referred Through Legal Professionals",
+      "intro": "This is especially relevant for clients working through estate planning, trust structures, or business-related legal matters with their attorneys.",
+      "focusedOn": [
+        "Aligning financial planning with legal structures",
+        "Coordinating with your attorney on broader planning needs",
+        "Making informed decisions within complex situations"
+      ],
+      "howWeHelp": "We provide financial planning that works alongside your legal and tax professionals, helping your financial strategy stay aligned with your broader plan without replacing the role of your attorney or CPA.",
+      "planningAreas": [
+        "Coordination with legal and tax professionals",
+        "Financial planning aligned with legal structures",
+        "Long-term strategy implementation"
+      ],
+      "ctaText": "Explore coordinated financial planning",
+      "ctaHref": "/process"
     }
   ],
-  "ctaBand": {
-    "heading": "See Yourself Here?",
-    "body": "No matter where you are on your financial journey, we're here to help you take the next step with clarity and confidence.",
+  "taxAware": {
+    "heading": "Tax-Aware Financial Planning",
+    "body1": "Every financial decision has potential tax implications. Our planning process incorporates tax-aware strategies with efficiency in mind over time, including considerations around income, capital gains, and long-term financial decisions.",
+    "body2": "Rather than reacting to taxes after the fact, we help incorporate tax awareness into the planning process upfront in coordination with your CPA or tax professional."
+  },
+  "noOneCategory": {
+    "heading": "You Don't Have to Fit Into Just One Category",
+    "body1": "Most clients don't fit into just one category, which is why our planning is designed to adapt to your full financial picture.",
+    "body2": "Whether you're a business owner planning for retirement, a professional building wealth, or a family balancing competing priorities, your strategy is built to reflect your complete situation."
+  },
+  "connectsEverything": {
+    "heading": "Planning That Connects Everything",
+    "body": "Your financial life is not made up of separate pieces, it's interconnected.",
+    "subheading": "Our approach is designed to help connect:",
+    "items": [
+      "Investments",
+      "Income planning",
+      "Tax awareness",
+      "Business decisions",
+      "Long-term goals"
+    ],
+    "footer": "So each decision can better support the bigger picture."
+  },
+  "closingCta": {
+    "heading": "Start with Clarity",
+    "body": "If any of these situations resonate with you, the next step is gaining clarity around your financial decisions.",
+    "body2": "We'll work with you to understand where you are, where you want to go, and how to build a strategy aligned with your goals.",
     "cta": {
-      "text": "Schedule Your Complimentary Strategy Review",
+      "text": "Schedule Your Complementary Clarity Session",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   }

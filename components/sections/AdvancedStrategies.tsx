@@ -1,4 +1,5 @@
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface AdvancedStrategiesProps {
   eyebrow: string;
@@ -57,9 +58,9 @@ export function AdvancedStrategies({
           <p className="text-xs md:text-[13px] text-slate-light leading-relaxed max-w-[720px] mb-7 italic">
             {disclaimer}
           </p>
-          <a href={ctaHref} className="btn btn-gold">
+          <CalendlyButton url={ctaHref} className="btn btn-gold">
             {ctaText}
-          </a>
+          </CalendlyButton>
         </FadeUp>
       </div>
     </section>

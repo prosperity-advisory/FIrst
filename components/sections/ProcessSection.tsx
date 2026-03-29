@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface ProcessStep {
   title: string;
@@ -84,9 +85,9 @@ export function ProcessSection({
         </div>
 
         <FadeUp>
-          <a href={ctaHref} className="btn btn-gold">
+          <CalendlyButton url={ctaHref} className="btn btn-gold">
             {ctaText}
-          </a>
+          </CalendlyButton>
         </FadeUp>
       </div>
     </section>

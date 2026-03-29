@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface InteriorHeroProps {
   eyebrow?: string;
@@ -50,12 +51,12 @@ export function InteriorHero({
           </p>
         )}
         {ctaText && (
-          <a
-            href={ctaHref}
+          <CalendlyButton
+            url={ctaHref}
             className="btn btn-gold mt-7 sm:mt-8 animate-[heroFadeIn_0.8s_ease_0.65s_both] opacity-0"
           >
             {ctaText}
-          </a>
+          </CalendlyButton>
         )}
       </div>
     </section>

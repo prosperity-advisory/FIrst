@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface ContactDetail {
   icon: React.ReactNode;
@@ -58,9 +59,15 @@ export function ContactSection({
             ))}
           </div>
 
-          <a href={ctaHref} className="btn btn-gold">
-            {ctaText}
-          </a>
+          {ctaHref.includes("calendly.com") ? (
+            <CalendlyButton url={ctaHref} className="btn btn-gold">
+              {ctaText}
+            </CalendlyButton>
+          ) : (
+            <a href={ctaHref} className="btn btn-gold">
+              {ctaText}
+            </a>
+          )}
         </FadeUp>
 
         {/* Office image or map placeholder */}

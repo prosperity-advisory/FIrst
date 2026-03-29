@@ -1,3 +1,5 @@
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
+
 interface CtaBandProps {
   headline?: string;
   subtext?: string;
@@ -20,9 +22,9 @@ export function CtaBand({
         <p className="text-[15px] md:text-base lg:text-[17px] text-navy/80 mb-7 md:mb-9 leading-relaxed">
           {subtext}
         </p>
-        <a href={ctaHref} className="btn btn-navy">
+        <CalendlyButton url={ctaHref} className="btn btn-navy">
           {ctaText}
-        </a>
+        </CalendlyButton>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface HeroSectionProps {
   eyebrow: string;
@@ -54,12 +55,12 @@ export function HeroSection({
         <p className="text-[15px] xs:text-base sm:text-[17px] md:text-lg lg:text-[19px] xl:text-xl font-light text-cream leading-relaxed max-w-[640px] mx-auto mb-9 sm:mb-10 xl:mb-11 animate-[heroFadeIn_0.8s_ease_0.7s_both] opacity-0">
           {subheadline}
         </p>
-        <a
-          href={ctaHref}
+        <CalendlyButton
+          url={ctaHref}
           className="btn btn-gold animate-[heroFadeIn_0.8s_ease_0.9s_both] opacity-0"
         >
           {ctaText}
-        </a>
+        </CalendlyButton>
       </div>
 
       {/* Scroll indicator — tablet+ */}

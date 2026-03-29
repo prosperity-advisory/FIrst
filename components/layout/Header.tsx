@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 interface NavItem {
   href: string;
@@ -229,12 +230,12 @@ export function Header() {
               );
             })}
 
-            <a
-              href={CTA_HREF}
+            <CalendlyButton
+              url={CTA_HREF}
               className="font-sans text-[12px] 2xl:text-[13px] font-semibold px-4 2xl:px-5 py-2.5 rounded-[5px] bg-gold text-navy whitespace-nowrap transition-all duration-300 hover:bg-gold-light hover:-translate-y-px ml-2"
             >
               Schedule Review
-            </a>
+            </CalendlyButton>
           </div>
 
           {/* Hamburger — visible below xl */}
@@ -345,13 +346,12 @@ export function Header() {
           );
         })}
 
-        <a
-          href={CTA_HREF}
-          onClick={closeMenu}
+        <CalendlyButton
+          url={CTA_HREF}
           className="mt-6 inline-block px-7 py-3.5 bg-gold text-navy rounded-[5px] font-semibold text-center text-sm"
         >
           Schedule Your Strategy Review
-        </a>
+        </CalendlyButton>
       </div>
     </>
   );

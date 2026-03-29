@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { getWhoWeServeContent } from "@/lib/content";
 
 const content = getWhoWeServeContent();
@@ -222,9 +223,9 @@ export default function WhoWeServePage() {
           <p className="text-[15px] md:text-base lg:text-[17px] text-navy/80 mb-7 md:mb-9 leading-relaxed">
             {content.closingCta.body2}
           </p>
-          <a href={content.closingCta.cta.href} className="btn btn-navy">
+          <CalendlyButton url={content.closingCta.cta.href} className="btn btn-navy">
             {content.closingCta.cta.text}
-          </a>
+          </CalendlyButton>
         </div>
       </section>
     </main>

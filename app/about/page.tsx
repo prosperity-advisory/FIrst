@@ -37,7 +37,7 @@ export default function AboutPage() {
       <InteriorHero
         eyebrow="Our Mission & Who We Are"
         headline={content.hero.headline}
-        backgroundImage="/images/Hero Image- jpg.JPG"
+        backgroundImage="/images/Main Heading Image for about us-Our Mission page -JPG.JPG"
       />
 
       {/* Mission */}

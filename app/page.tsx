@@ -51,7 +51,7 @@ export default function Home() {
             ),
           },
         ]}
-        image="/images/home page 1 jpg.JPG"
+        image="/images/Replacement for lady on home page 2 jpg.JPG"
         imageAlt="Financial advisor walking a path toward the future at sunrise"
       />
 

@@ -44,7 +44,7 @@ export default function ProcessPage() {
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
         ctaText={content.hero.cta.text + " →"}
-        backgroundImage="/images/Process image JPG.JPG"
+        backgroundImage="/images/OUR Process replacement- JPG.JPG"
       />
 
       {/* Hero extended body */}

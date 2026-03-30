@@ -367,6 +367,7 @@ export default function CaseStudiesPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
+        backgroundImage="/images/Planning Scenarios-JPG.JPG"
       />
       {/* Hero CTA buttons */}
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep text-center px-4 pb-10 sm:pb-12 -mt-1">

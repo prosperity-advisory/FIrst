@@ -60,7 +60,6 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-  const [logoError, setLogoError] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
@@ -135,30 +134,26 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between h-20 sm:h-[88px] md:h-[96px] lg:h-[104px]">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between h-16 sm:h-[72px] md:h-[76px] lg:h-20">
           {/* Logo */}
-          <Link href="/" className="shrink-0 flex items-center">
-            {!logoError ? (
-              <Image
-                src="/images/prosperity-rectangle-logo.png"
-                alt="Prosperity Planning & Advisory"
-                width={400}
-                height={120}
-                priority
-                onError={() => setLogoError(true)}
-                className="w-[220px] xs:w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] h-auto object-contain -ml-8 sm:-ml-10 md:-ml-12 lg:-ml-14"
-              />
-            ) : (
-              <span
-                className={`font-serif text-sm xs:text-base sm:text-lg lg:text-[19px] xl:text-lg font-bold whitespace-nowrap transition-colors duration-[350ms] ${
-                  scrolled ? "text-navy" : "text-white"
-                }`}
-              >
-                Prosperity
-                <span className="text-gold"> | </span>
-                Planning &amp; Advisory
-              </span>
-            )}
+          <Link href="/" className="shrink-0 flex items-center gap-2 sm:gap-2.5 md:gap-3">
+            <Image
+              src="/images/single-logo-trimmed.png"
+              alt=""
+              width={429}
+              height={464}
+              priority
+              className="h-8 xs:h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain"
+            />
+            <span
+              className={`font-serif text-sm xs:text-base sm:text-lg lg:text-[19px] xl:text-lg font-bold whitespace-nowrap transition-colors duration-[350ms] ${
+                scrolled ? "text-navy" : "text-white"
+              }`}
+            >
+              Prosperity
+              <span className="text-gold"> | </span>
+              Planning &amp; Advisory
+            </span>
           </Link>
 
           {/* Desktop nav — visible at xl+ */}

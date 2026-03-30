@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
-import { ServiceDetail } from "@/components/sections/ServiceDetail";
+import { ServiceAccordion } from "@/components/sections/ServiceAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getServicesContent } from "@/lib/content";
@@ -85,22 +85,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Category Sections */}
-      {sections.map((section: Record<string, unknown>, i: number) => (
-        <ServiceDetail
-          key={section.id as string}
-          id={section.id as string}
-          heading={section.heading as string}
-          body={section.body as string}
-          bodyExtra={section.bodyExtra as string | undefined}
-          subsections={section.subsections as { heading: string; body?: string; bodyExtra?: string; bodyExtra2?: string; items?: string[]; disclaimer?: string }[] | undefined}
-          disclaimers={section.disclaimers as string[] | undefined}
-          planningAreasHeading={section.planningAreasHeading as string | undefined}
-          planningAreas={section.planningAreas as string[] | undefined}
-          transition={section.transition as string | undefined}
-          variant={i % 2 === 0 ? "cream" : "white"}
-        />
-      ))}
+      {/* Service Category Sections — Two-level accordion */}
+      <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
+        <div className="mx-auto max-w-[900px]">
+          <ServiceAccordion sections={sections as any} />
+        </div>
+      </section>
 
       {/* Our Planning Approach */}
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">

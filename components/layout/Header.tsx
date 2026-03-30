@@ -135,18 +135,18 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between h-16 sm:h-[72px] md:h-[76px] lg:h-20">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between h-20 sm:h-[88px] md:h-[96px] lg:h-[104px]">
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
             {!logoError ? (
               <Image
-                src="/images/Logo-JPG.PNG"
+                src="/images/prosperity-rectangle-logo.png"
                 alt="Prosperity Planning & Advisory"
-                width={200}
-                height={200}
+                width={400}
+                height={120}
                 priority
                 onError={() => setLogoError(true)}
-                className="h-12 sm:h-[52px] md:h-14 lg:h-[60px] w-auto object-contain rounded-md"
+                className="w-[220px] xs:w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] h-auto object-contain -ml-8 sm:-ml-10 md:-ml-12 lg:-ml-14"
               />
             ) : (
               <span

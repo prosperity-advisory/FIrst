@@ -34,11 +34,13 @@
     },
     {
       "title": "Retirement Planning Strategies",
-      "body": "Whether you're just starting or nearing retirement, we help create a clear plan designed to build confidence and provide guidance for the years ahead."
+      "body": "Whether you're just starting or nearing retirement, we help create a clear plan designed to build confidence and provide guidance for the years ahead.",
+      "cta": { "text": "Explore Personal Prosperity Planning™", "href": "/planning" }
     },
     {
       "title": "Estate Planning Strategies",
-      "body": "Protect your legacy with strategies designed to help align your assets with your wishes and to work alongside your trusted attorney and tax professional to address potential estate and tax considerations."
+      "body": "Protect your legacy with strategies designed to help align your assets with your wishes and to work alongside your trusted attorney and tax professional to address potential estate and tax considerations.",
+      "cta": { "text": "Learn More", "href": "/services#estate-legacy" }
     }
   ]
 }

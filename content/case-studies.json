@@ -1,128 +1,660 @@
 {
   "meta": {
-    "title": "Case Studies | Prosperity Planning & Advisory",
-    "description": "See how fiduciary financial planning helps real people in Woodland Hills, CA and beyond. Anonymized case studies showing retirement, business, family, and career planning in action.",
-    "ogTitle": "Case Studies | Prosperity Planning & Advisory",
-    "ogDescription": "Anonymized planning scenarios showing how fiduciary financial guidance helps clients navigate complex financial decisions."
+    "title": "Planning Scenarios & Examples | Prosperity Planning & Advisory",
+    "description": "Illustrative financial planning scenarios designed to help you understand how Prosperity Planning & Advisory approaches retirement, tax-aware planning, business-owner strategy, legacy planning, and more.",
+    "ogTitle": "Planning Scenarios & Examples | Prosperity Planning & Advisory",
+    "ogDescription": "Explore hypothetical planning scenarios that show how coordinated financial planning can help bring clarity to retirement, taxes, business strategy, legacy goals, and other major financial decisions."
   },
   "hero": {
-    "eyebrow": "Case Studies",
-    "headline": "Real Planning. Real Results.",
-    "subheadline": "Every financial plan tells a story. These anonymized scenarios illustrate how our planning process helps clients navigate complex decisions and build lasting confidence.",
+    "eyebrow": "Planning Scenarios & Examples",
+    "headline": "How Thoughtful Financial Planning Comes Together",
+    "subheadline": "Explore hypothetical planning scenarios designed to show how coordinated financial planning may be applied to complex financial decisions across retirement, taxes, family priorities, business ownership, and legacy goals."
+  },
+  "heroIntro": {
+    "paragraphs": [
+      "Many financial decisions involve trade-offs that are not always obvious at first. Retirement, taxes, cash flow, business planning, legacy goals, and major life transitions often overlap in ways that can create complexity if they are addressed in isolation.",
+      "This page features illustrative planning scenarios designed to help you understand how a thoughtful planning process may be applied to common financial situations individuals and families may face."
+    ],
+    "tagline": "Hypothetical examples. Thoughtful planning insight."
+  },
+  "whatYoullSee": {
+    "heading": "What You'll See in These Examples",
+    "items": [
+      "How multiple financial decisions may connect and influence one another",
+      "How trade-offs are evaluated—not just \"solutions\" presented",
+      "How planning may involve coordination across investment, tax, risk, and legacy considerations",
+      "How a structured process may help organize complex decisions more clearly"
+    ]
+  },
+  "introSection": {
+    "heading": "Planning is personal — and every situation is different.",
+    "paragraphs": [
+      "No two households, business owners, or retirees face the exact same financial questions. That is why strong planning begins with understanding the full picture: your goals, resources, risks, timeline, and the trade-offs that matter most.",
+      "The examples below are intended to show how financial planning can connect multiple moving parts into one coordinated strategy—helping organize decisions, clarify trade-offs, and create a more structured path forward.",
+      "These scenarios may involve topics such as retirement income planning, tax-aware decision-making, college funding, estate and legacy considerations, business-owner planning, charitable strategy analysis, risk management, and portfolio alignment."
+    ]
+  },
+  "whatDesignedToShow": {
+    "heading": "What These Examples Are Designed to Show",
+    "items": [
+      {
+        "title": "A coordinated approach",
+        "body": "Financial decisions rarely exist in isolation. A retirement decision may affect taxes. A business transition may influence income planning. A college funding goal may impact long-term investing and cash flow."
+      },
+      {
+        "title": "A clearer decision-making process",
+        "body": "These examples are designed to show how structured planning may help evaluate trade-offs, organize complexity, and support more informed decision-making."
+      },
+      {
+        "title": "The importance of personalization",
+        "body": "The appropriate path depends on your objectives, timeline, risk tolerance, available resources, and overall financial picture."
+      }
+    ]
+  },
+  "planningProcess": {
+    "heading": "Our Planning Process",
+    "subtitle": "A structured path designed to simplify complexity and support better decisions",
+    "paragraphs": [
+      "Many financial decisions feel overwhelming because there is no clear process. Our approach is designed to bring structure, clarity, and follow-through to important financial decisions.",
+      "We believe good financial planning is not about predicting outcomes, but about helping clients make informed, well-structured decisions over time."
+    ],
+    "steps": [
+      { "number": 1, "title": "Initial Meeting", "body": "We begin by understanding your priorities, concerns, and what financial progress means to you." },
+      { "number": 2, "title": "Discovery", "body": "We gather the relevant details needed to understand your full financial picture, including goals, assets, liabilities, income sources, and current strategies." },
+      { "number": 3, "title": "Design", "body": "We evaluate planning options and develop strategies tailored to your situation." },
+      { "number": 4, "title": "Recommend", "body": "We present recommendations clearly, explain trade-offs, and help you understand how different decisions may affect your broader plan." },
+      { "number": 5, "title": "Implement", "body": "Where appropriate, we may assist in coordinating next steps and moving from planning into action." },
+      { "number": 6, "title": "Follow-Up", "body": "As your life evolves, we continue reviewing progress and making adjustments to help keep your plan aligned." }
+    ]
+  },
+  "scenariosIntro": {
+    "heading": "Planning Scenarios & Examples",
+    "paragraphs": [
+      "While every financial situation is unique, many important decisions follow similar patterns. These examples are designed to help you recognize those patterns and better evaluate how different choices may fit together in your own situation.",
+      "These scenarios are educational and illustrative only. They are not personalized advice, recommendations, or guarantees of results. Any strategy or planning approach referenced should be evaluated in light of a person's full financial picture, goals, time horizon, risk tolerance, liquidity needs, and tax circumstances."
+    ],
+    "illustrativeHeading": "Illustrative Financial Planning Scenarios",
+    "illustrativeParagraphs": [
+      "You may find that one or more of these situations reflects questions you are currently facing. These scenarios are designed to help you better understand how different planning decisions may come together in a coordinated strategy, and where thoughtful planning may help organize the trade-offs involved."
+    ],
+    "howToUse": {
+      "heading": "How to Use This Section",
+      "items": [
+        "The client situation and key objectives",
+        "Important financial challenges or trade-offs",
+        "Planning considerations that may need to be evaluated",
+        "How a structured planning process may be applied"
+      ],
+      "disclaimer": "Important: These examples are hypothetical, simplified for illustrative purposes, and provided for educational purposes only. They are not testimonials or guarantees of results."
+    }
+  },
+  "quickLinks": [
+    { "label": "Retirement Readiness & Life Transitions", "href": "#retirement-transitions" },
+    { "label": "Tax-Aware Asset Transition Planning", "href": "#tax-aware" },
+    { "label": "Business Owner & Peak-Earning Strategy", "href": "#business-owner" }
+  ],
+  "categories": [
+    {
+      "id": "retirement-transitions",
+      "title": "1. Retirement Readiness & Life Transitions",
+      "intro": "This section focuses on situations where individuals are evaluating retirement timing, balancing competing priorities, and planning for major life transitions into the next phase of life.",
+      "introExtra": "These examples often involve decisions around retirement readiness, family priorities, housing changes, income needs, and lifestyle transitions that may have broader implications than they appear to at first.",
+      "ctaHeading": "Why these scenarios matter",
+      "ctaBody": "Retirement planning often involves more than investments alone. Decisions around timing, family goals, taxes, housing, and income strategy can all influence one another.",
+      "ctaPrompt": "If this section reflects what you're planning for…",
+      "ctaText": "A focused conversation may help you evaluate your options, trade-offs, and next steps more clearly.",
+      "scenarios": [
+        {
+          "number": 1,
+          "title": "Late-Career Executive Evaluating Retirement Readiness",
+          "subtitle": "An example of how late-career professionals may evaluate retirement timing, tax exposure, and income strategy in the final working years.",
+          "introBody": "Many high-income professionals reach their late 50s with strong earnings—but still question whether they are truly prepared for retirement. This scenario illustrates how complex financial decisions can emerge during the final working years, even after significant career success.",
+          "scenario": "A single professional in the final stretch of a long corporate career is beginning to ask a difficult question: Is retirement in the next six to eight years realistic without a meaningful change in lifestyle?\n\nIn this hypothetical example, the client is age 59, recently divorced, and has one financially independent adult child. The client works as a senior executive in the medical technology industry and earns approximately $575,000 annually through a combination of salary, bonus, and restricted stock vesting. Approximate net worth is $4.8 million.\n\nThe client has accumulated substantial assets, but much of the retirement planning progress occurred later than originally intended. Despite strong income and growing wealth, there is a growing concern about whether enough has been done to support long-term lifestyle expectations.\n\nThe current financial picture includes approximately $980,000 in a 401(k), $430,000 in a traditional IRA from a prior rollover, $1.6 million in taxable brokerage assets, a home valued at approximately $1.3 million with a remaining mortgage balance of about $240,000, and roughly $120,000 in cash reserves. Future compensation is expected to include additional restricted stock and deferred compensation benefits.\n\nThe client maintains employer-provided group life and long-term disability coverage, as well as an umbrella policy. However, long-term care planning has not yet been addressed. Estate planning documents and beneficiary designations may no longer reflect current wishes following the divorce.\n\nAlthough cash flow is strong, the client feels uncertain about whether retirement at age 65 or 67 will support the desired lifestyle and is seeking clarity around available options.",
+          "objectives": [
+            "Determine whether retirement in approximately six to eight years is realistic.",
+            "Evaluate what level of after-tax retirement spending may be sustainable under different retirement dates.",
+            "Maximize available catch-up retirement savings opportunities during the final working years.",
+            "Reduce future tax pressure created by a large concentration in pre-tax retirement assets.",
+            "Review strategies for managing concentrated employer stock exposure over time.",
+            "Evaluate whether future years between retirement and required minimum distribution age may create planning opportunities.",
+            "Update estate planning and beneficiary arrangements following the divorce.",
+            "Support more informed decision-making around retirement timing, tax planning, and withdrawal flexibility."
+          ],
+          "planningConsiderations": [
+            {
+              "heading": "Retirement Readiness and Timeline Flexibility",
+              "body": "One of the primary planning questions in this type of situation is not simply whether retirement is possible, but how the retirement date changes the plan. A detailed review may compare outcomes if the client retires at different ages, such as 65, 66, or 67, and evaluate how those changes affect projected income needs, portfolio withdrawals, and long-term sustainability.\n\nBecause many late-career professionals experience their strongest earnings in the final working years, the years immediately before retirement can be especially important. Additional savings, equity compensation planning, and tax-aware contribution strategies may materially affect the client's future flexibility."
+            },
+            {
+              "heading": "Catch-Up Contributions and Employer Plan Features",
+              "body": "For high-income professionals nearing retirement, the final working years may offer valuable opportunities to strengthen retirement savings. Planning may involve reviewing all available catch-up contribution options and confirming whether the employer retirement plan permits additional after-tax contributions, in-plan Roth conversions, or other savings features.\n\nThe goal is not merely to save more, but to determine which contributions may be most effective when evaluated alongside current tax rates, future retirement income expectations, and plan design."
+            },
+            {
+              "heading": "Tax Planning and Future Required Minimum Distributions",
+              "body": "A large share of this client's retirement savings is held in pre-tax accounts. That can create future tax concerns, especially if required minimum distributions later in life increase taxable income beyond what the client expects.\n\nPlanning may include analyzing whether the years after retirement—but before Social Security, pension income, or required minimum distributions begin—could create a lower-income window for Roth conversion analysis. The purpose of that review is to compare the trade-off between paying taxes earlier at potentially lower rates versus maintaining a larger future pre-tax balance, recognizing that such strategies may not be appropriate in every situation."
+            },
+            {
+              "heading": "Deferred Compensation and Retirement Timing",
+              "body": "Deferred compensation elections may play an important role in this type of plan. Decisions made during the final working years can influence future tax timing, retirement cash flow, and liquidity.\n\nHowever, these arrangements can involve trade-offs. While deferral may reduce current taxable income or support retirement timing objectives, they may also introduce employer-related risks and reduce flexibility if not coordinated carefully with the broader plan."
+            },
+            {
+              "heading": "Equity Compensation and Concentration Risk",
+              "body": "For many executives, restricted stock or employer-related compensation creates a concentration risk that is easy to overlook during high-earning years. In this scenario, future vesting and taxable brokerage assets may cause the client's balance sheet to become too dependent on one company, one industry, or one source of compensation.\n\nPlanning may include reviewing staged liquidation and reallocation strategies over time rather than relying on a single large diversification event in one tax year. This type of analysis is designed to evaluate trade-offs between tax sensitivity, market exposure, and diversification objectives."
+            },
+            {
+              "heading": "Social Security and Retirement Income Sequencing",
+              "body": "The timing of Social Security can materially affect long-term retirement income planning, especially for clients who may have multiple income sources and a sizable taxable portfolio. A full analysis may compare claiming strategies alongside portfolio withdrawals, cash reserves, deferred compensation payouts, and potential Roth conversions.\n\nThis helps frame retirement as an income sequencing problem, not just an accumulation problem."
+            },
+            {
+              "heading": "Estate Planning and Post-Divorce Beneficiary Review",
+              "body": "After a divorce, estate documents and beneficiary designations often require more attention than clients initially expect. Outdated wills, trusts, powers of attorney, and beneficiary elections can create unintended results even when a divorce judgment has already been finalized.\n\nA planning review may include confirming that estate documents reflect current wishes and that beneficiary designations are aligned across accounts and policies."
+            },
+            {
+              "heading": "Long-Term Care and Risk Management Review",
+              "body": "The client currently carries employer group life insurance, disability coverage, and umbrella liability coverage, but long-term care planning has not yet been addressed. In late-career planning, this can be an important gap to evaluate.\n\nA broader risk review may explore whether the client prefers to self-fund future care costs, transfer part of the risk, or evaluate other planning approaches as part of retirement preparation."
+            },
+            {
+              "heading": "Cash Reserves and Withdrawal Flexibility",
+              "body": "Even for affluent clients, cash reserves matter. Retirement transition planning often benefits from having sufficient liquid reserves so that investment withdrawals do not need to be driven entirely by market conditions or short-term volatility.\n\nA reserve strategy can also support tax planning flexibility by creating more options around when to draw from taxable assets, retirement accounts, or future income sources."
+            }
+          ],
+          "howWeHelp": {
+            "intro": "At Prosperity Planning & Advisory, our role in a scenario like this is to provide a structured framework for evaluating a complex set of financial decisions.",
+            "steps": [
+              { "title": "Discovery", "body": "We begin by reviewing the client's complete financial picture, retirement goals, expected lifestyle, compensation structure, account types, estate considerations, and current risk exposures." },
+              { "title": "Design", "body": "We model multiple retirement timing scenarios, evaluate savings and tax-planning opportunities, review concentration risks, and analyze how different decisions may affect long-term flexibility." },
+              { "title": "Recommendations", "body": "We work to organize the planning considerations into practical next steps, outlining trade-offs between current taxes, future taxes, liquidity, savings, and retirement timing." },
+              { "title": "Coordination", "body": "Where appropriate, implementation planning may involve coordination with the client's CPA, attorney, and benefits professionals, especially for deferred compensation elections, post-divorce legal updates, and beneficiary alignment." },
+              { "title": "Ongoing Review", "body": "Because retirement readiness can change meaningfully in the final working years, we revisit projections, tax assumptions, stock concentration, withdrawal strategies, and planning priorities over time." }
+            ]
+          },
+          "keyTakeaways": [
+            "Retirement readiness is not determined by income alone—it depends on timing, tax structure, and coordinated planning decisions.",
+            "The final working years can have a significant impact on long-term retirement flexibility.",
+            "Tax planning often becomes as important as investment strategy in late-career planning.",
+            "Managing concentrated equity exposure requires a thoughtful, multi-year approach.",
+            "Coordinating income sources in retirement may influence flexibility and tax planning considerations over time."
+          ],
+          "keyTakeawaysFooter": "For individuals facing similar questions, a structured planning process can support more informed evaluation of complex financial decisions.",
+          "disclosure": "This example is hypothetical and provided for educational purposes only. It does not describe any actual client and should not be interpreted as personalized financial, investment, tax, or legal advice. All planning strategies depend on individual facts, goals, risk tolerance, time horizon, available plan features, and applicable law. Examples of planning concepts discussed may not be appropriate for all individuals. There is no guarantee that any planning approach will achieve desired results. All investing involves risk, including the possible loss of principal. Advisory services are offered through Prosperity Planning and Advisory, LLC, a California-registered investment adviser. Registration does not imply a certain level of skill or training. Prosperity Planning and Advisory, LLC does not provide tax or legal advice. Clients should consult their tax professional and attorney regarding their specific situation."
+        },
+        {
+          "number": 2,
+          "title": "College vs. Retirement: Planning Tradeoffs for High-Income Families",
+          "subtitle": "Hypothetical example for educational purposes only.",
+          "subtitleExtra": "This example does not describe an actual client, is not a testimonial, and does not guarantee any future result. Examples shown are simplified and may not reflect all real-world variables. This example is not intended to predict or project future results.",
+          "introBody": "",
+          "scenario": "How much should we help pay for our children's college without jeopardizing our own retirement?\n\nA married couple in their mid-40s is approaching a major financial planning crossroads. They have two children nearing college age, strong household income, meaningful retirement savings, taxable investments, real estate, and steady cash flow. On paper, they appear financially well positioned. In practice, they are facing the kind of competing priorities many high-earning families experience: helping their children with future education costs while also protecting their own long-term retirement security.\n\nIn this hypothetical example, both spouses are age 46 with children ages 14 and 11. One spouse works as a senior operations executive and the other works part time as a physician assistant. Combined household income is over $400,000 and approximate net worth is $3M+. Their financial picture includes retirement accounts, taxable investments, 529 savings, cash reserves, a primary residence with a mortgage, and a debt-free vacation property. They also maintain insurance coverage, but their estate planning documents and beneficiary designations have not been reviewed in several years.\n\nAlthough the family has made meaningful financial progress, the path forward is not obvious. They are unsure how much college funding should come from 529 plans, current income, taxable investments, or a shared family contribution strategy that includes some student responsibility. At the same time, they do not want college decisions to quietly weaken retirement readiness during their peak earning years.",
+          "objectivesGroups": [
+            {
+              "heading": "Education Priorities",
+              "items": [
+                "Help provide meaningful support for their children's future college education.",
+                "Determine a realistic and sustainable level of parental contribution."
+              ]
+            },
+            {
+              "heading": "Retirement Security",
+              "items": [
+                "Protect long-term retirement goals and avoid sacrificing future independence.",
+                "Evaluate whether current savings and timelines remain on track."
+              ]
+            },
+            {
+              "heading": "Financial Coordination & Clarity",
+              "items": [
+                "Improve clarity around which assets are best suited for college, retirement, liquidity, and legacy goals.",
+                "Better coordinate investment strategy, tax awareness, and family priorities.",
+                "Review whether estate planning documents still reflect their wishes.",
+                "Create a more intentional framework for future financial decisions."
+              ]
+            }
+          ],
+          "planningConsiderations": [
+            { "heading": "1. College funding strategy", "body": "How should college be funded?\nThis may involve evaluating 529 balances relative to projected costs, determining whether additional contributions make sense, and deciding how funding may be shared between savings, cash flow, and potential student responsibility." },
+            { "heading": "2. Retirement readiness", "body": "Are retirement goals still on track?\nEducation funding decisions may directly impact long-term retirement outcomes. A review may include savings rates, projected income needs, and retirement timing under different scenarios." },
+            { "heading": "3. Cash flow and lifestyle alignment", "body": "Is current spending aligned with priorities?\nThis includes evaluating discretionary spending and identifying whether additional savings capacity exists without disrupting what matters most to the family." },
+            { "heading": "4. Tax-aware investment decisions", "body": "What are the tax implications of funding choices?\nUsing taxable assets may trigger capital gains or sequencing concerns. A review may help determine whether repositioning investments over time improves efficiency, often in coordination with the client's tax professional." },
+            { "heading": "5. Liquidity and flexibility", "body": "Is enough flexibility being preserved?\nMaintaining appropriate cash reserves is important as large expenses approach. Overcommitting to tuition could reduce financial flexibility during uncertain periods." },
+            { "heading": "6. Estate planning coordination", "body": "Do legal and legacy plans reflect current wishes?\nThis may include reviewing wills, trusts, beneficiary designations, and guardianship provisions with qualified legal professionals." },
+            { "heading": "7. Tradeoffs and decision-making clarity", "body": "There is rarely a perfect answer—only informed tradeoffs.\nFamilies often must balance present support for children with long-term financial independence. Thoughtful planning helps clarify the implications of each decision so choices can be made with confidence." }
+          ],
+          "howWeHelp": {
+            "intro": "Our role is to help bring clarity and structure to complex financial decisions like these. Our process may include the following:\n\nAt Prosperity Planning & Advisory, this type of scenario typically begins with a comprehensive review of the household's financial picture so that education decisions can be evaluated in the broader context of retirement, taxes, investments, and long-term goals.",
+            "sections": [
+              {
+                "heading": "Analysis & Clarity",
+                "items": [
+                  "Reviewing assets, liabilities, savings patterns, and projected education costs.",
+                  "Clarifying family priorities around college support, retirement, and lifestyle goals.",
+                  "Modeling multiple scenarios to compare the impact of different funding approaches."
+                ]
+              },
+              {
+                "heading": "Strategy Development",
+                "items": [
+                  "Evaluating retirement readiness under varying assumptions.",
+                  "Reviewing taxable and tax-advantaged assets for potential planning inefficiencies.",
+                  "Assessing whether current investment positioning aligns with time horizons and goals."
+                ]
+              },
+              {
+                "heading": "Coordination & Implementation Support",
+                "items": [
+                  "Helping organize decisions around liquidity, family expectations, and financial tradeoffs.",
+                  "Coordinating planning considerations with the client's CPA, attorney, and other professionals when appropriate."
+                ]
+              }
+            ],
+            "footer": "Rather than offering a one-size-fits-all answer, the goal is to help families make informed, intentional decisions with a clear understanding of the tradeoffs involved."
+          },
+          "disclosure": "This is a hypothetical planning example for educational purposes only. It does not describe an actual client experience, does not reflect guaranteed results, and should not be interpreted as a testimonial, endorsement, or individualized financial advice. Any planning strategy depends on a person's unique financial circumstances, goals, risk tolerance, tax situation, and legal considerations. Investment, tax, insurance, and estate planning decisions should be evaluated based on individual circumstances and, where appropriate, in coordination with a qualified tax professional or attorney. Hypothetical examples and any discussion of planning concepts are not indicative of future results. Prosperity Planning & Advisory, LLC acts in a fiduciary capacity, seeking to provide advice aligned with each client's best interest."
+        },
+        {
+          "number": 3,
+          "title": "Tax-Aware Downsizing and Retirement Income Planning",
+          "subtitle": "",
+          "introBody": "",
+          "scenario": "A widowed retiree in her mid-70s is living alone in a longtime primary residence that has appreciated significantly over the years. While the home represents a large portion of her wealth, it no longer supports the lifestyle she wants moving forward. Ongoing maintenance, rising property-related costs, and the day-to-day responsibility of managing a larger property have begun to feel overwhelming.\n\nAt the same time, most of her net worth is tied up in home equity, while her monthly income is primarily derived from Social Security and pension benefits. She wants clarity before making a permanent financial decision and is concerned about selling her home without fully understanding the tax implications, income planning choices, liquidity tradeoffs, and long-term impact on her retirement security.\n\nShe is exploring whether downsizing could simplify her life, improve liquidity, and create a more stable and flexible retirement plan. She is also beginning to consider charitable and legacy planning as part of her long-term goals.",
+          "whyComplex": {
+            "heading": "Why This Decision Is More Complex Than It Appears",
+            "body": "What may seem like a simple housing decision often involves multiple interconnected financial considerations, including:",
+            "items": [
+              "A potentially large unrealized capital gain on the property",
+              "The timing of the sale and its tax implications",
+              "How to reposition proceeds into a sustainable income strategy",
+              "Balancing liquidity needs with long-term stability",
+              "Evaluating healthcare and longevity risks",
+              "Coordinating charitable intentions with tax and income planning",
+              "Aligning estate planning with evolving life priorities"
+            ],
+            "footer": "Because these decisions influence one another, careful sequencing and coordination are essential."
+          },
+          "whatCanGoWrong": {
+            "heading": "What Can Go Wrong Without Proper Planning",
+            "body": "Without a coordinated review, a client in this type of situation may risk:",
+            "items": [
+              "Selling before understanding the potential tax impact",
+              "Reinvesting proceeds in a way that does not match liquidity needs or risk tolerance",
+              "Taking too much or too little market risk after the sale",
+              "Committing to an irrevocable strategy without understanding the tradeoffs",
+              "Missing opportunities to better align income, taxes, estate planning, and charitable goals"
+            ]
+          },
+          "objectives": [
+            "Simplify housing and reduce ongoing financial and physical burden",
+            "Downsize without creating unnecessary tax or financial strain",
+            "Improve liquidity and maintain flexibility in retirement",
+            "Establish a more predictable and sustainable income strategy",
+            "Evaluate tax-aware strategies before selling a highly appreciated property",
+            "Explore charitable planning opportunities if aligned with personal values",
+            "Ensure estate and legacy planning reflect current wishes"
+          ],
+          "planningConsiderations": [
+            { "heading": "Tax and Sale Considerations", "items": ["Estimated capital gain, adjusted cost basis, and selling expenses", "Eligibility for primary residence exclusion", "Timing of the sale and potential tax-year impact", "Coordination with tax professionals prior to executing the transaction"] },
+            { "heading": "Retirement Income and Liquidity", "items": ["Required monthly income relative to lifestyle and healthcare needs", "Allocation of sale proceeds between short-term liquidity and long-term income", "Maintaining an appropriate emergency reserve"] },
+            { "heading": "Housing Transition", "items": ["Budget for replacement home purchase (cash vs partial financing)", "Impact of housing costs on overall retirement plan"] },
+            { "heading": "Risk Management and Healthcare Planning", "items": ["Longevity risk and the need for sustainable income", "Healthcare and long-term care considerations", "Protection against unexpected financial shocks"] },
+            { "heading": "Legacy and Charitable Goals", "items": ["Desire to support charitable causes", "Balancing personal use of assets with legacy intentions"] },
+            { "heading": "Estate Coordination", "items": ["Alignment of wills, trusts, and beneficiary designations", "Powers of attorney and healthcare directives"] }
+          ],
+          "strategies": [
+            { "heading": "Downsizing and Liquidity Strategy", "body": "Analyzing the financial impact of selling the current residence, purchasing a smaller home, and allocating proceeds in a way that supports flexibility, reserves, and retirement confidence." },
+            { "heading": "Tax-Aware Planning Approach", "body": "Reviewing estimated capital gain exposure, adjusted cost basis, selling expenses, and timing considerations before executing a sale. This may also include coordination with the client's tax professional to better understand available exclusions, tax-year impact, and sequencing issues before more advanced planning strategies are considered." },
+            { "heading": "How Income Planning May Be Structured", "body": "Evaluating income approaches that may include:", "items": ["Short-term cash reserves for flexibility and unexpected expenses", "Conservative fixed-income allocations for stability", "Diversified portfolios for long-term growth potential", "Structured withdrawal approaches intended to support more disciplined cash-flow planning", "Separation of near-term, intermediate-term, and long-term assets to help align income needs with time horizon"] },
+            { "heading": "Charitable Planning Considerations", "body": "Where there is genuine charitable intent, evaluating whether strategies such as a charitable remainder trust may be appropriate to review with qualified legal and tax professionals. This type of strategy generally must be evaluated before a sale, is not appropriate for every client, and involves important tradeoffs, including irrevocability, administrative complexity, payout design, and coordination with broader estate and tax planning." },
+            { "heading": "Income Stability and Longevity Planning", "body": "Where appropriate, reviewing whether guaranteed-income-oriented solutions or other conservative income approaches may be considered as one part of the overall plan. This review may include liquidity constraints, surrender periods, contractual features, fees and costs where applicable, insurer claims-paying ability, and overall suitability relative to the client's goals and risk profile." },
+            { "heading": "Risk Management Review", "body": "Assessing emergency reserves, healthcare planning considerations, longevity risk, and protection strategies to help address unexpected life events and financial disruptions." },
+            { "heading": "Estate and Legacy Alignment", "body": "Coordinating estate documents and beneficiary designations to reflect current goals and help align personal, family, and charitable priorities." }
+          ],
+          "keyTradeoffs": {
+            "heading": "Key Tradeoffs We Help Clients Evaluate",
+            "items": [
+              "Liquidity vs. long-term income stability",
+              "Simplicity vs. more advanced planning strategies",
+              "Control of assets vs. irrevocable planning structures",
+              "Growth potential vs. downside protection",
+              "Immediate tax impact vs. long-term planning flexibility"
+            ]
+          },
+          "howWeHelp": {
+            "intro": "Our role is to bring clarity and coordination to complex financial decisions before major moves are made.",
+            "body": "Through a structured planning process, we help clients:",
+            "items": [
+              "Understand their full financial picture before making major decisions",
+              "Clarify priorities and define what financial success looks like in this stage of life",
+              "Evaluate multiple planning paths and understand the tradeoffs involved",
+              "Coordinate tax-aware, income, risk-management, and legacy strategies in alignment with their goals",
+              "Work alongside tax and legal professionals where appropriate",
+              "Develop a more cohesive financial roadmap that can evolve over time"
+            ],
+            "footer": "Rather than focusing on a single product or transaction, our process is designed to help clients understand tradeoffs, evaluate multiple paths, and make informed decisions in the context of their full financial picture. The goal is to help bring greater clarity, structure, and confidence to decisions that can significantly affect long-term financial well-being."
+          },
+          "disclosure": "This hypothetical example is provided for educational purposes only. It is not a testimonial and does not represent any actual client experience. It should not be interpreted as personalized financial, tax, or legal advice, and no specific outcomes are guaranteed.\n\nAll strategies discussed depend on individual circumstances, timing, and suitability, and should be evaluated in coordination with qualified tax and legal professionals where appropriate.\n\nAdvisory services are separate from any insurance-related activity. If insurance or annuity solutions are discussed, clients are under no obligation to implement them. Any guarantees are subject to the terms of the contract and the claims-paying ability of the issuing insurer.\n\nRegistration as an investment adviser does not imply a certain level of skill or training."
+        }
+      ]
+    },
+    {
+      "id": "tax-aware",
+      "title": "2. Tax-Aware Asset Transition Planning",
+      "intro": "This section highlights situations involving appreciated assets, concentration risk, real estate transitions, and other decisions where taxes, liquidity, and long-term income strategy may intersect.",
+      "introExtra": "These examples are intended to show how tax-aware planning may help evaluate complex decisions, often in coordination with a client's CPA, attorney, or other professionals where appropriate.",
+      "ctaHeading": "Why these scenarios matter",
+      "ctaBody": "What appears to be a simple decision—such as selling stock, reducing real estate exposure, or downsizing a home—may have broader implications for taxes, cash flow, legacy goals, and portfolio structure.",
+      "ctaPrompt": "If these issues are relevant to your financial life…",
+      "ctaText": "A coordinated planning conversation may help bring more clarity to complex decisions involving taxes, investments, and long-term wealth strategy.",
+      "scenarios": [
+        {
+          "number": 4,
+          "title": "Concentrated Stock Position and Tax-Aware Diversification",
+          "subtitle": "After decades of building wealth, the greatest risk may no longer be market performance—it may be concentration, taxes, and timing.",
+          "subtitleExtra": "The following example is hypothetical and provided for educational purposes only. It is not a client story or testimonial.",
+          "introBody": "",
+          "scenario": "A married couple, ages 61 and 59, recently entered a new financial transition period. One spouse retired after a long career with a public technology company, while the other continues part-time consulting work. Their earned income has declined from prior peak years, but they have accumulated substantial wealth over time.\n\nTheir approximate net worth is in the $3M–$6M range, with over 50–70% concentrated in a single highly appreciated company stock position. While they feel grateful for the wealth this holding has created, they are increasingly concerned that too much of their retirement future depends on the performance of a single company. At the same time, selling a large portion of the stock all at once could create a significant capital gains tax event.\n\nThey are also beginning to think more seriously about retirement income, future Required Minimum Distributions, charitable giving, and whether today's lower-income years may create planning opportunities before Social Security and later-life distributions increase taxable income.",
+          "objectives": [
+            "Reducing exposure to a single concentrated stock position",
+            "Managing capital gains taxes thoughtfully rather than accelerating unnecessary taxes in one year",
+            "Building a more diversified and durable retirement-income framework",
+            "Evaluating whether partial Roth conversions may make sense during lower-income years",
+            "Incorporating charitable intent in a tax-aware and practical way",
+            "Coordinating investment, tax, retirement, and estate planning decisions into one cohesive strategy"
+          ],
+          "objectivesIntro": "This household's goals may include:",
+          "planningConsiderations": [
+            { "heading": "Concentration Risk", "body": "A large single-stock position can materially increase portfolio risk. Even a successful company can face volatility, regulatory changes, leadership transitions, or sector-specific downturns. When one holding becomes too large relative to the household's total balance sheet, the risk can impact retirement lifestyle decisions and long-term financial security." },
+            { "heading": "Embedded Capital Gains", "body": "Because the stock has a low cost basis relative to its current value, immediate liquidation may create a substantial tax impact. The planning question is not simply whether to diversify, but how to do so in a tax-aware and time-sensitive manner." },
+            { "heading": "Tax Bracket Management", "body": "Capital gains realization, Roth conversions, and income timing must be coordinated carefully. Decisions made in one area may affect overall tax exposure, including potential impacts on Medicare premiums and future required distributions." },
+            { "heading": "Retirement Income Timing", "body": "The couple's current earned income is lower than it was during their working years, but taxable income may rise later once Social Security begins and required distributions start. This creates a potential planning window." },
+            { "heading": "Charitable Planning", "body": "If charitable giving is part of the household's goals, appreciated assets may offer tax-efficient opportunities. However, charitable strategies should align with genuine intent and financial comfort." },
+            { "heading": "Estate and Legacy Alignment", "body": "Highly appreciated assets often require coordination between investment strategy and estate planning, particularly when considering legacy goals and potential step-up in basis implications." }
+          ],
+          "strategies": [
+            { "heading": "Staged Diversification Over Multiple Years", "body": "Rather than selling the entire position in one year, a structured, multi-year diversification strategy may be considered to gradually reduce concentration risk while managing tax exposure." },
+            { "heading": "Tax-Aware Gain Realization", "body": "Stock sales may be coordinated with income thresholds, filing status, and projected tax brackets. The objective is not to eliminate taxes entirely, but to avoid unnecessary tax acceleration." },
+            { "heading": "Roth Conversion Analysis", "body": "During lower-income years, partial Roth conversions may be evaluated as one way to potentially improve long-term tax diversification and flexibility, depending on the household's broader tax picture and future income expectations. These must be carefully coordinated with other income-generating strategies." },
+            { "heading": "Structured or Deferred Sale Strategies", "body": "In certain cases, installment-style or structured sale approaches may be evaluated to potentially spread tax liability over time. These strategies can involve material complexity, fees, liquidity limitations, reliance on third-party structures, and legal or tax uncertainty, and they require careful review with qualified tax and legal professionals before implementation." },
+            { "heading": "Retirement Income Strategy Development", "body": "The household may evaluate how to transition assets into income-producing strategies, including diversified portfolios, fixed income structures, and, where appropriate and consistent with the client's objectives, certain annuity-based income strategies. Not all income strategies are suitable for all investors, and any such option should be evaluated in light of costs, liquidity, surrender features, tax treatment, and overall plan fit." },
+            { "heading": "Risk-Managed Investment Approaches", "body": "Strategies designed to reduce downside exposure while maintaining market participation—such as buffered or hedging-based approaches—may be evaluated where appropriate." },
+            { "heading": "Charitable Planning Strategies", "body": "If aligned with client goals, options such as gifting appreciated shares or utilizing donor-advised funds may be evaluated as tools that may help support charitable intent and tax-aware planning. These approaches should be considered only where they fit the client's philanthropic objectives, liquidity needs, and broader estate plan.\n\nIn certain situations, more advanced charitable planning strategies—such as charitable remainder trusts—may also be evaluated. These structures may allow for the potential deferral of capital gains on contributed assets and the creation of an income stream to beneficiaries over a defined period or lifetime, depending on structure and design.\n\nSome variations may incorporate fixed or variable payout approaches and, in certain cases, may be coordinated with other income-generating strategies as part of a broader retirement income plan. These strategies can involve complexity, reduced liquidity, irrevocable transfer of assets, and reliance on legal and tax structuring, and are not appropriate for all investors." },
+            { "heading": "Estate and Beneficiary Coordination", "body": "Estate documents, beneficiary designations, and long-term legacy goals may be reviewed to ensure alignment with the broader financial plan." }
+          ],
+          "phasingExample": {
+            "heading": "An Example of How Planning May Be Phased Over Time Could Include",
+            "items": [
+              "Near-Term (1–3 years): Tax-aware diversification and income coordination",
+              "Mid-Term (3–7 years): Income restructuring and tax optimization strategies",
+              "Long-Term (7+ years): Legacy planning, distribution strategies, and ongoing risk management"
+            ]
+          },
+          "howWeHelp": {
+            "intro": "In a scenario like this, our role is not to prescribe a single solution, but to help evaluate tradeoffs and develop a strategy aligned with the client's goals.",
+            "body": "That may include:",
+            "items": [
+              "Organizing the household's full financial picture, including tax exposure and retirement timeline",
+              "Identifying concentration risk and its potential impact on long-term outcomes",
+              "Modeling multiple scenarios to evaluate different diversification and income strategies",
+              "Comparing tax strategies, charitable approaches, and investment structures",
+              "Helping determine not just what decisions to make—but when to make them",
+              "Coordinating with the client's CPA, estate planning attorney, and other professionals as needed"
+            ],
+            "footer": "Our process is designed to bring clarity, structure, and confidence to complex financial decisions, while recognizing that outcomes depend on market conditions, tax law, product terms, implementation timing, and each client's individual circumstances."
+          },
+          "importantTradeoffs": {
+            "heading": "Important Tradeoffs",
+            "intro": "A scenario like this involves real tradeoffs:",
+            "items": [
+              "Diversifying sooner may reduce risk but increase current taxes",
+              "Delaying sales may preserve tax deferral but extend concentration exposure",
+              "Roth conversions may improve future flexibility but increase current taxable income",
+              "Charitable strategies may enhance tax efficiency but reduce direct control over assets",
+              "Advanced strategies may introduce additional complexity and are not appropriate in every case"
+            ],
+            "footer": "No single strategy solves all variables simultaneously. Effective planning requires balancing risk, taxes, liquidity, time horizon, and long-term goals, and may involve tradeoffs between tax efficiency, income stability, flexibility, and growth potential."
+          },
+          "disclosure": "This example is hypothetical and provided for illustrative and educational purposes only. It does not describe an actual client experience, does not constitute a testimonial, and should not be interpreted as individualized investment, tax, legal, insurance, or estate planning advice. Any planning strategy should be evaluated based on a person's full financial situation, goals, tax profile, liquidity needs, risk tolerance, and applicable legal or regulatory considerations. No particular tax result, income level, or planning outcome is guaranteed. Past scenarios are not indicative of future results. All investments involve risk, including the potential loss of principal. Diversification and asset allocation do not guarantee a profit or protect against loss. Tax, legal, insurance, and estate planning strategies should be reviewed with qualified professionals before implementation. We may coordinate with a client's CPA, attorney, insurance professional, or other advisers, but we do not provide legal or tax advice independently. Advisory services are offered through a registered investment adviser. Insurance or other commissionable products, if discussed or implemented, are separate from advisory services and may involve additional compensation depending on the arrangement."
+        },
+        {
+          "number": 5,
+          "title": "Transitioning From Active Real Estate Management to a More Passive Retirement Strategy",
+          "subtitle": "",
+          "introBody": "The following hypothetical example illustrates how comprehensive financial planning may apply in a complex, real-world situation. It is designed to provide educational insight into the types of considerations that may arise when transitioning from active asset management to a more passive retirement strategy.",
+          "scenario": "This example features a 68-year-old real estate investor with three adult children. Over many years, the client built substantial wealth through rental properties and multiple 1031 exchanges. While the portfolio has appreciated significantly, the client has grown tired of the ongoing responsibilities of property oversight, vacancy risk, repairs, and administrative complexity. The client now wants to explore a more passive approach to retirement income without creating unnecessary tax disruption.\n\nIn this example, the client's balance sheet remains heavily concentrated in appreciated investment real estate, with additional retirement assets, taxable investments, and a debt-free primary residence. Estate documents are in place, but they have not been updated recently to reflect current asset values, family priorities, or charitable intentions. The central challenge is no longer accumulation—it is how to transition from active ownership to a more coordinated retirement, tax, and legacy strategy.",
+          "objectivesGroups": [
+            { "heading": "Lifestyle & Simplicity", "items": ["Reduce the burden of active real estate management in retirement", "Improve lifestyle flexibility and reduce ongoing administrative responsibilities"] },
+            { "heading": "Income & Tax Strategy", "items": ["Replace variable rental cash flow with a more predictable retirement-income strategy", "Manage capital gains exposure and depreciation recapture thoughtfully over time", "Improve liquidity for healthcare, lifestyle, and contingency reserves"] },
+            { "heading": "Risk & Diversification", "items": ["Reduce concentration risk by diversifying away from a single asset class", "Evaluate alternatives to continued reliance on 1031 exchanges"] },
+            { "heading": "Legacy & Planning", "items": ["Review charitable planning opportunities involving appreciated property", "Update estate planning so asset distribution is clearer and easier for heirs to administer"] }
+          ],
+          "planningConsiderations": [
+            { "heading": "", "body": "In situations like this, several key areas are typically evaluated as part of the financial planning process.\n\nOne area that may be evaluated is whether a staged transition strategy could be more appropriate than a one-time liquidation. A gradual approach may allow taxes, reinvestment decisions, and retirement-income planning to be addressed over time rather than concentrated into a single year.\n\nIncome stability is often a priority for investors in similar situations. Rental income can be uneven due to vacancies, maintenance, or unexpected expenses. A planning review may explore ways to help convert illiquid real estate equity into more predictable income streams, including diversified portfolios, income-focused strategies, or structured approaches intended to help align with long-term retirement cash flow needs.\n\nThis scenario also involves tax-aware diversification decisions. Because a large portion of the client's net worth is tied to appreciated real estate, the planning process may evaluate strategies intended to help address the timing and potential impact of capital gains, along with depreciation recapture, sale timing, gifting strategies, and reinvestment options in coordination with the client's tax professional.\n\nIf charitable giving is a priority, the client may also evaluate whether appreciated property could play a role in a charitable planning strategy rather than defaulting to another exchange. In certain cases, this may include evaluating structured approaches that combine income planning with tax-efficient asset transitions, particularly when charitable goals are also a consideration. Any such strategies would be reviewed in coordination with legal and tax professionals and assessed for suitability.\n\nFinally, estate and family coordination is an important consideration. When different types of assets may be distributed among heirs, planning may help address fairness, simplify administration, and align the estate structure with the client's current wishes and family dynamics." }
+          ],
+          "howWeHelp": {
+            "intro": "As a fiduciary firm, our role is to help evaluate options objectively and guide clients through complex financial decisions with clarity and structure.\n\nAt Prosperity Planning & Advisory, this type of planning begins with discovery. We work to understand the client's full financial picture, goals, cash-flow needs, tax considerations, and long-term priorities. From there, we design and evaluate strategies that fit the client's circumstances rather than applying a one-size-fits-all approach.",
+            "body": "In a scenario like this, our role may include:",
+            "items": [
+              "Reviewing the client's current holdings, concentration risk, and retirement-income needs",
+              "Helping evaluate whether a phased transition strategy may be more practical than a single exit event",
+              "Exploring tax-aware reinvestment and distribution planning in coordination with the client's CPA",
+              "Reviewing diversification and cash-flow approaches designed to support a more passive retirement lifestyle",
+              "Coordinating estate and legacy planning discussions with the client's attorney and other professionals",
+              "Helping the client compare tradeoffs among flexibility, liquidity, taxes, income stability, and legacy goals based on their individual circumstances"
+            ],
+            "footer": "Where appropriate, the planning process may also include discussion of advanced strategies (such as structured income planning or risk management approaches) or insurance-based solutions with contractual features. In some cases, this may involve repositioning appreciated assets into structures intended to support ongoing income while considering tax implications and long-term legacy goals. Any such options are evaluated carefully for suitability, costs, liquidity constraints, tax treatment, and coordination needs."
+          },
+          "disclosure": "This is a hypothetical planning example provided for general educational and informational purposes only. It is not a testimonial and not a guarantee of future results. It does not constitute individualized investment, legal, insurance, or tax advice.\n\nEach client's circumstances, asset structure, tax position, liquidity needs, and estate goals are unique. Any strategy should be evaluated based on a client's specific financial situation, objectives, and risk profile.\n\nSelling appreciated real estate may trigger capital gains taxes, including federal and state taxes, as well as depreciation recapture and other planning considerations. Charitable, trust, estate, and property-transfer strategies require coordination with qualified legal and tax professionals. Prosperity Planning & Advisory, LLC does not provide legal or tax advice.\n\nInsurance or annuity products, if discussed, are evaluated separately from advisory services and may involve additional costs, features, restrictions, and suitability considerations. Clients are under no obligation to implement any recommendation or purchase any product. All planning strategies are subject to individual review, feasibility, and applicable laws and regulations."
+        },
+        {
+          "number": 6,
+          "title": "Tax-Aware Downsizing and Income Planning Strategies in Retirement",
+          "subtitle": "",
+          "introBody": "",
+          "scenario": "In this type of scenario, a retiree may be asset-rich in real estate but income-constrained in everyday life. One common example is a widow or retiree who has owned a primary residence for decades, has substantial home equity, and is uncertain about how to move forward with a potential sale.\n\nA key concern in situations like this is how to manage potential capital gains from the sale while also creating a more predictable income stream in retirement.\n\nThe challenge is often not just whether to sell. It is whether a sale can be structured in a way that supports housing needs, improves retirement cash flow, and addresses potential tax consequences without creating additional financial complexity or stress.\n\nFor many retirees, this decision represents not just a financial transition, but a significant life change.",
+          "concerns": {
+            "heading": "For someone in this position, concerns may include:",
+            "items": [
+              "Feeling cash-constrained despite having significant home equity",
+              "Wanting more reliable income in retirement",
+              "Worrying about a large lump sum and how to manage it responsibly",
+              "Wanting to downsize without taking on a new mortgage",
+              "Uncertainty around capital gains exposure after a long-term property sale",
+              "Feeling emotionally overwhelmed by the financial decisions tied to the sale"
+            ],
+            "footer": "This type of planning scenario can be especially relevant for retirees who want greater clarity before making a major financial decision."
+          },
+          "objectives": [
+            "Reducing or managing potential capital gains exposure from the property sale",
+            "Creating a more predictable and reliable income stream in retirement",
+            "Converting illiquid real estate equity into usable cash flow",
+            "Downsizing into a more manageable home or condo",
+            "Avoiding a new mortgage in retirement",
+            "Preserving peace of mind by avoiding unnecessary complexity or risk exposure",
+            "Creating a strategy that aligns housing decisions with long-term retirement goals and charitable intent, where appropriate"
+          ],
+          "objectivesFooter": "These objectives often require more than a real estate decision alone. They may call for coordinated planning across cash flow, taxes, estate considerations, charitable planning, and long-term income strategy.",
+          "planningConsiderations": [
+            { "heading": "", "body": "This type of strategy is not appropriate for every client and should only be evaluated after a full review of the client's financial situation, goals, tax profile, income needs, charitable intent, liquidity needs, and risk tolerance.\n\nIn a case like this, planning considerations may include:\n• The estimated capital gain associated with the property sale\n• Whether the client plans to use a portion of proceeds to purchase a replacement residence outright\n• The client's current income sources, such as Social Security, pension income, or retirement accounts\n• The client's need for ongoing income versus immediate liquidity\n• The role of charitable intent in the planning process\n• Whether a charitable planning structure, such as a Charitable Remainder Trust (CRT), may be worth evaluating with qualified tax and legal professionals\n• The trade-offs between income generation, control of assets, complexity, and long-term flexibility\n\nIn some cases, charitable planning strategies are evaluated when a client is open to giving a portion of their assets to charity in exchange for potential income and tax-planning considerations.\n\nFor some clients, a CRT may be explored as part of a broader charitable and income-planning strategy. Depending on structure, applicable tax law, and individual circumstances, it may provide a combination of potential tax benefits, charitable deduction treatment, and an income stream over time. However, CRTs are highly specialized planning tools and are not suitable for every retiree or every property sale.\n\nThis type of planning should never be approached as a one-size-fits-all solution. The decision to use any charitable strategy must be based on careful analysis and coordinated with the client's CPA and estate planning attorney." }
+          ],
+          "howWeHelp": {
+            "intro": "At Prosperity Planning & Advisory, we help clients evaluate major financial decisions within the context of their full financial picture.",
+            "body": "In a scenario like this, our role may include:",
+            "items": [
+              "Reviewing how a home sale fits into the client's broader retirement plan",
+              "Helping assess income needs, housing goals, and long-term cash flow priorities",
+              "Evaluating tax-aware planning considerations in coordination with the client's CPA or tax professional",
+              "Helping determine whether charitable planning strategies may be appropriate to explore further with legal and tax counsel",
+              "Comparing options so the client can make an informed decision with greater clarity and confidence"
+            ],
+            "footer": "Our focus is not simply on the transaction itself, but on helping clients understand how housing, taxes, income planning, and long-term financial security connect."
+          },
+          "disclosure": "This scenario is a hypothetical educational example for illustrative purposes only. It is not intended to describe the experience of any specific client and should not be interpreted as individualized investment, tax, legal, charitable, or estate planning advice. Strategies involving Charitable Remainder Trusts or other charitable planning techniques require review by qualified legal and tax professionals and depend on each client's specific facts, objectives, and financial circumstances. Not all clients will benefit from these strategies. Nothing herein should be construed as a recommendation to implement any specific strategy. Results and planning outcomes will vary based on individual circumstances."
+        }
+      ]
+    },
+    {
+      "id": "business-owner",
+      "title": "3. Business Owner & Peak-Earning Strategy",
+      "intro": "This section explores situations for business owners and high earners who are looking to improve retirement accumulation, evaluate entity-level planning opportunities, and prepare for major future transitions such as a business sale.",
+      "introExtra": "These scenarios often involve decisions where small planning choices may carry meaningful long-term implications for taxes, cash flow, succession, retirement timing, and overall flexibility.",
+      "ctaHeading": "Why these scenarios matter",
+      "ctaBody": "Business owners and peak earners often face planning opportunities that involve employee costs, tax trade-offs, retirement plan design, liquidity needs, succession timing, and post-exit lifestyle goals.",
+      "ctaPrompt": "If your goals involve business planning, peak earnings, or future transition decisions…",
+      "ctaText": "Thoughtful coordination may help align decisions across multiple areas of your financial life.",
+      "scenarios": [
+        {
+          "number": 7,
+          "title": "Maximizing Retirement Contributions During Peak Earning Years",
+          "subtitle": "",
+          "introBody": "",
+          "scenario": "A married business owner in the skilled trades, age 52, with a spouse age 50 and two teenage children, is earning more than ever before—but is increasingly asking a common late-career question: Are we making the most of these peak income years, or leaving opportunities on the table?\n\nIncome is strong, but it fluctuates year to year due to business performance, seasonality, equipment costs, and operational demands. The owner has been contributing to a SEP-IRA and has built meaningful savings, yet begins to question whether that strategy is still the best fit for this stage of life.\n\nWith retirement approaching within the next 10 to 15 years, the business owner wants to explore whether more advanced planning strategies may create opportunities for greater tax efficiency, increased retirement savings capacity, and a more intentional transition from accumulation toward future retirement income planning—subject to the business's cash flow, employee structure, and long-term goals.\n\nLike many business owners in this position, the concern is not simply choosing a plan with a higher contribution limit. The bigger question is whether the current strategy is fully aligned with the family's broader financial picture—or whether waiting too long to evaluate alternatives could mean missed planning opportunities during some of the highest-earning years of the owner's career.\n\nAt the same time, the owner is cautious about implementing a strategy that could become too rigid, too costly, or difficult to maintain if business conditions change. Because the business has employees, any changes must also account for employee benefit requirements, total employer cost, and administrative complexity.",
+          "objectives": [
+            "Explore strategies that may help reduce current taxable income during peak earning years",
+            "Evaluate whether retirement contributions could be increased beyond what a SEP-IRA may allow",
+            "Identify a plan design that balances tax efficiency, flexibility, and long-term sustainability",
+            "Understand how employee benefit requirements may affect total business cost",
+            "Coordinate retirement planning with household cash flow, college funding, and long-term wealth strategy",
+            "Begin transitioning from accumulation-focused planning toward future retirement income planning",
+            "Gain clarity on whether the current approach is still appropriate or whether a more advanced structure should be evaluated"
+          ],
+          "planningConsiderations": [
+            { "heading": "", "body": "In a situation like this, multiple retirement plan designs and strategies may be evaluated. The appropriate direction depends on income stability, employee structure, contribution goals, and the owner's ability to commit to ongoing funding requirements.\n\nFor many business owners, the real planning challenge is not a lack of options—it is understanding which strategies may be worth deeper analysis, which tradeoffs matter most, and how today's decisions may affect taxes, cash flow, and retirement flexibility later on.\n\nA 401(k) with profit-sharing may be considered when a business owner wants more flexibility than a SEP-IRA. This structure may provide an opportunity for higher total contributions while maintaining some discretion year to year, depending on income, plan design, and employee considerations. It also introduces required compliance testing and employee contribution considerations.\n\nA cash balance plan, often layered on top of a 401(k)/profit-sharing structure, may be evaluated when the objective is to increase deductible contributions during high-income years. This type of plan may support accelerated retirement savings in appropriate situations, but it also introduces actuarial funding requirements, administrative complexity, and the expectation of consistent contributions.\n\nA 412(e)(3) fully insured defined benefit plan may be reviewed when a business owner is exploring a structure funded through qualifying insurance contracts. In certain limited circumstances, this type of design may appeal to those seeking contractual funding characteristics. However, it is generally less flexible and may not be appropriate for businesses with variable income or uncertain long-term commitment. These arrangements are highly specialized and are typically evaluated only in select situations where appropriate. Any guarantees associated with such arrangements are based solely on the underlying insurance contract and are subject to the claims-paying ability of the issuing insurer. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm." },
+            { "heading": "Tax Strategy Coordination", "items": ["Timing deductions during peak income years to potentially help reduce overall tax exposure", "Coordinating retirement contributions with CPA-driven tax planning strategies", "Evaluating how different plan structures impact taxable income across multiple years"] },
+            { "heading": "Contribution Layering Strategy", "items": ["Structuring contributions across multiple plan types (e.g., 401(k), profit-sharing, and defined benefit)", "Determining how much capital to allocate toward qualified plans versus maintaining liquidity in taxable accounts"] },
+            { "heading": "Retirement Income Planning (Forward-Looking)", "items": ["Evaluating how current contributions may translate into future retirement income needs", "Comparing flexible withdrawal strategies versus more structured income approaches", "In some cases, considering strategies designed to help address longevity risk and income variability through a combination of market-based investments and insurance-based solutions, depending on suitability, product terms, and overall plan design. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm."] },
+            { "heading": "Business and Cash Flow Considerations", "items": ["Assessing whether the business can support ongoing funding obligations in both strong and weaker years", "Evaluating debt obligations, capital expenditures, and operational needs alongside retirement contributions"] },
+            { "heading": "Employee Impact and Compliance", "items": ["Understanding required employer contributions for employees under each plan design", "Ensuring compliance with ERISA rules, nondiscrimination testing, and plan administration requirements"] },
+            { "heading": "Long-Term Planning Integration", "items": ["Aligning retirement plan decisions with broader goals such as business succession, potential exit planning, and family financial priorities", "In certain cases, exploring additional planning concepts such as installment-based or trust-based strategies in coordination with legal and tax professionals, particularly for future business transitions"] }
+          ],
+          "howWeHelp": {
+            "intro": "At Prosperity Planning & Advisory, our role is to help business owners make informed planning decisions with greater clarity and confidence.\n\nRather than assuming one strategy is universally appropriate, we guide clients through a structured, personalized process designed to evaluate tradeoffs, identify planning opportunities, and determine what may be appropriate based on the realities of the business, the household, and the long-term retirement picture.\n\nFor many clients, the value is not just in seeing what strategies exist—it is in understanding how those strategies may fit together, what risks or limitations need to be weighed, and how to avoid making important decisions in isolation.",
+            "body": "Our process may include:",
+            "items": [
+              "Reviewing the current retirement strategy (such as a SEP-IRA) and identifying potential gaps, limitations, or missed planning opportunities",
+              "Gathering detailed financial data, including income trends, employee census, cash flow patterns, and contribution goals",
+              "Developing side-by-side comparisons of different plan structures, including projected contribution capacity, tax impact, flexibility, and total business cost",
+              "Stress-testing strategies using hypothetical scenarios and assumptions, including lower-income years or changes in business conditions",
+              "Integrating retirement planning with broader financial strategies, including tax-aware planning, college funding, investment allocation, and long-term income design",
+              "Coordinating with the client's CPA, third-party administrator (TPA), and ERISA counsel to ensure that all recommendations are reviewed from tax, legal, and administrative perspectives before implementation"
+            ],
+            "footer": "We also emphasize that retirement plan design is not a one-time decision. As business conditions, tax laws, and personal goals evolve, strategies may need to be reviewed and adjusted over time to remain aligned with the client's objectives.\n\nFor prospective clients, this type of scenario often highlights an important point: a retirement plan should not simply be chosen because it is available. It should be evaluated in the context of the owner's broader goals, resources, and obligations."
+          },
+          "disclosure": "This hypothetical scenario is provided for educational and illustrative purposes only. It does not represent an actual client and should not be interpreted as a testimonial, endorsement, guarantee of results, or a representation of expected or typical client outcomes.\n\nAny planning strategy, including 401(k), profit-sharing, cash balance, or 412(e)(3) arrangements, must be evaluated based on an individual's specific circumstances, including income, employee structure, cash flow, tax position, legal considerations, and long-term objectives. Results will vary, and no strategy is guaranteed to achieve specific outcomes.\n\nTax, legal, actuarial, and plan-design decisions should be made in coordination with qualified professionals, including a CPA, third-party administrator, and ERISA counsel. Clients are under no obligation to implement any recommendations and may choose any provider or strategy they deem appropriate. If insurance-based strategies are considered as part of a broader plan, any guarantees are based solely on the terms of the underlying contract and the financial strength of the issuing insurer, and any such product would be implemented outside of the advisory relationship through appropriately licensed professionals."
+        },
+        {
+          "number": 8,
+          "title": "Business Owner Seeking Larger Retirement Contributions and Greater Tax Efficiency",
+          "subtitle": "A hypothetical example of how coordinated planning can help business owners evaluate advanced retirement strategies while balancing tax efficiency, employee-plan considerations, and family goals.",
+          "introBody": "",
+          "scenario": "A California business owner in his early 50s had built a successful S-corporation with more than 20 employees—but felt there may be opportunities to better align business income, retirement planning, and long-term financial priorities. Despite strong earnings and an established 401(k), he wanted to evaluate whether his current planning approach was fully coordinated for his stage of life and goals. At the same time, the family was balancing education planning for children in high school and college, along with broader long-term financial security considerations.",
+          "objectives": [
+            "Increase retirement savings during peak earning years in a meaningful way",
+            "Evaluate whether more advanced planning strategies may support greater long-term coordination and tax-aware planning, in coordination with the client's CPA and other qualified professionals",
+            "Create a more unified strategy between business income and personal financial goals",
+            "Support family priorities, including education planning and long-term flexibility",
+            "Evaluate additional planning opportunities to strengthen both current positioning and future retirement readiness"
+          ],
+          "planningConsiderations": [
+            { "heading": "", "body": "For business owners, advanced retirement planning can become more complex once employees, existing benefit plans, and entity structure are involved. In a situation like this, the planning process may require careful review of:\n• the current 401(k) and employee benefit structure\n• whether a defined benefit or cash balance plan may be appropriate, where suitable and in coordination with qualified professionals\n• employee coverage and nondiscrimination considerations\n• business cash flow and contribution sustainability\n• coordination between business planning, retirement planning, and family priorities\n• the need for collaboration with outside professionals on tax, ERISA, and legal matters when required\n\nMany of these factors are interconnected, and decisions in one area can affect plan design, employee obligations, cash flow, and long-term retirement projections.\n\nWhat may sound like a simple question—such as whether a business owner can add a more advanced retirement plan—often requires a broader review of plan design, business structure, implementation logistics, and long-term sustainability. Because tax and legal considerations may be part of that review, these discussions are best evaluated in coordination with the client's CPA, ERISA professionals, and legal counsel as appropriate." }
+          ],
+          "howWeHelp": {
+            "intro": "Our role in a case like this is to bring structure, analysis, and coordination to a complex planning decision. That may include:",
+            "items": [
+              "reviewing the client's current retirement plan and business-benefit framework",
+              "providing a structured review of the client's current planning approach to help identify areas that may warrant further evaluation",
+              "evaluating advanced retirement plan strategies, where appropriate, in light of the client's goals and business realities, together with the client's CPA and other qualified professionals when needed",
+              "identifying planning gaps that may not be obvious when tax, retirement, and business planning are handled separately",
+              "assessing how retirement planning interacts with broader family priorities, including education funding, cash flow, and long-term wealth planning",
+              "coordinating with the client's CPA and other qualified professionals to help evaluate implementation details and plan feasibility",
+              "discussing additional executive or family-focused planning considerations when suitable to the client's facts and objectives and when consistent with the scope of the engagement"
+            ],
+            "footer": "The value is not just in identifying a single strategy, it is in helping the client gain clarity, confidence, and a more coordinated financial direction through a thoughtful planning process.\n\nFor many business owners, the biggest opportunity isn't working harder, it's planning smarter."
+          },
+          "disclosure": "This example is hypothetical and provided for educational purposes only. It does not represent an actual client experience and is not a testimonial, investment recommendation, tax opinion, legal opinion, or a guarantee of results. Results, tax outcomes, and eligibility for strategies will vary based on individual circumstances. Every client situation is different, and strategies involving retirement plans, business entities, executive compensation, or insurance should be evaluated based on the client's full financial picture and in coordination with appropriate tax, legal, and retirement-plan professionals. Prosperity Planning and Advisory, LLC provides advisory guidance only and does not provide tax or legal advice."
+        },
+        {
+          "number": 9,
+          "title": "Business Owner Preparing for a Sale and Post-Sale Income Planning",
+          "subtitle": "Educational Example — Not a Client Story",
+          "subtitleExtra": "This hypothetical example is provided for educational and illustrative purposes only. It is designed to help prospective clients understand the types of planning issues that may arise when a business owner begins preparing for a future transition, retirement, and long-term wealth planning.",
+          "introBody": "",
+          "scenario": "\"Most of my wealth is tied up in my business—what happens when I sell?\"\n\nA married business owner in their early 60s is beginning to prepare for a possible future sale of a closely held company. A substantial portion of the family's net worth is tied to the business, while the rest is spread across retirement accounts, taxable investments, cash reserves, and real estate. The couple has built meaningful wealth over time, but much of it remains concentrated in an illiquid asset that may eventually need to be converted into a more flexible and diversified financial strategy.\n\nAs retirement gets closer, the owner wants to reduce day-to-day management responsibilities and better understand how a future sale may affect retirement readiness, after-tax income, charitable giving, family support, and long-term financial security. They also want to evaluate how early planning may affect the options available before a transaction becomes final.\n\nAt this stage, the family is not looking for a one-size-fits-all answer, but rather a structured, fiduciary planning process to help think through timing, cash flow, tax exposure, portfolio diversification, and legacy goals before making major decisions.",
+          "objectives": [
+            "Understand how a potential business sale could affect retirement readiness and long-term financial independence",
+            "Evaluate how concentrated business wealth might eventually transition into a more diversified financial plan",
+            "Estimate how much after-tax capital may be needed to support lifestyle goals in retirement",
+            "Explore tax-aware planning concepts that may be worth evaluating before a sale becomes irrevocable",
+            "Consider charitable planning opportunities aligned with personal values without compromising retirement security",
+            "Review estate and family wealth-transfer priorities in light of a potential liquidity event"
+          ],
+          "objectivesFooter": "These objectives would be evaluated subject to the client's full financial review, priorities, and timing.",
+          "planningConsiderations": [
+            { "heading": "", "body": "A scenario like this can involve multiple moving parts, many of which should be reviewed well before any binding transaction terms are in place." },
+            { "heading": "Transaction & Tax Considerations", "items": ["Sale timing and structure: Planning before a letter of intent or binding agreement may preserve more flexibility than after terms are finalized", "Business value and liquidity uncertainty: Preliminary valuations may change based on due diligence, deal structure, earnouts, and market conditions", "Capital gains and tax coordination: A future sale may create a significant tax event, requiring coordination with the client's CPA and legal professionals"] },
+            { "heading": "Income & Portfolio Considerations", "items": ["Investment values and income strategies may fluctuate based on market conditions, and should be aligned with the client's risk tolerance and time horizon.", "Retirement income needs: Determining how much annual after-tax income is needed to support lifestyle, travel, and family goals", "Diversification after a liquidity event: Transitioning from business concentration to a diversified strategy to help reduce risk and improve flexibility", "Risk tolerance and income design: Evaluating how much income should be stable versus market-based, depending on comfort with risk and long-term goals"] },
+            { "heading": "Legacy & Values Considerations", "items": ["Charitable planning: If there is genuine intent, certain charitable strategies may be worth evaluating before a transaction is finalized", "Estate and legacy alignment: Updating estate documents, beneficiary designations, and gifting strategies to reflect current priorities"] }
+          ],
+          "planningConsiderationsDisclaimer": "All planning considerations depend on the client's full financial picture, objectives, risk tolerance, liquidity needs, and timing.",
+          "howWeHelp": {
+            "intro": "At Prosperity Planning & Advisory, we guide clients through major financial transitions using a structured, fiduciary planning process (Discovery → Design → Recommend → Implement → Ongoing Review).",
+            "body": "In a scenario like this, our role may include, depending on the client's needs:",
+            "items": [
+              "Helping clarify retirement goals, lifestyle needs, and family priorities",
+              "Reviewing the client's balance sheet, liquidity profile, and concentration risk",
+              "Organizing planning discussions around taxes, retirement readiness, estate priorities, and charitable goals",
+              "Coordinating with the client's CPA, attorney, and other professionals when specialized analysis is required",
+              "Providing scenario-based modeling to evaluate possible post-sale planning scenarios related to cash flow, diversification, and long-term income planning",
+              "Identifying areas where additional planning or professional input may be needed before decisions are finalized",
+              "Helping establish a framework for implementation and ongoing review as life and financial circumstances evolve"
+            ],
+            "footer": "Our focus is not simply on the transaction itself, but on helping you understand how that transition may affect multiple areas of your financial life."
+          },
+          "disclosure": "This is a hypothetical example for educational and illustrative purposes only. It does not describe an actual client, client experience, or guaranteed outcome. Any planning strategies involving a business sale, tax mitigation, charitable giving, estate transfers, insurance, or annuity-based concepts are highly fact-specific and require review of the client's full financial circumstances, objectives, liquidity needs, risk tolerance, and timeline.\n\nProsperity Planning & Advisory, LLC provides advisory guidance only and does not provide legal or tax advice. Clients should consult qualified tax and legal professionals regarding implementation of any tax, estate, charitable, or transaction-related strategy. Registration does not imply a certain level of skill or training.\n\nIf insurance or annuity concepts are discussed as part of broader planning, such discussions occur outside the advisory relationship and are fully disclosed. Any such products should only be evaluated where appropriate and after a full suitability and needs-based review. Any contractual guarantees are subject to the claims-paying ability of the issuing insurer. Clients are never obligated to purchase any insurance or annuity product in order to receive advisory services. Any compensation related to insurance products would be disclosed separately. Nothing herein should be interpreted as a recommendation to engage in any specific transaction."
+        }
+      ]
+    }
+  ],
+  "whoThisIsFor": {
+    "heading": "Who This Page May Be Helpful For",
+    "body": "This page may be especially helpful for:",
+    "items": [
+      "Individuals and families seeking a more coordinated approach to retirement, cash flow, tax-aware planning, and long-term decision-making",
+      "Pre-retirees and retirees approaching major financial transitions and evaluating income, withdrawal, and legacy strategies",
+      "Business owners looking to align personal financial planning with business strategy and future exit or transition planning",
+      "Families balancing multiple priorities such as college funding, retirement readiness, estate considerations, and risk management",
+      "Individuals who want to better understand what comprehensive financial planning may look like before entering into an advisory relationship"
+    ]
+  },
+  "whyHypothetical": {
+    "heading": "Why Hypothetical Scenarios Matter",
+    "paragraphs": [
+      "Many financial decisions involve trade-offs that are not always immediately clear. What may seem like a straightforward choice can have broader implications for taxes, income, risk, and long-term outcomes.",
+      "In many cases, thoughtful planning is less about finding a single \"right\" answer and more about understanding trade-offs, sequencing decisions appropriately, and coordinating moving pieces over time.",
+      "Illustrative scenarios can make financial planning easier to understand. They provide a clearer view of how decisions may fit together and highlight the types of trade-offs that often need to be evaluated.",
+      "In many cases, what appears to be a simple financial decision may have broader implications for taxes, liquidity, risk, retirement timing, or legacy planning. Certain opportunities may also become more limited depending on timing, personal circumstances, or market conditions.",
+      "They are not intended to predict outcomes or suggest that one strategy fits everyone. Instead, they are designed to help you think more clearly about your own situation and identify areas where a more structured planning conversation may be beneficial."
+    ]
+  },
+  "closingCta": {
+    "paragraphs": [
+      "Our goal is not to predict outcomes, but to help you make well-informed, coordinated financial decisions over time.",
+      "Your situation is unique. Your planning should be too.",
+      "If you are navigating an important financial decision—or simply want a more structured way to think through what comes next—a focused conversation may help you evaluate your options more clearly.",
+      "Even if you are not sure whether professional planning is needed, this can simply be a starting point to explore your options and clarify your next step.",
+      "This is a no-obligation opportunity to discuss your situation, ask questions, and determine whether a more comprehensive planning relationship makes sense. If any of these scenarios feel familiar, a short conversation may help you better understand your options and next steps."
+    ],
     "cta": {
-      "text": "Schedule Your Complimentary Strategy Review",
+      "text": "Schedule Your Free 15-Minute Clarity Session",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
   },
-  "disclaimer": "All case studies are hypothetical illustrations based on common planning scenarios. They do not represent actual clients or guarantee specific outcomes. Individual results will vary based on personal circumstances, market conditions, and other factors. These examples are for educational purposes only and do not constitute investment advice.",
-  "cases": [
-    {
-      "id": "business-owner-retiring",
-      "title": "The Business Owner Ready to Step Away",
-      "subtitle": "Coordinating a business exit with personal retirement goals",
-      "profile": {
-        "description": "A 62-year-old small business owner preparing to retire within three years",
-        "situation": "Built a successful professional services firm over 25 years. Most of their wealth is tied up in the business. No formal succession plan in place. Concerned about tax impact of a sale and whether retirement savings are sufficient."
-      },
-      "challenges": [
-        "Business value concentrated in a single illiquid asset",
-        "No succession or exit plan in place",
-        "Uncertainty about retirement readiness without business income",
-        "Significant tax exposure from a potential business sale",
-        "Retirement plan (SEP IRA) may be underfunded for desired lifestyle"
-      ],
-      "approach": [
-        "Conducted a comprehensive financial analysis including business valuation coordination",
-        "Evaluated succession options: internal transition, family transfer, and third-party sale",
-        "Designed a tax-efficient exit timeline in coordination with their CPA",
-        "Modeled retirement income scenarios with and without business sale proceeds",
-        "Explored Defined Benefit plan strategies to accelerate pre-retirement savings",
-        "Reviewed estate plan to align with post-sale asset structure"
-      ],
-      "outcome": "With a structured exit timeline and coordinated tax strategy, the business owner gained clarity on their retirement readiness and a step-by-step plan to transition out of the business on their terms — with confidence that their financial future was secure."
-    },
-    {
-      "id": "family-balancing-priorities",
-      "title": "The Family Balancing College and Retirement",
-      "subtitle": "Prioritizing competing financial goals without sacrificing either",
-      "profile": {
-        "description": "A dual-income couple in their mid-40s with two children approaching college age",
-        "situation": "Combined household income of $250,000+. Both contribute to employer 401(k) plans but feel behind on retirement savings. Two children will start college within three years. Uncertain how to fund education without derailing retirement goals."
-      },
-      "challenges": [
-        "Competing priorities: college funding vs. retirement savings",
-        "No 529 plan or dedicated education savings in place",
-        "Feeling behind on retirement contributions relative to goals",
-        "Unclear how to optimize tax-advantaged accounts across both goals",
-        "Need for a coordinated cash-flow strategy to fund both priorities"
-      ],
-      "approach": [
-        "Built a comprehensive financial plan integrating both college and retirement timelines",
-        "Established 529 plans with a strategic funding approach balancing current savings capacity",
-        "Maximized employer 401(k) matches and evaluated Roth contribution strategies",
-        "Created a cash-flow plan that allocated dollars intentionally across competing goals",
-        "Modeled scenarios showing the long-term impact of different funding splits",
-        "Reviewed insurance coverage and estate documents for family protection"
-      ],
-      "outcome": "The family gained a clear understanding of how to fund both goals without sacrificing one for the other. By optimizing tax-advantaged accounts and implementing a disciplined savings strategy, they moved forward with confidence that both their children's education and their own retirement were on track."
-    },
-    {
-      "id": "attorney-variable-income",
-      "title": "The Attorney With Variable Income",
-      "subtitle": "Building stability and long-term wealth on an unpredictable income stream",
-      "profile": {
-        "description": "A 50-year-old litigation attorney with a contingency-based practice",
-        "situation": "Annual income ranges from $180,000 to $500,000+ depending on case outcomes. High earnings in some years, minimal in others. No consistent savings strategy. Approaching 50 with retirement planning concerns and significant tax exposure in high-income years."
-      },
-      "challenges": [
-        "Highly variable annual income makes budgeting and planning difficult",
-        "No structured retirement savings plan despite high earning potential",
-        "Significant tax liability in high-income years with no proactive strategy",
-        "Desire to build long-term wealth but unsure where to start",
-        "Partnership buy-in opportunity requiring capital allocation decisions"
-      ],
-      "approach": [
-        "Designed a variable-income cash-flow system using a bank-bucket spending strategy",
-        "Established a Solo 401(k) with profit-sharing to maximize retirement contributions in high-income years",
-        "Evaluated Roth conversion opportunities in lower-income years for tax diversification",
-        "Created a tax-aware investment strategy to manage capital gains and income timing",
-        "Analyzed the partnership buy-in opportunity within the context of overall financial goals",
-        "Built an emergency reserve strategy sized for income volatility"
-      ],
-      "outcome": "With a flexible planning framework designed for income variability, the attorney now has a system that maximizes savings in strong years, manages tax exposure proactively, and provides stability and structure regardless of annual income fluctuations."
-    },
-    {
-      "id": "late-career-catch-up",
-      "title": "The Late-Career Professional Playing Catch-Up",
-      "subtitle": "Accelerating retirement readiness in the final working years",
-      "profile": {
-        "description": "A 55-year-old corporate executive who prioritized career growth over retirement planning",
-        "situation": "Strong current income ($300,000+) but retirement savings significantly behind target. Recently divorced, requiring a reassessment of financial goals and asset division. Wants to retire by 65 but unsure if it's realistic."
-      },
-      "challenges": [
-        "Retirement savings well below target for desired retirement age and lifestyle",
-        "Post-divorce asset restructuring and updated financial goals",
-        "Need to maximize contributions in remaining working years",
-        "Uncertainty about Social Security timing and retirement income sources",
-        "No updated estate plan or beneficiary designations post-divorce"
-      ],
-      "approach": [
-        "Conducted a full financial reset — updated goals, assets, and projections post-divorce",
-        "Maximized 401(k) contributions including catch-up contributions",
-        "Evaluated supplemental savings strategies including taxable brokerage and backdoor Roth IRA",
-        "Modeled multiple retirement scenarios at ages 62, 65, and 67 with varying spending levels",
-        "Optimized Social Security claiming strategy based on updated marital status",
-        "Rebuilt estate plan with updated beneficiaries, powers of attorney, and healthcare directives"
-      ],
-      "outcome": "By maximizing every available savings vehicle and building a realistic, phased retirement timeline, the executive gained clarity on a viable path to retirement by 65 — with a contingency plan and the confidence that every remaining working year was being fully optimized."
-    }
-  ],
-  "ctaBand": {
-    "heading": "Your Story Is Next",
-    "body": "Every financial plan is unique. Schedule a complimentary Clarity Session and let's start writing yours.",
-    "cta": {
-      "text": "Schedule Your Clarity Session",
-      "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+  "compliance": {
+    "heading": "Important Disclosure",
+    "paragraphs": [
+      "The examples on this page are hypothetical and provided for general informational and educational purposes only. They do not describe actual clients, client experiences, or client results, and they should not be interpreted as testimonials, endorsements, or guarantees of future performance or success. Results will vary based on individual circumstances.",
+      "Any planning strategies referenced in these examples are illustrative only and may not be appropriate for every individual or situation. Actual recommendations, if any, depend on a client's full financial picture, objectives, time horizon, risk tolerance, liquidity needs, tax circumstances, and other relevant factors.",
+      "This page does not constitute individualized investment advice, a recommendation, or an offer to buy or sell any security or financial product. All investments involve risk, including the possible loss of principal. Past performance is not indicative of future results.",
+      "Prosperity Planning & Advisory is a California-registered investment adviser. Registration does not imply a certain level of skill or training. Advisory services are offered only after entering into a written advisory agreement and receiving all required disclosures.",
+      "Prosperity Planning & Advisory does not provide tax or legal advice. Clients should consult their tax professional and attorney regarding their specific situation before implementing any tax, estate, trust, or legal strategy.",
+      "Where insurance or annuity strategies are referenced, such discussion is for educational or planning-context purposes only unless otherwise stated. Prosperity Planning & Advisory, LLC does not sell insurance products or receive insurance commissions. Separately, Marcus Mann, in his individual capacity as a licensed insurance agent, may offer certain fixed insurance or annuity products outside the advisory relationship. Clients are under no obligation to purchase any such product through him, and any such transaction would be separate from the firm's advisory services."
+    ]
   }
 }

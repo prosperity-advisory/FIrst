@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 interface AccordionItem {
   question: string;
@@ -64,6 +64,57 @@ export function Accordion({ items }: AccordionProps) {
           </div>
         );
       })}
+    </div>
+  );
+}
+
+/* ── Scenario Accordion ── */
+interface ScenarioAccordionProps {
+  title: string;
+  children: ReactNode;
+}
+
+export function ScenarioAccordion({ title, children }: ScenarioAccordionProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="bg-white rounded-lg border border-border overflow-hidden transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(20,57,43,0.06)]">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between gap-4 p-5 md:p-6 lg:p-7 text-left cursor-pointer group"
+        aria-expanded={isOpen}
+      >
+        <span className="font-sans text-[15px] sm:text-base md:text-[17px] font-semibold text-navy leading-snug pr-2 group-hover:text-gold transition-colors duration-200">
+          {title}
+        </span>
+        <span
+          className={`w-10 h-10 md:w-9 md:h-9 rounded-full border-2 border-gold flex items-center justify-center shrink-0 transition-all duration-300 ${
+            isOpen ? "bg-gold" : "bg-transparent"
+          }`}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className={`w-4 h-4 md:w-[18px] md:h-[18px] stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round] transition-transform duration-300 ${
+              isOpen ? "text-white rotate-180" : "text-gold rotate-0"
+            }`}
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </button>
+
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-5 pb-5 md:px-6 md:pb-6 lg:px-7 lg:pb-7 pt-0">
+            <div className="w-full h-px bg-border mb-4 md:mb-5" />
+            {children}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -61,7 +61,9 @@
         {
           "heading": "Personal Planning Coordination",
           "body": "Personal planning coordination brings together the many moving parts of your financial life into one cohesive strategy. This may include coordinating priorities across cash flow, savings, insurance, retirement goals, family needs, and other planning decisions as your circumstances evolve.",
-          "bodyExtra": "This planning area is intended to help clients evaluate major financial decisions in a coordinated way, rather than in isolation, as part of a broader long-term strategy."
+          "bodyExtra": "This planning area is intended to help clients evaluate major financial decisions in a coordinated way, rather than in isolation, as part of a broader long-term strategy.",
+          "ctaText": "Explore Personal Prosperity Planning™",
+          "ctaHref": "/planning"
         }
       ],
       "planningAreasHeading": "Planning areas may include:",
@@ -88,7 +90,9 @@
         },
         {
           "heading": "Investment Management",
-          "body": "Investment management includes ongoing portfolio guidance designed to align your investment strategy with your goals, time horizon, and tolerance for risk. This may include reviewing existing investments, evaluating asset allocation, diversification, portfolio structure, risk exposure, exchange-traded fund implementation where appropriate, and ongoing portfolio reviews as market conditions and personal circumstances change."
+          "body": "Investment management includes ongoing portfolio guidance designed to align your investment strategy with your goals, time horizon, and tolerance for risk. This may include reviewing existing investments, evaluating asset allocation, diversification, portfolio structure, risk exposure, exchange-traded fund implementation where appropriate, and ongoing portfolio reviews as market conditions and personal circumstances change.",
+          "ctaText": "Find Your Prosperity Pathway™",
+          "ctaHref": "/portfolios"
         },
         {
           "heading": "Retirement Income Planning",

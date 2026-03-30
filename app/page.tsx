@@ -85,7 +85,8 @@ export default function Home() {
             description: "Ongoing support as life evolves",
           },
         ]}
-        ctaText="Start Your Journey →"
+        ctaText="Discover Our Six Step Process →"
+        ctaHref="/process"
         bannerImage="/images/Process google final.jpg"
         bannerAlt="The six-step road to prosperity financial planning process"
       />
@@ -100,7 +101,7 @@ export default function Home() {
 
       <ContactSection
         eyebrow="Get In Touch"
-        headline="Visit Our Office"
+        headline="Woodland Hills Office Visits by Appointment"
         details={[
           {
             label: "Address",
@@ -137,10 +138,10 @@ export default function Home() {
             ),
             value: (
               <a
-                href="mailto:info@prosperityadvisory.net"
+                href="mailto:help@prosperityadvisory.net"
                 className="text-gold hover:text-gold-light transition-colors"
               >
-                info@prosperityadvisory.net
+                help@prosperityadvisory.net
               </a>
             ),
           },

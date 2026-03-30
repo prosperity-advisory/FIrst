@@ -25,7 +25,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   { href: "/who-we-serve", label: "Who We Serve", short: "Who We Serve" },
   { href: "/process", label: "Our Process", short: "Process" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Our Mission & Who We Are", short: "About" },
   {
     href: "/resources",
     label: "Learn",
@@ -33,7 +33,7 @@ const NAV_ITEMS: NavItem[] = [
       { href: "/fees", label: "Fees & How We're Paid" },
       { href: "/faqs", label: "FAQs" },
       { href: "/resources", label: "Resources & Learning Center" },
-      { href: "/case-studies", label: "Case Studies" },
+      { href: "/case-studies", label: "Planning Scenarios & Examples" },
     ],
   },
   { href: "/contact", label: "Contact" },

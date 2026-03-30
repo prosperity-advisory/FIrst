@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
@@ -85,9 +86,15 @@ export function ProcessSection({
         </div>
 
         <FadeUp>
-          <CalendlyButton url={ctaHref} className="btn btn-gold">
-            {ctaText}
-          </CalendlyButton>
+          {ctaHref.includes("calendly.com") ? (
+            <CalendlyButton url={ctaHref} className="btn btn-gold">
+              {ctaText}
+            </CalendlyButton>
+          ) : (
+            <Link href={ctaHref} className="btn btn-gold">
+              {ctaText}
+            </Link>
+          )}
         </FadeUp>
       </div>
     </section>

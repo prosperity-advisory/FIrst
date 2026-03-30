@@ -13,7 +13,7 @@ const FOOTER_GROUPS = [
     ],
   },
   {
-    heading: "About Us",
+    heading: "About",
     links: [
       { href: "/about", label: "Our Mission" },
       { href: "/who-we-serve", label: "Who We Serve" },
@@ -26,7 +26,7 @@ const FOOTER_GROUPS = [
     links: [
       { href: "/faqs", label: "FAQs" },
       { href: "/resources", label: "Learning Center" },
-      { href: "/case-studies", label: "Case Studies" },
+      { href: "/case-studies", label: "Planning Scenarios & Examples" },
       { href: "/contact", label: "Contact Us" },
     ],
   },

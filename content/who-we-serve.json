@@ -49,7 +49,7 @@
         "Investment alignment with income needs"
       ],
       "ctaText": "Explore your retirement planning options",
-      "ctaHref": "/process"
+      "ctaHref": "/services#investment-retirement"
     },
     {
       "id": "business-owners",
@@ -71,7 +71,7 @@
         "Exit and transition considerations"
       ],
       "ctaText": "Learn how we work with business owners",
-      "ctaHref": "/process"
+      "ctaHref": "/services#business-advanced"
     },
     {
       "id": "professionals",
@@ -91,7 +91,7 @@
         "Long-term wealth accumulation planning"
       ],
       "ctaText": "Start building a more intentional financial strategy",
-      "ctaHref": "/process"
+      "ctaHref": "/services#comprehensive"
     },
     {
       "id": "families",
@@ -111,7 +111,7 @@
         "Long-term financial goal planning"
       ],
       "ctaText": "Start creating more clarity in your financial life",
-      "ctaHref": "/process"
+      "ctaHref": "/services#comprehensive"
     },
     {
       "id": "tax-legacy",
@@ -131,7 +131,7 @@
         "Coordination with CPA and estate planning professionals"
       ],
       "ctaText": "Explore planning for long-term goals",
-      "ctaHref": "/process"
+      "ctaHref": "/services#estate-legacy"
     },
     {
       "id": "attorneys",
@@ -149,7 +149,7 @@
         "Long-term strategy implementation"
       ],
       "ctaText": "Explore coordinated financial planning",
-      "ctaHref": "/process"
+      "ctaHref": "/services#comprehensive"
     }
   ],
   "taxAware": {

@@ -8,6 +8,8 @@ interface Subsection {
   bodyExtra2?: string;
   items?: string[];
   disclaimer?: string;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 interface ServiceDetailProps {
@@ -120,6 +122,14 @@ export function ServiceDetail({
                         </li>
                       ))}
                     </ul>
+                  )}
+                  {sub.ctaText && sub.ctaHref && (
+                    <Link
+                      href={sub.ctaHref}
+                      className="inline-flex items-center text-gold font-semibold text-[15px] md:text-base hover:text-gold-light transition-colors mt-3"
+                    >
+                      → {sub.ctaText}
+                    </Link>
                   )}
                   {sub.disclaimer && (
                     <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mt-3">

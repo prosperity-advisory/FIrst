@@ -26,7 +26,7 @@ export function HeroSection({
           src={backgroundImage}
           alt=""
           fill
-          className="object-cover opacity-[0.12]"
+          className="object-cover opacity-[0.20]"
           priority
           sizes="100vw"
         />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const FOOTER_GROUPS = [
@@ -44,8 +45,15 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="block font-serif text-sm sm:text-base md:text-[17px] lg:text-lg font-bold text-white mb-2.5 md:mb-3"
+              className="inline-flex items-center gap-2 sm:gap-2.5 font-serif text-sm sm:text-base md:text-[17px] lg:text-lg font-bold text-white mb-2.5 md:mb-3"
             >
+              <Image
+                src="/images/single-logo-trimmed.png"
+                alt=""
+                width={429}
+                height={464}
+                className="h-[1.4em] w-auto object-contain"
+              />
               Prosperity
               <span className="text-gold"> | </span>
               Planning &amp; Advisory

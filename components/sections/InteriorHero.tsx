@@ -26,7 +26,7 @@ export function InteriorHero({
           src={backgroundImage}
           alt=""
           fill
-          className="object-cover opacity-[0.10]"
+          className="object-cover opacity-[0.18]"
           priority
           sizes="100vw"
         />

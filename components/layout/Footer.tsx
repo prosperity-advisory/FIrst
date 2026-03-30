@@ -96,18 +96,41 @@ export function Footer() {
             into a written advisory agreement and receiving all required disclosures.
           </p>
           <p>
-            Information on this website is for general informational and educational
-            purposes only and does not constitute individualized investment advice,
-            a recommendation, or an offer to buy or sell any security or financial
-            product. All investments involve risk, including the possible loss of
-            principal. Past performance is not indicative of future results.
-          </p>
-          <p>
             Prosperity Planning and Advisory, LLC is a fee-only registered
             investment adviser and does not sell insurance products or receive
-            insurance commissions. Prosperity Planning &amp; Advisory does not
-            provide tax or legal advice. Clients should consult their tax
-            professional and attorney regarding their specific situation.
+            insurance commissions. Insurance products, if discussed, are offered
+            outside of the advisory relationship through a separate, non-advisory
+            business. Clients are under no obligation to purchase any insurance
+            products.
+          </p>
+          <p className="font-semibold text-white/45 mt-4">Website Disclaimer</p>
+          <p>
+            Information on this website is for general informational and educational
+            purposes only and does not constitute individualized investment advice,
+            a recommendation, or an offer to buy or sell any security. Past
+            performance is not indicative of future results. Any planning strategies
+            discussed are based on general principles and may not be suitable for
+            all individuals. Investment strategies involve risk, including the
+            potential loss of principal.
+          </p>
+          <p>
+            Prosperity Planning and Advisory, LLC is a registered investment adviser
+            in the State of California. Registration does not imply a certain level
+            of skill or training. Services may not be available to persons in
+            jurisdictions where we are not appropriately licensed or exempt.
+          </p>
+          <p>
+            We do not provide tax or legal advice. Hyperlinks to third-party content
+            are provided for convenience and do not imply endorsement; we are not
+            responsible for the accuracy or content of third-party sites. For our
+            current Form ADV or additional information, please contact us at{" "}
+            <a
+              href="mailto:help@prosperityadvisory.net"
+              className="text-white/50 hover:text-gold transition-colors"
+            >
+              help@prosperityadvisory.net
+            </a>{" "}
+            or 888-427-5240.
           </p>
           <p>
             Where insurance or annuity strategies are referenced, such discussion is

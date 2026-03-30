@@ -148,12 +148,14 @@ export function Footer() {
           <span className="text-xs md:text-[13px] text-white/40">
             &copy; 2026 Prosperity Planning &amp; Advisory
           </span>
-          <Link
-            href="/privacy"
+          <a
+            href="/documents/privacy-notice.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"
           >
             Privacy Policy
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

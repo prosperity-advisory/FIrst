@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
@@ -59,6 +60,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [logoError, setLogoError] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
@@ -135,15 +137,28 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-[1200px] items-center justify-between h-16 sm:h-[72px] md:h-[76px] lg:h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className={`font-serif text-sm xs:text-base sm:text-lg lg:text-[19px] xl:text-lg font-bold whitespace-nowrap transition-colors duration-[350ms] ${
-              scrolled ? "text-navy" : "text-white"
-            }`}
-          >
-            Prosperity
-            <span className="text-gold"> | </span>
-            Planning &amp; Advisory
+          <Link href="/" className="shrink-0 flex items-center">
+            {!logoError ? (
+              <Image
+                src="/images/Logo-JPG.PNG"
+                alt="Prosperity Planning & Advisory"
+                width={200}
+                height={200}
+                priority
+                onError={() => setLogoError(true)}
+                className="h-12 sm:h-[52px] md:h-14 lg:h-[60px] w-auto object-contain rounded-md"
+              />
+            ) : (
+              <span
+                className={`font-serif text-sm xs:text-base sm:text-lg lg:text-[19px] xl:text-lg font-bold whitespace-nowrap transition-colors duration-[350ms] ${
+                  scrolled ? "text-navy" : "text-white"
+                }`}
+              >
+                Prosperity
+                <span className="text-gold"> | </span>
+                Planning &amp; Advisory
+              </span>
+            )}
           </Link>
 
           {/* Desktop nav — visible at xl+ */}

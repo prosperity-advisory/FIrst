@@ -41,9 +41,9 @@ export function MissionSection({
             </FadeUp>
 
             <FadeUp delay={2}>
-              <div className={`flex flex-col xs:flex-row xs:flex-wrap ${image ? "justify-center md:justify-start" : "justify-center"} items-center gap-5 xs:gap-6 md:gap-9`}>
+              <div className={`flex flex-col xs:flex-row xs:flex-wrap ${image ? "justify-center md:justify-start" : "justify-center"} items-start xs:items-center gap-5 xs:gap-6 md:gap-9 pl-6 xs:pl-0`}>
                 {badges.map((badge) => (
-                  <div key={badge.label} className="flex items-center gap-3.5">
+                  <div key={badge.label} className="flex items-center gap-3.5 w-full xs:w-auto">
                     <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
                       <span className="w-5 h-5 md:w-[22px] md:h-[22px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
                         {badge.icon}

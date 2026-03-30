@@ -87,17 +87,38 @@ export function Footer() {
         </div>
 
         {/* Legal disclaimer */}
-        <p className="py-6 md:py-7 lg:py-8 text-xs md:text-[13px] leading-[1.8] text-white/35 max-w-[900px]">
-          Prosperity Planning &amp; Advisory, LLC is a California state-registered
-          investment adviser. Registration does not imply a certain level of skill
-          or training. Advisory services are provided by a registered investment
-          adviser representative of the Firm. Information on this website is for
-          general informational and educational purposes only and does not
-          constitute individualized investment advice. Past performance is not
-          indicative of future results. Prosperity Planning and Advisory, LLC is a
-          fee-only registered investment adviser and does not sell insurance
-          products or receive insurance commissions.
-        </p>
+        <div className="py-6 md:py-7 lg:py-8 text-xs md:text-[13px] leading-[1.8] text-white/35 max-w-[900px] space-y-3">
+          <p>
+            Prosperity Planning &amp; Advisory, LLC is a California state-registered
+            investment adviser. Registration does not imply a certain level of skill
+            or training. Advisory services are provided by a registered investment
+            adviser representative of the Firm and are offered only after entering
+            into a written advisory agreement and receiving all required disclosures.
+          </p>
+          <p>
+            Information on this website is for general informational and educational
+            purposes only and does not constitute individualized investment advice,
+            a recommendation, or an offer to buy or sell any security or financial
+            product. All investments involve risk, including the possible loss of
+            principal. Past performance is not indicative of future results.
+          </p>
+          <p>
+            Prosperity Planning and Advisory, LLC is a fee-only registered
+            investment adviser and does not sell insurance products or receive
+            insurance commissions. Prosperity Planning &amp; Advisory does not
+            provide tax or legal advice. Clients should consult their tax
+            professional and attorney regarding their specific situation.
+          </p>
+          <p>
+            Where insurance or annuity strategies are referenced, such discussion is
+            for educational or planning-context purposes only unless otherwise
+            stated. Separately, Marcus Mann, in his individual capacity as a
+            licensed insurance agent, may offer certain fixed insurance or annuity
+            products outside the advisory relationship. Clients are under no
+            obligation to purchase any such product through him, and any such
+            transaction would be separate from the firm&apos;s advisory services.
+          </p>
+        </div>
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row sm:justify-between text-center sm:text-left py-4 border-t border-white/[0.06] gap-2">

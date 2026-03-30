@@ -23,19 +23,19 @@ const NAV_ITEMS: NavItem[] = [
       { href: "/planning", label: "Personal Prosperity Planning™" },
     ],
   },
-  { href: "/who-we-serve", label: "Who We Serve", short: "Who We Serve" },
-  { href: "/process", label: "Our Process", short: "Process" },
-  { href: "/about", label: "Our Mission & Who We Are", short: "About" },
   {
     href: "/resources",
     label: "Learn",
     children: [
-      { href: "/fees", label: "Fees & How We're Paid" },
-      { href: "/faqs", label: "FAQs" },
-      { href: "/resources", label: "Resources & Learning Center" },
       { href: "/case-studies", label: "Planning Scenarios & Examples" },
+      { href: "/resources", label: "Resources & Learning Center" },
+      { href: "/faqs", label: "FAQs" },
+      { href: "/fees", label: "Fees & How We're Paid" },
     ],
   },
+  { href: "/process", label: "Our Process", short: "Process" },
+  { href: "/who-we-serve", label: "Who We Serve", short: "Who We Serve" },
+  { href: "/about", label: "Our Mission & Who We Are", short: "About" },
   { href: "/contact", label: "Contact" },
 ];
 

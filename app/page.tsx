@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { MissionSection } from "@/components/sections/MissionSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { BusinessOwnerAccordion } from "@/components/sections/BusinessOwnerAccordion";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { getHomeContent } from "@/lib/content";
@@ -98,6 +99,8 @@ export default function Home() {
         categories={content.services.categories}
         nextSteps={content.services.nextSteps}
       />
+
+      <BusinessOwnerAccordion />
 
       <ContactSection
         eyebrow="Get In Touch"

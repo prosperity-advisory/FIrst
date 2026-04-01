@@ -158,44 +158,107 @@
       "id": "business-advanced",
       "type": "category",
       "heading": "Business Owner & Advanced Planning",
-      "body": "Business owners and higher-income households often face financial decisions that involve multiple layers of complexity and coordination across advisors. These may include business planning, retirement design, succession, liquidity events, tax-sensitive strategies, and the integration of business decisions with personal wealth planning.",
-      "bodyExtra": "This planning area is designed to support high-impact decision-making through a coordinated and strategic approach, with general education and planning coordination tailored to individual circumstances where appropriate. It is often especially relevant for clients whose planning needs extend beyond traditional investment management and require thoughtful alignment across business, retirement, estate, and tax-aware considerations.",
+      "body": "Supporting business owners, professionals, and high-income households navigating complex financial decisions, competing priorities, and major financial transitions.",
+      "bodyExtra": "Many business owners reach a point where traditional planning is no longer enough. As income grows, business value increases, and future transition decisions become more significant, planning often requires a more coordinated approach across cash flow, tax awareness, key-person retention, and long-term ownership strategy.",
+      "bodyExtra2": "This area is typically most relevant for business owners, professionals, and households with more complex financial structures or upcoming financial transitions.",
+      "relevanceHeading": "When This Type of Planning Becomes Important",
+      "relevanceItems": [
+        "Preparing for a business sale, liquidity event, or other major transition",
+        "Experiencing a significant increase in income or business profitability",
+        "Looking for ways to improve tax efficiency while protecting cash flow",
+        "Exploring strategies to retain and reward key employees",
+        "Planning for succession, continuity, or ownership changes",
+        "Coordinating business decisions with personal retirement and legacy goals"
+      ],
       "subsections": [
         {
           "heading": "Business Planning",
-          "body": "Evaluating how business decisions and personal financial goals interact. This may include business cash-flow coordination, owner compensation discussions, reinvestment priorities, and planning considerations for owners whose personal wealth and family goals are closely tied to business performance."
+          "body": "Coordinating personal and business financial decisions into a unified strategy that supports day-to-day operations and long-term goals."
         },
         {
-          "heading": "Business Retirement Plan Strategies",
-          "body": "Includes education around 401(k), solo 401(k), SEP IRA, SIMPLE IRA, profit-sharing, defined benefit, and cash balance plans. Where relevant, this area may also include non-qualified deferred compensation education and broader plan-design discussions for business owners and key employees."
+          "heading": "Executive Retention & Reward Strategies",
+          "body": "Helping business owners evaluate strategies designed to attract, retain, and reward key leadership while aligning incentives with long-term business success.",
+          "subsections": [
+            {
+              "heading": "Retaining and Rewarding Key Executives",
+              "body": "Exploring approaches that go beyond salary and standard benefits to help support retention and align incentives."
+            },
+            {
+              "heading": "Qualified Retirement Plans",
+              "body": "Reviewing retirement plan designs that may support tax efficiency, long-term savings, and employee retention."
+            },
+            {
+              "heading": "Non-Qualified Deferred Compensation",
+              "body": "Evaluating flexible compensation strategies for key executives that extend beyond qualified plan contribution limits."
+            },
+            {
+              "heading": "Defined Benefit & Pension Plans",
+              "body": "Reviewing advanced retirement plan strategies designed to maximize tax-deferred savings for eligible business owners and professionals."
+            },
+            {
+              "heading": "Executive Bonus Arrangements",
+              "body": "Exploring bonus-based strategies that may help reward and retain key employees in a tax-aware manner."
+            },
+            {
+              "heading": "Business Retirement Plan Strategies",
+              "body": "Reviewing retirement plan options for business owners and key employees as part of a broader planning strategy."
+            }
+          ]
         },
         {
-          "heading": "Succession & Transition Planning",
-          "body": "Preparing for ownership changes and long-term business continuity. This may also include buy-sell agreement coordination, ownership transfer considerations, leadership transition planning, and discussions related to future sale or transfer events."
-        },
-        {
-          "heading": "Executive Benefit & Retention Planning",
-          "body": "Includes executive bonus strategy education, key person risk planning, competitive benefit concepts, and retention-focused strategies intended to support leadership continuity and talent retention."
+          "heading": "Tax-Efficient Business & Exit Planning",
+          "body": "Planning ahead for major financial decisions, liquidity events, and ownership transitions with an emphasis on tax awareness, cash-flow preservation, and long-term value.",
+          "subsections": [
+            {
+              "heading": "Reducing Taxes on Income or Exit",
+              "body": "Coordinating planning strategies in advance of major transactions or liquidity events to help evaluate ways to reduce tax friction and improve overall tax efficiency over time."
+            },
+            {
+              "heading": "Planning Approaches That May Be Evaluated",
+              "body": "Depending on your situation, more advanced strategies may be explored in coordination with your tax and legal professionals. These approaches are not appropriate for all clients and may involve varying levels of risk, complexity, cost, and liquidity constraints.",
+              "items": [
+                "Structured Installment Sales — may help spread recognition of gains over time and convert proceeds into installment-based income",
+                "Charitable Remainder Trusts — may be evaluated as part of charitable, income, and tax-aware planning",
+                "Cost Segregation Planning (Coordination) — may help accelerate depreciation for certain real estate holdings when appropriate",
+                "Deferred Sales Trusts (DST) — may be evaluated in certain cases involving highly appreciated assets or business sale planning"
+              ]
+            },
+            {
+              "heading": "Succession & Business Continuity Planning",
+              "body": "Preparing for ownership changes, unexpected events, and long-term business continuity through structured planning.",
+              "subsections": [
+                {
+                  "heading": "Planning Ownership Transition",
+                  "body": "Helping evaluate succession and continuity strategies that support more intentional ownership changes over time."
+                },
+                {
+                  "heading": "Business Continuation Planning",
+                  "body": "Planning for unexpected events and ownership transitions with the goal of helping protect business value and operational continuity."
+                },
+                {
+                  "heading": "Buy-Sell Agreements",
+                  "body": "Coordinating planning discussions around funded agreements that may help structure ownership transitions and protect business partners."
+                }
+              ]
+            }
+          ]
         },
         {
           "heading": "Advanced Planning Coordination",
-          "body": "Includes general educational discussion around structured installment sale strategies, Deferred Sales Trust concepts, liquidity events, concentrated asset planning, structural tax planning considerations, real estate-related planning, and other complex tax-aware strategies. This section is intended to help clients better understand, at a conceptual level, how major financial transitions may affect investment, retirement, estate, and business planning decisions. These topics are discussed for general education and evaluation purposes and do not constitute specific tax or legal recommendations.",
-          "bodyExtra": "This area is often relevant for clients preparing for a sale, evaluating a large gain, managing concentrated positions, or seeking a more integrated approach to high-stakes financial decisions."
-        },
-        {
-          "heading": "Cost Segregation Planning (Coordination)",
-          "body": "Working with tax professionals to evaluate, at a general planning level, whether cost segregation strategies may be relevant for certain real estate holdings. These discussions are intended to help assess whether accelerated depreciation concepts may play a role in broader tax-efficiency and cash-flow planning, while any analysis or implementation remains with qualified tax professionals."
+          "body": "Bringing together complex planning elements — such as concentrated wealth, liquidity events, insurance planning, tax-sensitive decisions, and long-term income considerations — into a coordinated strategy aligned with your overall financial plan.",
+          "itemsHeading": "How We Approach Advanced Planning",
+          "items": [
+            "Understand your broader financial and business picture",
+            "Identify planning areas where taxes, cash flow, and long-term goals may intersect",
+            "Coordinate with your CPA, attorney, and other professionals where appropriate",
+            "Evaluate multiple planning approaches based on your goals, timeline, and risk considerations",
+            "Help implement selected strategies through the appropriate professionals and service providers",
+            "Monitor and adjust the planning approach as circumstances evolve"
+          ],
+          "disclaimer": "If implemented, insurance-based products or annuities would be offered only through a separate licensed insurance capacity outside of the advisory relationship, and clients are under no obligation to purchase any such product."
         }
       ],
-      "disclaimers": ["Advanced planning strategies are discussed in coordination with your legal, tax, and other professional advisors where appropriate. Prosperity Planning & Advisory does not provide legal or tax advice."],
-      "planningAreasHeading": "Planning areas may include:",
-      "planningAreas": [
-        "Business retirement plan design and qualified plan education",
-        "Non-qualified deferred compensation concepts",
-        "Succession, buy-sell, and exit planning considerations",
-        "Executive bonus, key person, and talent retention strategies",
-        "Liquidity event coordination, concentration planning, and advanced tax-aware discussions"
-      ]
+      "disclaimers": ["All advanced planning strategies are evaluated in coordination with appropriate tax and legal professionals. Prosperity Planning & Advisory does not provide tax or legal advice. Insurance or other non-advisory products, where applicable, are offered separately outside the advisory relationship. Clients are under no obligation to implement any recommendation or purchase any product through any affiliated or separate capacity. A structured planning conversation can help clarify which options, if any, may be appropriate based on your circumstances."]
     }
   ],
   "approach": {

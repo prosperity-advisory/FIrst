@@ -10,9 +10,11 @@ interface Subsection {
   bodyExtra?: string;
   bodyExtra2?: string;
   items?: string[];
+  itemsHeading?: string;
   disclaimer?: string;
   ctaText?: string;
   ctaHref?: string;
+  subsections?: Subsection[];
 }
 
 interface ServiceSection {
@@ -20,6 +22,9 @@ interface ServiceSection {
   heading: string;
   body: string;
   bodyExtra?: string;
+  bodyExtra2?: string;
+  relevanceHeading?: string;
+  relevanceItems?: string[];
   subsections?: Subsection[];
   disclaimers?: string[];
   planningAreasHeading?: string;
@@ -68,24 +73,24 @@ function Collapse({ open, children }: { open: boolean; children: React.ReactNode
 }
 
 /* ── Subsection accordion item ── */
-function SubsectionItem({ sub }: { sub: Subsection }) {
+function SubsectionItem({ sub, nested = false }: { sub: Subsection; nested?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-border rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-[0_2px_12px_rgba(20,57,43,0.05)]">
+    <div className={`border border-border rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-[0_2px_12px_rgba(20,57,43,0.05)] ${nested ? "bg-cream/40" : ""}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-3 px-4 py-3.5 md:px-5 md:py-4 text-left cursor-pointer group"
+        className={`w-full flex items-center justify-between gap-3 ${nested ? "px-3.5 py-2.5 md:px-4 md:py-3" : "px-4 py-3.5 md:px-5 md:py-4"} text-left cursor-pointer group`}
         aria-expanded={open}
       >
-        <span className="font-sans text-[15px] md:text-base font-semibold text-navy leading-snug pr-2 group-hover:text-gold transition-colors duration-200">
+        <span className={`font-sans ${nested ? "text-[14px] md:text-[15px]" : "text-[15px] md:text-base"} font-semibold text-navy leading-snug pr-2 group-hover:text-gold transition-colors duration-200`}>
           {sub.heading}
         </span>
         <ChevronIcon open={open} size="sm" />
       </button>
 
       <Collapse open={open}>
-        <div className="px-4 pb-4 md:px-5 md:pb-5 pt-0">
+        <div className={`${nested ? "px-3.5 pb-3.5 md:px-4 md:pb-4" : "px-4 pb-4 md:px-5 md:pb-5"} pt-0`}>
           <div className="w-full h-px bg-border mb-3 md:mb-4" />
 
           {sub.body && (
@@ -104,6 +109,12 @@ function SubsectionItem({ sub }: { sub: Subsection }) {
             </p>
           )}
 
+          {sub.itemsHeading && (
+            <p className="text-[14px] md:text-[15px] font-semibold text-navy mb-2">
+              {sub.itemsHeading}
+            </p>
+          )}
+
           {sub.items && (
             <ul className="space-y-2 mb-3">
               {sub.items.map((item, i) => (
@@ -115,6 +126,15 @@ function SubsectionItem({ sub }: { sub: Subsection }) {
                 </li>
               ))}
             </ul>
+          )}
+
+          {/* Nested sub-subsections */}
+          {sub.subsections && sub.subsections.length > 0 && (
+            <div className="space-y-2 mt-3">
+              {sub.subsections.map((nested) => (
+                <SubsectionItem key={nested.heading} sub={nested} nested />
+              ))}
+            </div>
           )}
 
           {sub.ctaText && sub.ctaHref && (
@@ -209,9 +229,33 @@ export function ServiceAccordion({ sections }: ServiceAccordionProps) {
                   {section.body}
                 </p>
                 {section.bodyExtra && (
-                  <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                  <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 md:mb-6">
                     {section.bodyExtra}
                   </p>
+                )}
+                {section.bodyExtra2 && (
+                  <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8] mb-5 md:mb-6">
+                    {section.bodyExtra2}
+                  </p>
+                )}
+
+                {/* Relevance items */}
+                {section.relevanceHeading && section.relevanceItems && section.relevanceItems.length > 0 && (
+                  <div className="mb-6 md:mb-8">
+                    <p className="text-[15px] sm:text-base md:text-[17px] font-semibold text-navy mb-3">
+                      {section.relevanceHeading}
+                    </p>
+                    <ul className="space-y-2.5">
+                      {section.relevanceItems.map((item, j) => (
+                        <li key={j} className="flex items-start gap-3">
+                          <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                          <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
 
                 {/* Subsection accordions (level 2) */}

@@ -73,14 +73,13 @@
       },
       {
         "title": "Business Owner & Advanced Planning",
-        "description": "Supporting business owners and high-income households with complex financial decisions, competing priorities, and major financial transitions.",
-        "href": "/services#business-advanced",
+        "description": "Supporting business owners, professionals, and high-income households navigating complex financial decisions, competing priorities, and major financial transitions.",
+        "href": "#business-owner-detail",
         "items": [
-          { "title": "Business Planning", "description": "Helping evaluate personal and business financial decisions within one coordinated planning framework." },
-          { "title": "Business Retirement Plan Strategies", "description": "Reviewing retirement plan options and planning considerations for business owners and key employees." },
-          { "title": "Succession & Transition Planning", "description": "Preparing for future ownership changes and long-term business continuity through structured planning." },
-          { "title": "Advanced Planning Coordination", "description": "Coordinating complex financial decisions such as concentrated wealth, liquidity events, and tax-sensitive strategies within a comprehensive plan." },
-          { "title": "Cost Segregation Planning (Coordination)", "description": "Coordinating with tax professionals to evaluate cost segregation strategies for real estate holdings, with the goal of improving tax efficiency and cash flow." }
+          { "title": "Business Planning", "description": "Coordinating personal and business financial decisions into a unified strategy that supports day-to-day operations and long-term goals." },
+          { "title": "Executive Retention & Reward Strategies", "description": "Helping business owners evaluate strategies designed to attract, retain, and reward key leadership while aligning incentives with long-term business success." },
+          { "title": "Tax-Efficient Business & Exit Planning", "description": "Planning ahead for major financial decisions, liquidity events, and ownership transitions with an emphasis on tax awareness and cash-flow preservation." },
+          { "title": "Advanced Planning Coordination", "description": "Bringing together complex planning elements into a coordinated strategy aligned with your overall financial plan." }
         ]
       }
     ],

@@ -344,6 +344,20 @@ export function BusinessOwnerAccordion() {
             >
               Schedule Your Complimentary Strategy Review
             </Link>
+            <div className="mt-4">
+              <Link
+                href="/services#business-advanced"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-colors duration-300 hover:text-gold-light"
+              >
+                Learn More
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-3.5 h-3.5 stroke-current fill-none stroke-2 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </FadeUp>
       </div>

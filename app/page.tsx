@@ -7,9 +7,8 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { getHomeContent } from "@/lib/content";
 
-const content = getHomeContent();
-
-export default function Home() {
+export default async function Home() {
+  const content = await getHomeContent();
   return (
     <main>
       <HeroSection

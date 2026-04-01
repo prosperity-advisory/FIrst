@@ -5,18 +5,20 @@ import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { getWhoWeServeContent } from "@/lib/content";
 
-const content = getWhoWeServeContent();
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getWhoWeServeContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
-
-export default function WhoWeServePage() {
+export default async function WhoWeServePage() {
+  const content = await getWhoWeServeContent();
   return (
     <main>
       {/* Hero */}
@@ -59,7 +61,7 @@ export default function WhoWeServePage() {
             <h2 className="section-headline text-center">{content.quickOverview.heading}</h2>
           </FadeUp>
           <div className="mt-8 md:mt-10 space-y-4">
-            {content.quickOverview.items.map((item, i) => (
+            {content.quickOverview.items.map((item: { label: string; desc: string }, i: number) => (
               <FadeUp key={i} delay={Math.min(i, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
                 <div className="flex items-start gap-3">
                   <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
@@ -75,7 +77,7 @@ export default function WhoWeServePage() {
       </section>
 
       {/* Individual Audience Sections */}
-      {content.audiences.map((audience, i) => {
+      {content.audiences.map((audience: any, i: number) => {
         const isEven = i % 2 === 0;
         return (
           <section
@@ -98,7 +100,7 @@ export default function WhoWeServePage() {
                   You may be focused on:
                 </h3>
                 <ul className="space-y-2.5 mb-8">
-                  {audience.focusedOn.map((item) => (
+                  {audience.focusedOn.map((item: string) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
                       <span className="text-[15px] md:text-base text-slate leading-relaxed">
@@ -125,7 +127,7 @@ export default function WhoWeServePage() {
                   Planning areas often involved:
                 </h3>
                 <ul className="space-y-2.5 mb-8">
-                  {audience.planningAreas.map((item) => (
+                  {audience.planningAreas.map((item: string) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
                       <span className="text-[15px] md:text-base text-slate leading-relaxed">

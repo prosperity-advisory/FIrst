@@ -7,16 +7,17 @@ import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getProcessContent } from "@/lib/content";
 
-const content = getProcessContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getProcessContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 interface StepData {
   number: number;
@@ -35,7 +36,9 @@ interface ExpectItem {
   body: string;
 }
 
-export default function ProcessPage() {
+export default async function ProcessPage() {
+  const content = await getProcessContent();
+
   return (
     <main>
       {/* Hero */}

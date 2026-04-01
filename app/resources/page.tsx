@@ -4,16 +4,17 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getResourcesContent } from "@/lib/content";
 
-const content = getResourcesContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getResourcesContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 interface CalculatorTool {
   id?: string;
@@ -36,7 +37,8 @@ interface ResourceTopic {
   description: string;
 }
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const content = await getResourcesContent();
   return (
     <main>
       {/* Hero */}

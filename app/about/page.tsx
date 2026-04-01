@@ -5,16 +5,17 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getAboutContent } from "@/lib/content";
 
-const content = getAboutContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getAboutContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 const featureIcons: React.ReactNode[] = [
   /* Fiduciary Duty */
@@ -31,7 +32,8 @@ const featureIcons: React.ReactNode[] = [
   <svg key="goals" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>,
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getAboutContent();
   return (
     <main>
       <InteriorHero
@@ -117,7 +119,7 @@ export default function AboutPage() {
           {/* Feature badges */}
           <FadeUp delay={1}>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
-              {content.features.map((feature, i) => (
+              {content.features.map((feature: string, i: number) => (
                 <div key={feature} className="flex flex-col items-center gap-3">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-cream flex items-center justify-center shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
                     <span className="w-6 h-6 md:w-7 md:h-7 text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">

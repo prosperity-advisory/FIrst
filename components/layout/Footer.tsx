@@ -33,7 +33,12 @@ const FOOTER_GROUPS = [
   },
 ];
 
-export function Footer() {
+interface FooterProps {
+  linkGroups?: { heading: string; links: { href: string; label: string }[] }[];
+}
+
+export function Footer({ linkGroups }: FooterProps = {}) {
+  const groups = linkGroups ?? FOOTER_GROUPS;
   const pathname = usePathname();
 
   return (
@@ -70,7 +75,7 @@ export function Footer() {
           </div>
 
           {/* Link groups */}
-          {FOOTER_GROUPS.map((group) => (
+          {groups.map((group) => (
             <div key={group.heading}>
               <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-3 md:mb-4">
                 {group.heading}

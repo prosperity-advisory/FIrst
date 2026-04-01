@@ -6,16 +6,17 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getPlanningContent } from "@/lib/content";
 
-const content = getPlanningContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getPlanningContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 const serviceIcons: React.ReactNode[] = [
   /* Retirement */
@@ -39,7 +40,8 @@ const portalIcons: React.ReactNode[] = [
   <svg key="connected" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>,
 ];
 
-export default function PlanningPage() {
+export default async function PlanningPage() {
+  const content = await getPlanningContent();
   return (
     <main>
       <InteriorHero
@@ -79,7 +81,7 @@ export default function PlanningPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-            {content.serviceCards.map((card, i) => {
+            {content.serviceCards.map((card: { title: string; body: string; tagline?: string; cta?: { text: string; href: string } }, i: number) => {
               const delay = ((i % 3) + 1) as 1 | 2 | 3;
               return (
                 <FadeUp key={card.title} delay={delay} className="group">
@@ -161,7 +163,7 @@ export default function PlanningPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 lg:gap-7 max-w-[900px] mx-auto">
-            {content.portal.features.map((feature, i) => {
+            {content.portal.features.map((feature: { title: string; body: string }, i: number) => {
               const delay = ((i % 2) + 1) as 1 | 2;
               return (
                 <FadeUp key={feature.title} delay={delay}>

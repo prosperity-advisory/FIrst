@@ -5,18 +5,20 @@ import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getFaqsContent } from "@/lib/content";
 
-const content = getFaqsContent();
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getFaqsContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
-
-export default function FaqsPage() {
+export default async function FaqsPage() {
+  const content = await getFaqsContent();
   return (
     <main>
       <InteriorHero

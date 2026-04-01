@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { getSiteSettings } from "@/lib/content-db";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -56,17 +57,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await getSiteSettings();
+
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="min-h-screen antialiased">
-        <Header />
+        <Header
+          navItems={settings?.header?.navItems}
+          ctaText={settings?.header?.ctaText}
+          ctaMobileText={settings?.header?.ctaMobileText}
+        />
         {children}
-        <Footer />
+        <Footer linkGroups={settings?.footer?.linkGroups} />
       </body>
     </html>
   );

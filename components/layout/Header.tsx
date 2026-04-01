@@ -40,8 +40,15 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
+const DEFAULT_NAV_ITEMS = NAV_ITEMS;
 const CTA_HREF =
   "https://calendly.com/prosperityplanningandadvisory/clarity-session";
+
+interface HeaderProps {
+  navItems?: NavItem[];
+  ctaText?: string;
+  ctaMobileText?: string;
+}
 
 function ChevronDown({ className }: { className?: string }) {
   return (
@@ -54,7 +61,8 @@ function ChevronDown({ className }: { className?: string }) {
   );
 }
 
-export function Header() {
+export function Header({ navItems, ctaText, ctaMobileText }: HeaderProps = {}) {
+  const items = navItems ?? DEFAULT_NAV_ITEMS;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -158,7 +166,7 @@ export function Header() {
 
           {/* Desktop nav — visible at xl+ */}
           <div className="hidden xl:flex items-center gap-1 2xl:gap-1.5">
-            {NAV_ITEMS.map((item) => {
+            {items.map((item) => {
               const active = isActive(item);
               const hasChildren = !!item.children;
 
@@ -244,7 +252,7 @@ export function Header() {
               url={CTA_HREF}
               className="font-sans text-[12px] 2xl:text-[13px] font-semibold px-4 2xl:px-5 py-2.5 rounded-[5px] bg-gold text-navy whitespace-nowrap transition-all duration-300 hover:bg-gold-light hover:-translate-y-px ml-2"
             >
-              Schedule Review
+              {ctaText ?? "Schedule Review"}
             </CalendlyButton>
           </div>
 
@@ -291,7 +299,7 @@ export function Header() {
           menuOpen ? "right-0" : "-right-full"
         }`}
       >
-        {NAV_ITEMS.map((item) => {
+        {items.map((item) => {
           const active = isActive(item);
           const hasChildren = !!item.children;
           const isExpanded = mobileExpanded === item.label;
@@ -360,7 +368,7 @@ export function Header() {
           url={CTA_HREF}
           className="mt-6 inline-block px-7 py-3.5 bg-gold text-navy rounded-[5px] font-semibold text-center text-sm"
         >
-          Schedule Your Strategy Review
+          {ctaMobileText ?? "Schedule Your Strategy Review"}
         </CalendlyButton>
       </div>
     </>

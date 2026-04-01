@@ -6,16 +6,17 @@ import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { getCaseStudiesContent } from "@/lib/content";
 
-const content = getCaseStudiesContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getCaseStudiesContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 /* ── helpers ── */
 
@@ -356,7 +357,8 @@ function ScenarioContent({ s }: { s: AnyObj }) {
 }
 
 /* ── Page ── */
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage() {
+  const content = await getCaseStudiesContent();
   let sectionIdx = 0;
   const bg = () => (sectionIdx++ % 2 === 0 ? "bg-white" : "bg-cream");
 

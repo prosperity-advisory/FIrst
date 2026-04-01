@@ -6,18 +6,20 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getServicesContent } from "@/lib/content";
 
-const content = getServicesContent();
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getServicesContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
-
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const content = await getServicesContent();
   const { intro, sections, approach, disclosures } = content;
 
   return (

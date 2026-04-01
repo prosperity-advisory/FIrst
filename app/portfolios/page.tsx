@@ -5,18 +5,20 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getPortfoliosContent } from "@/lib/content";
 
-const content = getPortfoliosContent();
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getPortfoliosContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
-
-export default function PortfoliosPage() {
+export default async function PortfoliosPage() {
+  const content = await getPortfoliosContent();
   return (
     <main>
       <InteriorHero
@@ -36,7 +38,7 @@ export default function PortfoliosPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-            {content.portfolios.map((portfolio, i) => (
+            {content.portfolios.map((portfolio: { id: string; name: string; summary: string; goal: string; purpose: string; description: string; tagline: string }, i: number) => (
               <PortfolioCard
                 key={portfolio.id}
                 portfolio={portfolio}

@@ -6,16 +6,17 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getContactContent } from "@/lib/content";
 
-const content = getContactContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContactContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 const cardIcons: React.ReactNode[] = [
   /* Investment */
@@ -26,7 +27,8 @@ const cardIcons: React.ReactNode[] = [
   <svg key="estate" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>,
 ];
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const content = await getContactContent();
   return (
     <main>
       <InteriorHero
@@ -114,7 +116,7 @@ export default function ContactPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-            {content.serviceCards.map((card, i) => {
+            {content.serviceCards.map((card: { title: string; body: string; cta?: { text: string; href: string } }, i: number) => {
               const delay = (i + 1) as 1 | 2 | 3;
               return (
                 <FadeUp key={card.title} delay={delay}>

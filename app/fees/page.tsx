@@ -4,16 +4,17 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getFeesContent } from "@/lib/content";
 
-const content = getFeesContent();
-
-export const metadata: Metadata = {
-  title: content.meta.title,
-  description: content.meta.description,
-  openGraph: {
-    title: content.meta.ogTitle,
-    description: content.meta.ogDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getFeesContent();
+  return {
+    title: content.meta.title,
+    description: content.meta.description,
+    openGraph: {
+      title: content.meta.ogTitle,
+      description: content.meta.ogDescription,
+    },
+  };
+}
 
 interface FeeSection {
   id: string;
@@ -24,7 +25,9 @@ interface FeeSection {
   footnotes?: string[];
 }
 
-export default function FeesPage() {
+export default async function FeesPage() {
+  const content = await getFeesContent();
+
   return (
     <main>
       <InteriorHero

@@ -24,7 +24,11 @@ interface ServiceSection {
   bodyExtra?: string;
   bodyExtra2?: string;
   relevanceHeading?: string;
+  relevanceIntro?: string;
   relevanceItems?: string[];
+  whyHeading?: string;
+  whyIntro?: string;
+  whyItems?: string[];
   subsections?: Subsection[];
   disclaimers?: string[];
   planningAreasHeading?: string;
@@ -245,8 +249,37 @@ export function ServiceAccordion({ sections }: ServiceAccordionProps) {
                     <p className="text-[15px] sm:text-base md:text-[17px] font-semibold text-navy mb-3">
                       {section.relevanceHeading}
                     </p>
+                    {section.relevanceIntro && (
+                      <p className="text-[15px] md:text-base text-slate leading-[1.8] mb-3">
+                        {section.relevanceIntro}
+                      </p>
+                    )}
                     <ul className="space-y-2.5">
                       {section.relevanceItems.map((item, j) => (
+                        <li key={j} className="flex items-start gap-3">
+                          <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                          <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Why clients seek this planning */}
+                {section.whyHeading && section.whyItems && section.whyItems.length > 0 && (
+                  <div className="mb-6 md:mb-8">
+                    <p className="text-[15px] sm:text-base md:text-[17px] font-semibold text-navy mb-3">
+                      {section.whyHeading}
+                    </p>
+                    {section.whyIntro && (
+                      <p className="text-[15px] md:text-base text-slate leading-[1.8] mb-3">
+                        {section.whyIntro}
+                      </p>
+                    )}
+                    <ul className="space-y-2.5">
+                      {section.whyItems.map((item, j) => (
                         <li key={j} className="flex items-start gap-3">
                           <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
                           <span className="text-[15px] md:text-base text-slate leading-relaxed">

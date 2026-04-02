@@ -5,6 +5,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getContactContent } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContactContent();
@@ -18,14 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const cardIcons: React.ReactNode[] = [
-  /* Investment */
-  <svg key="investment" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>,
-  /* Retirement */
-  <svg key="retirement" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>,
-  /* Estate */
-  <svg key="estate" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>,
-];
+const defaultCardIcons = ["bar-chart", "target", "heart"];
 
 export default async function ContactPage() {
   const content = await getContactContent();
@@ -45,55 +39,20 @@ export default async function ContactPage() {
         details={[
           {
             label: "Address",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            ),
-            value: (
-              <>
-                {content.location.name}
-                <br />
-                {content.location.address}
-                <br />
-                {content.location.city}, {content.location.state}{" "}
-                {content.location.zip}
-              </>
-            ),
+            icon: "map-pin",
+            value: `${content.location.name}\n${content.location.address}\n${content.location.city}, ${content.location.state} ${content.location.zip}`,
           },
           {
             label: "Phone",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            ),
-            value: (
-              <a
-                href={`tel:${content.location.phone.replace(/[^\d]/g, "")}`}
-                className="text-gold hover:text-gold-light transition-colors"
-              >
-                {content.location.phone}
-              </a>
-            ),
+            icon: "phone",
+            value: content.location.phone,
+            href: `tel:${content.location.phone.replace(/[^\d]/g, "")}`,
           },
           {
             label: "Email",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            ),
-            value: (
-              <a
-                href={`mailto:${content.location.email}`}
-                className="text-gold hover:text-gold-light transition-colors"
-              >
-                {content.location.email}
-              </a>
-            ),
+            icon: "mail",
+            value: content.location.email,
+            href: `mailto:${content.location.email}`,
           },
         ]}
         ctaText="Schedule a Consultation →"
@@ -123,7 +82,7 @@ export default async function ContactPage() {
                   <div className="bg-white p-5 xs:p-6 sm:p-7 lg:p-10 rounded-lg border border-border border-t-[3px] border-t-transparent transition-all duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,57,43,0.1)] hover:border-t-gold h-full flex flex-col">
                     <div className="w-12 h-12 lg:w-[52px] lg:h-[52px] rounded-[10px] bg-linear-to-br from-gold/10 to-gold/5 flex items-center justify-center mb-5">
                       <span className="w-6 h-6 lg:w-[26px] lg:h-[26px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                        {cardIcons[i]}
+                        {getIcon(defaultCardIcons[i])}
                       </span>
                     </div>
 

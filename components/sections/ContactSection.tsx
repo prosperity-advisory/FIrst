@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { getIcon } from "@/lib/icons";
 
 interface ContactDetail {
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
   label: string;
-  value: React.ReactNode;
+  value: React.ReactNode | string;
+  href?: string | null;
 }
 
 interface ContactSectionProps {
@@ -18,6 +20,35 @@ interface ContactSectionProps {
   mapSublabel: string;
   image?: string;
   imageAlt?: string;
+}
+
+function renderDetailValue(detail: ContactDetail): React.ReactNode {
+  if (typeof detail.value !== "string") return detail.value;
+  // If there's an href, wrap in a link
+  if (detail.href) {
+    return (
+      <a href={detail.href} className="text-gold hover:text-gold-light transition-colors">
+        {detail.value}
+      </a>
+    );
+  }
+  // Multi-line values (address) — split on newlines
+  const val = detail.value as string;
+  if (val.includes("\n")) {
+    const lines = val.split("\n");
+    return lines.map((line, i) => (
+      <span key={i}>
+        {line}
+        {i < lines.length - 1 && <br />}
+      </span>
+    ));
+  }
+  return detail.value;
+}
+
+function renderIcon(icon: React.ReactNode | string): React.ReactNode {
+  if (typeof icon === "string") return getIcon(icon) ?? icon;
+  return icon;
 }
 
 export function ContactSection({
@@ -46,14 +77,14 @@ export function ContactSection({
               <div key={detail.label} className="flex items-start gap-3.5">
                 <div className="w-[38px] h-[38px] lg:w-10 lg:h-10 bg-cream rounded-lg flex items-center justify-center shrink-0 mt-0.5">
                   <span className="w-[17px] h-[17px] lg:w-[18px] lg:h-[18px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-2 [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                    {detail.icon}
+                    {renderIcon(detail.icon)}
                   </span>
                 </div>
                 <div className="text-sm lg:text-[15px] text-slate leading-relaxed">
                   <strong className="block font-semibold text-navy text-[13px] lg:text-sm mb-0.5">
                     {detail.label}
                   </strong>
-                  {detail.value}
+                  {renderDetailValue(detail)}
                 </div>
               </div>
             ))}

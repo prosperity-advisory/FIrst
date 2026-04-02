@@ -4,6 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getAboutContent } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getAboutContent();
@@ -17,27 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const featureIcons: React.ReactNode[] = [
-  /* Fiduciary Duty */
-  <svg key="fiduciary" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
-  /* Professional Guidance */
-  <svg key="guidance" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>,
-  /* Comprehensive */
-  <svg key="comprehensive" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>,
-  /* Personalized */
-  <svg key="personalized" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
-  /* Ongoing Support */
-  <svg key="support" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>,
-  /* Goal-Based */
-  <svg key="goals" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>,
-];
+const defaultFeatureIcons = ["shield", "star", "target", "users", "bar-chart", "target"];
 
 export default async function AboutPage() {
   const content = await getAboutContent();
   return (
     <main>
       <InteriorHero
-        eyebrow="Our Mission & Who We Are"
+        eyebrow={content.hero.eyebrow ?? "Our Mission & Who We Are"}
         headline={content.hero.headline}
         backgroundImage={content.hero.backgroundImage ?? "/images/Main Heading Image for about us-Our Mission page -JPG.JPG"}
       />
@@ -123,7 +111,7 @@ export default async function AboutPage() {
                 <div key={feature} className="flex flex-col items-center gap-3">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-cream flex items-center justify-center shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
                     <span className="w-6 h-6 md:w-7 md:h-7 text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                      {featureIcons[i]}
+                      {getIcon(defaultFeatureIcons[i])}
                     </span>
                   </div>
                   <span className="font-semibold text-sm md:text-[15px] text-navy text-center">

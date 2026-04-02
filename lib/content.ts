@@ -31,6 +31,15 @@ function ta(arr: { text: string }[] | undefined | null): string[] {
   return (arr ?? []).map((i) => i.text);
 }
 
+/** Recursively normalize accordion sections from DB: convert {text}[] items to string[] */
+function normalizeSections(sections: A[]): A[] {
+  return sections.map((s) => ({
+    ...s,
+    items: s.items ? (Array.isArray(s.items) && s.items[0]?.text !== undefined ? ta(s.items) : s.items) : undefined,
+    subsections: s.subsections ? normalizeSections(s.subsections) : undefined,
+  }));
+}
+
 // ---------------------------------------------------------------------------
 // HOME
 // ---------------------------------------------------------------------------
@@ -39,23 +48,124 @@ export const getHomeContent = cache(async () => {
   const page = await getPage('');
   if (!page) {
     console.warn('[content] Falling back to JSON for /');
-    return homeJson;
+    return {
+      ...homeJson,
+      hero: {
+        eyebrow: 'Your Fiduciary Partner',
+        headline: homeJson.hero.headline,
+        subheadline: homeJson.hero.subheadline,
+        ctaText: homeJson.hero.cta.text,
+        ctaHref: homeJson.hero.cta.href,
+        backgroundImage: homeJson.hero.backgroundImage ?? undefined,
+      },
+      mission: {
+        eyebrow: 'Our Mission',
+        headline: 'Welcome to Prosperity Planning',
+        body: homeJson.welcome.body,
+        badges: [] as { icon: string; label: string }[],
+        image: homeJson.mission.image ?? undefined,
+        imageAlt: homeJson.mission.imageAlt ?? undefined,
+      },
+      process: {
+        eyebrow: 'The Road to Prosperity',
+        headline: 'Your Journey to Financial Clarity',
+        subtitle: 'We guide every client through a structured six-step process designed to build confidence and keep every decision intentional.',
+        steps: homeJson.process.steps.map((s) => ({ ...s, description: '' })),
+        ctaText: 'Discover Our Six Step Process →',
+        ctaHref: '/process',
+        bannerImage: homeJson.process.bannerImage ?? undefined,
+        bannerAlt: homeJson.process.bannerAlt ?? undefined,
+      },
+      contact: {
+        eyebrow: 'Get In Touch',
+        headline: 'Woodland Hills Office Visits by Appointment',
+        details: [] as { icon: string; label: string; value: string; href?: string | null }[],
+        ctaText: 'Contact Us →',
+        ctaHref: '/contact',
+        mapLabel: 'Woodland Hills, CA',
+        mapSublabel: '21255 Burbank Blvd, Suite 120',
+        image: homeJson.contact.image ?? undefined,
+        imageAlt: homeJson.contact.imageAlt ?? undefined,
+      },
+      businessOwner: null as null,
+    };
   }
   const hero = page.section('hero');
   const mission = page.section('mission');
   const ps = page.section('process_steps');
   const cs = page.section('contact_section');
   const sg = page.section('services_grid');
+  const boa = page.section('business_owner_accordion');
   return {
     ...homeJson,
     meta: page.meta,
-    hero: { ...homeJson.hero, backgroundImage: hero?.backgroundImage as string | undefined },
-    mission: { ...homeJson.mission, image: mission?.image as string | undefined, imageAlt: mission?.imageAlt as string | undefined },
-    process: { ...homeJson.process, bannerImage: ps?.bannerImage as string | undefined, bannerAlt: ps?.bannerAlt as string | undefined },
-    contact: { image: cs?.image as string | undefined, imageAlt: cs?.imageAlt as string | undefined },
+    hero: hero
+      ? {
+          eyebrow: hero.eyebrow ?? homeJson.hero.headline,
+          headline: hero.headline ?? homeJson.hero.headline,
+          subheadline: hero.subheadline ?? homeJson.hero.subheadline,
+          ctaText: hero.ctaText ?? homeJson.hero.cta.text,
+          ctaHref: hero.ctaHref ?? homeJson.hero.cta.href,
+          backgroundImage: hero.backgroundImage as string | undefined,
+        }
+      : {
+          eyebrow: 'Your Fiduciary Partner',
+          headline: homeJson.hero.headline,
+          subheadline: homeJson.hero.subheadline,
+          ctaText: homeJson.hero.cta.text,
+          ctaHref: homeJson.hero.cta.href,
+          backgroundImage: undefined as string | undefined,
+        },
+    mission: mission
+      ? {
+          eyebrow: mission.eyebrow ?? 'Our Mission',
+          headline: mission.headline ?? 'Welcome to Prosperity Planning',
+          body: mission.body ?? homeJson.welcome.body,
+          badges: mission.badges ?? [],
+          image: mission.image as string | undefined,
+          imageAlt: mission.imageAlt as string | undefined,
+        }
+      : { ...homeJson.mission, eyebrow: 'Our Mission', headline: 'Welcome to Prosperity Planning', body: homeJson.welcome.body, badges: [] },
+    process: ps
+      ? {
+          eyebrow: ps.eyebrow ?? 'The Road to Prosperity',
+          headline: ps.headline ?? 'Your Journey to Financial Clarity',
+          subtitle: ps.subtitle ?? '',
+          steps: ps.steps ?? homeJson.process.steps,
+          ctaText: ps.ctaText ?? 'Discover Our Six Step Process →',
+          ctaHref: ps.ctaHref ?? '/process',
+          bannerImage: ps.bannerImage as string | undefined,
+          bannerAlt: ps.bannerAlt as string | undefined,
+        }
+      : { ...homeJson.process, eyebrow: 'The Road to Prosperity', headline: 'Your Journey to Financial Clarity', subtitle: '', ctaText: 'Discover Our Six Step Process →', ctaHref: '/process' },
+    contact: cs
+      ? {
+          eyebrow: cs.eyebrow ?? 'Get In Touch',
+          headline: cs.headline ?? 'Woodland Hills Office Visits by Appointment',
+          details: cs.details ?? [],
+          ctaText: cs.ctaText ?? 'Contact Us →',
+          ctaHref: cs.ctaHref ?? '/contact',
+          mapLabel: cs.mapLabel ?? 'Woodland Hills, CA',
+          mapSublabel: cs.mapSublabel ?? '21255 Burbank Blvd, Suite 120',
+          image: cs.image as string | undefined,
+          imageAlt: cs.imageAlt as string | undefined,
+        }
+      : { image: undefined as string | undefined, imageAlt: undefined as string | undefined },
     services: sg
       ? { eyebrow: sg.eyebrow, heading: sg.headline, body: sg.body, categories: sg.categories, nextSteps: sg.nextSteps }
       : homeJson.services,
+    businessOwner: boa
+      ? {
+          heading: boa.heading,
+          body: boa.body,
+          ctaText: boa.ctaText,
+          ctaHref: boa.ctaHref,
+          learnMoreText: boa.learnMoreText,
+          learnMoreHref: boa.learnMoreHref,
+          relevanceItems: boa.relevanceItems ? ta(boa.relevanceItems) : [],
+          sections: boa.sections ? normalizeSections(boa.sections) : [],
+        }
+      : null,
   };
 });
 
@@ -178,7 +288,7 @@ export const getAboutContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...aboutJson.hero, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined },
+    hero: { ...aboutJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined },
     mission: { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined },
     ourServices: services ? {
       heading: services.heading, body: services.body, items: ta(services.items), outro: services.outro,

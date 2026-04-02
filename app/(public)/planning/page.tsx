@@ -5,6 +5,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getPlanningContent } from "@/lib/content";
+import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getPlanningContent();
@@ -18,27 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const serviceIcons: React.ReactNode[] = [
-  /* Retirement */
-  <svg key="retirement" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>,
-  /* Family */
-  <svg key="family" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
-  /* Personal */
-  <svg key="personal" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
-  /* Risk */
-  <svg key="risk" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
-  /* Tax */
-  <svg key="tax" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>,
-  /* Wealth */
-  <svg key="wealth" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>,
-];
-
-const portalIcons: React.ReactNode[] = [
-  <svg key="review" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>,
-  <svg key="whatif" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>,
-  <svg key="simulations" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>,
-  <svg key="connected" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>,
-];
+const defaultServiceIcons = ["target", "users", "heart", "shield", "dollar", "bar-chart"];
+const defaultPortalIcons = ["briefcase", "target", "bar-chart", "heart"];
 
 export default async function PlanningPage() {
   const content = await getPlanningContent();
@@ -46,7 +28,7 @@ export default async function PlanningPage() {
     <main>
       <InteriorHero
         eyebrow={content.hero.eyebrow}
-        headline="Personal Prosperity Planning™"
+        headline={content.hero.headline ?? "Personal Prosperity Planning™"}
         subtitle={content.hero.tagline}
         ctaText={content.hero.cta.text + " →"}
         backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image 2 -JPG.JPG"}
@@ -88,7 +70,7 @@ export default async function PlanningPage() {
                   <div className="bg-white p-5 xs:p-6 sm:p-7 lg:p-10 rounded-lg border border-border border-t-[3px] border-t-transparent transition-all duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,57,43,0.1)] hover:border-t-gold h-full flex flex-col">
                     <div className="w-12 h-12 lg:w-[52px] lg:h-[52px] rounded-[10px] bg-linear-to-br from-gold/10 to-gold/5 flex items-center justify-center mb-5">
                       <span className="w-6 h-6 lg:w-[26px] lg:h-[26px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                        {serviceIcons[i]}
+                        {getIcon(defaultServiceIcons[i])}
                       </span>
                     </div>
 
@@ -170,7 +152,7 @@ export default async function PlanningPage() {
                   <div className="bg-cream p-6 sm:p-7 lg:p-8 rounded-lg border border-border flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(20,57,43,0.06)]">
                       <span className="w-[18px] h-[18px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                        {portalIcons[i]}
+                        {getIcon(defaultPortalIcons[i])}
                       </span>
                     </div>
                     <div>

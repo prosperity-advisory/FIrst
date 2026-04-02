@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { getIcon } from "@/lib/icons";
 
 interface TrustBadge {
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
   label: string;
 }
 
@@ -46,7 +47,7 @@ export function MissionSection({
                   <div key={badge.label} className="flex items-center gap-3.5 w-full xs:w-auto">
                     <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center shrink-0 shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
                       <span className="w-5 h-5 md:w-[22px] md:h-[22px] text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                        {badge.icon}
+                        {typeof badge.icon === "string" ? getIcon(badge.icon) : badge.icon}
                       </span>
                     </div>
                     <span className="font-semibold text-sm md:text-[15px] text-navy">

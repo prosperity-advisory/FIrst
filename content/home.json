@@ -127,6 +127,29 @@
             "description": "Integrating charitable goals into your broader financial, tax, and legacy planning discussions."
           }
         ]
+      },
+      {
+        "title": "Business Owner & Advanced Planning",
+        "description": "Supporting business owners, professionals, and high-income households navigating complex financial decisions, competing priorities, and major financial transitions.",
+        "href": "#business-owner-detail",
+        "items": [
+          {
+            "title": "Business Planning",
+            "description": "Coordinating personal and business financial decisions into a unified strategy that supports day-to-day operations and long-term goals."
+          },
+          {
+            "title": "Executive Retention & Reward Strategies",
+            "description": "Evaluating strategies designed to attract, retain, and reward key leadership while aligning incentives with long-term business success."
+          },
+          {
+            "title": "Tax-Efficient Business & Exit Planning",
+            "description": "Planning ahead for major financial decisions, liquidity events, and ownership transitions with an emphasis on tax awareness and long-term value."
+          },
+          {
+            "title": "Advanced Planning Coordination",
+            "description": "Bringing together complex planning elements into a coordinated strategy aligned with your overall financial plan."
+          }
+        ]
       }
     ],
     "nextSteps": ""

@@ -170,8 +170,30 @@ function AccordionItem({ section }: { section: AccordionSection }) {
 }
 
 /* ── Exported section ── */
-export function BusinessOwnerAccordion() {
-  const relevanceItems = [
+interface BusinessOwnerAccordionProps {
+  heading?: string;
+  body?: string;
+  secondaryBody?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  learnMoreText?: string;
+  learnMoreHref?: string;
+  relevanceItemsOverride?: string[];
+  sectionsOverride?: AccordionSection[];
+}
+
+export function BusinessOwnerAccordion({
+  heading,
+  body,
+  secondaryBody,
+  ctaText,
+  ctaHref,
+  learnMoreText,
+  learnMoreHref,
+  relevanceItemsOverride,
+  sectionsOverride,
+}: BusinessOwnerAccordionProps = {}) {
+  const relevanceItems = relevanceItemsOverride ?? [
     "Preparing for a business sale, liquidity event, or other major transition",
     "Experiencing a significant increase in income or business profitability",
     "Looking for ways to improve tax efficiency while protecting cash flow",
@@ -180,7 +202,7 @@ export function BusinessOwnerAccordion() {
     "Coordinating business decisions with personal retirement and legacy goals",
   ];
 
-  const sections: AccordionSection[] = [
+  const sections: AccordionSection[] = sectionsOverride ?? [
     {
       heading: "Business Planning",
       body: "Coordinating personal and business financial decisions into a unified strategy that supports day-to-day operations and long-term goals.",
@@ -277,19 +299,15 @@ export function BusinessOwnerAccordion() {
     >
       <div className="mx-auto max-w-[900px]">
         <FadeUp>
-          <span className="eyebrow !text-gold">Business Owner & Advanced Planning</span>
+          <span className="eyebrow !text-gold">{heading ?? "Business Owner & Advanced Planning"}</span>
           <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] font-semibold text-white mb-4 md:mb-5 leading-snug">
-            Business Owner &amp; Advanced Planning
+            {heading ?? "Business Owner & Advanced Planning"}
           </h2>
           <p className="text-[15px] sm:text-base md:text-[17px] text-white/80 leading-[1.8] mb-5 md:mb-6 max-w-[750px]">
-            Supporting business owners, professionals, and high-income households navigating
-            complex financial decisions, competing priorities, and major financial transitions.
+            {body ?? "Supporting business owners, professionals, and high-income households navigating complex financial decisions, competing priorities, and major financial transitions."}
           </p>
           <p className="text-[15px] sm:text-base md:text-[17px] text-white/70 leading-[1.8] mb-6 md:mb-8 max-w-[750px]">
-            Many business owners reach a point where traditional planning is no longer enough. As
-            income grows, business value increases, and future transition decisions become more
-            significant, planning often requires a more coordinated approach across cash flow, tax
-            awareness, key-person retention, and long-term ownership strategy.
+            {secondaryBody ?? "Many business owners reach a point where traditional planning is no longer enough. As income grows, business value increases, and future transition decisions become more significant, planning often requires a more coordinated approach across cash flow, tax awareness, key-person retention, and long-term ownership strategy."}
           </p>
         </FadeUp>
 
@@ -339,17 +357,17 @@ export function BusinessOwnerAccordion() {
               Explore how these strategies may apply to your situation and long-term goals.
             </p>
             <Link
-              href="https://calendly.com/prosperityplanningandadvisory/clarity-session"
+              href={ctaHref ?? "https://calendly.com/prosperityplanningandadvisory/clarity-session"}
               className="btn btn-gold"
             >
-              Schedule Your Complimentary Strategy Review
+              {ctaText ?? "Schedule Your Complimentary Strategy Review"}
             </Link>
             <div className="mt-4">
               <Link
-                href="/services#business-advanced"
+                href={learnMoreHref ?? "/services#business-advanced"}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-colors duration-300 hover:text-gold-light"
               >
-                Learn More
+                {learnMoreText ?? "Learn More"}
                 <svg
                   viewBox="0 0 24 24"
                   className="w-3.5 h-3.5 stroke-current fill-none stroke-2 transition-transform duration-300 group-hover:translate-x-1"

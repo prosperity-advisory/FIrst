@@ -12,83 +12,43 @@ export default async function Home() {
   return (
     <main>
       <HeroSection
-        eyebrow="Your Fiduciary Partner"
-        headline="Your Financial Plan<br/>Starts Here."
-        subheadline="Clarity. Confidence. Control. — A Financial Planner & Adviser proudly serving with integrity, where your best interest isn't just a commitment, it's our standard."
-        ctaText="Schedule Your Complimentary Strategy Review →"
-        backgroundImage={content.hero?.backgroundImage ?? "/images/Hero 3 blank.jpg"}
+        eyebrow={content.hero.eyebrow ?? "Your Fiduciary Partner"}
+        headline={content.hero.headline ?? "Your Financial Plan<br/>Starts Here."}
+        subheadline={content.hero.subheadline ?? "Clarity. Confidence. Control. — A Financial Planner & Adviser proudly serving with integrity, where your best interest isn't just a commitment, it's our standard."}
+        ctaText={content.hero.ctaText ?? "Schedule Your Complimentary Strategy Review →"}
+        ctaHref={content.hero.ctaHref}
+        backgroundImage={content.hero.backgroundImage ?? "/images/Hero 3 blank.jpg"}
       />
 
       <MissionSection
-        eyebrow="Our Mission"
-        headline="Welcome to Prosperity Planning"
-        body="At Prosperity Planning & Advisory, we partner with individuals and small business owners to work toward their financial goals with achievable strategies. As a fiduciary firm, we are legally and ethically committed to putting your best interests first in every recommendation we make. Whether you're preparing for retirement, building wealth, or strengthening your business, we deliver professional guidance and ongoing support."
-        badges={[
-          {
-            label: "Fiduciary Standard",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            ),
-          },
-          {
-            label: "Clear & Transparent Pricing",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            ),
-          },
-          {
-            label: "Personalized Strategies",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            ),
-          },
+        eyebrow={content.mission.eyebrow ?? "Our Mission"}
+        headline={content.mission.headline ?? "Welcome to Prosperity Planning"}
+        body={content.mission.body ?? "At Prosperity Planning & Advisory, we partner with individuals and small business owners to work toward their financial goals with achievable strategies. As a fiduciary firm, we are legally and ethically committed to putting your best interests first in every recommendation we make. Whether you're preparing for retirement, building wealth, or strengthening your business, we deliver professional guidance and ongoing support."}
+        badges={content.mission.badges?.length > 0 ? content.mission.badges : [
+          { label: "Fiduciary Standard", icon: "shield" },
+          { label: "Clear & Transparent Pricing", icon: "dollar" },
+          { label: "Personalized Strategies", icon: "users" },
         ]}
-        image={content.mission?.image ?? "/images/Replacement for lady on home page 2 jpg.JPG"}
-        imageAlt={content.mission?.imageAlt ?? "Financial advisor walking a path toward the future at sunrise"}
+        image={content.mission.image ?? "/images/Replacement for lady on home page 2 jpg.JPG"}
+        imageAlt={content.mission.imageAlt ?? "Financial advisor walking a path toward the future at sunrise"}
       />
 
       <ProcessSection
-        eyebrow="The Road to Prosperity"
-        headline="Your Journey to Financial Clarity"
-        subtitle="We guide every client through a structured six-step process designed to build confidence and keep every decision intentional."
-        steps={[
-          {
-            title: "Initial Meeting",
-            description: "Understanding your goals and priorities",
-          },
-          {
-            title: "Discovery",
-            description: "Uncovering your full financial picture",
-          },
-          {
-            title: "Design",
-            description: "Crafting tailored strategies for your situation",
-          },
-          {
-            title: "Recommend",
-            description: "Presenting a clear path forward",
-          },
-          {
-            title: "Implement",
-            description: "Putting strategies into action with care",
-          },
-          {
-            title: "Follow-Up",
-            description: "Ongoing support as life evolves",
-          },
+        eyebrow={content.process.eyebrow ?? "The Road to Prosperity"}
+        headline={content.process.headline ?? "Your Journey to Financial Clarity"}
+        subtitle={content.process.subtitle ?? "We guide every client through a structured six-step process designed to build confidence and keep every decision intentional."}
+        steps={content.process.steps?.length > 0 ? content.process.steps : [
+          { title: "Initial Meeting", description: "Understanding your goals and priorities" },
+          { title: "Discovery", description: "Uncovering your full financial picture" },
+          { title: "Design", description: "Crafting tailored strategies for your situation" },
+          { title: "Recommend", description: "Presenting a clear path forward" },
+          { title: "Implement", description: "Putting strategies into action with care" },
+          { title: "Follow-Up", description: "Ongoing support as life evolves" },
         ]}
-        ctaText="Discover Our Six Step Process →"
-        ctaHref="/process"
-        bannerImage={content.process?.bannerImage ?? "/images/Process google final.jpg"}
-        bannerAlt={content.process?.bannerAlt ?? "The six-step road to prosperity financial planning process"}
+        ctaText={content.process.ctaText ?? "Discover Our Six Step Process →"}
+        ctaHref={content.process.ctaHref ?? "/process"}
+        bannerImage={content.process.bannerImage ?? "/images/Process google final.jpg"}
+        bannerAlt={content.process.bannerAlt ?? "The six-step road to prosperity financial planning process"}
       />
 
       <ServicesGrid
@@ -99,60 +59,32 @@ export default async function Home() {
         nextSteps={content.services.nextSteps}
       />
 
-      <BusinessOwnerAccordion />
+      <BusinessOwnerAccordion
+        heading={content.businessOwner?.heading}
+        body={content.businessOwner?.body}
+        ctaText={content.businessOwner?.ctaText}
+        ctaHref={content.businessOwner?.ctaHref}
+        learnMoreText={content.businessOwner?.learnMoreText}
+        learnMoreHref={content.businessOwner?.learnMoreHref}
+        relevanceItemsOverride={content.businessOwner?.relevanceItems?.length ? content.businessOwner.relevanceItems : undefined}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        sectionsOverride={content.businessOwner?.sections?.length ? content.businessOwner.sections as any : undefined}
+      />
 
       <ContactSection
-        eyebrow="Get In Touch"
-        headline="Woodland Hills Office Visits by Appointment"
-        details={[
-          {
-            label: "Address",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            ),
-            value: (
-              <>
-                21255 Burbank Boulevard, Suite 120
-                <br />
-                Woodland Hills, CA 91367
-              </>
-            ),
-          },
-          {
-            label: "Phone",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-            ),
-            value: "888-427-5240",
-          },
-          {
-            label: "Email",
-            icon: (
-              <svg viewBox="0 0 24 24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            ),
-            value: (
-              <a
-                href="mailto:help@prosperityadvisory.net"
-                className="text-gold hover:text-gold-light transition-colors"
-              >
-                help@prosperityadvisory.net
-              </a>
-            ),
-          },
+        eyebrow={content.contact.eyebrow ?? "Get In Touch"}
+        headline={content.contact.headline ?? "Woodland Hills Office Visits by Appointment"}
+        details={content.contact.details?.length > 0 ? content.contact.details : [
+          { label: "Address", icon: "map-pin", value: "21255 Burbank Boulevard, Suite 120\nWoodland Hills, CA 91367" },
+          { label: "Phone", icon: "phone", value: "888-427-5240", href: "tel:888-427-5240" },
+          { label: "Email", icon: "mail", value: "help@prosperityadvisory.net", href: "mailto:help@prosperityadvisory.net" },
         ]}
-        ctaText="Contact Us →"
-        mapLabel="Woodland Hills, CA"
-        mapSublabel="21255 Burbank Blvd, Suite 120"
-        image={content.contact?.image ?? "/images/Front building.jpg"}
-        imageAlt={content.contact?.imageAlt ?? "Prosperity Planning & Advisory office in Woodland Hills, CA"}
+        ctaText={content.contact.ctaText ?? "Contact Us →"}
+        ctaHref={content.contact.ctaHref}
+        mapLabel={content.contact.mapLabel ?? "Woodland Hills, CA"}
+        mapSublabel={content.contact.mapSublabel ?? "21255 Burbank Blvd, Suite 120"}
+        image={content.contact.image ?? "/images/Front building.jpg"}
+        imageAlt={content.contact.imageAlt ?? "Prosperity Planning & Advisory office in Woodland Hills, CA"}
       />
 
       <CtaBand />

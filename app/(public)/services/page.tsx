@@ -139,10 +139,7 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline="Start Your Financial Journey Today"
-        subtext="Contact us for personalized advice."
-      />
+      <CtaBand pageSlug="services" />
     </main>
   );
 }

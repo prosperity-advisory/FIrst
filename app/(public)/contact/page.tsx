@@ -128,10 +128,7 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline="Ready to Take the Next Step?"
-        subtext="Schedule your complimentary strategy review and start building your financial plan with confidence."
-      />
+      <CtaBand pageSlug="contact" />
     </main>
   );
 }

@@ -71,10 +71,7 @@ export default async function FaqsPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline={content.ctaBand.heading}
-        subtext={content.ctaBand.body}
-      />
+      <CtaBand pageSlug="faqs" />
     </main>
   );
 }

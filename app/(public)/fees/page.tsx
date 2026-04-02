@@ -107,10 +107,7 @@ export default async function FeesPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline={content.ctaBand.heading}
-        subtext={content.ctaBand.body}
-      />
+      <CtaBand pageSlug="fees" />
     </main>
   );
 }

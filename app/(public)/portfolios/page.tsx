@@ -127,10 +127,7 @@ export default async function PortfoliosPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline="Discover Your Prosperity Pathway"
-        subtext="Schedule a complimentary strategy call to find the portfolio that fits your goals, risk tolerance, and stage of life."
-      />
+      <CtaBand pageSlug="portfolios" />
     </main>
   );
 }

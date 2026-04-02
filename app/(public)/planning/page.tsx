@@ -171,10 +171,7 @@ export default async function PlanningPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline="Ready to Build Your Plan?"
-        subtext="Schedule your complimentary financial planning review and take the first step toward financial independence."
-      />
+      <CtaBand pageSlug="planning" />
     </main>
   );
 }

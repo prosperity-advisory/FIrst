@@ -87,7 +87,7 @@ export default async function Home() {
         imageAlt={content.contact.imageAlt ?? "Prosperity Planning & Advisory office in Woodland Hills, CA"}
       />
 
-      <CtaBand />
+      <CtaBand pageSlug="" />
     </main>
   );
 }

@@ -136,10 +136,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <CtaBand
-        headline={content.ctaBand.heading}
-        subtext={content.ctaBand.body}
-      />
+      <CtaBand pageSlug="about" />
     </main>
   );
 }

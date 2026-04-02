@@ -2,6 +2,9 @@
 
 import { useState, useEffect, useRef, useTransition } from "react";
 import { getMediaItems, uploadImage } from "@/app/admin/actions";
+import { showToast } from "@/components/admin/Toast";
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type MediaItem = Record<string, any>;
@@ -20,30 +23,33 @@ export function MediaPickerModal({
   const [isPending, startTransition] = useTransition();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [fetchError, setFetchError] = useState<string | null>(null);
+
   useEffect(() => {
     if (!open) return;
     setLoading(true);
+    setFetchError(null);
     getMediaItems()
       .then(setItems)
+      .catch((err) => setFetchError(err instanceof Error ? err.message : "Failed to load media"))
       .finally(() => setLoading(false));
   }, [open]);
 
   function handleUpload(files: FileList | null) {
     if (!files?.length) return;
+    const file = files[0];
+    if (file.size > MAX_FILE_SIZE) {
+      showToast("error", "Image too large. Max 10MB.");
+      return;
+    }
     startTransition(async () => {
-      for (const file of Array.from(files)) {
-        const fd = new FormData();
-        fd.append("file", file);
-        try {
-          const url = await uploadImage(fd);
-          // Select the just-uploaded image
-          onSelect(url);
-          return;
-        } catch (err) {
-          alert(
-            "Upload failed: " + (err instanceof Error ? err.message : err)
-          );
-        }
+      const fd = new FormData();
+      fd.append("file", file);
+      try {
+        const url = await uploadImage(fd);
+        onSelect(url);
+      } catch (err) {
+        showToast("error", "Upload failed: " + (err instanceof Error ? err.message : err));
       }
     });
   }
@@ -104,6 +110,10 @@ export function MediaPickerModal({
           {loading ? (
             <p className="text-sm text-gray-500 text-center py-12">
               Loading...
+            </p>
+          ) : fetchError ? (
+            <p className="text-sm text-red-500 text-center py-12">
+              {fetchError}
             </p>
           ) : items.length === 0 ? (
             <p className="text-sm text-gray-500 text-center py-12">

@@ -4,6 +4,7 @@ import { useState, useCallback, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import type { FieldDefinition } from "@/lib/component-registry";
 import { updateSiteSettings } from "@/app/admin/actions";
+import { showToast } from "@/components/admin/Toast";
 import {
   FieldGroup,
   setNestedValue,
@@ -54,9 +55,14 @@ function SettingsCard({ section }: { section: SettingsSection }) {
   function handleSave() {
     setSaved(false);
     startTransition(async () => {
-      await updateSiteSettings(section.key, values);
-      setSaved(true);
-      router.refresh();
+      try {
+        await updateSiteSettings(section.key, values);
+        setSaved(true);
+        showToast("success", `${section.label} saved`);
+        router.refresh();
+      } catch (err) {
+        showToast("error", err instanceof Error ? err.message : "Failed to save");
+      }
     });
   }
 

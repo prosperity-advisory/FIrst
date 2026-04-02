@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import type { FieldDefinition } from "@/lib/component-registry";
 import { updateSectionContent } from "@/app/admin/actions";
+import { showToast } from "@/components/admin/Toast";
 import {
   FieldGroup,
   setNestedValue,
@@ -44,9 +45,14 @@ export function SectionEditorClient({
   function handleSave() {
     setSaved(false);
     startTransition(async () => {
-      await updateSectionContent(section.id, content);
-      setSaved(true);
-      router.refresh();
+      try {
+        await updateSectionContent(section.id, content);
+        setSaved(true);
+        showToast("success", "Section saved");
+        router.refresh();
+      } catch (err) {
+        showToast("error", err instanceof Error ? err.message : "Failed to save");
+      }
     });
   }
 

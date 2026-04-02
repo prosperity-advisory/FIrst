@@ -7,6 +7,9 @@ import {
   updateMediaAltText,
   deleteMediaItem,
 } from "@/app/admin/actions";
+import { showToast } from "@/components/admin/Toast";
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type MediaItem = Record<string, any>;
@@ -26,18 +29,25 @@ export function MediaLibraryClient({
   const handleUpload = useCallback(
     (files: FileList | null) => {
       if (!files?.length) return;
+      const toUpload = Array.from(files);
+      const oversized = toUpload.filter((f) => f.size > MAX_FILE_SIZE);
+      if (oversized.length > 0) {
+        showToast("error", `${oversized.map((f) => f.name).join(", ")} too large. Max 10MB.`);
+        return;
+      }
       startTransition(async () => {
-        for (const file of Array.from(files)) {
+        let uploaded = 0;
+        for (const file of toUpload) {
           const fd = new FormData();
           fd.append("file", file);
           try {
             await uploadImage(fd);
+            uploaded++;
           } catch (err) {
-            alert(
-              "Upload failed: " + (err instanceof Error ? err.message : err)
-            );
+            showToast("error", `Failed to upload ${file.name}: ${err instanceof Error ? err.message : "Unknown error"}`);
           }
         }
+        if (uploaded > 0) showToast("success", `${uploaded} image${uploaded > 1 ? "s" : ""} uploaded`);
         router.refresh();
       });
     },
@@ -52,11 +62,18 @@ export function MediaLibraryClient({
 
   function handleDelete(item: MediaItem) {
     if (!confirm(`Delete "${item.filename}"? This cannot be undone.`)) return;
-    setItems((prev) => prev.filter((i) => i.id !== item.id));
+    const prev = items;
+    setItems((s) => s.filter((i) => i.id !== item.id));
     if (selected?.id === item.id) setSelected(null);
     startTransition(async () => {
-      await deleteMediaItem(item.id, item.url);
-      router.refresh();
+      try {
+        await deleteMediaItem(item.id, item.url);
+        showToast("success", "Image deleted");
+        router.refresh();
+      } catch (err) {
+        setItems(prev);
+        showToast("error", err instanceof Error ? err.message : "Failed to delete");
+      }
     });
   }
 
@@ -197,9 +214,13 @@ function DetailPanel({
   function handleSaveAlt() {
     setAltSaved(false);
     startTransition(async () => {
-      await updateMediaAltText(item.id, altText);
-      onUpdate({ ...item, alt_text: altText });
-      setAltSaved(true);
+      try {
+        await updateMediaAltText(item.id, altText);
+        onUpdate({ ...item, alt_text: altText });
+        setAltSaved(true);
+      } catch (err) {
+        showToast("error", err instanceof Error ? err.message : "Failed to save alt text");
+      }
     });
   }
 

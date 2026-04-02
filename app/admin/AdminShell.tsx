@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createBrowserClient } from "@supabase/ssr";
+import { ToastContainer } from "@/components/admin/Toast";
 import type { User } from "@supabase/supabase-js";
 
 const NAV_ITEMS = [
@@ -142,6 +143,7 @@ export function AdminShell({
         {/* Page content */}
         <main className="flex-1 p-6 overflow-auto">{children}</main>
       </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -4,6 +4,9 @@ import { useState } from "react";
 import type { FieldDefinition } from "@/lib/component-registry";
 import { uploadImage } from "@/app/admin/actions";
 import { MediaPickerModal } from "@/components/admin/MediaPickerModal";
+import { showToast } from "@/components/admin/Toast";
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyRecord = Record<string, any>;
@@ -289,14 +292,19 @@ function ImageInput({
   async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    if (file.size > MAX_FILE_SIZE) {
+      showToast("error", "Image too large. Max 10MB. Try compressing it first.");
+      return;
+    }
     setUploading(true);
     try {
       const fd = new FormData();
       fd.append("file", file);
       const url = await uploadImage(fd);
       onUpdate(path, url);
+      showToast("success", "Image uploaded");
     } catch (err) {
-      alert("Upload failed: " + (err instanceof Error ? err.message : err));
+      showToast("error", "Upload failed: " + (err instanceof Error ? err.message : err));
     } finally {
       setUploading(false);
     }
@@ -497,6 +505,9 @@ function ArrayField({
     <div>
       <FieldLabel field={field} />
       <div className="space-y-2 mt-1">
+        {value.length === 0 && (
+          <p className="text-xs text-gray-400 italic py-2">No items yet</p>
+        )}
         {value.map((item, i) => {
           const isCollapsed = collapsed[i] ?? true;
           return (

@@ -144,6 +144,25 @@ export async function uploadImage(formData: FormData): Promise<string> {
 }
 
 // ---------------------------------------------------------------------------
+// Update site settings
+// ---------------------------------------------------------------------------
+
+export async function updateSiteSettings(
+  key: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: Record<string, any>
+) {
+  const supabase = await createSupabaseServerClient();
+  const { error } = await supabase
+    .from("site_settings")
+    .update({ value, updated_at: new Date().toISOString() })
+    .eq("key", key);
+
+  if (error) throw new Error(error.message);
+  revalidatePath("/", "layout");
+}
+
+// ---------------------------------------------------------------------------
 // Delete section
 // ---------------------------------------------------------------------------
 

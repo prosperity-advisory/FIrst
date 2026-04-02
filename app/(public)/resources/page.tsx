@@ -45,7 +45,7 @@ export default async function ResourcesPage() {
       <InteriorHero
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
-        backgroundImage="/images/services google.jpg"
+        backgroundImage={content.hero.backgroundImage ?? "/images/services google.jpg"}
       />
 
       {/* Hero extended body */}

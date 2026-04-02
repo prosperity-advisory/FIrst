@@ -28,7 +28,7 @@ export default async function ServicesPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.body}
-        backgroundImage="/images/services 2.0.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/services 2.0.JPG"}
       />
 
       {/* Intro Section */}

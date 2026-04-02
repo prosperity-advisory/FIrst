@@ -47,7 +47,7 @@ export default async function ProcessPage() {
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
         ctaText={content.hero.cta.text + " →"}
-        backgroundImage="/images/OUR Process replacement- JPG.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/OUR Process replacement- JPG.JPG"}
       />
 
       {/* Hero extended body */}
@@ -122,7 +122,7 @@ export default async function ProcessPage() {
           <FadeUp delay={2}>
             <div className="relative rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(20,57,43,0.10)] mb-10 md:mb-12">
               <Image
-                src="/images/road to prosperity wide 2.jpg"
+                src={content.roadmap?.image ?? "/images/road to prosperity wide 2.jpg"}
                 alt="The road to prosperity — a glowing golden path leading toward a bright horizon"
                 width={1200}
                 height={480}

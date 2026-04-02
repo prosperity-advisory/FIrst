@@ -41,10 +41,18 @@ export const getHomeContent = cache(async () => {
     console.warn('[content] Falling back to JSON for /');
     return homeJson;
   }
+  const hero = page.section('hero');
+  const mission = page.section('mission');
+  const ps = page.section('process_steps');
+  const cs = page.section('contact_section');
   const sg = page.section('services_grid');
   return {
     ...homeJson,
     meta: page.meta,
+    hero: { ...homeJson.hero, backgroundImage: hero?.backgroundImage as string | undefined },
+    mission: { ...homeJson.mission, image: mission?.image as string | undefined, imageAlt: mission?.imageAlt as string | undefined },
+    process: { ...homeJson.process, bannerImage: ps?.bannerImage as string | undefined, bannerAlt: ps?.bannerAlt as string | undefined },
+    contact: { image: cs?.image as string | undefined, imageAlt: cs?.imageAlt as string | undefined },
     services: sg
       ? { eyebrow: sg.eyebrow, heading: sg.headline, body: sg.body, categories: sg.categories, nextSteps: sg.nextSteps }
       : homeJson.services,
@@ -67,7 +75,7 @@ export const getServicesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { eyebrow: hero?.eyebrow, headline: hero?.headline, body: hero?.subtitle },
+    hero: { ...servicesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, body: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
     intro: si ? {
       paragraphs: ta(si.paragraphs),
       cta: { text: si.ctaText, href: si.ctaHref, prefix: si.ctaPrefix },
@@ -108,7 +116,7 @@ export const getPortfoliosContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body },
+    hero: { ...portfoliosJson.hero, headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body, backgroundImage: hero?.backgroundImage as string | undefined },
     portfolios: pc?.portfolios ?? portfoliosJson.portfolios,
     management: textSections[0] ?? portfoliosJson.management,
     fiduciary: textSections[1] ?? portfoliosJson.fiduciary,
@@ -136,9 +144,11 @@ export const getPlanningContent = cache(async () => {
   return {
     meta: page.meta,
     hero: {
+      ...planningJson.hero,
       eyebrow: hero?.eyebrow ?? planningJson.hero.eyebrow,
       headline: hero?.headline,
       tagline: hero?.subtitle,
+      backgroundImage: hero?.backgroundImage as string | undefined,
       body: hb?.paragraphs?.[0]?.text ?? planningJson.hero.body,
       detail: hb?.paragraphs?.[1]?.text ?? planningJson.hero.detail,
       cta: { text: hero?.ctaText ?? planningJson.hero.cta.text, href: hero?.ctaHref ?? planningJson.hero.cta.href },
@@ -147,7 +157,7 @@ export const getPlanningContent = cache(async () => {
       title: c.title, body: c.body, tagline: c.tagline,
       cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
     })) : planningJson.serviceCards,
-    portal: cp ?? planningJson.portal,
+    portal: { ...planningJson.portal, ...(cp ?? {}), image: cp?.image as string | undefined },
   };
 });
 
@@ -168,8 +178,8 @@ export const getAboutContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { headline: hero?.headline ?? aboutJson.hero.headline },
-    mission: mission ?? aboutJson.mission,
+    hero: { ...aboutJson.hero, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined },
+    mission: { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined },
     ourServices: services ? {
       heading: services.heading, body: services.body, items: ta(services.items), outro: services.outro,
     } : aboutJson.ourServices,
@@ -195,7 +205,9 @@ export const getContactContent = cache(async () => {
   return {
     meta: page.meta,
     hero: {
+      ...contactJson.hero,
       headline: hero?.headline ?? contactJson.hero.headline,
+      backgroundImage: hero?.backgroundImage as string | undefined,
       cta: { text: hero?.ctaText ?? contactJson.hero.cta.text, href: hero?.ctaHref ?? contactJson.hero.cta.href },
     },
     location: loc ? {
@@ -229,7 +241,9 @@ export const getWhoWeServeContent = cache(async () => {
   return {
     meta: page.meta,
     hero: {
+      ...whoWeServeJson.hero,
       eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle,
+      backgroundImage: hero?.backgroundImage as string | undefined,
       heroBody: ai?.heroBody ?? whoWeServeJson.hero.heroBody,
       cta: { text: hero?.ctaText, href: hero?.ctaHref },
     },
@@ -273,7 +287,9 @@ export const getProcessContent = cache(async () => {
   return {
     meta: page.meta,
     hero: {
+      ...processJson.hero,
       eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle,
+      backgroundImage: hero?.backgroundImage as string | undefined,
       body: hb ? ta(hb.paragraphs) : processJson.hero.body,
       cta: { text: hero?.ctaText, href: hero?.ctaHref },
     },
@@ -281,7 +297,7 @@ export const getProcessContent = cache(async () => {
       heading: wim.heading, body: wim.body, listHeading: wim.listHeading,
       items: ta(wim.items), paragraphs: ta(wim.paragraphs),
     } : processJson.whyItMatters,
-    roadmap: rm ?? processJson.roadmap,
+    roadmap: { ...processJson.roadmap, ...(rm ?? {}), image: rm?.image as string | undefined },
     steps: ds ? ds.steps.map((s: A) => ({
       number: s.number, title: s.title, subtitle: s.subtitle,
       body: ta(s.body), listHeading: s.listHeading, items: ta(s.items),
@@ -317,7 +333,7 @@ export const getFeesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle },
+    hero: { ...feesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
     sections: fs ? fs.sections.map((s: A) => ({
       id: s.id, heading: s.heading, paragraphs: ta(s.paragraphs),
       listHeading: s.listHeading, items: ta(s.items), footnotes: ta(s.footnotes),
@@ -341,7 +357,7 @@ export const getFaqsContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle },
+    hero: { ...faqsJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
     intro: { paragraphs: fc ? ta(fc.introParagraphs) : faqsJson.intro.paragraphs },
     categories: fc?.categories ?? faqsJson.categories,
     disclosures: fc?.disclosures ?? faqsJson.disclosures,
@@ -373,7 +389,8 @@ export const getResourcesContent = cache(async () => {
   return {
     meta: page.meta,
     hero: {
-      eyebrow: hero?.eyebrow, headline: hero?.headline,
+      ...resourcesJson.hero,
+      eyebrow: hero?.eyebrow, headline: hero?.headline, backgroundImage: hero?.backgroundImage as string | undefined,
       body: hb ? ta(hb.paragraphs) : resourcesJson.hero.body,
       cta: hb ? { text: hb.ctaText, href: hb.ctaHref, prefix: hb.ctaPrefix } : resourcesJson.hero.cta,
     },
@@ -419,7 +436,7 @@ export const getCaseStudiesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle },
+    hero: { ...caseStudiesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
     heroIntro: csi ? { paragraphs: ta(csi.heroIntroParagraphs), tagline: csi.tagline } : caseStudiesJson.heroIntro,
     whatYoullSee: csi ? { heading: csi.whatYoullSeeHeading, items: ta(csi.whatYoullSeeItems) } : caseStudiesJson.whatYoullSee,
     introSection: csi ? { heading: csi.introHeading, paragraphs: ta(csi.introParagraphs) } : caseStudiesJson.introSection,

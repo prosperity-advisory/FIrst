@@ -13,7 +13,8 @@
     "cta": {
       "text": "Start a Conversation",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "builtAroundYou": {
     "heading": "Financial Planning Built Around You",
@@ -22,11 +23,26 @@
   "quickOverview": {
     "heading": "Who This Is For (Quick Overview)",
     "items": [
-      { "label": "Pre-Retirees & Retirees", "desc": "Planning the transition from savings to income" },
-      { "label": "Small Business Owners", "desc": "Aligning business success with personal wealth" },
-      { "label": "High-Income Professionals", "desc": "Using your income more intentionally and efficiently" },
-      { "label": "Families", "desc": "Balancing today's needs with long-term goals" },
-      { "label": "Tax & Legacy-Focused Clients", "desc": "Planning beyond just investments" }
+      {
+        "label": "Pre-Retirees & Retirees",
+        "desc": "Planning the transition from savings to income"
+      },
+      {
+        "label": "Small Business Owners",
+        "desc": "Aligning business success with personal wealth"
+      },
+      {
+        "label": "High-Income Professionals",
+        "desc": "Using your income more intentionally and efficiently"
+      },
+      {
+        "label": "Families",
+        "desc": "Balancing today's needs with long-term goals"
+      },
+      {
+        "label": "Tax & Legacy-Focused Clients",
+        "desc": "Planning beyond just investments"
+      }
     ]
   },
   "audiences": [

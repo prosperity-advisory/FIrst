@@ -48,6 +48,7 @@ interface HeaderProps {
   navItems?: NavItem[];
   ctaText?: string;
   ctaMobileText?: string;
+  logoUrl?: string;
 }
 
 function ChevronDown({ className }: { className?: string }) {
@@ -61,7 +62,7 @@ function ChevronDown({ className }: { className?: string }) {
   );
 }
 
-export function Header({ navItems, ctaText, ctaMobileText }: HeaderProps = {}) {
+export function Header({ navItems, ctaText, ctaMobileText, logoUrl }: HeaderProps = {}) {
   const items = navItems ?? DEFAULT_NAV_ITEMS;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -146,7 +147,7 @@ export function Header({ navItems, ctaText, ctaMobileText }: HeaderProps = {}) {
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center gap-2 sm:gap-2.5 md:gap-3">
             <Image
-              src="/images/single-logo-trimmed.png"
+              src={logoUrl ?? "/images/single-logo-trimmed.png"}
               alt=""
               width={429}
               height={464}

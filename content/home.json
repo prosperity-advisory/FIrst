@@ -12,18 +12,39 @@
     "cta": {
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "process": {
     "intro": "At Prosperity Planning & Advisory, we believe financial confidence comes from clarity, collaboration, and trust. That's why we guide every client through a structured six-step process: beginning with an initial meeting to understand your goals, followed by discovery to uncover your full financial picture. We then design tailored strategies and recommend a path forward that aligns with your objectives. Once you're ready, we help you implement those strategies with care and provide ongoing follow-up to keep you aligned as life evolves. This structured approach is designed to help make decisions intentional, keep each step supported, and build confidence as you pursue long-term financial goals.",
     "steps": [
-      { "number": 1, "title": "Initial Meeting" },
-      { "number": 2, "title": "Discovery" },
-      { "number": 3, "title": "Design" },
-      { "number": 4, "title": "Recommend" },
-      { "number": 5, "title": "Implement" },
-      { "number": 6, "title": "Follow-Up" }
-    ]
+      {
+        "number": 1,
+        "title": "Initial Meeting"
+      },
+      {
+        "number": 2,
+        "title": "Discovery"
+      },
+      {
+        "number": 3,
+        "title": "Design"
+      },
+      {
+        "number": 4,
+        "title": "Recommend"
+      },
+      {
+        "number": 5,
+        "title": "Implement"
+      },
+      {
+        "number": 6,
+        "title": "Follow-Up"
+      }
+    ],
+    "bannerImage": null,
+    "bannerAlt": null
   },
   "welcome": {
     "heading": "Welcome to Prosperity Planning",
@@ -43,10 +64,22 @@
         "description": "Bringing clarity and structure to your everyday financial decisions so your plan supports both your current lifestyle and future goals.",
         "href": "/services#comprehensive",
         "items": [
-          { "title": "Spending Strategy", "description": "Helping you align saving, spending, and cash flow decisions so your day-to-day finances support long-term financial independence." },
-          { "title": "Education Planning", "description": "Helping you prepare for future education costs while balancing other financial priorities and long-term goals." },
-          { "title": "Insurance Planning", "description": "Evaluating protection needs and integrating insurance considerations into your broader financial strategy." },
-          { "title": "Personal Planning Coordination", "description": "Coordinating the key areas of your financial life into one cohesive strategy that evolves as your goals and circumstances change." }
+          {
+            "title": "Spending Strategy",
+            "description": "Helping you align saving, spending, and cash flow decisions so your day-to-day finances support long-term financial independence."
+          },
+          {
+            "title": "Education Planning",
+            "description": "Helping you prepare for future education costs while balancing other financial priorities and long-term goals."
+          },
+          {
+            "title": "Insurance Planning",
+            "description": "Evaluating protection needs and integrating insurance considerations into your broader financial strategy."
+          },
+          {
+            "title": "Personal Planning Coordination",
+            "description": "Coordinating the key areas of your financial life into one cohesive strategy that evolves as your goals and circumstances change."
+          }
         ]
       },
       {
@@ -54,10 +87,22 @@
         "description": "Turning your investments into a coordinated strategy designed to support growth, manage risk, and create sustainable income over time.",
         "href": "/services#investment-retirement",
         "items": [
-          { "title": "Retirement Planning", "description": "Helping you prepare for retirement with a clear strategy focused on accumulation, transition, and long-term sustainability." },
-          { "title": "Investment Management", "description": "Ongoing portfolio guidance aligned with your goals, time horizon, and risk tolerance." },
-          { "title": "Retirement Income Planning", "description": "Structuring income sources in retirement to support your lifestyle while maintaining long-term financial stability." },
-          { "title": "Tax-Efficient Investment Positioning", "description": "Incorporating tax considerations into investment decisions to help improve long-term portfolio efficiency." }
+          {
+            "title": "Retirement Planning",
+            "description": "Helping you prepare for retirement with a clear strategy focused on accumulation, transition, and long-term sustainability."
+          },
+          {
+            "title": "Investment Management",
+            "description": "Ongoing portfolio guidance aligned with your goals, time horizon, and risk tolerance."
+          },
+          {
+            "title": "Retirement Income Planning",
+            "description": "Structuring income sources in retirement to support your lifestyle while maintaining long-term financial stability."
+          },
+          {
+            "title": "Tax-Efficient Investment Positioning",
+            "description": "Incorporating tax considerations into investment decisions to help improve long-term portfolio efficiency."
+          }
         ]
       },
       {
@@ -65,10 +110,22 @@
         "description": "Helping ensure your wealth, values, and intentions are thoughtfully carried forward through coordinated planning strategies.",
         "href": "/services#estate-legacy",
         "items": [
-          { "title": "Estate Planning Coordination", "description": "Working alongside your legal and tax professionals to align estate planning strategies with your overall financial plan." },
-          { "title": "Legacy Planning", "description": "Clarifying long-term intentions for family, heirs, and charitable goals within a multigenerational framework." },
-          { "title": "Beneficiary & Transfer Review", "description": "Reviewing beneficiary designations and transfer strategies to support efficient and coordinated wealth transfer." },
-          { "title": "Charitable Planning Coordination", "description": "Integrating charitable goals into your broader financial, tax, and legacy planning discussions." }
+          {
+            "title": "Estate Planning Coordination",
+            "description": "Working alongside your legal and tax professionals to align estate planning strategies with your overall financial plan."
+          },
+          {
+            "title": "Legacy Planning",
+            "description": "Clarifying long-term intentions for family, heirs, and charitable goals within a multigenerational framework."
+          },
+          {
+            "title": "Beneficiary & Transfer Review",
+            "description": "Reviewing beneficiary designations and transfer strategies to support efficient and coordinated wealth transfer."
+          },
+          {
+            "title": "Charitable Planning Coordination",
+            "description": "Integrating charitable goals into your broader financial, tax, and legacy planning discussions."
+          }
         ]
       }
     ],
@@ -80,7 +137,10 @@
     "state": "CA",
     "zip": "91367",
     "country": "USA",
-    "cta": { "text": "Contact Us", "href": "/contact" }
+    "cta": {
+      "text": "Contact Us",
+      "href": "/contact"
+    }
   },
   "ctaBand": {
     "heading": "Create your financial plan with us now!",
@@ -89,5 +149,13 @@
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
     }
+  },
+  "mission": {
+    "image": null,
+    "imageAlt": null
+  },
+  "contact": {
+    "image": null,
+    "imageAlt": null
   }
 }

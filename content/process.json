@@ -16,7 +16,8 @@
     "cta": {
       "text": "Schedule Your Free 15-Minute Clarity Session",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "whyItMatters": {
     "heading": "Why Our Process Matters",
@@ -39,13 +40,38 @@
     "subheading": "Here's how we guide you through the planning process:",
     "intro": "Our process is designed to be structured, repeatable, and tailored to each client. We focus on understanding before recommending, education before implementation, and long-term alignment rather than one-time transactions.",
     "summary": [
-      { "number": 1, "title": "First Meeting", "description": "We get to know you, your priorities, and what brought you here." },
-      { "number": 2, "title": "Discovery", "description": "We organize your financial picture so nothing important is overlooked." },
-      { "number": 3, "title": "Design", "description": "We build personalized strategies based on your goals and situation." },
-      { "number": 4, "title": "Recommendation", "description": "We walk you through the plan clearly so you understand every step." },
-      { "number": 5, "title": "Implement", "description": "We help coordinate the action steps so you don't have to do it alone." },
-      { "number": 6, "title": "Follow-Up", "description": "We review, adjust, and keep your plan aligned over time." }
-    ]
+      {
+        "number": 1,
+        "title": "First Meeting",
+        "description": "We get to know you, your priorities, and what brought you here."
+      },
+      {
+        "number": 2,
+        "title": "Discovery",
+        "description": "We organize your financial picture so nothing important is overlooked."
+      },
+      {
+        "number": 3,
+        "title": "Design",
+        "description": "We build personalized strategies based on your goals and situation."
+      },
+      {
+        "number": 4,
+        "title": "Recommendation",
+        "description": "We walk you through the plan clearly so you understand every step."
+      },
+      {
+        "number": 5,
+        "title": "Implement",
+        "description": "We help coordinate the action steps so you don't have to do it alone."
+      },
+      {
+        "number": 6,
+        "title": "Follow-Up",
+        "description": "We review, adjust, and keep your plan aligned over time."
+      }
+    ],
+    "image": null
   },
   "steps": [
     {
@@ -222,11 +248,26 @@
   "whatToExpect": {
     "heading": "What You Can Expect as a Client",
     "items": [
-      { "title": "A structured and organized experience", "body": "You will always know where you are in the process and what comes next." },
-      { "title": "Personalized planning — not one-size-fits-all", "body": "Your strategies are built around your life, not a template." },
-      { "title": "Clear, practical communication", "body": "We focus on making financial decisions easier to understand." },
-      { "title": "Fiduciary guidance", "body": "We are committed to acting in your best interest when providing advisory services." },
-      { "title": "Ongoing support", "body": "We help you stay aligned as your life and financial situation evolve." }
+      {
+        "title": "A structured and organized experience",
+        "body": "You will always know where you are in the process and what comes next."
+      },
+      {
+        "title": "Personalized planning — not one-size-fits-all",
+        "body": "Your strategies are built around your life, not a template."
+      },
+      {
+        "title": "Clear, practical communication",
+        "body": "We focus on making financial decisions easier to understand."
+      },
+      {
+        "title": "Fiduciary guidance",
+        "body": "We are committed to acting in your best interest when providing advisory services."
+      },
+      {
+        "title": "Ongoing support",
+        "body": "We help you stay aligned as your life and financial situation evolve."
+      }
     ]
   },
   "planningExperience": {
@@ -239,11 +280,26 @@
   "faq": {
     "heading": "Frequently Asked Questions",
     "questions": [
-      { "question": "How long does the process take?", "answer": "The timeline depends on your situation and planning needs. We will help set clear expectations early in the process." },
-      { "question": "Is the first meeting a sales meeting?", "answer": "No. The first meeting is a conversation designed to understand your goals and determine if our process is a good fit." },
-      { "question": "Do I need to have everything organized before starting?", "answer": "No. Many clients begin because they want help organizing their financial picture." },
-      { "question": "Will you help implement recommendations?", "answer": "Yes, implementation support is part of the process based on the scope of engagement." },
-      { "question": "How often do you review the plan?", "answer": "Ongoing planning relationships typically include periodic reviews and updates as circumstances change." }
+      {
+        "question": "How long does the process take?",
+        "answer": "The timeline depends on your situation and planning needs. We will help set clear expectations early in the process."
+      },
+      {
+        "question": "Is the first meeting a sales meeting?",
+        "answer": "No. The first meeting is a conversation designed to understand your goals and determine if our process is a good fit."
+      },
+      {
+        "question": "Do I need to have everything organized before starting?",
+        "answer": "No. Many clients begin because they want help organizing their financial picture."
+      },
+      {
+        "question": "Will you help implement recommendations?",
+        "answer": "Yes, implementation support is part of the process based on the scope of engagement."
+      },
+      {
+        "question": "How often do you review the plan?",
+        "answer": "Ongoing planning relationships typically include periodic reviews and updates as circumstances change."
+      }
     ]
   },
   "closing": {

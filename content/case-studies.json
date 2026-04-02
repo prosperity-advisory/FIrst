@@ -8,7 +8,8 @@
   "hero": {
     "eyebrow": "Planning Scenarios & Examples",
     "headline": "How Thoughtful Financial Planning Comes Together",
-    "subheadline": "Explore hypothetical planning scenarios designed to show how coordinated financial planning may be applied to complex financial decisions across retirement, taxes, family priorities, business ownership, and legacy goals."
+    "subheadline": "Explore hypothetical planning scenarios designed to show how coordinated financial planning may be applied to complex financial decisions across retirement, taxes, family priorities, business ownership, and legacy goals.",
+    "backgroundImage": null
   },
   "heroIntro": {
     "paragraphs": [
@@ -59,12 +60,36 @@
       "We believe good financial planning is not about predicting outcomes, but about helping clients make informed, well-structured decisions over time."
     ],
     "steps": [
-      { "number": 1, "title": "Initial Meeting", "body": "We begin by understanding your priorities, concerns, and what financial progress means to you." },
-      { "number": 2, "title": "Discovery", "body": "We gather the relevant details needed to understand your full financial picture, including goals, assets, liabilities, income sources, and current strategies." },
-      { "number": 3, "title": "Design", "body": "We evaluate planning options and develop strategies tailored to your situation." },
-      { "number": 4, "title": "Recommend", "body": "We present recommendations clearly, explain trade-offs, and help you understand how different decisions may affect your broader plan." },
-      { "number": 5, "title": "Implement", "body": "Where appropriate, we may assist in coordinating next steps and moving from planning into action." },
-      { "number": 6, "title": "Follow-Up", "body": "As your life evolves, we continue reviewing progress and making adjustments to help keep your plan aligned." }
+      {
+        "number": 1,
+        "title": "Initial Meeting",
+        "body": "We begin by understanding your priorities, concerns, and what financial progress means to you."
+      },
+      {
+        "number": 2,
+        "title": "Discovery",
+        "body": "We gather the relevant details needed to understand your full financial picture, including goals, assets, liabilities, income sources, and current strategies."
+      },
+      {
+        "number": 3,
+        "title": "Design",
+        "body": "We evaluate planning options and develop strategies tailored to your situation."
+      },
+      {
+        "number": 4,
+        "title": "Recommend",
+        "body": "We present recommendations clearly, explain trade-offs, and help you understand how different decisions may affect your broader plan."
+      },
+      {
+        "number": 5,
+        "title": "Implement",
+        "body": "Where appropriate, we may assist in coordinating next steps and moving from planning into action."
+      },
+      {
+        "number": 6,
+        "title": "Follow-Up",
+        "body": "As your life evolves, we continue reviewing progress and making adjustments to help keep your plan aligned."
+      }
     ]
   },
   "scenariosIntro": {
@@ -89,9 +114,18 @@
     }
   },
   "quickLinks": [
-    { "label": "Retirement Readiness & Life Transitions", "href": "#retirement-transitions" },
-    { "label": "Tax-Aware Asset Transition Planning", "href": "#tax-aware" },
-    { "label": "Business Owner & Peak-Earning Strategy", "href": "#business-owner" }
+    {
+      "label": "Retirement Readiness & Life Transitions",
+      "href": "#retirement-transitions"
+    },
+    {
+      "label": "Tax-Aware Asset Transition Planning",
+      "href": "#tax-aware"
+    },
+    {
+      "label": "Business Owner & Peak-Earning Strategy",
+      "href": "#business-owner"
+    }
   ],
   "categories": [
     {
@@ -161,11 +195,26 @@
           "howWeHelp": {
             "intro": "At Prosperity Planning & Advisory, our role in a scenario like this is to provide a structured framework for evaluating a complex set of financial decisions.",
             "steps": [
-              { "title": "Discovery", "body": "We begin by reviewing the client's complete financial picture, retirement goals, expected lifestyle, compensation structure, account types, estate considerations, and current risk exposures." },
-              { "title": "Design", "body": "We model multiple retirement timing scenarios, evaluate savings and tax-planning opportunities, review concentration risks, and analyze how different decisions may affect long-term flexibility." },
-              { "title": "Recommendations", "body": "We work to organize the planning considerations into practical next steps, outlining trade-offs between current taxes, future taxes, liquidity, savings, and retirement timing." },
-              { "title": "Coordination", "body": "Where appropriate, implementation planning may involve coordination with the client's CPA, attorney, and benefits professionals, especially for deferred compensation elections, post-divorce legal updates, and beneficiary alignment." },
-              { "title": "Ongoing Review", "body": "Because retirement readiness can change meaningfully in the final working years, we revisit projections, tax assumptions, stock concentration, withdrawal strategies, and planning priorities over time." }
+              {
+                "title": "Discovery",
+                "body": "We begin by reviewing the client's complete financial picture, retirement goals, expected lifestyle, compensation structure, account types, estate considerations, and current risk exposures."
+              },
+              {
+                "title": "Design",
+                "body": "We model multiple retirement timing scenarios, evaluate savings and tax-planning opportunities, review concentration risks, and analyze how different decisions may affect long-term flexibility."
+              },
+              {
+                "title": "Recommendations",
+                "body": "We work to organize the planning considerations into practical next steps, outlining trade-offs between current taxes, future taxes, liquidity, savings, and retirement timing."
+              },
+              {
+                "title": "Coordination",
+                "body": "Where appropriate, implementation planning may involve coordination with the client's CPA, attorney, and benefits professionals, especially for deferred compensation elections, post-divorce legal updates, and beneficiary alignment."
+              },
+              {
+                "title": "Ongoing Review",
+                "body": "Because retirement readiness can change meaningfully in the final working years, we revisit projections, tax assumptions, stock concentration, withdrawal strategies, and planning priorities over time."
+              }
             ]
           },
           "keyTakeaways": [
@@ -211,13 +260,34 @@
             }
           ],
           "planningConsiderations": [
-            { "heading": "1. College funding strategy", "body": "How should college be funded?\nThis may involve evaluating 529 balances relative to projected costs, determining whether additional contributions make sense, and deciding how funding may be shared between savings, cash flow, and potential student responsibility." },
-            { "heading": "2. Retirement readiness", "body": "Are retirement goals still on track?\nEducation funding decisions may directly impact long-term retirement outcomes. A review may include savings rates, projected income needs, and retirement timing under different scenarios." },
-            { "heading": "3. Cash flow and lifestyle alignment", "body": "Is current spending aligned with priorities?\nThis includes evaluating discretionary spending and identifying whether additional savings capacity exists without disrupting what matters most to the family." },
-            { "heading": "4. Tax-aware investment decisions", "body": "What are the tax implications of funding choices?\nUsing taxable assets may trigger capital gains or sequencing concerns. A review may help determine whether repositioning investments over time improves efficiency, often in coordination with the client's tax professional." },
-            { "heading": "5. Liquidity and flexibility", "body": "Is enough flexibility being preserved?\nMaintaining appropriate cash reserves is important as large expenses approach. Overcommitting to tuition could reduce financial flexibility during uncertain periods." },
-            { "heading": "6. Estate planning coordination", "body": "Do legal and legacy plans reflect current wishes?\nThis may include reviewing wills, trusts, beneficiary designations, and guardianship provisions with qualified legal professionals." },
-            { "heading": "7. Tradeoffs and decision-making clarity", "body": "There is rarely a perfect answer—only informed tradeoffs.\nFamilies often must balance present support for children with long-term financial independence. Thoughtful planning helps clarify the implications of each decision so choices can be made with confidence." }
+            {
+              "heading": "1. College funding strategy",
+              "body": "How should college be funded?\nThis may involve evaluating 529 balances relative to projected costs, determining whether additional contributions make sense, and deciding how funding may be shared between savings, cash flow, and potential student responsibility."
+            },
+            {
+              "heading": "2. Retirement readiness",
+              "body": "Are retirement goals still on track?\nEducation funding decisions may directly impact long-term retirement outcomes. A review may include savings rates, projected income needs, and retirement timing under different scenarios."
+            },
+            {
+              "heading": "3. Cash flow and lifestyle alignment",
+              "body": "Is current spending aligned with priorities?\nThis includes evaluating discretionary spending and identifying whether additional savings capacity exists without disrupting what matters most to the family."
+            },
+            {
+              "heading": "4. Tax-aware investment decisions",
+              "body": "What are the tax implications of funding choices?\nUsing taxable assets may trigger capital gains or sequencing concerns. A review may help determine whether repositioning investments over time improves efficiency, often in coordination with the client's tax professional."
+            },
+            {
+              "heading": "5. Liquidity and flexibility",
+              "body": "Is enough flexibility being preserved?\nMaintaining appropriate cash reserves is important as large expenses approach. Overcommitting to tuition could reduce financial flexibility during uncertain periods."
+            },
+            {
+              "heading": "6. Estate planning coordination",
+              "body": "Do legal and legacy plans reflect current wishes?\nThis may include reviewing wills, trusts, beneficiary designations, and guardianship provisions with qualified legal professionals."
+            },
+            {
+              "heading": "7. Tradeoffs and decision-making clarity",
+              "body": "There is rarely a perfect answer—only informed tradeoffs.\nFamilies often must balance present support for children with long-term financial independence. Thoughtful planning helps clarify the implications of each decision so choices can be made with confidence."
+            }
           ],
           "howWeHelp": {
             "intro": "Our role is to help bring clarity and structure to complex financial decisions like these. Our process may include the following:\n\nAt Prosperity Planning & Advisory, this type of scenario typically begins with a comprehensive review of the household's financial picture so that education decisions can be evaluated in the broader context of retirement, taxes, investments, and long-term goals.",
@@ -291,21 +361,89 @@
             "Ensure estate and legacy planning reflect current wishes"
           ],
           "planningConsiderations": [
-            { "heading": "Tax and Sale Considerations", "items": ["Estimated capital gain, adjusted cost basis, and selling expenses", "Eligibility for primary residence exclusion", "Timing of the sale and potential tax-year impact", "Coordination with tax professionals prior to executing the transaction"] },
-            { "heading": "Retirement Income and Liquidity", "items": ["Required monthly income relative to lifestyle and healthcare needs", "Allocation of sale proceeds between short-term liquidity and long-term income", "Maintaining an appropriate emergency reserve"] },
-            { "heading": "Housing Transition", "items": ["Budget for replacement home purchase (cash vs partial financing)", "Impact of housing costs on overall retirement plan"] },
-            { "heading": "Risk Management and Healthcare Planning", "items": ["Longevity risk and the need for sustainable income", "Healthcare and long-term care considerations", "Protection against unexpected financial shocks"] },
-            { "heading": "Legacy and Charitable Goals", "items": ["Desire to support charitable causes", "Balancing personal use of assets with legacy intentions"] },
-            { "heading": "Estate Coordination", "items": ["Alignment of wills, trusts, and beneficiary designations", "Powers of attorney and healthcare directives"] }
+            {
+              "heading": "Tax and Sale Considerations",
+              "items": [
+                "Estimated capital gain, adjusted cost basis, and selling expenses",
+                "Eligibility for primary residence exclusion",
+                "Timing of the sale and potential tax-year impact",
+                "Coordination with tax professionals prior to executing the transaction"
+              ]
+            },
+            {
+              "heading": "Retirement Income and Liquidity",
+              "items": [
+                "Required monthly income relative to lifestyle and healthcare needs",
+                "Allocation of sale proceeds between short-term liquidity and long-term income",
+                "Maintaining an appropriate emergency reserve"
+              ]
+            },
+            {
+              "heading": "Housing Transition",
+              "items": [
+                "Budget for replacement home purchase (cash vs partial financing)",
+                "Impact of housing costs on overall retirement plan"
+              ]
+            },
+            {
+              "heading": "Risk Management and Healthcare Planning",
+              "items": [
+                "Longevity risk and the need for sustainable income",
+                "Healthcare and long-term care considerations",
+                "Protection against unexpected financial shocks"
+              ]
+            },
+            {
+              "heading": "Legacy and Charitable Goals",
+              "items": [
+                "Desire to support charitable causes",
+                "Balancing personal use of assets with legacy intentions"
+              ]
+            },
+            {
+              "heading": "Estate Coordination",
+              "items": [
+                "Alignment of wills, trusts, and beneficiary designations",
+                "Powers of attorney and healthcare directives"
+              ]
+            }
           ],
           "strategies": [
-            { "heading": "Downsizing and Liquidity Strategy", "body": "Analyzing the financial impact of selling the current residence, purchasing a smaller home, and allocating proceeds in a way that supports flexibility, reserves, and retirement confidence." },
-            { "heading": "Tax-Aware Planning Approach", "body": "Reviewing estimated capital gain exposure, adjusted cost basis, selling expenses, and timing considerations before executing a sale. This may also include coordination with the client's tax professional to better understand available exclusions, tax-year impact, and sequencing issues before more advanced planning strategies are considered." },
-            { "heading": "How Income Planning May Be Structured", "body": "Evaluating income approaches that may include:", "items": ["Short-term cash reserves for flexibility and unexpected expenses", "Conservative fixed-income allocations for stability", "Diversified portfolios for long-term growth potential", "Structured withdrawal approaches intended to support more disciplined cash-flow planning", "Separation of near-term, intermediate-term, and long-term assets to help align income needs with time horizon"] },
-            { "heading": "Charitable Planning Considerations", "body": "Where there is genuine charitable intent, evaluating whether strategies such as a charitable remainder trust may be appropriate to review with qualified legal and tax professionals. This type of strategy generally must be evaluated before a sale, is not appropriate for every client, and involves important tradeoffs, including irrevocability, administrative complexity, payout design, and coordination with broader estate and tax planning." },
-            { "heading": "Income Stability and Longevity Planning", "body": "Where appropriate, reviewing whether guaranteed-income-oriented solutions or other conservative income approaches may be considered as one part of the overall plan. This review may include liquidity constraints, surrender periods, contractual features, fees and costs where applicable, insurer claims-paying ability, and overall suitability relative to the client's goals and risk profile." },
-            { "heading": "Risk Management Review", "body": "Assessing emergency reserves, healthcare planning considerations, longevity risk, and protection strategies to help address unexpected life events and financial disruptions." },
-            { "heading": "Estate and Legacy Alignment", "body": "Coordinating estate documents and beneficiary designations to reflect current goals and help align personal, family, and charitable priorities." }
+            {
+              "heading": "Downsizing and Liquidity Strategy",
+              "body": "Analyzing the financial impact of selling the current residence, purchasing a smaller home, and allocating proceeds in a way that supports flexibility, reserves, and retirement confidence."
+            },
+            {
+              "heading": "Tax-Aware Planning Approach",
+              "body": "Reviewing estimated capital gain exposure, adjusted cost basis, selling expenses, and timing considerations before executing a sale. This may also include coordination with the client's tax professional to better understand available exclusions, tax-year impact, and sequencing issues before more advanced planning strategies are considered."
+            },
+            {
+              "heading": "How Income Planning May Be Structured",
+              "body": "Evaluating income approaches that may include:",
+              "items": [
+                "Short-term cash reserves for flexibility and unexpected expenses",
+                "Conservative fixed-income allocations for stability",
+                "Diversified portfolios for long-term growth potential",
+                "Structured withdrawal approaches intended to support more disciplined cash-flow planning",
+                "Separation of near-term, intermediate-term, and long-term assets to help align income needs with time horizon"
+              ]
+            },
+            {
+              "heading": "Charitable Planning Considerations",
+              "body": "Where there is genuine charitable intent, evaluating whether strategies such as a charitable remainder trust may be appropriate to review with qualified legal and tax professionals. This type of strategy generally must be evaluated before a sale, is not appropriate for every client, and involves important tradeoffs, including irrevocability, administrative complexity, payout design, and coordination with broader estate and tax planning."
+            },
+            {
+              "heading": "Income Stability and Longevity Planning",
+              "body": "Where appropriate, reviewing whether guaranteed-income-oriented solutions or other conservative income approaches may be considered as one part of the overall plan. This review may include liquidity constraints, surrender periods, contractual features, fees and costs where applicable, insurer claims-paying ability, and overall suitability relative to the client's goals and risk profile."
+            },
+            {
+              "heading": "Risk Management Review",
+              "body": "Assessing emergency reserves, healthcare planning considerations, longevity risk, and protection strategies to help address unexpected life events and financial disruptions."
+            },
+            {
+              "heading": "Estate and Legacy Alignment",
+              "body": "Coordinating estate documents and beneficiary designations to reflect current goals and help align personal, family, and charitable priorities."
+            }
           ],
           "keyTradeoffs": {
             "heading": "Key Tradeoffs We Help Clients Evaluate",
@@ -361,22 +499,64 @@
           ],
           "objectivesIntro": "This household's goals may include:",
           "planningConsiderations": [
-            { "heading": "Concentration Risk", "body": "A large single-stock position can materially increase portfolio risk. Even a successful company can face volatility, regulatory changes, leadership transitions, or sector-specific downturns. When one holding becomes too large relative to the household's total balance sheet, the risk can impact retirement lifestyle decisions and long-term financial security." },
-            { "heading": "Embedded Capital Gains", "body": "Because the stock has a low cost basis relative to its current value, immediate liquidation may create a substantial tax impact. The planning question is not simply whether to diversify, but how to do so in a tax-aware and time-sensitive manner." },
-            { "heading": "Tax Bracket Management", "body": "Capital gains realization, Roth conversions, and income timing must be coordinated carefully. Decisions made in one area may affect overall tax exposure, including potential impacts on Medicare premiums and future required distributions." },
-            { "heading": "Retirement Income Timing", "body": "The couple's current earned income is lower than it was during their working years, but taxable income may rise later once Social Security begins and required distributions start. This creates a potential planning window." },
-            { "heading": "Charitable Planning", "body": "If charitable giving is part of the household's goals, appreciated assets may offer tax-efficient opportunities. However, charitable strategies should align with genuine intent and financial comfort." },
-            { "heading": "Estate and Legacy Alignment", "body": "Highly appreciated assets often require coordination between investment strategy and estate planning, particularly when considering legacy goals and potential step-up in basis implications." }
+            {
+              "heading": "Concentration Risk",
+              "body": "A large single-stock position can materially increase portfolio risk. Even a successful company can face volatility, regulatory changes, leadership transitions, or sector-specific downturns. When one holding becomes too large relative to the household's total balance sheet, the risk can impact retirement lifestyle decisions and long-term financial security."
+            },
+            {
+              "heading": "Embedded Capital Gains",
+              "body": "Because the stock has a low cost basis relative to its current value, immediate liquidation may create a substantial tax impact. The planning question is not simply whether to diversify, but how to do so in a tax-aware and time-sensitive manner."
+            },
+            {
+              "heading": "Tax Bracket Management",
+              "body": "Capital gains realization, Roth conversions, and income timing must be coordinated carefully. Decisions made in one area may affect overall tax exposure, including potential impacts on Medicare premiums and future required distributions."
+            },
+            {
+              "heading": "Retirement Income Timing",
+              "body": "The couple's current earned income is lower than it was during their working years, but taxable income may rise later once Social Security begins and required distributions start. This creates a potential planning window."
+            },
+            {
+              "heading": "Charitable Planning",
+              "body": "If charitable giving is part of the household's goals, appreciated assets may offer tax-efficient opportunities. However, charitable strategies should align with genuine intent and financial comfort."
+            },
+            {
+              "heading": "Estate and Legacy Alignment",
+              "body": "Highly appreciated assets often require coordination between investment strategy and estate planning, particularly when considering legacy goals and potential step-up in basis implications."
+            }
           ],
           "strategies": [
-            { "heading": "Staged Diversification Over Multiple Years", "body": "Rather than selling the entire position in one year, a structured, multi-year diversification strategy may be considered to gradually reduce concentration risk while managing tax exposure." },
-            { "heading": "Tax-Aware Gain Realization", "body": "Stock sales may be coordinated with income thresholds, filing status, and projected tax brackets. The objective is not to eliminate taxes entirely, but to avoid unnecessary tax acceleration." },
-            { "heading": "Roth Conversion Analysis", "body": "During lower-income years, partial Roth conversions may be evaluated as one way to potentially improve long-term tax diversification and flexibility, depending on the household's broader tax picture and future income expectations. These must be carefully coordinated with other income-generating strategies." },
-            { "heading": "Structured or Deferred Sale Strategies", "body": "In certain cases, installment-style or structured sale approaches may be evaluated to potentially spread tax liability over time. These strategies can involve material complexity, fees, liquidity limitations, reliance on third-party structures, and legal or tax uncertainty, and they require careful review with qualified tax and legal professionals before implementation." },
-            { "heading": "Retirement Income Strategy Development", "body": "The household may evaluate how to transition assets into income-producing strategies, including diversified portfolios, fixed income structures, and, where appropriate and consistent with the client's objectives, certain annuity-based income strategies. Not all income strategies are suitable for all investors, and any such option should be evaluated in light of costs, liquidity, surrender features, tax treatment, and overall plan fit." },
-            { "heading": "Risk-Managed Investment Approaches", "body": "Strategies designed to reduce downside exposure while maintaining market participation—such as buffered or hedging-based approaches—may be evaluated where appropriate." },
-            { "heading": "Charitable Planning Strategies", "body": "If aligned with client goals, options such as gifting appreciated shares or utilizing donor-advised funds may be evaluated as tools that may help support charitable intent and tax-aware planning. These approaches should be considered only where they fit the client's philanthropic objectives, liquidity needs, and broader estate plan.\n\nIn certain situations, more advanced charitable planning strategies—such as charitable remainder trusts—may also be evaluated. These structures may allow for the potential deferral of capital gains on contributed assets and the creation of an income stream to beneficiaries over a defined period or lifetime, depending on structure and design.\n\nSome variations may incorporate fixed or variable payout approaches and, in certain cases, may be coordinated with other income-generating strategies as part of a broader retirement income plan. These strategies can involve complexity, reduced liquidity, irrevocable transfer of assets, and reliance on legal and tax structuring, and are not appropriate for all investors." },
-            { "heading": "Estate and Beneficiary Coordination", "body": "Estate documents, beneficiary designations, and long-term legacy goals may be reviewed to ensure alignment with the broader financial plan." }
+            {
+              "heading": "Staged Diversification Over Multiple Years",
+              "body": "Rather than selling the entire position in one year, a structured, multi-year diversification strategy may be considered to gradually reduce concentration risk while managing tax exposure."
+            },
+            {
+              "heading": "Tax-Aware Gain Realization",
+              "body": "Stock sales may be coordinated with income thresholds, filing status, and projected tax brackets. The objective is not to eliminate taxes entirely, but to avoid unnecessary tax acceleration."
+            },
+            {
+              "heading": "Roth Conversion Analysis",
+              "body": "During lower-income years, partial Roth conversions may be evaluated as one way to potentially improve long-term tax diversification and flexibility, depending on the household's broader tax picture and future income expectations. These must be carefully coordinated with other income-generating strategies."
+            },
+            {
+              "heading": "Structured or Deferred Sale Strategies",
+              "body": "In certain cases, installment-style or structured sale approaches may be evaluated to potentially spread tax liability over time. These strategies can involve material complexity, fees, liquidity limitations, reliance on third-party structures, and legal or tax uncertainty, and they require careful review with qualified tax and legal professionals before implementation."
+            },
+            {
+              "heading": "Retirement Income Strategy Development",
+              "body": "The household may evaluate how to transition assets into income-producing strategies, including diversified portfolios, fixed income structures, and, where appropriate and consistent with the client's objectives, certain annuity-based income strategies. Not all income strategies are suitable for all investors, and any such option should be evaluated in light of costs, liquidity, surrender features, tax treatment, and overall plan fit."
+            },
+            {
+              "heading": "Risk-Managed Investment Approaches",
+              "body": "Strategies designed to reduce downside exposure while maintaining market participation—such as buffered or hedging-based approaches—may be evaluated where appropriate."
+            },
+            {
+              "heading": "Charitable Planning Strategies",
+              "body": "If aligned with client goals, options such as gifting appreciated shares or utilizing donor-advised funds may be evaluated as tools that may help support charitable intent and tax-aware planning. These approaches should be considered only where they fit the client's philanthropic objectives, liquidity needs, and broader estate plan.\n\nIn certain situations, more advanced charitable planning strategies—such as charitable remainder trusts—may also be evaluated. These structures may allow for the potential deferral of capital gains on contributed assets and the creation of an income stream to beneficiaries over a defined period or lifetime, depending on structure and design.\n\nSome variations may incorporate fixed or variable payout approaches and, in certain cases, may be coordinated with other income-generating strategies as part of a broader retirement income plan. These strategies can involve complexity, reduced liquidity, irrevocable transfer of assets, and reliance on legal and tax structuring, and are not appropriate for all investors."
+            },
+            {
+              "heading": "Estate and Beneficiary Coordination",
+              "body": "Estate documents, beneficiary designations, and long-term legacy goals may be reviewed to ensure alignment with the broader financial plan."
+            }
           ],
           "phasingExample": {
             "heading": "An Example of How Planning May Be Phased Over Time Could Include",
@@ -420,13 +600,41 @@
           "introBody": "The following hypothetical example illustrates how comprehensive financial planning may apply in a complex, real-world situation. It is designed to provide educational insight into the types of considerations that may arise when transitioning from active asset management to a more passive retirement strategy.",
           "scenario": "This example features a 68-year-old real estate investor with three adult children. Over many years, the client built substantial wealth through rental properties and multiple 1031 exchanges. While the portfolio has appreciated significantly, the client has grown tired of the ongoing responsibilities of property oversight, vacancy risk, repairs, and administrative complexity. The client now wants to explore a more passive approach to retirement income without creating unnecessary tax disruption.\n\nIn this example, the client's balance sheet remains heavily concentrated in appreciated investment real estate, with additional retirement assets, taxable investments, and a debt-free primary residence. Estate documents are in place, but they have not been updated recently to reflect current asset values, family priorities, or charitable intentions. The central challenge is no longer accumulation—it is how to transition from active ownership to a more coordinated retirement, tax, and legacy strategy.",
           "objectivesGroups": [
-            { "heading": "Lifestyle & Simplicity", "items": ["Reduce the burden of active real estate management in retirement", "Improve lifestyle flexibility and reduce ongoing administrative responsibilities"] },
-            { "heading": "Income & Tax Strategy", "items": ["Replace variable rental cash flow with a more predictable retirement-income strategy", "Manage capital gains exposure and depreciation recapture thoughtfully over time", "Improve liquidity for healthcare, lifestyle, and contingency reserves"] },
-            { "heading": "Risk & Diversification", "items": ["Reduce concentration risk by diversifying away from a single asset class", "Evaluate alternatives to continued reliance on 1031 exchanges"] },
-            { "heading": "Legacy & Planning", "items": ["Review charitable planning opportunities involving appreciated property", "Update estate planning so asset distribution is clearer and easier for heirs to administer"] }
+            {
+              "heading": "Lifestyle & Simplicity",
+              "items": [
+                "Reduce the burden of active real estate management in retirement",
+                "Improve lifestyle flexibility and reduce ongoing administrative responsibilities"
+              ]
+            },
+            {
+              "heading": "Income & Tax Strategy",
+              "items": [
+                "Replace variable rental cash flow with a more predictable retirement-income strategy",
+                "Manage capital gains exposure and depreciation recapture thoughtfully over time",
+                "Improve liquidity for healthcare, lifestyle, and contingency reserves"
+              ]
+            },
+            {
+              "heading": "Risk & Diversification",
+              "items": [
+                "Reduce concentration risk by diversifying away from a single asset class",
+                "Evaluate alternatives to continued reliance on 1031 exchanges"
+              ]
+            },
+            {
+              "heading": "Legacy & Planning",
+              "items": [
+                "Review charitable planning opportunities involving appreciated property",
+                "Update estate planning so asset distribution is clearer and easier for heirs to administer"
+              ]
+            }
           ],
           "planningConsiderations": [
-            { "heading": "", "body": "In situations like this, several key areas are typically evaluated as part of the financial planning process.\n\nOne area that may be evaluated is whether a staged transition strategy could be more appropriate than a one-time liquidation. A gradual approach may allow taxes, reinvestment decisions, and retirement-income planning to be addressed over time rather than concentrated into a single year.\n\nIncome stability is often a priority for investors in similar situations. Rental income can be uneven due to vacancies, maintenance, or unexpected expenses. A planning review may explore ways to help convert illiquid real estate equity into more predictable income streams, including diversified portfolios, income-focused strategies, or structured approaches intended to help align with long-term retirement cash flow needs.\n\nThis scenario also involves tax-aware diversification decisions. Because a large portion of the client's net worth is tied to appreciated real estate, the planning process may evaluate strategies intended to help address the timing and potential impact of capital gains, along with depreciation recapture, sale timing, gifting strategies, and reinvestment options in coordination with the client's tax professional.\n\nIf charitable giving is a priority, the client may also evaluate whether appreciated property could play a role in a charitable planning strategy rather than defaulting to another exchange. In certain cases, this may include evaluating structured approaches that combine income planning with tax-efficient asset transitions, particularly when charitable goals are also a consideration. Any such strategies would be reviewed in coordination with legal and tax professionals and assessed for suitability.\n\nFinally, estate and family coordination is an important consideration. When different types of assets may be distributed among heirs, planning may help address fairness, simplify administration, and align the estate structure with the client's current wishes and family dynamics." }
+            {
+              "heading": "",
+              "body": "In situations like this, several key areas are typically evaluated as part of the financial planning process.\n\nOne area that may be evaluated is whether a staged transition strategy could be more appropriate than a one-time liquidation. A gradual approach may allow taxes, reinvestment decisions, and retirement-income planning to be addressed over time rather than concentrated into a single year.\n\nIncome stability is often a priority for investors in similar situations. Rental income can be uneven due to vacancies, maintenance, or unexpected expenses. A planning review may explore ways to help convert illiquid real estate equity into more predictable income streams, including diversified portfolios, income-focused strategies, or structured approaches intended to help align with long-term retirement cash flow needs.\n\nThis scenario also involves tax-aware diversification decisions. Because a large portion of the client's net worth is tied to appreciated real estate, the planning process may evaluate strategies intended to help address the timing and potential impact of capital gains, along with depreciation recapture, sale timing, gifting strategies, and reinvestment options in coordination with the client's tax professional.\n\nIf charitable giving is a priority, the client may also evaluate whether appreciated property could play a role in a charitable planning strategy rather than defaulting to another exchange. In certain cases, this may include evaluating structured approaches that combine income planning with tax-efficient asset transitions, particularly when charitable goals are also a consideration. Any such strategies would be reviewed in coordination with legal and tax professionals and assessed for suitability.\n\nFinally, estate and family coordination is an important consideration. When different types of assets may be distributed among heirs, planning may help address fairness, simplify administration, and align the estate structure with the client's current wishes and family dynamics."
+            }
           ],
           "howWeHelp": {
             "intro": "As a fiduciary firm, our role is to help evaluate options objectively and guide clients through complex financial decisions with clarity and structure.\n\nAt Prosperity Planning & Advisory, this type of planning begins with discovery. We work to understand the client's full financial picture, goals, cash-flow needs, tax considerations, and long-term priorities. From there, we design and evaluate strategies that fit the client's circumstances rather than applying a one-size-fits-all approach.",
@@ -472,7 +680,10 @@
           ],
           "objectivesFooter": "These objectives often require more than a real estate decision alone. They may call for coordinated planning across cash flow, taxes, estate considerations, charitable planning, and long-term income strategy.",
           "planningConsiderations": [
-            { "heading": "", "body": "This type of strategy is not appropriate for every client and should only be evaluated after a full review of the client's financial situation, goals, tax profile, income needs, charitable intent, liquidity needs, and risk tolerance.\n\nIn a case like this, planning considerations may include:\n• The estimated capital gain associated with the property sale\n• Whether the client plans to use a portion of proceeds to purchase a replacement residence outright\n• The client's current income sources, such as Social Security, pension income, or retirement accounts\n• The client's need for ongoing income versus immediate liquidity\n• The role of charitable intent in the planning process\n• Whether a charitable planning structure, such as a Charitable Remainder Trust (CRT), may be worth evaluating with qualified tax and legal professionals\n• The trade-offs between income generation, control of assets, complexity, and long-term flexibility\n\nIn some cases, charitable planning strategies are evaluated when a client is open to giving a portion of their assets to charity in exchange for potential income and tax-planning considerations.\n\nFor some clients, a CRT may be explored as part of a broader charitable and income-planning strategy. Depending on structure, applicable tax law, and individual circumstances, it may provide a combination of potential tax benefits, charitable deduction treatment, and an income stream over time. However, CRTs are highly specialized planning tools and are not suitable for every retiree or every property sale.\n\nThis type of planning should never be approached as a one-size-fits-all solution. The decision to use any charitable strategy must be based on careful analysis and coordinated with the client's CPA and estate planning attorney." }
+            {
+              "heading": "",
+              "body": "This type of strategy is not appropriate for every client and should only be evaluated after a full review of the client's financial situation, goals, tax profile, income needs, charitable intent, liquidity needs, and risk tolerance.\n\nIn a case like this, planning considerations may include:\n• The estimated capital gain associated with the property sale\n• Whether the client plans to use a portion of proceeds to purchase a replacement residence outright\n• The client's current income sources, such as Social Security, pension income, or retirement accounts\n• The client's need for ongoing income versus immediate liquidity\n• The role of charitable intent in the planning process\n• Whether a charitable planning structure, such as a Charitable Remainder Trust (CRT), may be worth evaluating with qualified tax and legal professionals\n• The trade-offs between income generation, control of assets, complexity, and long-term flexibility\n\nIn some cases, charitable planning strategies are evaluated when a client is open to giving a portion of their assets to charity in exchange for potential income and tax-planning considerations.\n\nFor some clients, a CRT may be explored as part of a broader charitable and income-planning strategy. Depending on structure, applicable tax law, and individual circumstances, it may provide a combination of potential tax benefits, charitable deduction treatment, and an income stream over time. However, CRTs are highly specialized planning tools and are not suitable for every retiree or every property sale.\n\nThis type of planning should never be approached as a one-size-fits-all solution. The decision to use any charitable strategy must be based on careful analysis and coordinated with the client's CPA and estate planning attorney."
+            }
           ],
           "howWeHelp": {
             "intro": "At Prosperity Planning & Advisory, we help clients evaluate major financial decisions within the context of their full financial picture.",
@@ -516,13 +727,54 @@
             "Gain clarity on whether the current approach is still appropriate or whether a more advanced structure should be evaluated"
           ],
           "planningConsiderations": [
-            { "heading": "", "body": "In a situation like this, multiple retirement plan designs and strategies may be evaluated. The appropriate direction depends on income stability, employee structure, contribution goals, and the owner's ability to commit to ongoing funding requirements.\n\nFor many business owners, the real planning challenge is not a lack of options—it is understanding which strategies may be worth deeper analysis, which tradeoffs matter most, and how today's decisions may affect taxes, cash flow, and retirement flexibility later on.\n\nA 401(k) with profit-sharing may be considered when a business owner wants more flexibility than a SEP-IRA. This structure may provide an opportunity for higher total contributions while maintaining some discretion year to year, depending on income, plan design, and employee considerations. It also introduces required compliance testing and employee contribution considerations.\n\nA cash balance plan, often layered on top of a 401(k)/profit-sharing structure, may be evaluated when the objective is to increase deductible contributions during high-income years. This type of plan may support accelerated retirement savings in appropriate situations, but it also introduces actuarial funding requirements, administrative complexity, and the expectation of consistent contributions.\n\nA 412(e)(3) fully insured defined benefit plan may be reviewed when a business owner is exploring a structure funded through qualifying insurance contracts. In certain limited circumstances, this type of design may appeal to those seeking contractual funding characteristics. However, it is generally less flexible and may not be appropriate for businesses with variable income or uncertain long-term commitment. These arrangements are highly specialized and are typically evaluated only in select situations where appropriate. Any guarantees associated with such arrangements are based solely on the underlying insurance contract and are subject to the claims-paying ability of the issuing insurer. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm." },
-            { "heading": "Tax Strategy Coordination", "items": ["Timing deductions during peak income years to potentially help reduce overall tax exposure", "Coordinating retirement contributions with CPA-driven tax planning strategies", "Evaluating how different plan structures impact taxable income across multiple years"] },
-            { "heading": "Contribution Layering Strategy", "items": ["Structuring contributions across multiple plan types (e.g., 401(k), profit-sharing, and defined benefit)", "Determining how much capital to allocate toward qualified plans versus maintaining liquidity in taxable accounts"] },
-            { "heading": "Retirement Income Planning (Forward-Looking)", "items": ["Evaluating how current contributions may translate into future retirement income needs", "Comparing flexible withdrawal strategies versus more structured income approaches", "In some cases, considering strategies designed to help address longevity risk and income variability through a combination of market-based investments and insurance-based solutions, depending on suitability, product terms, and overall plan design. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm."] },
-            { "heading": "Business and Cash Flow Considerations", "items": ["Assessing whether the business can support ongoing funding obligations in both strong and weaker years", "Evaluating debt obligations, capital expenditures, and operational needs alongside retirement contributions"] },
-            { "heading": "Employee Impact and Compliance", "items": ["Understanding required employer contributions for employees under each plan design", "Ensuring compliance with ERISA rules, nondiscrimination testing, and plan administration requirements"] },
-            { "heading": "Long-Term Planning Integration", "items": ["Aligning retirement plan decisions with broader goals such as business succession, potential exit planning, and family financial priorities", "In certain cases, exploring additional planning concepts such as installment-based or trust-based strategies in coordination with legal and tax professionals, particularly for future business transitions"] }
+            {
+              "heading": "",
+              "body": "In a situation like this, multiple retirement plan designs and strategies may be evaluated. The appropriate direction depends on income stability, employee structure, contribution goals, and the owner's ability to commit to ongoing funding requirements.\n\nFor many business owners, the real planning challenge is not a lack of options—it is understanding which strategies may be worth deeper analysis, which tradeoffs matter most, and how today's decisions may affect taxes, cash flow, and retirement flexibility later on.\n\nA 401(k) with profit-sharing may be considered when a business owner wants more flexibility than a SEP-IRA. This structure may provide an opportunity for higher total contributions while maintaining some discretion year to year, depending on income, plan design, and employee considerations. It also introduces required compliance testing and employee contribution considerations.\n\nA cash balance plan, often layered on top of a 401(k)/profit-sharing structure, may be evaluated when the objective is to increase deductible contributions during high-income years. This type of plan may support accelerated retirement savings in appropriate situations, but it also introduces actuarial funding requirements, administrative complexity, and the expectation of consistent contributions.\n\nA 412(e)(3) fully insured defined benefit plan may be reviewed when a business owner is exploring a structure funded through qualifying insurance contracts. In certain limited circumstances, this type of design may appeal to those seeking contractual funding characteristics. However, it is generally less flexible and may not be appropriate for businesses with variable income or uncertain long-term commitment. These arrangements are highly specialized and are typically evaluated only in select situations where appropriate. Any guarantees associated with such arrangements are based solely on the underlying insurance contract and are subject to the claims-paying ability of the issuing insurer. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm."
+            },
+            {
+              "heading": "Tax Strategy Coordination",
+              "items": [
+                "Timing deductions during peak income years to potentially help reduce overall tax exposure",
+                "Coordinating retirement contributions with CPA-driven tax planning strategies",
+                "Evaluating how different plan structures impact taxable income across multiple years"
+              ]
+            },
+            {
+              "heading": "Contribution Layering Strategy",
+              "items": [
+                "Structuring contributions across multiple plan types (e.g., 401(k), profit-sharing, and defined benefit)",
+                "Determining how much capital to allocate toward qualified plans versus maintaining liquidity in taxable accounts"
+              ]
+            },
+            {
+              "heading": "Retirement Income Planning (Forward-Looking)",
+              "items": [
+                "Evaluating how current contributions may translate into future retirement income needs",
+                "Comparing flexible withdrawal strategies versus more structured income approaches",
+                "In some cases, considering strategies designed to help address longevity risk and income variability through a combination of market-based investments and insurance-based solutions, depending on suitability, product terms, and overall plan design. Any insurance-related implementation would occur outside of the advisory relationship through appropriately licensed professionals and is not offered through the firm."
+              ]
+            },
+            {
+              "heading": "Business and Cash Flow Considerations",
+              "items": [
+                "Assessing whether the business can support ongoing funding obligations in both strong and weaker years",
+                "Evaluating debt obligations, capital expenditures, and operational needs alongside retirement contributions"
+              ]
+            },
+            {
+              "heading": "Employee Impact and Compliance",
+              "items": [
+                "Understanding required employer contributions for employees under each plan design",
+                "Ensuring compliance with ERISA rules, nondiscrimination testing, and plan administration requirements"
+              ]
+            },
+            {
+              "heading": "Long-Term Planning Integration",
+              "items": [
+                "Aligning retirement plan decisions with broader goals such as business succession, potential exit planning, and family financial priorities",
+                "In certain cases, exploring additional planning concepts such as installment-based or trust-based strategies in coordination with legal and tax professionals, particularly for future business transitions"
+              ]
+            }
           ],
           "howWeHelp": {
             "intro": "At Prosperity Planning & Advisory, our role is to help business owners make informed planning decisions with greater clarity and confidence.\n\nRather than assuming one strategy is universally appropriate, we guide clients through a structured, personalized process designed to evaluate tradeoffs, identify planning opportunities, and determine what may be appropriate based on the realities of the business, the household, and the long-term retirement picture.\n\nFor many clients, the value is not just in seeing what strategies exist—it is in understanding how those strategies may fit together, what risks or limitations need to be weighed, and how to avoid making important decisions in isolation.",
@@ -553,7 +805,10 @@
             "Evaluate additional planning opportunities to strengthen both current positioning and future retirement readiness"
           ],
           "planningConsiderations": [
-            { "heading": "", "body": "For business owners, advanced retirement planning can become more complex once employees, existing benefit plans, and entity structure are involved. In a situation like this, the planning process may require careful review of:\n• the current 401(k) and employee benefit structure\n• whether a defined benefit or cash balance plan may be appropriate, where suitable and in coordination with qualified professionals\n• employee coverage and nondiscrimination considerations\n• business cash flow and contribution sustainability\n• coordination between business planning, retirement planning, and family priorities\n• the need for collaboration with outside professionals on tax, ERISA, and legal matters when required\n\nMany of these factors are interconnected, and decisions in one area can affect plan design, employee obligations, cash flow, and long-term retirement projections.\n\nWhat may sound like a simple question—such as whether a business owner can add a more advanced retirement plan—often requires a broader review of plan design, business structure, implementation logistics, and long-term sustainability. Because tax and legal considerations may be part of that review, these discussions are best evaluated in coordination with the client's CPA, ERISA professionals, and legal counsel as appropriate." }
+            {
+              "heading": "",
+              "body": "For business owners, advanced retirement planning can become more complex once employees, existing benefit plans, and entity structure are involved. In a situation like this, the planning process may require careful review of:\n• the current 401(k) and employee benefit structure\n• whether a defined benefit or cash balance plan may be appropriate, where suitable and in coordination with qualified professionals\n• employee coverage and nondiscrimination considerations\n• business cash flow and contribution sustainability\n• coordination between business planning, retirement planning, and family priorities\n• the need for collaboration with outside professionals on tax, ERISA, and legal matters when required\n\nMany of these factors are interconnected, and decisions in one area can affect plan design, employee obligations, cash flow, and long-term retirement projections.\n\nWhat may sound like a simple question—such as whether a business owner can add a more advanced retirement plan—often requires a broader review of plan design, business structure, implementation logistics, and long-term sustainability. Because tax and legal considerations may be part of that review, these discussions are best evaluated in coordination with the client's CPA, ERISA professionals, and legal counsel as appropriate."
+            }
           ],
           "howWeHelp": {
             "intro": "Our role in a case like this is to bring structure, analysis, and coordination to a complex planning decision. That may include:",
@@ -587,10 +842,34 @@
           ],
           "objectivesFooter": "These objectives would be evaluated subject to the client's full financial review, priorities, and timing.",
           "planningConsiderations": [
-            { "heading": "", "body": "A scenario like this can involve multiple moving parts, many of which should be reviewed well before any binding transaction terms are in place." },
-            { "heading": "Transaction & Tax Considerations", "items": ["Sale timing and structure: Planning before a letter of intent or binding agreement may preserve more flexibility than after terms are finalized", "Business value and liquidity uncertainty: Preliminary valuations may change based on due diligence, deal structure, earnouts, and market conditions", "Capital gains and tax coordination: A future sale may create a significant tax event, requiring coordination with the client's CPA and legal professionals"] },
-            { "heading": "Income & Portfolio Considerations", "items": ["Investment values and income strategies may fluctuate based on market conditions, and should be aligned with the client's risk tolerance and time horizon.", "Retirement income needs: Determining how much annual after-tax income is needed to support lifestyle, travel, and family goals", "Diversification after a liquidity event: Transitioning from business concentration to a diversified strategy to help reduce risk and improve flexibility", "Risk tolerance and income design: Evaluating how much income should be stable versus market-based, depending on comfort with risk and long-term goals"] },
-            { "heading": "Legacy & Values Considerations", "items": ["Charitable planning: If there is genuine intent, certain charitable strategies may be worth evaluating before a transaction is finalized", "Estate and legacy alignment: Updating estate documents, beneficiary designations, and gifting strategies to reflect current priorities"] }
+            {
+              "heading": "",
+              "body": "A scenario like this can involve multiple moving parts, many of which should be reviewed well before any binding transaction terms are in place."
+            },
+            {
+              "heading": "Transaction & Tax Considerations",
+              "items": [
+                "Sale timing and structure: Planning before a letter of intent or binding agreement may preserve more flexibility than after terms are finalized",
+                "Business value and liquidity uncertainty: Preliminary valuations may change based on due diligence, deal structure, earnouts, and market conditions",
+                "Capital gains and tax coordination: A future sale may create a significant tax event, requiring coordination with the client's CPA and legal professionals"
+              ]
+            },
+            {
+              "heading": "Income & Portfolio Considerations",
+              "items": [
+                "Investment values and income strategies may fluctuate based on market conditions, and should be aligned with the client's risk tolerance and time horizon.",
+                "Retirement income needs: Determining how much annual after-tax income is needed to support lifestyle, travel, and family goals",
+                "Diversification after a liquidity event: Transitioning from business concentration to a diversified strategy to help reduce risk and improve flexibility",
+                "Risk tolerance and income design: Evaluating how much income should be stable versus market-based, depending on comfort with risk and long-term goals"
+              ]
+            },
+            {
+              "heading": "Legacy & Values Considerations",
+              "items": [
+                "Charitable planning: If there is genuine intent, certain charitable strategies may be worth evaluating before a transaction is finalized",
+                "Estate and legacy alignment: Updating estate documents, beneficiary designations, and gifting strategies to reflect current priorities"
+              ]
+            }
           ],
           "planningConsiderationsDisclaimer": "All planning considerations depend on the client's full financial picture, objectives, risk tolerance, liquidity needs, and timing.",
           "howWeHelp": {

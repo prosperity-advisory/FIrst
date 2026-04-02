@@ -34,7 +34,7 @@ export default async function FeesPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
-        backgroundImage="/images/tree jpg.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/tree jpg.JPG"}
       />
 
       {/* Content Sections */}

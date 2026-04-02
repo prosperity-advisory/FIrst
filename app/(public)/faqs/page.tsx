@@ -25,7 +25,7 @@ export default async function FaqsPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
-        backgroundImage="/images/Hero Image- jpg.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image- jpg.JPG"}
       />
 
       {/* Intro */}

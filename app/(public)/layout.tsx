@@ -15,6 +15,7 @@ export default async function PublicLayout({
         navItems={settings?.header?.navItems}
         ctaText={settings?.header?.ctaText}
         ctaMobileText={settings?.header?.ctaMobileText}
+        logoUrl={settings?.company?.logoUrl}
       />
       {children}
       <Footer linkGroups={settings?.footer?.linkGroups} />

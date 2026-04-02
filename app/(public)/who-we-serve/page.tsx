@@ -28,7 +28,7 @@ export default async function WhoWeServePage() {
         subtitle={content.hero.subheadline}
         ctaText={content.hero.cta.text}
         ctaHref={content.hero.cta.href}
-        backgroundImage="/images/Who We Serve-JPG.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/Who We Serve-JPG.JPG"}
       />
 
       {/* Hero extended body */}

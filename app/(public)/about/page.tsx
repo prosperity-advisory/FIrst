@@ -39,7 +39,7 @@ export default async function AboutPage() {
       <InteriorHero
         eyebrow="Our Mission & Who We Are"
         headline={content.hero.headline}
-        backgroundImage="/images/Main Heading Image for about us-Our Mission page -JPG.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/Main Heading Image for about us-Our Mission page -JPG.JPG"}
       />
 
       {/* Mission */}
@@ -60,7 +60,7 @@ export default async function AboutPage() {
           <FadeUp delay={2}>
             <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(20,57,43,0.12)] max-h-[280px] xs:max-h-[320px] sm:max-h-[360px] md:max-h-none">
               <Image
-                src="/images/Our Mission 2.0 JPG.JPG"
+                src={content.mission.image ?? "/images/Our Mission 2.0 JPG.JPG"}
                 alt="We help you see the bigger picture — and walk with you toward it"
                 width={600}
                 height={400}

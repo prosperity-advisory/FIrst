@@ -10,11 +10,13 @@
     "cta": {
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "mission": {
     "heading": "Dedicated to guiding your financial journey with expertise",
-    "body": "At Prosperity Planning and Advisory, our mission is to empower individuals, families, and business owners to pursue financial clarity, confidence, and lasting prosperity. We believe true wealth goes beyond numbers — it is measured in peace of mind, freedom of choice, and the ability to live life on your terms. Through comprehensive financial planning, customized portfolio strategies, and practical day-to-day guidance, we help our clients make informed decisions at every stage of life. Whether building a strong financial foundation, preparing for retirement, or navigating complex challenges, we serve as a dedicated partner committed to supporting your long-term goals. Our purpose is rooted in integrity, education, and personal connection. We deliver advice that blends time tested strategies with a deep understanding of your goals and values, with the aim that every plan reflects not only financial objectives but also the life you want to create. By helping turn uncertainty into confidence and possibility into opportunity, we seek to transform financial planning from a task into a lifelong advantage."
+    "body": "At Prosperity Planning and Advisory, our mission is to empower individuals, families, and business owners to pursue financial clarity, confidence, and lasting prosperity. We believe true wealth goes beyond numbers — it is measured in peace of mind, freedom of choice, and the ability to live life on your terms. Through comprehensive financial planning, customized portfolio strategies, and practical day-to-day guidance, we help our clients make informed decisions at every stage of life. Whether building a strong financial foundation, preparing for retirement, or navigating complex challenges, we serve as a dedicated partner committed to supporting your long-term goals. Our purpose is rooted in integrity, education, and personal connection. We deliver advice that blends time tested strategies with a deep understanding of your goals and values, with the aim that every plan reflects not only financial objectives but also the life you want to create. By helping turn uncertainty into confidence and possibility into opportunity, we seek to transform financial planning from a task into a lifelong advantage.",
+    "image": null
   },
   "ourServices": {
     "heading": "Our Services",

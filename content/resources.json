@@ -17,17 +17,38 @@
       "text": "Schedule a Clarity Call",
       "prefix": "If you'd like personalized guidance,",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "startHere": {
     "heading": "Start Here",
     "intro": "Not sure where to begin? Use this quick guide:",
     "items": [
-      { "trigger": "Selling an asset or investment?", "action": "Start with the Capital Gains Calculator", "href": "#capital-gains" },
-      { "trigger": "Planning for retirement?", "action": "Use the Investment or Roth IRA Calculator", "href": "#investment-retirement-tools" },
-      { "trigger": "Buying a home?", "action": "Explore the Mortgage Calculator", "href": "#family-lifestyle-tools" },
-      { "trigger": "Planning for college?", "action": "Review the Net Price Calculator", "href": "#family-lifestyle-tools" },
-      { "trigger": "Thinking about long-term care?", "action": "Use the Cost of Care Tool", "href": "#family-lifestyle-tools" }
+      {
+        "trigger": "Selling an asset or investment?",
+        "action": "Start with the Capital Gains Calculator",
+        "href": "#capital-gains"
+      },
+      {
+        "trigger": "Planning for retirement?",
+        "action": "Use the Investment or Roth IRA Calculator",
+        "href": "#investment-retirement-tools"
+      },
+      {
+        "trigger": "Buying a home?",
+        "action": "Explore the Mortgage Calculator",
+        "href": "#family-lifestyle-tools"
+      },
+      {
+        "trigger": "Planning for college?",
+        "action": "Review the Net Price Calculator",
+        "href": "#family-lifestyle-tools"
+      },
+      {
+        "trigger": "Thinking about long-term care?",
+        "action": "Use the Cost of Care Tool",
+        "href": "#family-lifestyle-tools"
+      }
     ]
   },
   "howToUse": {
@@ -156,13 +177,34 @@
   "resourceLibrary": {
     "heading": "Resource Library by Planning Topic",
     "topics": [
-      { "title": "Retirement Planning", "description": "Guidance on retirement readiness, income strategies, and long-term planning." },
-      { "title": "Tax-Efficient Planning", "description": "Resources focused on capital gains, charitable strategies, and coordinated tax planning." },
-      { "title": "Budgeting & Cash Flow", "description": "Tools and education to improve spending alignment and financial organization." },
-      { "title": "Family & Education Planning", "description": "Support for college planning, savings strategies, and family financial decisions." },
-      { "title": "Estate & Legacy Planning", "description": "Educational content around wealth transfer, beneficiary alignment, and legacy goals." },
-      { "title": "Small Business Planning", "description": "Resources for business owners focused on cash flow, retirement, and tax-aware strategies." },
-      { "title": "Attorney-Specific Planning Resources", "description": "Focused planning considerations for attorneys and high-income professionals." }
+      {
+        "title": "Retirement Planning",
+        "description": "Guidance on retirement readiness, income strategies, and long-term planning."
+      },
+      {
+        "title": "Tax-Efficient Planning",
+        "description": "Resources focused on capital gains, charitable strategies, and coordinated tax planning."
+      },
+      {
+        "title": "Budgeting & Cash Flow",
+        "description": "Tools and education to improve spending alignment and financial organization."
+      },
+      {
+        "title": "Family & Education Planning",
+        "description": "Support for college planning, savings strategies, and family financial decisions."
+      },
+      {
+        "title": "Estate & Legacy Planning",
+        "description": "Educational content around wealth transfer, beneficiary alignment, and legacy goals."
+      },
+      {
+        "title": "Small Business Planning",
+        "description": "Resources for business owners focused on cash flow, retirement, and tax-aware strategies."
+      },
+      {
+        "title": "Attorney-Specific Planning Resources",
+        "description": "Focused planning considerations for attorneys and high-income professionals."
+      }
     ]
   },
   "downloadableGuides": {

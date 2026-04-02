@@ -16,7 +16,7 @@ export default async function Home() {
         headline="Your Financial Plan<br/>Starts Here."
         subheadline="Clarity. Confidence. Control. — A Financial Planner & Adviser proudly serving with integrity, where your best interest isn't just a commitment, it's our standard."
         ctaText="Schedule Your Complimentary Strategy Review →"
-        backgroundImage="/images/Hero 3 blank.jpg"
+        backgroundImage={content.hero?.backgroundImage ?? "/images/Hero 3 blank.jpg"}
       />
 
       <MissionSection
@@ -51,8 +51,8 @@ export default async function Home() {
             ),
           },
         ]}
-        image="/images/Replacement for lady on home page 2 jpg.JPG"
-        imageAlt="Financial advisor walking a path toward the future at sunrise"
+        image={content.mission?.image ?? "/images/Replacement for lady on home page 2 jpg.JPG"}
+        imageAlt={content.mission?.imageAlt ?? "Financial advisor walking a path toward the future at sunrise"}
       />
 
       <ProcessSection
@@ -87,8 +87,8 @@ export default async function Home() {
         ]}
         ctaText="Discover Our Six Step Process →"
         ctaHref="/process"
-        bannerImage="/images/Process google final.jpg"
-        bannerAlt="The six-step road to prosperity financial planning process"
+        bannerImage={content.process?.bannerImage ?? "/images/Process google final.jpg"}
+        bannerAlt={content.process?.bannerAlt ?? "The six-step road to prosperity financial planning process"}
       />
 
       <ServicesGrid
@@ -151,8 +151,8 @@ export default async function Home() {
         ctaText="Contact Us →"
         mapLabel="Woodland Hills, CA"
         mapSublabel="21255 Burbank Blvd, Suite 120"
-        image="/images/Front building.jpg"
-        imageAlt="Prosperity Planning & Advisory office in Woodland Hills, CA"
+        image={content.contact?.image ?? "/images/Front building.jpg"}
+        imageAlt={content.contact?.imageAlt ?? "Prosperity Planning & Advisory office in Woodland Hills, CA"}
       />
 
       <CtaBand />

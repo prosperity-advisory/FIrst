@@ -12,7 +12,8 @@
     "cta": {
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"
-    }
+    },
+    "backgroundImage": null
   },
   "intro": {
     "paragraphs": [
@@ -27,10 +28,22 @@
     "exploreHeading": "Explore Our Services",
     "exploreBody": "Use the sections below to explore the planning areas we help coordinate:",
     "exploreLinks": [
-      { "title": "Comprehensive Financial Planning", "href": "#comprehensive" },
-      { "title": "Investment & Retirement Planning", "href": "#investment-retirement" },
-      { "title": "Estate & Legacy Planning", "href": "#estate-legacy" },
-      { "title": "Business Owner & Advanced Planning", "href": "#business-advanced" }
+      {
+        "title": "Comprehensive Financial Planning",
+        "href": "#comprehensive"
+      },
+      {
+        "title": "Investment & Retirement Planning",
+        "href": "#investment-retirement"
+      },
+      {
+        "title": "Estate & Legacy Planning",
+        "href": "#estate-legacy"
+      },
+      {
+        "title": "Business Owner & Advanced Planning",
+        "href": "#business-advanced"
+      }
     ],
     "exploreNote": "We primarily work with individuals nearing or in retirement, business owners, and high-income professionals seeking a more coordinated, fiduciary, and strategic approach to financial planning."
   },
@@ -143,7 +156,9 @@
           "body": "Charitable planning coordination helps incorporate charitable goals into a broader financial and legacy planning framework, including educational discussions of Charitable Remainder Trusts (CRTs/CRUTs) and other charitable planning concepts where appropriate. These conversations are intended to provide general education and help clients evaluate how charitable intentions may intersect with income, tax, legacy, and family planning priorities."
         }
       ],
-      "disclaimers": ["Prosperity Planning & Advisory does not provide legal or tax advice. Estate and legacy planning strategies are coordinated with your legal and tax professionals as appropriate."],
+      "disclaimers": [
+        "Prosperity Planning & Advisory does not provide legal or tax advice. Estate and legacy planning strategies are coordinated with your legal and tax professionals as appropriate."
+      ],
       "planningAreasHeading": "Planning areas may include:",
       "planningAreas": [
         "Beneficiary and asset-transfer coordination",
@@ -274,7 +289,9 @@
           "body": "Because advanced business-owner planning often touches multiple disciplines, these conversations are typically most effective when coordinated across Advisory, tax, legal, insurance, and other specialized professionals. The purpose of this section is to help clients better understand how these planning areas may connect within the broader financial picture and when additional specialist review may be appropriate."
         }
       ],
-      "disclaimers": ["Prosperity Planning & Advisory, LLC does not provide legal or tax advice. Advanced planning topics, including CRT/CRUT, Structured Installment Sale (SIS) concepts, Deferred Sales Trust concepts, defined benefit and cash balance plans, cost segregation discussions, and other business or tax-related strategies, are discussed for general educational and planning-coordination purposes and may require separate legal, tax, insurance, actuarial, or third-party analysis before implementation. Insurance-related products, where applicable, are offered only through a separate licensed insurance capacity outside of the advisory relationship, and clients are under no obligation to implement any recommendation or purchase any product through any separate capacity."]
+      "disclaimers": [
+        "Prosperity Planning & Advisory, LLC does not provide legal or tax advice. Advanced planning topics, including CRT/CRUT, Structured Installment Sale (SIS) concepts, Deferred Sales Trust concepts, defined benefit and cash balance plans, cost segregation discussions, and other business or tax-related strategies, are discussed for general educational and planning-coordination purposes and may require separate legal, tax, insurance, actuarial, or third-party analysis before implementation. Insurance-related products, where applicable, are offered only through a separate licensed insurance capacity outside of the advisory relationship, and clients are under no obligation to implement any recommendation or purchase any product through any separate capacity."
+      ]
     }
   ],
   "approach": {

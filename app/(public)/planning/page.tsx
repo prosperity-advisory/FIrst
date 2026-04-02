@@ -49,7 +49,7 @@ export default async function PlanningPage() {
         headline="Personal Prosperity Planning™"
         subtitle={content.hero.tagline}
         ctaText={content.hero.cta.text + " →"}
-        backgroundImage="/images/Hero Image 2 -JPG.JPG"
+        backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image 2 -JPG.JPG"}
       />
 
       {/* Intro body */}
@@ -151,7 +151,7 @@ export default async function PlanningPage() {
               </p>
               <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(20,57,43,0.10)] border border-border max-w-[600px] mx-auto">
                 <Image
-                  src="/images/Dashboard.JPG"
+                  src={content.portal?.image ?? "/images/Dashboard.JPG"}
                   alt="Financial planning dashboard showing portfolio analysis, projections, and asset allocation"
                   width={824}
                   height={871}

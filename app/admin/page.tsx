@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { getSnapshotInfo } from "@/app/admin/actions";
+import { BackupRestore } from "./BackupRestore";
 
 export default async function AdminDashboard() {
   const supabase = await createSupabaseServerClient();
@@ -13,6 +15,7 @@ export default async function AdminDashboard() {
     .from("sections")
     .select("id", { count: "exact", head: true });
 
+  const snapshot = await getSnapshotInfo();
   const totalPages = pages?.length ?? 0;
   const publishedPages = pages?.filter((p) => p.is_published).length ?? 0;
 
@@ -94,6 +97,11 @@ export default async function AdminDashboard() {
             </div>
           </div>
         </Link>
+      </div>
+
+      {/* Backup & Restore */}
+      <div className="mb-8">
+        <BackupRestore snapshot={snapshot} />
       </div>
 
       {/* Recent pages */}

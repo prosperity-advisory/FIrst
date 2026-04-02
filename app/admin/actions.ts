@@ -2,6 +2,8 @@
 
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { revalidatePath } from "next/cache";
+import { readFileSync, writeFileSync, existsSync } from "fs";
+import { resolve } from "path";
 
 // ---------------------------------------------------------------------------
 // Page metadata
@@ -224,4 +226,99 @@ export async function deleteSection(sectionId: string) {
 
   if (error) throw new Error(error.message);
   revalidatePath("/", "layout");
+}
+
+// ---------------------------------------------------------------------------
+// Snapshot & Restore
+// ---------------------------------------------------------------------------
+
+const SNAPSHOT_PATH = resolve(process.cwd(), "supabase", "snapshot.json");
+
+export async function takeSnapshot() {
+  const supabase = await createSupabaseServerClient();
+
+  const { data: pages } = await supabase
+    .from("pages").select("*").order("sort_order");
+  const { data: sections } = await supabase
+    .from("sections").select("*").order("page_id").order("sort_order");
+  const { data: settings } = await supabase
+    .from("site_settings").select("*");
+  const { data: media } = await supabase
+    .from("media").select("*").order("uploaded_at", { ascending: false });
+
+  const snapshot = {
+    created_at: new Date().toISOString(),
+    pages: pages ?? [],
+    sections: sections ?? [],
+    site_settings: settings ?? [],
+    media: media ?? [],
+  };
+
+  writeFileSync(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2) + "\n");
+
+  return {
+    created_at: snapshot.created_at,
+    pages: snapshot.pages.length,
+    sections: snapshot.sections.length,
+    settings: snapshot.site_settings.length,
+    media: snapshot.media.length,
+  };
+}
+
+export async function getSnapshotInfo() {
+  if (!existsSync(SNAPSHOT_PATH)) return null;
+  try {
+    const raw = JSON.parse(readFileSync(SNAPSHOT_PATH, "utf-8"));
+    return {
+      created_at: raw.created_at as string,
+      pages: (raw.pages as unknown[]).length,
+      sections: (raw.sections as unknown[]).length,
+      settings: (raw.site_settings as unknown[]).length,
+      media: (raw.media as unknown[]).length,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export async function restoreSnapshot() {
+  if (!existsSync(SNAPSHOT_PATH)) {
+    throw new Error("No snapshot found. Take a snapshot first.");
+  }
+
+  const snapshot = JSON.parse(readFileSync(SNAPSHOT_PATH, "utf-8"));
+  const supabase = await createSupabaseServerClient();
+
+  // Clear in order (sections first due to FK)
+  await supabase.from("sections").delete().gte("sort_order", -1);
+  await supabase.from("pages").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+  await supabase.from("site_settings").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+  await supabase.from("media").delete().neq("id", "00000000-0000-0000-0000-000000000000");
+
+  // Re-insert
+  if (snapshot.pages?.length) {
+    const { error } = await supabase.from("pages").insert(snapshot.pages);
+    if (error) throw new Error(`pages: ${error.message}`);
+  }
+  if (snapshot.sections?.length) {
+    const { error } = await supabase.from("sections").insert(snapshot.sections);
+    if (error) throw new Error(`sections: ${error.message}`);
+  }
+  if (snapshot.site_settings?.length) {
+    const { error } = await supabase.from("site_settings").insert(snapshot.site_settings);
+    if (error) throw new Error(`site_settings: ${error.message}`);
+  }
+  if (snapshot.media?.length) {
+    const { error } = await supabase.from("media").insert(snapshot.media);
+    if (error) throw new Error(`media: ${error.message}`);
+  }
+
+  revalidatePath("/", "layout");
+
+  return {
+    pages: snapshot.pages?.length ?? 0,
+    sections: snapshot.sections?.length ?? 0,
+    settings: snapshot.site_settings?.length ?? 0,
+    media: snapshot.media?.length ?? 0,
+  };
 }

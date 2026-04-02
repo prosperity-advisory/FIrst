@@ -122,7 +122,7 @@ export async function updateSectionContent(
 }
 
 // ---------------------------------------------------------------------------
-// Upload to Supabase Storage
+// Upload to Supabase Storage + media table
 // ---------------------------------------------------------------------------
 
 export async function uploadImage(formData: FormData): Promise<string> {
@@ -131,16 +131,65 @@ export async function uploadImage(formData: FormData): Promise<string> {
 
   const supabase = await createSupabaseServerClient();
   const ext = file.name.split(".").pop() ?? "png";
-  const path = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  const storagePath = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
-  const { error } = await supabase.storage
+  const { error: uploadError } = await supabase.storage
     .from("media")
-    .upload(path, file, { contentType: file.type, upsert: false });
+    .upload(storagePath, file, { contentType: file.type, upsert: false });
+
+  if (uploadError) throw new Error(uploadError.message);
+
+  const { data } = supabase.storage.from("media").getPublicUrl(storagePath);
+  const publicUrl = data.publicUrl;
+
+  // Create media table record
+  await supabase.from("media").insert({
+    filename: file.name,
+    url: publicUrl,
+    alt_text: "",
+    mime_type: file.type,
+    file_size: file.size,
+  });
+
+  return publicUrl;
+}
+
+// ---------------------------------------------------------------------------
+// Media library CRUD
+// ---------------------------------------------------------------------------
+
+export async function getMediaItems() {
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase
+    .from("media")
+    .select("*")
+    .order("uploaded_at", { ascending: false });
 
   if (error) throw new Error(error.message);
+  return data ?? [];
+}
 
-  const { data } = supabase.storage.from("media").getPublicUrl(path);
-  return data.publicUrl;
+export async function updateMediaAltText(id: string, altText: string) {
+  const supabase = await createSupabaseServerClient();
+  const { error } = await supabase
+    .from("media")
+    .update({ alt_text: altText })
+    .eq("id", id);
+
+  if (error) throw new Error(error.message);
+}
+
+export async function deleteMediaItem(id: string, url: string) {
+  const supabase = await createSupabaseServerClient();
+
+  // Extract storage path from public URL
+  const match = url.match(/\/storage\/v1\/object\/public\/media\/(.+)$/);
+  if (match) {
+    await supabase.storage.from("media").remove([match[1]]);
+  }
+
+  const { error } = await supabase.from("media").delete().eq("id", id);
+  if (error) throw new Error(error.message);
 }
 
 // ---------------------------------------------------------------------------

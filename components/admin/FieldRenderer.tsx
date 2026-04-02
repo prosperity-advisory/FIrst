@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { FieldDefinition } from "@/lib/component-registry";
 import { uploadImage } from "@/app/admin/actions";
+import { MediaPickerModal } from "@/components/admin/MediaPickerModal";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyRecord = Record<string, any>;
@@ -283,6 +284,7 @@ function ImageInput({
   onUpdate: (path: string[], value: unknown) => void;
 }) {
   const [uploading, setUploading] = useState(false);
+  const [showPicker, setShowPicker] = useState(false);
 
   async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -303,12 +305,12 @@ function ImageInput({
   return (
     <div>
       <FieldLabel field={field} />
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-2">
         <input
           type="text"
           value={value}
           onChange={(e) => onUpdate(path, e.target.value)}
-          placeholder="Image URL or upload below"
+          placeholder="Image URL"
           className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <label className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-sm font-medium px-3 py-2 rounded-lg hover:bg-gray-200 cursor-pointer transition-colors shrink-0">
@@ -321,6 +323,21 @@ function ImageInput({
             disabled={uploading}
           />
         </label>
+        <button
+          type="button"
+          onClick={() => setShowPicker(true)}
+          className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-sm font-medium px-3 py-2 rounded-lg hover:bg-gray-200 transition-colors shrink-0"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="w-4 h-4 stroke-current fill-none stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          Library
+        </button>
       </div>
       {value && (
         <div className="mt-2">
@@ -332,6 +349,14 @@ function ImageInput({
           />
         </div>
       )}
+      <MediaPickerModal
+        open={showPicker}
+        onClose={() => setShowPicker(false)}
+        onSelect={(url) => {
+          onUpdate(path, url);
+          setShowPicker(false);
+        }}
+      />
     </div>
   );
 }

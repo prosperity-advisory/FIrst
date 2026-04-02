@@ -374,14 +374,14 @@ export default async function CaseStudiesPage() {
       {/* Hero CTA buttons */}
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep text-center px-4 pb-10 sm:pb-12 -mt-1">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <CalendlyButton className="btn btn-gold">
-            Schedule Your Free 15-Minute Clarity Session
+          <CalendlyButton url={content.heroCta1Href} className="btn btn-gold">
+            {content.heroCta1Text}
           </CalendlyButton>
           <Link
-            href="#scenarios"
+            href={content.heroCta2Href}
             className="btn btn-outline text-white border-gold hover:bg-gold/10 transition-colors"
           >
-            Explore Example Scenarios Below
+            {content.heroCta2Text}
           </Link>
         </div>
       </section>
@@ -649,7 +649,7 @@ export default async function CaseStudiesPage() {
                   {category.ctaText}
                 </p>
                 <CalendlyButton className="btn btn-gold">
-                  Schedule Your Free 15-Minute Clarity Session
+                  {content.scenarioCtaText}
                 </CalendlyButton>
               </div>
             </FadeUp>

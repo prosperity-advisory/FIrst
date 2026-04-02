@@ -1144,6 +1144,11 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Paragraph', type: 'textarea', required: true },
         ],
       },
+      { name: 'heroCta1Text', label: 'Hero Button 1 Text', type: 'text' },
+      { name: 'heroCta1Href', label: 'Hero Button 1 Link', type: 'url' },
+      { name: 'heroCta2Text', label: 'Hero Button 2 Text', type: 'text' },
+      { name: 'heroCta2Href', label: 'Hero Button 2 Link', type: 'url' },
+      { name: 'scenarioCtaText', label: 'Scenario CTA Button Text', type: 'text', hint: 'Button text shown at the end of each scenario category' },
       { name: 'whatDesignedHeading', label: 'What Designed To Show Heading', type: 'text' },
       {
         name: 'whatDesignedItems',

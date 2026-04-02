@@ -46,7 +46,7 @@ export default async function ProcessPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline}
         subtitle={content.hero.subheadline}
-        ctaText={content.hero.cta.text + " →"}
+        ctaText={content.hero.cta.text}
         backgroundImage={content.hero.backgroundImage ?? "/images/OUR Process replacement- JPG.JPG"}
       />
 

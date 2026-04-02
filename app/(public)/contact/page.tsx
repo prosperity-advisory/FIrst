@@ -27,16 +27,16 @@ export default async function ContactPage() {
     <main>
       <InteriorHero
         headline={content.hero.headline}
-        subtitle="We&rsquo;re here to help you take the next step toward financial confidence."
-        ctaText={content.hero.cta.text + " →"}
+        subtitle={content.hero.subtitle ?? "We\u2019re here to help you take the next step toward financial confidence."}
+        ctaText={content.hero.cta.text}
         backgroundImage={content.hero.backgroundImage ?? "/images/Front building.jpg"}
       />
 
       {/* Contact details + map */}
       <ContactSection
-        eyebrow="Get In Touch"
-        headline={content.location.heading}
-        details={[
+        eyebrow={content.contactSection?.eyebrow ?? "Get In Touch"}
+        headline={content.contactSection?.headline ?? content.location.heading}
+        details={content.contactSection?.details?.length ? content.contactSection.details : [
           {
             label: "Address",
             icon: "map-pin",
@@ -55,11 +55,12 @@ export default async function ContactPage() {
             href: `mailto:${content.location.email}`,
           },
         ]}
-        ctaText="Schedule a Consultation →"
-        mapLabel={`${content.location.city}, ${content.location.state}`}
-        mapSublabel={content.location.address}
-        image={content.hero.backgroundImage ?? "/images/Front building.jpg"}
-        imageAlt="Prosperity Planning & Advisory office building in Woodland Hills, CA"
+        ctaText={content.contactSection?.ctaText ?? "Schedule a Consultation →"}
+        ctaHref={content.contactSection?.ctaHref}
+        mapLabel={content.contactSection?.mapLabel ?? `${content.location.city}, ${content.location.state}`}
+        mapSublabel={content.contactSection?.mapSublabel ?? content.location.address}
+        image={content.contactSection?.image ?? content.hero.backgroundImage ?? "/images/Front building.jpg"}
+        imageAlt={content.contactSection?.imageAlt ?? "Prosperity Planning & Advisory office building in Woodland Hills, CA"}
       />
 
       {/* Service Cards */}

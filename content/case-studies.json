@@ -11,6 +11,11 @@
     "subheadline": "Explore hypothetical planning scenarios designed to show how coordinated financial planning may be applied to complex financial decisions across retirement, taxes, family priorities, business ownership, and legacy goals.",
     "backgroundImage": null
   },
+  "heroCta1Text": "Schedule Your Free 15-Minute Clarity Session",
+  "heroCta1Href": "https://calendly.com/prosperityplanningandadvisory/clarity-session",
+  "heroCta2Text": "Explore Example Scenarios Below",
+  "heroCta2Href": "#scenarios",
+  "scenarioCtaText": "Schedule Your Free 15-Minute Clarity Session",
   "heroIntro": {
     "paragraphs": [
       "Many financial decisions involve trade-offs that are not always obvious at first. Retirement, taxes, cash flow, business planning, legacy goals, and major life transitions often overlap in ways that can create complexity if they are addressed in isolation.",

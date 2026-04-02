@@ -30,7 +30,7 @@ export default async function PlanningPage() {
         eyebrow={content.hero.eyebrow}
         headline={content.hero.headline ?? "Personal Prosperity Planning™"}
         subtitle={content.hero.tagline}
-        ctaText={content.hero.cta.text + " →"}
+        ctaText={content.hero.cta.text}
         backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image 2 -JPG.JPG"}
       />
 

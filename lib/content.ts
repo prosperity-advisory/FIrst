@@ -306,20 +306,27 @@ export const getAboutContent = cache(async () => {
 
 export const getContactContent = cache(async () => {
   const page = await getPage('contact');
-  if (!page) { console.warn('[content] Falling back to JSON for /contact'); return contactJson; }
+  if (!page) { console.warn('[content] Falling back to JSON for /contact'); return { ...contactJson, contactSection: null }; }
 
   const hero = page.section('interior_hero');
   const loc = page.section('location_info');
   const sc = page.section('service_cards');
+  const cs = page.section('contact_section');
 
   return {
     meta: page.meta,
     hero: {
       ...contactJson.hero,
       headline: hero?.headline ?? contactJson.hero.headline,
+      subtitle: hero?.subtitle,
       backgroundImage: hero?.backgroundImage as string | undefined,
       cta: { text: hero?.ctaText ?? contactJson.hero.cta.text, href: hero?.ctaHref ?? contactJson.hero.cta.href },
     },
+    contactSection: cs ? {
+      ctaText: cs.ctaText, ctaHref: cs.ctaHref,
+      details: cs.details, image: cs.image as string | undefined, imageAlt: cs.imageAlt as string | undefined,
+      eyebrow: cs.eyebrow, headline: cs.headline, mapLabel: cs.mapLabel, mapSublabel: cs.mapSublabel,
+    } : null,
     location: loc ? {
       heading: loc.heading, name: loc.name, address: loc.address, city: loc.city,
       state: loc.state, zip: loc.zip, phone: loc.phone, email: loc.email,
@@ -547,6 +554,11 @@ export const getCaseStudiesContent = cache(async () => {
   return {
     meta: page.meta,
     hero: { ...caseStudiesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
+    heroCta1Text: csi?.heroCta1Text ?? 'Schedule Your Free 15-Minute Clarity Session',
+    heroCta1Href: csi?.heroCta1Href ?? 'https://calendly.com/prosperityplanningandadvisory/clarity-session',
+    heroCta2Text: csi?.heroCta2Text ?? 'Explore Example Scenarios Below',
+    heroCta2Href: csi?.heroCta2Href ?? '#scenarios',
+    scenarioCtaText: csi?.scenarioCtaText ?? 'Schedule Your Free 15-Minute Clarity Session',
     heroIntro: csi ? { paragraphs: ta(csi.heroIntroParagraphs), tagline: csi.tagline } : caseStudiesJson.heroIntro,
     whatYoullSee: csi ? { heading: csi.whatYoullSeeHeading, items: ta(csi.whatYoullSeeItems) } : caseStudiesJson.whatYoullSee,
     introSection: csi ? { heading: csi.introHeading, paragraphs: ta(csi.introParagraphs) } : caseStudiesJson.introSection,

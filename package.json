@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:seed": "npx tsx supabase/seed.ts"
+    "db:seed": "npx tsx supabase/seed.ts",
+    "db:snapshot": "npx tsx supabase/snapshot.ts",
+    "db:restore": "npx tsx supabase/restore.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.0",

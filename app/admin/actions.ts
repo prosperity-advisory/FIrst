@@ -103,6 +103,47 @@ export async function addSection(
 }
 
 // ---------------------------------------------------------------------------
+// Update section content
+// ---------------------------------------------------------------------------
+
+export async function updateSectionContent(
+  sectionId: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  content: Record<string, any>
+) {
+  const supabase = await createSupabaseServerClient();
+  const { error } = await supabase
+    .from("sections")
+    .update({ content, updated_at: new Date().toISOString() })
+    .eq("id", sectionId);
+
+  if (error) throw new Error(error.message);
+  revalidatePath("/", "layout");
+}
+
+// ---------------------------------------------------------------------------
+// Upload to Supabase Storage
+// ---------------------------------------------------------------------------
+
+export async function uploadImage(formData: FormData): Promise<string> {
+  const file = formData.get("file") as File;
+  if (!file) throw new Error("No file provided");
+
+  const supabase = await createSupabaseServerClient();
+  const ext = file.name.split(".").pop() ?? "png";
+  const path = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+
+  const { error } = await supabase.storage
+    .from("media")
+    .upload(path, file, { contentType: file.type, upsert: false });
+
+  if (error) throw new Error(error.message);
+
+  const { data } = supabase.storage.from("media").getPublicUrl(path);
+  return data.publicUrl;
+}
+
+// ---------------------------------------------------------------------------
 // Delete section
 // ---------------------------------------------------------------------------
 

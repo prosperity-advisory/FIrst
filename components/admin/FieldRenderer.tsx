@@ -608,14 +608,15 @@ function FieldLabel({
   inline?: boolean;
 }) {
   return (
-    <label
-      className={`block text-sm font-medium text-gray-700 ${
-        inline ? "" : "mb-1"
-      }`}
-    >
-      {field.label}
-      {field.required && <span className="text-red-400 ml-0.5">*</span>}
-    </label>
+    <div className={inline ? "" : "mb-1"}>
+      <label className="block text-sm font-medium text-gray-700">
+        {field.label}
+        {field.required && <span className="text-red-400 ml-0.5">*</span>}
+      </label>
+      {field.hint && (
+        <p className="text-xs text-gray-400 mt-0.5">{field.hint}</p>
+      )}
+    </div>
   );
 }
 

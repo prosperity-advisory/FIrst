@@ -62,7 +62,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'subtitle', label: 'Subtitle', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
-      { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x800px, JPG, under 500KB' },
+      { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
     ],
   },
 
@@ -220,7 +220,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
       { name: 'mapLabel', label: 'Map Label', type: 'text' },
       { name: 'mapSublabel', label: 'Map Sublabel', type: 'text' },
-      { name: 'image', label: 'Map/Office Image', type: 'image', hint: 'Recommended: 680x450px, JPG' },
+      { name: 'image', label: 'Map/Office Image', type: 'image', hint: 'Recommended: 800x600px, JPG' },
       { name: 'imageAlt', label: 'Image Alt Text', type: 'text' },
       {
         name: 'details',

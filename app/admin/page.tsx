@@ -73,7 +73,7 @@ export default async function AdminDashboard() {
                   </td>
                   <td className="px-5 py-3.5 text-right">
                     <Link
-                      href={`/admin/pages/${page.id}`}
+                      href={`/admin/pages/${page.slug || "_home"}`}
                       className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
                     >
                       Edit

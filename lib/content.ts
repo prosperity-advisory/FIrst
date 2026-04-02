@@ -554,8 +554,8 @@ export const getCaseStudiesContent = cache(async () => {
   return {
     meta: page.meta,
     hero: { ...caseStudiesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
-    heroCta1Text: csi?.heroCta1Text ?? 'Schedule Your Free 15-Minute Clarity Session',
-    heroCta1Href: csi?.heroCta1Href ?? 'https://calendly.com/prosperityplanningandadvisory/clarity-session',
+    heroCta1Text: hero?.ctaText ?? csi?.heroCta1Text ?? 'Schedule Your Free 15-Minute Clarity Session',
+    heroCta1Href: hero?.ctaHref ?? csi?.heroCta1Href ?? 'https://calendly.com/prosperityplanningandadvisory/clarity-session',
     heroCta2Text: csi?.heroCta2Text ?? 'Explore Example Scenarios Below',
     heroCta2Href: csi?.heroCta2Href ?? '#scenarios',
     scenarioCtaText: csi?.scenarioCtaText ?? 'Schedule Your Free 15-Minute Clarity Session',

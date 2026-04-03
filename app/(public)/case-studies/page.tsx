@@ -648,8 +648,8 @@ export default async function CaseStudiesPage() {
                 <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6">
                   {category.ctaText}
                 </p>
-                <CalendlyButton url={content.heroCta1Href} className="btn btn-gold">
-                  {content.scenarioCtaText}
+                <CalendlyButton url={category.ctaButtonHref || content.heroCta1Href} className="btn btn-gold">
+                  {category.ctaButtonText || content.scenarioCtaText}
                 </CalendlyButton>
               </div>
             </FadeUp>

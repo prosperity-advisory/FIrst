@@ -1246,7 +1246,9 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaHeading', label: 'CTA Heading', type: 'text' },
       { name: 'ctaBody', label: 'CTA Body', type: 'textarea' },
       { name: 'ctaPrompt', label: 'CTA Prompt', type: 'text' },
-      { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
+      { name: 'ctaText', label: 'CTA Closing Text', type: 'textarea', hint: 'Paragraph shown above the button' },
+      { name: 'ctaButtonText', label: 'CTA Button Text', type: 'text', hint: 'Text displayed inside the button' },
+      { name: 'ctaButtonHref', label: 'CTA Button Link', type: 'url' },
       {
         name: 'scenarios',
         label: 'Scenarios',

@@ -62,6 +62,8 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'subtitle', label: 'Subtitle', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      { name: 'cta2Text', label: 'Second Button Text', type: 'text', hint: 'Optional second button (e.g. "Explore Example Scenarios Below")' },
+      { name: 'cta2Href', label: 'Second Button Link', type: 'url', hint: 'Use #section-id for on-page links' },
       { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
     ],
   },

@@ -18,7 +18,12 @@ export default async function PublicLayout({
         logoUrl={settings?.company?.logoUrl}
       />
       {children}
-      <Footer linkGroups={settings?.footer?.linkGroups} />
+      <Footer
+        linkGroups={settings?.footer?.linkGroups}
+        disclosures={settings?.footer?.disclosures}
+        insuranceDisclaimer={settings?.footer?.insuranceDisclaimer}
+        privacyPolicyHref={settings?.footer?.privacyPolicyHref}
+      />
     </>
   );
 }

@@ -35,10 +35,29 @@ const FOOTER_GROUPS = [
 
 interface FooterProps {
   linkGroups?: { heading: string; links: { href: string; label: string }[] }[];
+  disclosures?: ({ text: string } | string)[];
+  insuranceDisclaimer?: string;
+  privacyPolicyHref?: string;
 }
 
-export function Footer({ linkGroups }: FooterProps = {}) {
+const DEFAULT_DISCLOSURES: { text: string }[] = [
+  { text: "Prosperity Planning & Advisory, LLC is a California state-registered investment adviser. Registration does not imply a certain level of skill or training. Advisory services are provided by a registered investment adviser representative of the Firm and are offered only after entering into a written advisory agreement and receiving all required disclosures." },
+  { text: "Prosperity Planning and Advisory, LLC is a fee-only registered investment adviser and does not sell insurance products or receive insurance commissions. Insurance products, if discussed, are offered outside of the advisory relationship through a separate, non-advisory business. Clients are under no obligation to purchase any insurance products." },
+  { text: "Website Disclaimer" },
+  { text: "Information on this website is for general informational and educational purposes only and does not constitute individualized investment advice, a recommendation, or an offer to buy or sell any security. Past performance is not indicative of future results. Any planning strategies discussed are based on general principles and may not be suitable for all individuals. Investment strategies involve risk, including the potential loss of principal." },
+  { text: "Prosperity Planning and Advisory, LLC is a registered investment adviser in the State of California. Registration does not imply a certain level of skill or training. Services may not be available to persons in jurisdictions where we are not appropriately licensed or exempt." },
+  { text: "We do not provide tax or legal advice. Hyperlinks to third-party content are provided for convenience and do not imply endorsement; we are not responsible for the accuracy or content of third-party sites. For our current Form ADV or additional information, please contact us at help@prosperityadvisory.net or 888-427-5240." },
+  { text: "Where insurance or annuity strategies are referenced, such discussion is for educational or planning-context purposes only unless otherwise stated. Separately, Marcus Mann, in his individual capacity as a licensed insurance agent, may offer certain fixed insurance or annuity products outside the advisory relationship. Clients are under no obligation to purchase any such product through him, and any such transaction would be separate from the firm\u2019s advisory services." },
+];
+
+export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPolicyHref }: FooterProps = {}) {
   const groups = linkGroups ?? FOOTER_GROUPS;
+  // Normalize: DB may have plain strings or {text} objects
+  const raw = disclosures && disclosures.length > 0 ? disclosures : DEFAULT_DISCLOSURES;
+  const disclaimerParagraphs = raw.map((item: { text: string } | string) =>
+    typeof item === "string" ? { text: item } : item
+  );
+  const policyHref = privacyPolicyHref || "/documents/privacy-notice.pdf";
   const pathname = usePathname();
 
   return (
@@ -99,61 +118,21 @@ export function Footer({ linkGroups }: FooterProps = {}) {
           ))}
         </div>
 
-        {/* Legal disclaimer */}
+        {/* Legal disclaimers */}
         <div className="py-6 md:py-7 lg:py-8 text-xs md:text-[13px] leading-[1.8] text-white/35 max-w-[900px] space-y-3">
-          <p>
-            Prosperity Planning &amp; Advisory, LLC is a California state-registered
-            investment adviser. Registration does not imply a certain level of skill
-            or training. Advisory services are provided by a registered investment
-            adviser representative of the Firm and are offered only after entering
-            into a written advisory agreement and receiving all required disclosures.
-          </p>
-          <p>
-            Prosperity Planning and Advisory, LLC is a fee-only registered
-            investment adviser and does not sell insurance products or receive
-            insurance commissions. Insurance products, if discussed, are offered
-            outside of the advisory relationship through a separate, non-advisory
-            business. Clients are under no obligation to purchase any insurance
-            products.
-          </p>
-          <p className="font-semibold text-white/45 mt-4">Website Disclaimer</p>
-          <p>
-            Information on this website is for general informational and educational
-            purposes only and does not constitute individualized investment advice,
-            a recommendation, or an offer to buy or sell any security. Past
-            performance is not indicative of future results. Any planning strategies
-            discussed are based on general principles and may not be suitable for
-            all individuals. Investment strategies involve risk, including the
-            potential loss of principal.
-          </p>
-          <p>
-            Prosperity Planning and Advisory, LLC is a registered investment adviser
-            in the State of California. Registration does not imply a certain level
-            of skill or training. Services may not be available to persons in
-            jurisdictions where we are not appropriately licensed or exempt.
-          </p>
-          <p>
-            We do not provide tax or legal advice. Hyperlinks to third-party content
-            are provided for convenience and do not imply endorsement; we are not
-            responsible for the accuracy or content of third-party sites. For our
-            current Form ADV or additional information, please contact us at{" "}
-            <a
-              href="mailto:help@prosperityadvisory.net"
-              className="text-white/50 hover:text-gold transition-colors"
-            >
-              help@prosperityadvisory.net
-            </a>{" "}
-            or 888-427-5240.
-          </p>
-          <p>
-            Where insurance or annuity strategies are referenced, such discussion is
-            for educational or planning-context purposes only unless otherwise
-            stated. Separately, Marcus Mann, in his individual capacity as a
-            licensed insurance agent, may offer certain fixed insurance or annuity
-            products outside the advisory relationship. Clients are under no
-            obligation to purchase any such product through him, and any such
-            transaction would be separate from the firm&apos;s advisory services.
-          </p>
+          {disclaimerParagraphs.map((item, i) => {
+            const isHeading = item.text.length < 60 && !item.text.includes(".");
+            return isHeading ? (
+              <p key={i} className="font-semibold text-white/45 mt-4">
+                {item.text}
+              </p>
+            ) : (
+              <p key={i}>{item.text}</p>
+            );
+          })}
+          {insuranceDisclaimer && (
+            <p>{insuranceDisclaimer}</p>
+          )}
         </div>
 
         {/* Bottom row */}
@@ -162,7 +141,7 @@ export function Footer({ linkGroups }: FooterProps = {}) {
             &copy; 2026 Prosperity Planning &amp; Advisory
           </span>
           <a
-            href="/documents/privacy-notice.pdf"
+            href={policyHref}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"

@@ -132,9 +132,12 @@ export default async function ServicesPage() {
             <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
               Important Disclosures
             </h3>
-            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
+            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-8">
               {disclosures}
             </p>
+            <Link href="/case-studies" className="btn btn-gold">
+              Explore Planning Examples →
+            </Link>
           </FadeUp>
         </div>
       </section>

@@ -99,6 +99,12 @@ export function ServicesGrid({
             </p>
           </FadeUp>
         )}
+
+        <FadeUp delay={4}>
+          <Link href="/case-studies" className="btn btn-gold mt-8 md:mt-10 inline-block">
+            Explore Planning Examples →
+          </Link>
+        </FadeUp>
       </div>
     </section>
   );

@@ -8,27 +8,46 @@ const TOKEN_ENDPOINT =
 
 declare global {
   interface Window {
-    WebChat: {
-      renderWebChat: (options: Record<string, unknown>, el: HTMLElement | null) => void;
-      createDirectLine: (options: { token: string }) => unknown;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    WebChat: any;
   }
 }
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [initialized, setInitialized] = useState(false);
   const [sdkReady, setSdkReady] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const chatRef = useRef<HTMLDivElement>(null);
 
   const initChat = useCallback(async () => {
-    if (loaded || !chatRef.current || !window.WebChat) return;
+    if (initialized || !chatRef.current) return;
+    if (!window.WebChat?.renderWebChat || !window.WebChat?.createDirectLine) {
+      setError("Chat SDK failed to load. Please refresh.");
+      return;
+    }
+
+    setInitialized(true); // Mark immediately so we don't double-init
+
     try {
       const res = await fetch(TOKEN_ENDPOINT);
-      const { token } = await res.json();
+      if (!res.ok) {
+        setError("Unable to connect. Please try again later.");
+        return;
+      }
+      const data = await res.json();
+      const token = data.token;
+
+      if (!token) {
+        setError("Unable to connect. Please try again later.");
+        return;
+      }
+
+      const directLine = window.WebChat.createDirectLine({ token });
+
       window.WebChat.renderWebChat(
         {
-          directLine: window.WebChat.createDirectLine({ token }),
+          directLine,
           styleOptions: {
             // Colors
             accent: "#C9A84C",
@@ -71,17 +90,23 @@ export function ChatWidget() {
         },
         chatRef.current
       );
-      setLoaded(true);
     } catch (err) {
       console.error("Chat connection issue:", err);
+      setError("Unable to connect. Please try again later.");
+      setInitialized(false); // Allow retry
     }
-  }, [loaded]);
+  }, [initialized]);
 
   useEffect(() => {
-    if (open && sdkReady && !loaded) {
+    if (open && sdkReady && !initialized) {
       initChat();
     }
-  }, [open, sdkReady, loaded, initChat]);
+  }, [open, sdkReady, initialized, initChat]);
+
+  function handleRetry() {
+    setError(null);
+    setInitialized(false);
+  }
 
   return (
     <>
@@ -128,11 +153,17 @@ export function ChatWidget() {
           {/* Chat body */}
           <div ref={chatRef} className="flex-1 bg-white min-h-0" />
 
-          {!loaded && open && (
+          {/* Error state */}
+          {error && (
             <div className="absolute inset-0 top-12 flex items-center justify-center bg-white">
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
-                <p className="text-sm text-slate-light">Connecting...</p>
+              <div className="flex flex-col items-center gap-3 px-6 text-center">
+                <p className="text-sm text-slate">{error}</p>
+                <button
+                  onClick={handleRetry}
+                  className="text-sm font-medium text-gold hover:text-gold-light transition-colors"
+                >
+                  Try Again
+                </button>
               </div>
             </div>
           )}

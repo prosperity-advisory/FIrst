@@ -82,9 +82,15 @@ export default async function ServicesPage() {
           </FadeUp>
 
           <FadeUp delay={5}>
-            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8]">
+            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8] mb-8">
               {intro.exploreNote}
             </p>
+            <CtaButtonGroup
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              buttons={(content as any).exploreButtons?.length
+                ? (content as any).exploreButtons
+                : [{ text: "Explore Planning Examples →", href: "/case-studies", style: "gold" as const }]}
+            />
           </FadeUp>
         </div>
       </section>
@@ -134,15 +140,9 @@ export default async function ServicesPage() {
             <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
               Important Disclosures
             </h3>
-            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-8">
+            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
               {disclosures}
             </p>
-            <CtaButtonGroup
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              buttons={(content as any).disclosureButtons?.length
-                ? (content as any).disclosureButtons
-                : [{ text: "Explore Planning Examples →", href: "/case-studies", style: "gold" as const }]}
-            />
           </FadeUp>
         </div>
       </section>

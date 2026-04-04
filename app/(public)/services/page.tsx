@@ -4,6 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { ServiceAccordion } from "@/components/sections/ServiceAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CtaButtonGroup } from "@/components/ui/CtaButtonGroup";
 import { getServicesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ServicesPage() {
   const content = await getServicesContent();
-  const { intro, sections, approach, disclosures } = content;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { intro, sections, approach, disclosures } = content as any;
 
   return (
     <main>
@@ -135,9 +137,12 @@ export default async function ServicesPage() {
             <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-8">
               {disclosures}
             </p>
-            <Link href="/case-studies" className="btn btn-gold">
-              Explore Planning Examples →
-            </Link>
+            <CtaButtonGroup
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              buttons={(content as any).disclosureButtons?.length
+                ? (content as any).disclosureButtons
+                : [{ text: "Explore Planning Examples →", href: "/case-studies", style: "gold" as const }]}
+            />
           </FadeUp>
         </div>
       </section>

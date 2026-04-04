@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { CtaButtonGroup, type CtaButton } from "@/components/ui/CtaButtonGroup";
 
 interface ServiceItem {
   title: string;
@@ -19,6 +20,7 @@ interface ServicesGridProps {
   body: string;
   categories: ServiceCategory[];
   nextSteps?: string;
+  ctaButtons?: CtaButton[];
 }
 
 function ArrowIcon() {
@@ -32,13 +34,19 @@ function ArrowIcon() {
   );
 }
 
+const DEFAULT_CTA_BUTTONS: CtaButton[] = [
+  { text: "Explore Planning Examples →", href: "/case-studies", style: "gold" },
+];
+
 export function ServicesGrid({
   eyebrow,
   headline,
   body,
   categories,
   nextSteps,
+  ctaButtons,
 }: ServicesGridProps) {
+  const buttons = ctaButtons?.length ? ctaButtons : DEFAULT_CTA_BUTTONS;
   return (
     <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
       <div className="mx-auto max-w-[1200px] text-center">
@@ -101,9 +109,7 @@ export function ServicesGrid({
         )}
 
         <FadeUp delay={4}>
-          <Link href="/case-studies" className="btn btn-gold mt-8 md:mt-10 inline-block">
-            Explore Planning Examples →
-          </Link>
+          <CtaButtonGroup buttons={buttons} className="justify-center mt-8 md:mt-10" />
         </FadeUp>
       </div>
     </section>

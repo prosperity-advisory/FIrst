@@ -5,6 +5,7 @@ import type { FieldDefinition } from "@/lib/component-registry";
 import { uploadImage } from "@/app/admin/actions";
 import { MediaPickerModal } from "@/components/admin/MediaPickerModal";
 import { showToast } from "@/components/admin/Toast";
+import { UrlPicker } from "@/components/admin/UrlPicker";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
@@ -96,14 +97,31 @@ function FieldRenderer({
 }) {
   switch (field.type) {
     case "text":
-    case "url":
       return (
         <TextInput
           field={field}
           value={(value as string) ?? ""}
           path={path}
           onUpdate={onUpdate}
-          type={field.type === "url" ? "url" : "text"}
+          type="text"
+        />
+      );
+    case "url":
+      return (
+        <UrlPicker
+          field={field}
+          value={(value as string) ?? ""}
+          path={path}
+          onUpdate={onUpdate}
+        />
+      );
+    case "select":
+      return (
+        <SelectInput
+          field={field}
+          value={(value as string) ?? ""}
+          path={path}
+          onUpdate={onUpdate}
         />
       );
     case "number":
@@ -202,6 +220,40 @@ function TextInput({
         onChange={(e) => onUpdate(path, e.target.value)}
         className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Select input
+// ---------------------------------------------------------------------------
+
+function SelectInput({
+  field,
+  value,
+  path,
+  onUpdate,
+}: {
+  field: FieldDefinition;
+  value: string;
+  path: string[];
+  onUpdate: (path: string[], value: unknown) => void;
+}) {
+  return (
+    <div>
+      <FieldLabel field={field} />
+      <select
+        value={value}
+        onChange={(e) => onUpdate(path, e.target.value)}
+        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+      >
+        <option value="">— Select —</option>
+        {(field.options ?? []).map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

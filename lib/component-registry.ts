@@ -13,7 +13,8 @@ export type FieldType =
   | 'boolean'
   | 'number'
   | 'array'
-  | 'group';
+  | 'group'
+  | 'select';
 
 export interface FieldDefinition {
   name: string;
@@ -26,7 +27,31 @@ export interface FieldDefinition {
   itemFields?: FieldDefinition[];
   /** For type "group" — defines nested fields */
   fields?: FieldDefinition[];
+  /** For type "select" — dropdown options */
+  options?: { label: string; value: string }[];
 }
+
+/** Reusable CTA buttons array — add to any section that should support configurable buttons */
+export const ctaButtonsField: FieldDefinition = {
+  name: 'ctaButtons',
+  label: 'CTA Buttons',
+  type: 'array',
+  hint: 'Add call-to-action buttons. Leave empty to use the section default.',
+  itemFields: [
+    { name: 'text', label: 'Button Text', type: 'text', required: true },
+    { name: 'href', label: 'Button Link', type: 'url', required: true },
+    {
+      name: 'style',
+      label: 'Button Style',
+      type: 'select',
+      options: [
+        { label: 'Gold', value: 'gold' },
+        { label: 'Navy', value: 'navy' },
+        { label: 'Outline', value: 'outline' },
+      ],
+    },
+  ],
+};
 
 export interface ComponentDefinition {
   label: string;
@@ -49,6 +74,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'body', label: 'Body Text', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      ctaButtonsField,
       { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
     ],
   },
@@ -64,6 +90,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
       { name: 'cta2Text', label: 'Second Button Text', type: 'text', hint: 'Optional second button (e.g. "Explore Example Scenarios Below")' },
       { name: 'cta2Href', label: 'Second Button Link', type: 'url', hint: 'Use #section-id for on-page links' },
+      ctaButtonsField,
       { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
     ],
   },
@@ -113,6 +140,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      ctaButtonsField,
       { name: 'bannerImage', label: 'Banner Image', type: 'image', hint: 'Recommended: 1200x480px, JPG, wide landscape format' },
       { name: 'bannerAlt', label: 'Banner Image Alt Text', type: 'text' },
     ],
@@ -126,6 +154,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'headline', label: 'Headline', type: 'text', required: true },
       { name: 'body', label: 'Body Text', type: 'textarea' },
       { name: 'nextSteps', label: 'Next Steps Text', type: 'textarea' },
+      ctaButtonsField,
       {
         name: 'categories',
         label: 'Service Categories',
@@ -220,6 +249,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'headline', label: 'Headline', type: 'text', required: true },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      ctaButtonsField,
       { name: 'mapLabel', label: 'Map Label', type: 'text' },
       { name: 'mapSublabel', label: 'Map Sublabel', type: 'text' },
       { name: 'image', label: 'Map/Office Image', type: 'image', hint: 'Recommended: 800x600px, JPG' },
@@ -246,6 +276,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'subtext', label: 'Subtext', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      ctaButtonsField,
     ],
   },
 

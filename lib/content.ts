@@ -152,7 +152,7 @@ export const getHomeContent = cache(async () => {
         }
       : { image: undefined as string | undefined, imageAlt: undefined as string | undefined },
     services: sg
-      ? { eyebrow: sg.eyebrow, heading: sg.headline, body: sg.body, categories: sg.categories, nextSteps: sg.nextSteps }
+      ? { eyebrow: sg.eyebrow, heading: sg.headline, body: sg.body, categories: sg.categories, nextSteps: sg.nextSteps, ctaButtons: sg.ctaButtons }
       : homeJson.services,
     businessOwner: boa
       ? {

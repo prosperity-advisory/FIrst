@@ -57,6 +57,7 @@ export default async function Home() {
         body={content.services.body}
         categories={content.services.categories}
         nextSteps={content.services.nextSteps}
+        ctaButtons={(content.services as { ctaButtons?: { text: string; href: string; style?: "gold" | "navy" | "outline" }[] }).ctaButtons}
       />
 
       <BusinessOwnerAccordion

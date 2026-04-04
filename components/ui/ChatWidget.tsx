@@ -3,8 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
 
-const TOKEN_ENDPOINT =
-  "https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=80518000-d02e-f111-88b4-6045bd08b490";
+const TOKEN_ENDPOINT = "/api/chat-token";
 
 declare global {
   interface Window {

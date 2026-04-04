@@ -42,15 +42,18 @@ export default async function ProcessPage() {
   return (
     <main>
       {/* Hero */}
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
-        ctaText={content.hero.cta.text}
-        backgroundImage={content.hero.backgroundImage ?? "/images/OUR Process replacement- JPG.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.subheadline}
+          ctaText={content.hero.cta.text}
+          backgroundImage={content.hero.backgroundImage ?? "/images/OUR Process replacement- JPG.JPG"}
+        />
+      )}
 
       {/* Hero extended body */}
+      {content.hero && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {content.hero.body.map((p: string, i: number) => (
@@ -62,8 +65,10 @@ export default async function ProcessPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* Why Our Process Matters */}
+      {content.whyItMatters && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -98,8 +103,10 @@ export default async function ProcessPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* The Six-Step Roadmap */}
+      {content.roadmap && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -152,9 +159,10 @@ export default async function ProcessPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Detailed Steps */}
-      {content.steps.map((step: StepData, i: number) => {
+      {content.steps && content.steps.length > 0 && content.steps.map((step: StepData, i: number) => {
         const isEven = i % 2 === 0;
         return (
           <section
@@ -253,6 +261,7 @@ export default async function ProcessPage() {
       })}
 
       {/* Who This Process Is For */}
+      {content.whoIsFor && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -275,8 +284,10 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* What This Process Can Help You Address */}
+      {content.whatItAddresses && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -302,8 +313,10 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* What You Can Expect as a Client */}
+      {content.whatToExpect && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -325,8 +338,10 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Your Planning Experience */}
+      {content.planningExperience && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -341,8 +356,10 @@ export default async function ProcessPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* FAQ */}
+      {content.faq && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -353,8 +370,10 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Closing */}
+      {content.closing && (
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
@@ -375,8 +394,10 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Compliance */}
+      {content.compliance && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -386,6 +407,7 @@ export default async function ProcessPage() {
           </FadeUp>
         </div>
       </section>
+      )}
     </main>
   );
 }

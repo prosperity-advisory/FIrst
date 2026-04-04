@@ -22,16 +22,19 @@ export default async function WhoWeServePage() {
   return (
     <main>
       {/* Hero */}
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
-        ctaText={content.hero.cta.text}
-        ctaHref={content.hero.cta.href}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Who We Serve-JPG.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.subheadline}
+          ctaText={content.hero.cta.text}
+          ctaHref={content.hero.cta.href}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Who We Serve-JPG.JPG"}
+        />
+      )}
 
       {/* Hero extended body */}
+      {content.hero && (
       <section className="bg-white py-10 sm:py-12 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -41,8 +44,10 @@ export default async function WhoWeServePage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Financial Planning Built Around You */}
+      {content.builtAroundYou && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -53,8 +58,10 @@ export default async function WhoWeServePage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Who This Is For (Quick Overview) */}
+      {content.quickOverview && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -75,9 +82,10 @@ export default async function WhoWeServePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Individual Audience Sections */}
-      {content.audiences.map((audience: any, i: number) => {
+      {content.audiences && content.audiences.length > 0 && content.audiences.map((audience: any, i: number) => {
         const isEven = i % 2 === 0;
         return (
           <section
@@ -153,6 +161,7 @@ export default async function WhoWeServePage() {
       })}
 
       {/* Tax-Aware Financial Planning */}
+      {content.taxAware && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -166,8 +175,10 @@ export default async function WhoWeServePage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* You Don't Have to Fit Into Just One Category */}
+      {content.noOneCategory && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -181,8 +192,10 @@ export default async function WhoWeServePage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Planning That Connects Everything */}
+      {content.connectsEverything && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -213,8 +226,10 @@ export default async function WhoWeServePage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Closing CTA — Start with Clarity */}
+      {content.closingCta && (
       <section className="bg-linear-to-br from-gold to-gold-light py-12 md:py-16 lg:py-[clamp(56px,6vw,88px)] px-4 md:px-6 text-center">
         <div className="mx-auto max-w-[680px]">
           <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[42px] text-navy mb-3.5">
@@ -231,6 +246,7 @@ export default async function WhoWeServePage() {
           </CalendlyButton>
         </div>
       </section>
+      )}
     </main>
   );
 }

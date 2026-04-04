@@ -42,13 +42,16 @@ export default async function ResourcesPage() {
   return (
     <main>
       {/* Hero */}
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        backgroundImage={content.hero.backgroundImage ?? "/images/services google.jpg"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          backgroundImage={content.hero.backgroundImage ?? "/images/services google.jpg"}
+        />
+      )}
 
       {/* Hero extended body */}
+      {content.hero && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {content.hero.body.map((p: string, i: number) => (
@@ -71,8 +74,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Start Here */}
+      {content.startHere && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -99,8 +104,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* How to Use This Page */}
+      {content.howToUse && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -131,8 +138,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Featured Financial Calculators & Planning Tools */}
+      {content.calculators && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1000px]">
           <FadeUp>
@@ -199,8 +208,10 @@ export default async function ResourcesPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* Prosperity Insight */}
+      {content.prosperityInsight && (
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
@@ -216,8 +227,10 @@ export default async function ResourcesPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* How and Why to Use These Tools */}
+      {content.howAndWhy && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -262,8 +275,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Resource Library by Planning Topic */}
+      {content.resourceLibrary && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1000px]">
           <FadeUp>
@@ -288,8 +303,10 @@ export default async function ResourcesPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Featured Downloadable Guides */}
+      {content.downloadableGuides && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -319,8 +336,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Short Educational Videos */}
+      {content.videos && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -342,8 +361,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Important Educational Note */}
+      {content.educationalNote && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -358,8 +379,10 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Closing Call to Action */}
+      {content.closing && (
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
@@ -386,6 +409,7 @@ export default async function ResourcesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
     </main>
   );
 }

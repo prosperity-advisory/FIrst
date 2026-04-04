@@ -24,13 +24,16 @@ export default async function AboutPage() {
   const content = await getAboutContent();
   return (
     <main>
-      <InteriorHero
-        eyebrow={content.hero.eyebrow ?? "Our Mission & Who We Are"}
-        headline={content.hero.headline}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Main Heading Image for about us-Our Mission page -JPG.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow ?? "Our Mission & Who We Are"}
+          headline={content.hero.headline}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Main Heading Image for about us-Our Mission page -JPG.JPG"}
+        />
+      )}
 
       {/* Mission */}
+      {content.mission && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-[1fr_0.9fr] gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-center">
           <div className="text-center md:text-left">
@@ -59,8 +62,10 @@ export default async function AboutPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Services List */}
+      {content.ourServices && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -93,8 +98,10 @@ export default async function AboutPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Trusted Partner */}
+      {content.trustedPartner && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -123,8 +130,10 @@ export default async function AboutPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Tailored Solutions */}
+      {content.tailored && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -135,6 +144,7 @@ export default async function AboutPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="about" />
     </main>

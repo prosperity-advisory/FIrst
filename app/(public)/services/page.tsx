@@ -26,14 +26,17 @@ export default async function ServicesPage() {
 
   return (
     <main>
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.body}
-        backgroundImage={content.hero.backgroundImage ?? "/images/services 2.0.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.body}
+          backgroundImage={content.hero.backgroundImage ?? "/images/services 2.0.JPG"}
+        />
+      )}
 
       {/* Intro Section */}
+      {intro && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {intro.paragraphs.map((p: string, i: number) => (
@@ -94,15 +97,19 @@ export default async function ServicesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Service Category Sections — Two-level accordion */}
+      {sections && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
           <ServiceAccordion sections={sections as any} />
         </div>
       </section>
+      )}
 
       {/* Our Planning Approach */}
+      {approach && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -132,8 +139,10 @@ export default async function ServicesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Important Disclosures */}
+      {disclosures && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -146,6 +155,7 @@ export default async function ServicesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="services" />
     </main>

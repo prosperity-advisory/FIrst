@@ -25,14 +25,17 @@ export default async function ContactPage() {
   const content = await getContactContent();
   return (
     <main>
-      <InteriorHero
-        headline={content.hero.headline}
-        subtitle={content.hero.subtitle ?? "We\u2019re here to help you take the next step toward financial confidence."}
-        ctaText={content.hero.cta.text}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Front building.jpg"}
-      />
+      {content.hero && (
+        <InteriorHero
+          headline={content.hero.headline}
+          subtitle={content.hero.subtitle ?? "We\u2019re here to help you take the next step toward financial confidence."}
+          ctaText={content.hero.cta.text}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Front building.jpg"}
+        />
+      )}
 
       {/* Contact details + map */}
+      {content.location && (
       <ContactSection
         eyebrow={content.contactSection?.eyebrow ?? "Get In Touch"}
         headline={content.contactSection?.headline ?? content.location.heading}
@@ -59,11 +62,13 @@ export default async function ContactPage() {
         ctaHref={content.contactSection?.ctaHref}
         mapLabel={content.contactSection?.mapLabel ?? `${content.location.city}, ${content.location.state}`}
         mapSublabel={content.contactSection?.mapSublabel ?? content.location.address}
-        image={content.contactSection?.image ?? content.hero.backgroundImage ?? "/images/Front building.jpg"}
+        image={content.contactSection?.image ?? content.hero?.backgroundImage ?? "/images/Front building.jpg"}
         imageAlt={content.contactSection?.imageAlt ?? "Prosperity Planning & Advisory office building in Woodland Hills, CA"}
       />
+      )}
 
       {/* Service Cards */}
+      {content.serviceCards && content.serviceCards.length > 0 && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
           <FadeUp>
@@ -114,8 +119,10 @@ export default async function ContactPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Disclosures */}
+      {content.location?.disclosures && content.location.disclosures.length > 0 && (
       <section className="bg-white py-6 sm:py-8 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {content.location.disclosures.map((d, i) => (
@@ -128,6 +135,7 @@ export default async function ContactPage() {
           ))}
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="contact" />
     </main>

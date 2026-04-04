@@ -30,15 +30,17 @@ export default async function FeesPage() {
 
   return (
     <main>
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
-        backgroundImage={content.hero.backgroundImage ?? "/images/tree jpg.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.subheadline}
+          backgroundImage={content.hero.backgroundImage ?? "/images/tree jpg.JPG"}
+        />
+      )}
 
       {/* Content Sections */}
-      {content.sections.map((section: FeeSection, sectionIdx: number) => (
+      {content.sections && content.sections.length > 0 && content.sections.map((section: FeeSection, sectionIdx: number) => (
         <section
           key={section.id}
           id={section.id}
@@ -94,6 +96,7 @@ export default async function FeesPage() {
       ))}
 
       {/* Important Disclosure */}
+      {content.disclosure && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -106,6 +109,7 @@ export default async function FeesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="fees" />
     </main>

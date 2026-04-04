@@ -21,19 +21,22 @@ export default async function PortfoliosPage() {
   const content = await getPortfoliosContent();
   return (
     <main>
-      <InteriorHero
-        eyebrow="Prosperity Pathways™ Portfolios"
-        headline={content.hero.headline}
-        subtitle={content.hero.intro}
-        backgroundImage={content.hero.backgroundImage ?? "/images/invest page.png"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow="Prosperity Pathways™ Portfolios"
+          headline={content.hero.headline}
+          subtitle={content.hero.intro}
+          backgroundImage={content.hero.backgroundImage ?? "/images/invest page.png"}
+        />
+      )}
 
       {/* Portfolio Grid */}
+      {content.portfolios && content.portfolios.length > 0 && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
           <FadeUp>
             <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] max-w-[780px] mx-auto text-center mb-10 md:mb-12 lg:mb-14">
-              {content.hero.body}
+              {content.hero?.body}
             </p>
           </FadeUp>
 
@@ -48,8 +51,10 @@ export default async function PortfoliosPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Management & Fiduciary */}
+      {content.management && content.fiduciary && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -74,8 +79,10 @@ export default async function PortfoliosPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Foundation */}
+      {content.foundation && (
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
 
@@ -112,8 +119,10 @@ export default async function PortfoliosPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Disclosures */}
+      {content.disclosures && content.disclosures.length > 0 && (
       <section className="bg-cream py-8 sm:py-10 md:py-12 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {content.disclosures.map((disclosure, i) => (
@@ -126,6 +135,7 @@ export default async function PortfoliosPage() {
           ))}
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="portfolios" />
     </main>

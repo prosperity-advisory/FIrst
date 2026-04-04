@@ -365,13 +365,16 @@ export default async function CaseStudiesPage() {
   return (
     <main>
       {/* Hero */}
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Planning Scenarios-JPG.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.subheadline}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Planning Scenarios-JPG.JPG"}
+        />
+      )}
       {/* Hero CTA buttons */}
+      {content.heroCta1Text && (
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep text-center px-4 pb-10 sm:pb-12 -mt-1">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyButton url={content.heroCta1Href} className="btn btn-gold">
@@ -385,8 +388,10 @@ export default async function CaseStudiesPage() {
           </Link>
         </div>
       </section>
+      )}
 
       {/* Hero Intro */}
+      {content.heroIntro && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           {content.heroIntro.paragraphs.map((p: string, i: number) => (
@@ -403,8 +408,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* What You'll See */}
+      {content.whatYoullSee && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -417,8 +424,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Intro Section */}
+      {content.introSection && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -435,8 +444,10 @@ export default async function CaseStudiesPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* What Designed to Show */}
+      {content.whatDesignedToShow && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -465,8 +476,10 @@ export default async function CaseStudiesPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Planning Process */}
+      {content.planningProcess && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -516,8 +529,10 @@ export default async function CaseStudiesPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Scenarios Intro */}
+      {content.scenariosIntro && (
       <section id="scenarios" className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -564,8 +579,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Quick Links */}
+      {content.quickLinks && content.quickLinks.length > 0 && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -592,9 +609,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Categories & Scenarios */}
-      {content.categories.map((category: AnyObj, catIdx: number) => (
+      {content.categories && content.categories.length > 0 && content.categories.map((category: AnyObj, catIdx: number) => (
         <section
           key={category.id}
           id={category.id}
@@ -658,6 +676,7 @@ export default async function CaseStudiesPage() {
       ))}
 
       {/* Who This Is For */}
+      {content.whoThisIsFor && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -673,8 +692,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Why Hypothetical */}
+      {content.whyHypothetical && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
@@ -696,8 +717,10 @@ export default async function CaseStudiesPage() {
           )}
         </div>
       </section>
+      )}
 
       {/* Closing CTA */}
+      {content.closingCta && (
       <section className="bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -721,8 +744,10 @@ export default async function CaseStudiesPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Compliance */}
+      {content.compliance && (
       <section className="bg-cream py-10 sm:py-12 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <h3 className="font-sans text-sm font-semibold text-navy uppercase tracking-[0.1em] mb-4">
@@ -738,6 +763,7 @@ export default async function CaseStudiesPage() {
           ))}
         </div>
       </section>
+      )}
     </main>
   );
 }

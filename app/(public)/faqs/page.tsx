@@ -21,14 +21,17 @@ export default async function FaqsPage() {
   const content = await getFaqsContent();
   return (
     <main>
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline}
-        subtitle={content.hero.subheadline}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image- jpg.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline}
+          subtitle={content.hero.subheadline}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image- jpg.JPG"}
+        />
+      )}
 
       {/* Intro */}
+      {content.intro && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           {content.intro.paragraphs.map((p: string, i: number) => (
@@ -40,9 +43,10 @@ export default async function FaqsPage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* FAQ Categories */}
-      {content.categories.map((category: { heading: string; questions: { question: string; answer: string }[] }, catIdx: number) => (
+      {content.categories && content.categories.length > 0 && content.categories.map((category: { heading: string; questions: { question: string; answer: string }[] }, catIdx: number) => (
         <section
           key={category.heading}
           className={`${catIdx % 2 === 0 ? "bg-cream" : "bg-white"} py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6`}
@@ -61,6 +65,7 @@ export default async function FaqsPage() {
       ))}
 
       {/* Disclosures */}
+      {content.disclosures && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
           <FadeUp>
@@ -70,6 +75,7 @@ export default async function FaqsPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="faqs" />
     </main>

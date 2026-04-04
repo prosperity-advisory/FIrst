@@ -28,10 +28,12 @@ export interface PageMeta {
 export interface PageData {
   meta: PageMeta;
   sections: { component_type: string; sort_order: number; content: AnyContent }[];
-  /** Returns the first section matching `type`, or null. */
+  /** Returns the first visible section matching `type`, or null. */
   section: (type: string) => AnyContent | null;
-  /** Returns all sections matching `type`, preserving sort order. */
+  /** Returns all visible sections matching `type`, preserving sort order. */
   sectionsOfType: (type: string) => AnyContent[];
+  /** Returns true if a section of this type exists but is hidden. */
+  isHidden: (type: string) => boolean;
 }
 
 /**
@@ -52,14 +54,17 @@ export const getPage = cache(async (slug: string): Promise<PageData | null> => {
 
     if (error || !page) return null;
 
-    const { data: sections } = await client
+    // Fetch ALL sections (visible + hidden) so we can distinguish
+    // "section not created" from "section hidden by admin"
+    const { data: allSections } = await client
       .from('sections')
-      .select('component_type, sort_order, content')
+      .select('component_type, sort_order, content, is_visible')
       .eq('page_id', page.id)
-      .eq('is_visible', true)
       .order('sort_order');
 
-    const secs = (sections ?? []) as PageData['sections'];
+    const all = (allSections ?? []) as { component_type: string; sort_order: number; content: AnyContent; is_visible: boolean }[];
+    const secs = all.filter((s) => s.is_visible) as PageData['sections'];
+    const hiddenTypes = new Set(all.filter((s) => !s.is_visible).map((s) => s.component_type));
 
     return {
       meta: {
@@ -74,6 +79,9 @@ export const getPage = cache(async (slug: string): Promise<PageData | null> => {
       },
       sectionsOfType(type: string) {
         return secs.filter((s) => s.component_type === type).map((s) => s.content);
+      },
+      isHidden(type: string) {
+        return hiddenTypes.has(type);
       },
     };
   } catch (e) {

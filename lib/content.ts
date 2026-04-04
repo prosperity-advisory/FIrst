@@ -6,7 +6,16 @@
  */
 
 import { cache } from 'react';
-import { getPage } from './content-db';
+import { getPage, type PageData } from './content-db';
+
+/**
+ * Return `null` if the section is hidden in the admin, otherwise return `data`.
+ * This lets pages skip rendering hidden sections while still showing
+ * fallback data for sections that haven't been created in the DB yet.
+ */
+function vis<T>(page: PageData, type: string, data: T): T | null {
+  return page.isHidden(type) ? null : data;
+}
 
 // JSON fallbacks (kept in place — never deleted)
 import homeJson from '@/content/home.json';
@@ -99,7 +108,7 @@ export const getHomeContent = cache(async () => {
   return {
     ...homeJson,
     meta: page.meta,
-    hero: hero
+    hero: vis(page, 'hero', hero
       ? {
           eyebrow: hero.eyebrow ?? homeJson.hero.headline,
           headline: hero.headline ?? homeJson.hero.headline,
@@ -115,8 +124,8 @@ export const getHomeContent = cache(async () => {
           ctaText: homeJson.hero.cta.text,
           ctaHref: homeJson.hero.cta.href,
           backgroundImage: undefined as string | undefined,
-        },
-    mission: mission
+        }),
+    mission: vis(page, 'mission', mission
       ? {
           eyebrow: mission.eyebrow ?? 'Our Mission',
           headline: mission.headline ?? 'Welcome to Prosperity Planning',
@@ -125,8 +134,8 @@ export const getHomeContent = cache(async () => {
           image: mission.image as string | undefined,
           imageAlt: mission.imageAlt as string | undefined,
         }
-      : { ...homeJson.mission, eyebrow: 'Our Mission', headline: 'Welcome to Prosperity Planning', body: homeJson.welcome.body, badges: [] },
-    process: ps
+      : { ...homeJson.mission, eyebrow: 'Our Mission', headline: 'Welcome to Prosperity Planning', body: homeJson.welcome.body, badges: [] as { icon: string; label: string }[] }),
+    process: vis(page, 'process_steps', ps
       ? {
           eyebrow: ps.eyebrow ?? 'The Road to Prosperity',
           headline: ps.headline ?? 'Your Journey to Financial Clarity',
@@ -137,8 +146,8 @@ export const getHomeContent = cache(async () => {
           bannerImage: ps.bannerImage as string | undefined,
           bannerAlt: ps.bannerAlt as string | undefined,
         }
-      : { ...homeJson.process, eyebrow: 'The Road to Prosperity', headline: 'Your Journey to Financial Clarity', subtitle: '', ctaText: 'Discover Our Six Step Process →', ctaHref: '/process' },
-    contact: cs
+      : { ...homeJson.process, eyebrow: 'The Road to Prosperity', headline: 'Your Journey to Financial Clarity', subtitle: '', ctaText: 'Discover Our Six Step Process →', ctaHref: '/process' }),
+    contact: vis(page, 'contact_section', cs
       ? {
           eyebrow: cs.eyebrow ?? 'Get In Touch',
           headline: cs.headline ?? 'Woodland Hills Office Visits by Appointment',
@@ -150,11 +159,11 @@ export const getHomeContent = cache(async () => {
           image: cs.image as string | undefined,
           imageAlt: cs.imageAlt as string | undefined,
         }
-      : { image: undefined as string | undefined, imageAlt: undefined as string | undefined },
-    services: sg
+      : { image: undefined as string | undefined, imageAlt: undefined as string | undefined }),
+    services: vis(page, 'services_grid', sg
       ? { eyebrow: sg.eyebrow, heading: sg.headline, body: sg.body, categories: sg.categories, nextSteps: sg.nextSteps, ctaButtons: sg.ctaButtons }
-      : homeJson.services,
-    businessOwner: boa
+      : homeJson.services),
+    businessOwner: vis(page, 'business_owner_accordion', boa
       ? {
           heading: boa.heading,
           body: boa.body,
@@ -165,7 +174,7 @@ export const getHomeContent = cache(async () => {
           relevanceItems: boa.relevanceItems ? ta(boa.relevanceItems) : [],
           sections: boa.sections ? normalizeSections(boa.sections) : [],
         }
-      : null,
+      : null),
   };
 });
 
@@ -185,28 +194,28 @@ export const getServicesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...servicesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, body: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
-    intro: si ? {
+    hero: vis(page, 'interior_hero', { ...servicesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, body: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined }),
+    intro: vis(page, 'services_intro', si ? {
       paragraphs: ta(si.paragraphs),
       cta: { text: si.ctaText, href: si.ctaHref, prefix: si.ctaPrefix },
       exploreHeading: si.exploreHeading,
       exploreBody: si.exploreBody,
       exploreNote: si.exploreNote,
       exploreLinks: si.exploreLinks,
-    } : servicesJson.intro,
-    sections: sa ? sa.sections.map((s: A) => ({
+    } : servicesJson.intro),
+    sections: vis(page, 'service_accordion', sa ? sa.sections.map((s: A) => ({
       ...s,
       planningAreas: ta(s.planningAreas),
       disclaimers: ta(s.disclaimers),
       relevanceItems: ta(s.relevanceItems),
       whyItems: ta(s.whyItems),
-    })) : servicesJson.sections,
-    approach: ap ? {
+    })) : servicesJson.sections),
+    approach: vis(page, 'services_approach', ap ? {
       heading: ap.heading,
       paragraphs: ta(ap.paragraphs),
       cta: { heading: ap.ctaHeading, body: ap.ctaBody, text: ap.ctaText, href: ap.ctaHref },
-    } : servicesJson.approach,
-    disclosures: disc?.text ?? servicesJson.disclosures,
+    } : servicesJson.approach),
+    disclosures: vis(page, 'disclosure', disc?.text ?? servicesJson.disclosures),
   };
 });
 
@@ -226,15 +235,15 @@ export const getPortfoliosContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...portfoliosJson.hero, headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body, backgroundImage: hero?.backgroundImage as string | undefined },
-    portfolios: pc?.portfolios ?? portfoliosJson.portfolios,
-    management: textSections[0] ?? portfoliosJson.management,
-    fiduciary: textSections[1] ?? portfoliosJson.fiduciary,
-    foundation: fs ? {
+    hero: vis(page, 'interior_hero', { ...portfoliosJson.hero, headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body, backgroundImage: hero?.backgroundImage as string | undefined }),
+    portfolios: vis(page, 'portfolio_cards', pc?.portfolios ?? portfoliosJson.portfolios),
+    management: vis(page, 'text_section', textSections[0] ?? portfoliosJson.management),
+    fiduciary: vis(page, 'text_section', textSections[1] ?? portfoliosJson.fiduciary),
+    foundation: vis(page, 'foundation_section', fs ? {
       heading: fs.heading, intro: fs.intro, items: ta(fs.items), body: fs.body,
       cta: { text: fs.ctaText, href: fs.ctaHref },
-    } : portfoliosJson.foundation,
-    disclosures: dl ? ta(dl.items) : portfoliosJson.disclosures,
+    } : portfoliosJson.foundation),
+    disclosures: vis(page, 'disclosure_list', dl ? ta(dl.items) : portfoliosJson.disclosures),
   };
 });
 
@@ -253,7 +262,7 @@ export const getPlanningContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: {
+    hero: vis(page, 'interior_hero', {
       ...planningJson.hero,
       eyebrow: hero?.eyebrow ?? planningJson.hero.eyebrow,
       headline: hero?.headline,
@@ -262,12 +271,12 @@ export const getPlanningContent = cache(async () => {
       body: hb?.paragraphs?.[0]?.text ?? planningJson.hero.body,
       detail: hb?.paragraphs?.[1]?.text ?? planningJson.hero.detail,
       cta: { text: hero?.ctaText ?? planningJson.hero.cta.text, href: hero?.ctaHref ?? planningJson.hero.cta.href },
-    },
-    serviceCards: sc ? sc.cards.map((c: A) => ({
+    }),
+    serviceCards: vis(page, 'service_cards', sc ? sc.cards.map((c: A) => ({
       title: c.title, body: c.body, tagline: c.tagline,
       cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
-    })) : planningJson.serviceCards,
-    portal: { ...planningJson.portal, ...(cp ?? {}), image: cp?.image as string | undefined },
+    })) : planningJson.serviceCards),
+    portal: vis(page, 'client_portal', { ...planningJson.portal, ...(cp ?? {}), image: cp?.image as string | undefined }),
   };
 });
 
@@ -288,15 +297,15 @@ export const getAboutContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...aboutJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined },
-    mission: { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined },
-    ourServices: services ? {
+    hero: vis(page, 'interior_hero', { ...aboutJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined }),
+    mission: vis(page, 'about_mission', { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined }),
+    ourServices: vis(page, 'about_services', services ? {
       heading: services.heading, body: services.body, items: ta(services.items), outro: services.outro,
-    } : aboutJson.ourServices,
-    trustedPartner: textSections[0] ?? aboutJson.trustedPartner,
-    features: badges ? badges.features.map((f: A) => f.label) : aboutJson.features,
-    tailored: textSections[1] ?? aboutJson.tailored,
-    ctaBand: ctaBand ? { heading: ctaBand.headline, body: ctaBand.subtext } : aboutJson.ctaBand,
+    } : aboutJson.ourServices),
+    trustedPartner: vis(page, 'text_section', textSections[0] ?? aboutJson.trustedPartner),
+    features: vis(page, 'feature_badges', badges ? badges.features.map((f: A) => f.label) : aboutJson.features),
+    tailored: vis(page, 'text_section', textSections[1] ?? aboutJson.tailored),
+    ctaBand: vis(page, 'cta_band', ctaBand ? { heading: ctaBand.headline, body: ctaBand.subtext } : aboutJson.ctaBand),
   };
 });
 
@@ -315,27 +324,27 @@ export const getContactContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: {
+    hero: vis(page, 'interior_hero', {
       ...contactJson.hero,
       headline: hero?.headline ?? contactJson.hero.headline,
       subtitle: hero?.subtitle,
       backgroundImage: hero?.backgroundImage as string | undefined,
       cta: { text: hero?.ctaText ?? contactJson.hero.cta.text, href: hero?.ctaHref ?? contactJson.hero.cta.href },
-    },
-    contactSection: cs ? {
+    }),
+    contactSection: vis(page, 'contact_section', cs ? {
       ctaText: cs.ctaText, ctaHref: cs.ctaHref,
       details: cs.details, image: cs.image as string | undefined, imageAlt: cs.imageAlt as string | undefined,
       eyebrow: cs.eyebrow, headline: cs.headline, mapLabel: cs.mapLabel, mapSublabel: cs.mapSublabel,
-    } : null,
-    location: loc ? {
+    } : null),
+    location: vis(page, 'location_info', loc ? {
       heading: loc.heading, name: loc.name, address: loc.address, city: loc.city,
       state: loc.state, zip: loc.zip, phone: loc.phone, email: loc.email,
       disclosures: ta(loc.disclosures),
-    } : contactJson.location,
-    serviceCards: sc ? sc.cards.map((c: A) => ({
+    } : contactJson.location),
+    serviceCards: vis(page, 'service_cards', sc ? sc.cards.map((c: A) => ({
       title: c.title, body: c.body,
       cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
-    })) : contactJson.serviceCards,
+    })) : contactJson.serviceCards),
   };
 });
 
@@ -357,27 +366,27 @@ export const getWhoWeServeContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: {
+    hero: vis(page, 'interior_hero', {
       ...whoWeServeJson.hero,
       eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle,
       backgroundImage: hero?.backgroundImage as string | undefined,
       heroBody: ai?.heroBody ?? whoWeServeJson.hero.heroBody,
       cta: { text: hero?.ctaText, href: hero?.ctaHref },
-    },
-    builtAroundYou: ai ? { heading: ai.heading, body: ai.body } : whoWeServeJson.builtAroundYou,
-    quickOverview: ao ?? whoWeServeJson.quickOverview,
-    audiences: ap ? ap.audiences.map((a: A) => ({
+    }),
+    builtAroundYou: vis(page, 'audience_intro', ai ? { heading: ai.heading, body: ai.body } : whoWeServeJson.builtAroundYou),
+    quickOverview: vis(page, 'audience_overview', ao ?? whoWeServeJson.quickOverview),
+    audiences: vis(page, 'audience_profiles', ap ? ap.audiences.map((a: A) => ({
       ...a, focusedOn: ta(a.focusedOn), planningAreas: ta(a.planningAreas),
-    })) : whoWeServeJson.audiences,
-    taxAware: twoCol[0] ?? whoWeServeJson.taxAware,
-    noOneCategory: twoCol[1] ?? whoWeServeJson.noOneCategory,
-    connectsEverything: ce ? {
+    })) : whoWeServeJson.audiences),
+    taxAware: vis(page, 'two_column_text', twoCol[0] ?? whoWeServeJson.taxAware),
+    noOneCategory: vis(page, 'two_column_text', twoCol[1] ?? whoWeServeJson.noOneCategory),
+    connectsEverything: vis(page, 'connects_everything', ce ? {
       heading: ce.heading, body: ce.body, subheading: ce.subheading, items: ta(ce.items), footer: ce.footer,
-    } : whoWeServeJson.connectsEverything,
-    closingCta: cc ? {
+    } : whoWeServeJson.connectsEverything),
+    closingCta: vis(page, 'closing_cta', cc ? {
       heading: cc.heading, body: cc.body, body2: cc.body2,
       cta: { text: cc.ctaText, href: cc.ctaHref },
-    } : whoWeServeJson.closingCta,
+    } : whoWeServeJson.closingCta),
   };
 });
 
@@ -403,35 +412,35 @@ export const getProcessContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: {
+    hero: vis(page, 'interior_hero', {
       ...processJson.hero,
       eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle,
       backgroundImage: hero?.backgroundImage as string | undefined,
       body: hb ? ta(hb.paragraphs) : processJson.hero.body,
       cta: { text: hero?.ctaText, href: hero?.ctaHref },
-    },
-    whyItMatters: wim ? {
+    }),
+    whyItMatters: vis(page, 'why_it_matters', wim ? {
       heading: wim.heading, body: wim.body, listHeading: wim.listHeading,
       items: ta(wim.items), paragraphs: ta(wim.paragraphs),
-    } : processJson.whyItMatters,
-    roadmap: { ...processJson.roadmap, ...(rm ?? {}), image: rm?.image as string | undefined },
-    steps: ds ? ds.steps.map((s: A) => ({
+    } : processJson.whyItMatters),
+    roadmap: vis(page, 'roadmap_summary', { ...processJson.roadmap, ...(rm ?? {}), image: rm?.image as string | undefined }),
+    steps: vis(page, 'detailed_steps', ds ? ds.steps.map((s: A) => ({
       number: s.number, title: s.title, subtitle: s.subtitle,
       body: ta(s.body), listHeading: s.listHeading, items: ta(s.items),
       whyMatters: s.whyMatters, whatYouLeaveWith: ta(s.whatYouLeaveWith), cta: s.cta,
-    })) : processJson.steps,
-    whoIsFor: bls[0] ? { heading: bls[0].heading, listHeading: bls[0].listHeading, items: ta(bls[0].items) } : processJson.whoIsFor,
-    whatItAddresses: bls[1] ? {
+    })) : processJson.steps),
+    whoIsFor: vis(page, 'bullet_list_section', bls[0] ? { heading: bls[0].heading, listHeading: bls[0].listHeading, items: ta(bls[0].items) } : processJson.whoIsFor),
+    whatItAddresses: vis(page, 'bullet_list_section', bls[1] ? {
       heading: bls[1].heading, listHeading: bls[1].listHeading, items: ta(bls[1].items), footnote: bls[1].footnote,
-    } : processJson.whatItAddresses,
-    whatToExpect: tls ?? processJson.whatToExpect,
-    planningExperience: ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs) } : processJson.planningExperience,
-    faq: faq ?? processJson.faq,
-    closing: cc ? {
+    } : processJson.whatItAddresses),
+    whatToExpect: vis(page, 'titled_list_section', tls ?? processJson.whatToExpect),
+    planningExperience: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs) } : processJson.planningExperience),
+    faq: vis(page, 'faq_accordion', faq ?? processJson.faq),
+    closing: vis(page, 'closing_cta', cc ? {
       heading: cc.heading, paragraphs: cc.body?.split('\n\n') ?? [],
       cta: { text: cc.ctaText, href: cc.ctaHref },
-    } : processJson.closing,
-    compliance: disc?.text ?? processJson.compliance,
+    } : processJson.closing),
+    compliance: vis(page, 'disclosure', disc?.text ?? processJson.compliance),
   };
 });
 
@@ -450,13 +459,13 @@ export const getFeesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...feesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
-    sections: fs ? fs.sections.map((s: A) => ({
+    hero: vis(page, 'interior_hero', { ...feesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined }),
+    sections: vis(page, 'fee_sections', fs ? fs.sections.map((s: A) => ({
       id: s.id, heading: s.heading, paragraphs: ta(s.paragraphs),
       listHeading: s.listHeading, items: ta(s.items), footnotes: ta(s.footnotes),
-    })) : feesJson.sections,
-    disclosure: disc?.text ?? feesJson.disclosure,
-    ctaBand: cb ? { heading: cb.headline, body: cb.subtext } : feesJson.ctaBand,
+    })) : feesJson.sections),
+    disclosure: vis(page, 'disclosure', disc?.text ?? feesJson.disclosure),
+    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext } : feesJson.ctaBand),
   };
 });
 
@@ -474,11 +483,11 @@ export const getFaqsContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...faqsJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
-    intro: { paragraphs: fc ? ta(fc.introParagraphs) : faqsJson.intro.paragraphs },
-    categories: fc?.categories ?? faqsJson.categories,
-    disclosures: fc?.disclosures ?? faqsJson.disclosures,
-    ctaBand: cb ? { heading: cb.headline, body: cb.subtext } : faqsJson.ctaBand,
+    hero: vis(page, 'interior_hero', { ...faqsJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined }),
+    intro: vis(page, 'faq_categories', { paragraphs: fc ? ta(fc.introParagraphs) : faqsJson.intro.paragraphs }),
+    categories: vis(page, 'faq_categories', fc?.categories ?? faqsJson.categories),
+    disclosures: vis(page, 'faq_categories', fc?.disclosures ?? faqsJson.disclosures),
+    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext } : faqsJson.ctaBand),
   };
 });
 
@@ -505,31 +514,31 @@ export const getResourcesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: {
+    hero: vis(page, 'interior_hero', {
       ...resourcesJson.hero,
       eyebrow: hero?.eyebrow, headline: hero?.headline, backgroundImage: hero?.backgroundImage as string | undefined,
       body: hb ? ta(hb.paragraphs) : resourcesJson.hero.body,
       cta: hb ? { text: hb.ctaText, href: hb.ctaHref, prefix: hb.ctaPrefix } : resourcesJson.hero.cta,
-    },
-    startHere: sh ?? resourcesJson.startHere,
-    howToUse: htu ? {
+    }),
+    startHere: vis(page, 'resources_start_here', sh ?? resourcesJson.startHere),
+    howToUse: vis(page, 'resources_how_to_use', htu ? {
       heading: htu.heading, intro: htu.intro, listHeading: htu.listHeading,
       items: ta(htu.items), footnote: htu.footnote,
-    } : resourcesJson.howToUse,
-    calculators: cg ?? resourcesJson.calculators,
-    prosperityInsight: pi ? { heading: pi.heading, paragraphs: ta(pi.paragraphs) } : resourcesJson.prosperityInsight,
-    howAndWhy: hw ? {
+    } : resourcesJson.howToUse),
+    calculators: vis(page, 'calculator_groups', cg ?? resourcesJson.calculators),
+    prosperityInsight: vis(page, 'prosperity_insight', pi ? { heading: pi.heading, paragraphs: ta(pi.paragraphs) } : resourcesJson.prosperityInsight),
+    howAndWhy: vis(page, 'how_and_why', hw ? {
       heading: hw.heading, paragraphs: ta(hw.paragraphs), listHeading: hw.listHeading,
       items: ta(hw.items), closing: hw.closing, cta: hw.cta,
-    } : resourcesJson.howAndWhy,
-    resourceLibrary: rl ?? resourcesJson.resourceLibrary,
-    downloadableGuides: dg ? { heading: dg.heading, items: ta(dg.items), cta: dg.cta } : resourcesJson.downloadableGuides,
-    videos: vl ? { heading: vl.heading, items: ta(vl.items) } : resourcesJson.videos,
-    educationalNote: disc?.text ?? resourcesJson.educationalNote,
-    closing: cl ? {
+    } : resourcesJson.howAndWhy),
+    resourceLibrary: vis(page, 'resource_library', rl ?? resourcesJson.resourceLibrary),
+    downloadableGuides: vis(page, 'downloadable_guides', dg ? { heading: dg.heading, items: ta(dg.items), cta: dg.cta } : resourcesJson.downloadableGuides),
+    videos: vis(page, 'video_list', vl ? { heading: vl.heading, items: ta(vl.items) } : resourcesJson.videos),
+    educationalNote: vis(page, 'disclosure', disc?.text ?? resourcesJson.educationalNote),
+    closing: vis(page, 'resources_closing', cl ? {
       heading: cl.heading, paragraphs: ta(cl.paragraphs),
       cta: { text: cl.ctaText, href: cl.ctaHref, prefix: cl.ctaPrefix },
-    } : resourcesJson.closing,
+    } : resourcesJson.closing),
   };
 });
 
@@ -553,35 +562,35 @@ export const getCaseStudiesContent = cache(async () => {
 
   return {
     meta: page.meta,
-    hero: { ...caseStudiesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined },
+    hero: vis(page, 'interior_hero', { ...caseStudiesJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined }),
     heroCta1Text: hero?.ctaText ?? 'Schedule Your Free 15-Minute Clarity Session',
     heroCta1Href: hero?.ctaHref ?? 'https://calendly.com/prosperityplanningandadvisory/clarity-session',
     heroCta2Text: hero?.cta2Text ?? 'Explore Example Scenarios Below',
     heroCta2Href: hero?.cta2Href ?? '#scenarios',
     scenarioCtaText: csi?.scenarioCtaText ?? 'Schedule Your Free 15-Minute Clarity Session',
-    heroIntro: csi ? { paragraphs: ta(csi.heroIntroParagraphs), tagline: csi.tagline } : caseStudiesJson.heroIntro,
-    whatYoullSee: csi ? { heading: csi.whatYoullSeeHeading, items: ta(csi.whatYoullSeeItems) } : caseStudiesJson.whatYoullSee,
-    introSection: csi ? { heading: csi.introHeading, paragraphs: ta(csi.introParagraphs) } : caseStudiesJson.introSection,
-    whatDesignedToShow: csi ? { heading: csi.whatDesignedHeading, items: csi.whatDesignedItems } : caseStudiesJson.whatDesignedToShow,
-    planningProcess: csp ? {
+    heroIntro: vis(page, 'case_studies_intro', csi ? { paragraphs: ta(csi.heroIntroParagraphs), tagline: csi.tagline } : caseStudiesJson.heroIntro),
+    whatYoullSee: vis(page, 'case_studies_intro', csi ? { heading: csi.whatYoullSeeHeading, items: ta(csi.whatYoullSeeItems) } : caseStudiesJson.whatYoullSee),
+    introSection: vis(page, 'case_studies_intro', csi ? { heading: csi.introHeading, paragraphs: ta(csi.introParagraphs) } : caseStudiesJson.introSection),
+    whatDesignedToShow: vis(page, 'case_studies_intro', csi ? { heading: csi.whatDesignedHeading, items: csi.whatDesignedItems } : caseStudiesJson.whatDesignedToShow),
+    planningProcess: vis(page, 'case_studies_process', csp ? {
       heading: csp.heading, subtitle: csp.subtitle,
       paragraphs: ta(csp.paragraphs), steps: csp.steps,
-    } : caseStudiesJson.planningProcess,
-    scenariosIntro: si ? {
+    } : caseStudiesJson.planningProcess),
+    scenariosIntro: vis(page, 'scenarios_intro', si ? {
       heading: si.heading, paragraphs: ta(si.paragraphs),
       illustrativeHeading: si.illustrativeHeading,
       illustrativeParagraphs: ta(si.illustrativeParagraphs),
       howToUse: { heading: si.howToUseHeading, items: ta(si.howToUseItems), disclaimer: si.howToUseDisclaimer },
-    } : caseStudiesJson.scenariosIntro,
-    quickLinks: si?.quickLinks ?? caseStudiesJson.quickLinks,
-    categories: cats.length > 0 ? cats : caseStudiesJson.categories,
-    whoThisIsFor: bls[0] ? { heading: bls[0].heading, body: bls[0].listHeading, items: ta(bls[0].items) } : caseStudiesJson.whoThisIsFor,
-    whyHypothetical: ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs) } : caseStudiesJson.whyHypothetical,
-    closingCta: cc ? {
+    } : caseStudiesJson.scenariosIntro),
+    quickLinks: vis(page, 'scenarios_intro', si?.quickLinks ?? caseStudiesJson.quickLinks),
+    categories: vis(page, 'scenario_category', cats.length > 0 ? cats : caseStudiesJson.categories),
+    whoThisIsFor: vis(page, 'bullet_list_section', bls[0] ? { heading: bls[0].heading, body: bls[0].listHeading, items: ta(bls[0].items) } : caseStudiesJson.whoThisIsFor),
+    whyHypothetical: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs) } : caseStudiesJson.whyHypothetical),
+    closingCta: vis(page, 'closing_cta', cc ? {
       paragraphs: cc.body?.split('\n\n') ?? [],
       cta: { text: cc.ctaText, href: cc.ctaHref },
-    } : caseStudiesJson.closingCta,
-    compliance: disc ? { heading: 'Important Disclosures', paragraphs: disc.text?.split('\n\n') ?? [] } : caseStudiesJson.compliance,
+    } : caseStudiesJson.closingCta),
+    compliance: vis(page, 'disclosure', disc ? { heading: 'Important Disclosures', paragraphs: disc.text?.split('\n\n') ?? [] } : caseStudiesJson.compliance),
   };
 });
 

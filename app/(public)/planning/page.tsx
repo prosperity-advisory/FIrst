@@ -26,15 +26,18 @@ export default async function PlanningPage() {
   const content = await getPlanningContent();
   return (
     <main>
-      <InteriorHero
-        eyebrow={content.hero.eyebrow}
-        headline={content.hero.headline ?? "Personal Prosperity Planning™"}
-        subtitle={content.hero.tagline}
-        ctaText={content.hero.cta.text}
-        backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image 2 -JPG.JPG"}
-      />
+      {content.hero && (
+        <InteriorHero
+          eyebrow={content.hero.eyebrow}
+          headline={content.hero.headline ?? "Personal Prosperity Planning™"}
+          subtitle={content.hero.tagline}
+          ctaText={content.hero.cta.text}
+          backgroundImage={content.hero.backgroundImage ?? "/images/Hero Image 2 -JPG.JPG"}
+        />
+      )}
 
       {/* Intro body */}
+      {content.hero && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <FadeUp>
@@ -49,8 +52,10 @@ export default async function PlanningPage() {
           </FadeUp>
         </div>
       </section>
+      )}
 
       {/* Service Cards */}
+      {content.serviceCards && content.serviceCards.length > 0 && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
           <FadeUp>
@@ -109,8 +114,10 @@ export default async function PlanningPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Financial Planning Portal */}
+      {content.portal && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
           <FadeUp>
@@ -170,6 +177,7 @@ export default async function PlanningPage() {
           </div>
         </div>
       </section>
+      )}
 
       <CtaBand pageSlug="planning" />
     </main>

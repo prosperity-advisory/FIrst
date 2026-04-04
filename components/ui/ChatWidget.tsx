@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
 
-const TOKEN_ENDPOINT = "/api/chat-token";
+const POWER_VA_ENDPOINT =
+  "https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=80518000-d02e-f111-88b4-6045bd08b490";
+const PROXY_ENDPOINT = "/api/chat-token";
 
 declare global {
   interface Window {
@@ -29,13 +31,26 @@ export function ChatWidget() {
     setInitialized(true); // Mark immediately so we don't double-init
 
     try {
-      const res = await fetch(TOKEN_ENDPOINT);
-      if (!res.ok) {
-        setError("Unable to connect. Please try again later.");
-        return;
+      // Try direct first (works when domain is whitelisted in Copilot Studio),
+      // fall back to server proxy
+      let token: string | null = null;
+      try {
+        const directRes = await fetch(POWER_VA_ENDPOINT);
+        if (directRes.ok) {
+          const directData = await directRes.json();
+          token = directData.token;
+        }
+      } catch {
+        // CORS blocked — try server proxy
       }
-      const data = await res.json();
-      const token = data.token;
+
+      if (!token) {
+        const proxyRes = await fetch(PROXY_ENDPOINT);
+        if (proxyRes.ok) {
+          const proxyData = await proxyRes.json();
+          token = proxyData.token;
+        }
+      }
 
       if (!token) {
         setError("Unable to connect. Please try again later.");

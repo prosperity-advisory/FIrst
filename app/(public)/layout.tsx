@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/ui/ChatWidget";
 import { getSiteSettings } from "@/lib/content-db";
 
 export default async function PublicLayout({
@@ -24,6 +25,7 @@ export default async function PublicLayout({
         insuranceDisclaimer={settings?.footer?.insuranceDisclaimer}
         privacyPolicyHref={settings?.footer?.privacyPolicyHref}
       />
+      <ChatWidget />
     </>
   );
 }

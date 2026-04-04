@@ -1,0 +1,163 @@
+"use client";
+
+import { useState, useEffect, useRef, useCallback } from "react";
+import Script from "next/script";
+
+const TOKEN_ENDPOINT =
+  "https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=80518000-d02e-f111-88b4-6045bd08b490";
+
+declare global {
+  interface Window {
+    WebChat: {
+      renderWebChat: (options: Record<string, unknown>, el: HTMLElement | null) => void;
+      createDirectLine: (options: { token: string }) => unknown;
+    };
+  }
+}
+
+export function ChatWidget() {
+  const [open, setOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [sdkReady, setSdkReady] = useState(false);
+  const chatRef = useRef<HTMLDivElement>(null);
+
+  const initChat = useCallback(async () => {
+    if (loaded || !chatRef.current || !window.WebChat) return;
+    try {
+      const res = await fetch(TOKEN_ENDPOINT);
+      const { token } = await res.json();
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({ token }),
+          styleOptions: {
+            // Colors
+            accent: "#C9A84C",
+            backgroundColor: "#FFFFFF",
+            bubbleBackground: "#F4F6F0",
+            bubbleBorderColor: "#D5DDD8",
+            bubbleBorderRadius: 8,
+            bubbleFromUserBackground: "#14392B",
+            bubbleFromUserBorderColor: "#14392B",
+            bubbleFromUserBorderRadius: 8,
+            bubbleFromUserTextColor: "#FFFFFF",
+            bubbleTextColor: "#4B5B52",
+
+            // Avatar
+            botAvatarInitials: "PA",
+            botAvatarBackgroundColor: "#14392B",
+            userAvatarInitials: "You",
+            userAvatarBackgroundColor: "#C9A84C",
+
+            // Send box
+            sendBoxBackground: "#FFFFFF",
+            sendBoxButtonColor: "#C9A84C",
+            sendBoxButtonColorOnHover: "#DBBF6A",
+            sendBoxTextColor: "#4B5B52",
+            sendBoxBorderTop: "1px solid #D5DDD8",
+            sendBoxPlaceholderColor: "#6B7E72",
+
+            // Suggested actions
+            suggestedActionBackground: "#FFFFFF",
+            suggestedActionBorderColor: "#C9A84C",
+            suggestedActionTextColor: "#14392B",
+
+            // Typography
+            primaryFont: "'DM Sans', sans-serif",
+            fontSizeSmall: "13px",
+            rootHeight: "100%",
+            rootWidth: "100%",
+            hideUploadButton: true,
+          },
+        },
+        chatRef.current
+      );
+      setLoaded(true);
+    } catch (err) {
+      console.error("Chat connection issue:", err);
+    }
+  }, [loaded]);
+
+  useEffect(() => {
+    if (open && sdkReady && !loaded) {
+      initChat();
+    }
+  }, [open, sdkReady, loaded, initChat]);
+
+  return (
+    <>
+      <Script
+        src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
+        strategy="lazyOnload"
+        onLoad={() => setSdkReady(true)}
+      />
+
+      {/* Chat panel */}
+      <div
+        className={`fixed bottom-20 right-4 sm:right-6 z-[999] w-[min(380px,calc(100vw-2rem))] transition-all duration-300 origin-bottom-right ${
+          open
+            ? "opacity-100 scale-100 translate-y-0"
+            : "opacity-0 scale-95 translate-y-2 pointer-events-none"
+        }`}
+      >
+        <div className="rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(11,42,30,0.2)] border border-border flex flex-col" style={{ height: "min(520px, calc(100dvh - 120px))" }}>
+          {/* Header */}
+          <div className="bg-navy px-4 py-3 flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">
+                PA
+              </div>
+              <div>
+                <p className="text-white text-sm font-semibold leading-tight">
+                  Prosperity Assistant
+                </p>
+                <p className="text-white/50 text-[11px]">Ask us anything</p>
+              </div>
+            </div>
+            <button
+              onClick={() => setOpen(false)}
+              className="text-white/50 hover:text-white transition-colors p-1"
+              aria-label="Close chat"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Chat body */}
+          <div ref={chatRef} className="flex-1 bg-white min-h-0" />
+
+          {!loaded && open && (
+            <div className="absolute inset-0 top-12 flex items-center justify-center bg-white">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                <p className="text-sm text-slate-light">Connecting...</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Floating button */}
+      <button
+        onClick={() => setOpen(!open)}
+        className={`fixed bottom-4 right-4 sm:right-6 z-[999] w-14 h-14 rounded-full shadow-[0_4px_20px_rgba(11,42,30,0.25)] flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_6px_28px_rgba(11,42,30,0.35)] ${
+          open ? "bg-slate rotate-0" : "bg-navy"
+        }`}
+        aria-label={open ? "Close chat" : "Open chat"}
+      >
+        {open ? (
+          <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-white fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-white fill-none stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        )}
+      </button>
+    </>
+  );
+}

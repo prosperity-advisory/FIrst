@@ -5,6 +5,7 @@ import { ServiceAccordion } from "@/components/sections/ServiceAccordion";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CtaButtonGroup } from "@/components/ui/CtaButtonGroup";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getServicesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -112,31 +113,33 @@ export default async function ServicesPage() {
       {approach && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] font-semibold text-navy mb-5 md:mb-6">
-              {approach.heading}
-            </h2>
-          </FadeUp>
-
-          {approach.paragraphs.map((p: string, i: number) => (
-            <FadeUp key={i} delay={Math.min(i + 1, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
-              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
-                {p}
-              </p>
+          <SectionImage image={approach.sectionImage}>
+            <FadeUp>
+              <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] font-semibold text-navy mb-5 md:mb-6">
+                {approach.heading}
+              </h2>
             </FadeUp>
-          ))}
 
-          <FadeUp delay={3}>
-            <h3 className="font-sans text-lg md:text-[19px] font-semibold text-navy mb-3">
-              {approach.cta.heading}
-            </h3>
-            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6">
-              {approach.cta.body}
-            </p>
-            <Link href={approach.cta.href} className="btn btn-gold">
-              {approach.cta.text}
-            </Link>
-          </FadeUp>
+            {approach.paragraphs.map((p: string, i: number) => (
+              <FadeUp key={i} delay={Math.min(i + 1, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
+                <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                  {p}
+                </p>
+              </FadeUp>
+            ))}
+
+            <FadeUp delay={3}>
+              <h3 className="font-sans text-lg md:text-[19px] font-semibold text-navy mb-3">
+                {approach.cta.heading}
+              </h3>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6">
+                {approach.cta.body}
+              </p>
+              <Link href={approach.cta.href} className="btn btn-gold">
+                {approach.cta.text}
+              </Link>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -156,6 +159,15 @@ export default async function ServicesPage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       <CtaBand pageSlug="services" />
     </main>

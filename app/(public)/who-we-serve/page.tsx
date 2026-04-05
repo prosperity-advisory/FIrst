@@ -3,6 +3,7 @@ import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { ImageBlockSection } from "@/components/ui/SectionImage";
 import { getWhoWeServeContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -227,6 +228,15 @@ export default async function WhoWeServePage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       {/* Closing CTA — Start with Clarity */}
       {content.closingCta && (

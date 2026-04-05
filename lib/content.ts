@@ -17,6 +17,18 @@ function vis<T>(page: PageData, type: string, data: T): T | null {
   return page.isHidden(type) ? null : data;
 }
 
+/** Extract section image data from a DB section content object */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function simg(section: Record<string, any> | null) {
+  if (!section?.sectionImage) return undefined;
+  return {
+    url: section.sectionImage as string,
+    alt: (section.sectionImageAlt as string) || '',
+    caption: (section.sectionImageCaption as string) || '',
+    layout: (section.sectionImageLayout as string) || 'featured-below',
+  };
+}
+
 // JSON fallbacks (kept in place — never deleted)
 import homeJson from '@/content/home.json';
 import servicesJson from '@/content/services.json';
@@ -214,8 +226,10 @@ export const getServicesContent = cache(async () => {
       heading: ap.heading,
       paragraphs: ta(ap.paragraphs),
       cta: { heading: ap.ctaHeading, body: ap.ctaBody, text: ap.ctaText, href: ap.ctaHref },
+      sectionImage: simg(ap),
     } : servicesJson.approach),
     disclosures: vis(page, 'disclosure', disc?.text ?? servicesJson.disclosures),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -237,13 +251,14 @@ export const getPortfoliosContent = cache(async () => {
     meta: page.meta,
     hero: vis(page, 'interior_hero', { ...portfoliosJson.hero, headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body, backgroundImage: hero?.backgroundImage as string | undefined }),
     portfolios: vis(page, 'portfolio_cards', pc?.portfolios ?? portfoliosJson.portfolios),
-    management: vis(page, 'text_section', textSections[0] ?? portfoliosJson.management),
-    fiduciary: vis(page, 'text_section', textSections[1] ?? portfoliosJson.fiduciary),
+    management: vis(page, 'text_section', { ...portfoliosJson.management, ...(textSections[0] ?? {}), sectionImage: simg(textSections[0]) }),
+    fiduciary: vis(page, 'text_section', { ...portfoliosJson.fiduciary, ...(textSections[1] ?? {}), sectionImage: simg(textSections[1]) }),
     foundation: vis(page, 'foundation_section', fs ? {
       heading: fs.heading, intro: fs.intro, items: ta(fs.items), body: fs.body,
       cta: { text: fs.ctaText, href: fs.ctaHref },
     } : portfoliosJson.foundation),
     disclosures: vis(page, 'disclosure_list', dl ? ta(dl.items) : portfoliosJson.disclosures),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -298,14 +313,15 @@ export const getAboutContent = cache(async () => {
   return {
     meta: page.meta,
     hero: vis(page, 'interior_hero', { ...aboutJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined }),
-    mission: vis(page, 'about_mission', { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined }),
+    mission: vis(page, 'about_mission', { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined, sectionImage: simg(mission) }),
     ourServices: vis(page, 'about_services', services ? {
       heading: services.heading, body: services.body, items: ta(services.items), outro: services.outro,
     } : aboutJson.ourServices),
-    trustedPartner: vis(page, 'text_section', textSections[0] ?? aboutJson.trustedPartner),
+    trustedPartner: vis(page, 'text_section', { ...aboutJson.trustedPartner, ...(textSections[0] ?? {}), sectionImage: simg(textSections[0]) }),
     features: vis(page, 'feature_badges', badges ? badges.features.map((f: A) => f.label) : aboutJson.features),
-    tailored: vis(page, 'text_section', textSections[1] ?? aboutJson.tailored),
+    tailored: vis(page, 'text_section', { ...aboutJson.tailored, ...(textSections[1] ?? {}), sectionImage: simg(textSections[1]) }),
     ctaBand: vis(page, 'cta_band', ctaBand ? { heading: ctaBand.headline, body: ctaBand.subtext } : aboutJson.ctaBand),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -387,6 +403,7 @@ export const getWhoWeServeContent = cache(async () => {
       heading: cc.heading, body: cc.body, body2: cc.body2,
       cta: { text: cc.ctaText, href: cc.ctaHref },
     } : whoWeServeJson.closingCta),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -422,6 +439,7 @@ export const getProcessContent = cache(async () => {
     whyItMatters: vis(page, 'why_it_matters', wim ? {
       heading: wim.heading, body: wim.body, listHeading: wim.listHeading,
       items: ta(wim.items), paragraphs: ta(wim.paragraphs),
+      sectionImage: simg(wim),
     } : processJson.whyItMatters),
     roadmap: vis(page, 'roadmap_summary', { ...processJson.roadmap, ...(rm ?? {}), image: rm?.image as string | undefined }),
     steps: vis(page, 'detailed_steps', ds ? ds.steps.map((s: A) => ({
@@ -434,13 +452,14 @@ export const getProcessContent = cache(async () => {
       heading: bls[1].heading, listHeading: bls[1].listHeading, items: ta(bls[1].items), footnote: bls[1].footnote,
     } : processJson.whatItAddresses),
     whatToExpect: vis(page, 'titled_list_section', tls ?? processJson.whatToExpect),
-    planningExperience: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs) } : processJson.planningExperience),
+    planningExperience: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs), sectionImage: simg(ps) } : processJson.planningExperience),
     faq: vis(page, 'faq_accordion', faq ?? processJson.faq),
     closing: vis(page, 'closing_cta', cc ? {
       heading: cc.heading, paragraphs: cc.body?.split('\n\n') ?? [],
       cta: { text: cc.ctaText, href: cc.ctaHref },
     } : processJson.closing),
     compliance: vis(page, 'disclosure', disc?.text ?? processJson.compliance),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -466,6 +485,7 @@ export const getFeesContent = cache(async () => {
     })) : feesJson.sections),
     disclosure: vis(page, 'disclosure', disc?.text ?? feesJson.disclosure),
     ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext } : feesJson.ctaBand),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -539,6 +559,7 @@ export const getResourcesContent = cache(async () => {
       heading: cl.heading, paragraphs: ta(cl.paragraphs),
       cta: { text: cl.ctaText, href: cl.ctaHref, prefix: cl.ctaPrefix },
     } : resourcesJson.closing),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 
@@ -591,6 +612,7 @@ export const getCaseStudiesContent = cache(async () => {
       cta: { text: cc.ctaText, href: cc.ctaHref },
     } : caseStudiesJson.closingCta),
     compliance: vis(page, 'disclosure', disc ? { heading: 'Important Disclosures', paragraphs: disc.text?.split('\n\n') ?? [] } : caseStudiesJson.compliance),
+    imageBlocks: page.sectionsOfType('image_block'),
   };
 });
 

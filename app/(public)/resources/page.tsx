@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { ImageBlockSection } from "@/components/ui/SectionImage";
 import { getResourcesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -380,6 +381,15 @@ export default async function ResourcesPage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       {/* Closing Call to Action */}
       {content.closing && (

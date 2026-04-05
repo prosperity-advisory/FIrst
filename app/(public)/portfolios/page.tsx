@@ -3,6 +3,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { PortfolioCard } from "@/components/sections/PortfolioCard";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getPortfoliosContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -57,26 +58,30 @@ export default async function PortfoliosPage() {
       {content.management && content.fiduciary && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline">{content.management.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-4">
-              {content.management.body}
-            </p>
-            <p className="text-[15px] md:text-base text-slate-light leading-relaxed mb-10 md:mb-14">
-              {content.management.detail}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.management as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.management.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-4">
+                {content.management.body}
+              </p>
+              <p className="text-[15px] md:text-base text-slate-light leading-relaxed mb-10 md:mb-14">
+                {content.management.detail}
+              </p>
+            </FadeUp>
+          </SectionImage>
 
-          <FadeUp delay={1}>
-            <div className="w-12 h-[3px] bg-gold mx-auto mb-4" />
-            <h2 className="section-headline">{content.fiduciary.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-3">
-              {content.fiduciary.body}
-            </p>
-            <p className="text-[15px] md:text-base text-slate-light leading-relaxed">
-              {content.fiduciary.detail}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.fiduciary as any).sectionImage}>
+            <FadeUp delay={1}>
+              <div className="w-12 h-[3px] bg-gold mx-auto mb-4" />
+              <h2 className="section-headline">{content.fiduciary.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-3">
+                {content.fiduciary.body}
+              </p>
+              <p className="text-[15px] md:text-base text-slate-light leading-relaxed">
+                {content.fiduciary.detail}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -136,6 +141,15 @@ export default async function PortfoliosPage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       <CtaBand pageSlug="portfolios" />
     </main>

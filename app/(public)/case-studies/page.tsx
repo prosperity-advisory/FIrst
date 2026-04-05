@@ -4,6 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { ScenarioAccordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { ImageBlockSection } from "@/components/ui/SectionImage";
 import { getCaseStudiesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -718,6 +719,15 @@ export default async function CaseStudiesPage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       {/* Closing CTA */}
       {content.closingCta && (

@@ -5,6 +5,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getProcessContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -71,36 +72,38 @@ export default async function ProcessPage() {
       {content.whyItMatters && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.whyItMatters.heading}</h2>
-            <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
-              {content.whyItMatters.body}
-            </p>
-          </FadeUp>
-
-          <FadeUp delay={1}>
-            <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
-              {content.whyItMatters.listHeading}
-            </p>
-            <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10">
-              {content.whyItMatters.items.map((item: string) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
-                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </FadeUp>
-
-          {content.whyItMatters.paragraphs.map((p: string, i: number) => (
-            <FadeUp key={i} delay={2}>
-              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 last:mb-0">
-                {p}
+          <SectionImage image={(content.whyItMatters as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.whyItMatters.heading}</h2>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
+                {content.whyItMatters.body}
               </p>
             </FadeUp>
-          ))}
+
+            <FadeUp delay={1}>
+              <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
+                {content.whyItMatters.listHeading}
+              </p>
+              <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10">
+                {content.whyItMatters.items.map((item: string) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                    <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+
+            {content.whyItMatters.paragraphs.map((p: string, i: number) => (
+              <FadeUp key={i} delay={2}>
+                <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 last:mb-0">
+                  {p}
+                </p>
+              </FadeUp>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}
@@ -344,16 +347,18 @@ export default async function ProcessPage() {
       {content.planningExperience && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.planningExperience.heading}</h2>
-          </FadeUp>
-          {content.planningExperience.paragraphs.map((p: string, i: number) => (
-            <FadeUp key={i} delay={1}>
-              <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 last:mb-0">
-                {p}
-              </p>
+          <SectionImage image={(content.planningExperience as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.planningExperience.heading}</h2>
             </FadeUp>
-          ))}
+            {content.planningExperience.paragraphs.map((p: string, i: number) => (
+              <FadeUp key={i} delay={1}>
+                <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-5 last:mb-0">
+                  {p}
+                </p>
+              </FadeUp>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}
@@ -371,6 +376,15 @@ export default async function ProcessPage() {
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       {/* Closing */}
       {content.closing && (

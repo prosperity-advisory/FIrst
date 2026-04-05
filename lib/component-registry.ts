@@ -53,6 +53,25 @@ export const ctaButtonsField: FieldDefinition = {
   ],
 };
 
+/** Reusable section image fields — add to any section for optional image support */
+export const sectionImageFields: FieldDefinition[] = [
+  { name: 'sectionImage', label: 'Section Image', type: 'image', hint: 'Optional image for this section' },
+  { name: 'sectionImageAlt', label: 'Image Alt Text', type: 'text' },
+  { name: 'sectionImageCaption', label: 'Image Caption', type: 'text', hint: 'Optional caption below the image' },
+  {
+    name: 'sectionImageLayout',
+    label: 'Image Layout',
+    type: 'select',
+    hint: 'How the image appears relative to the text',
+    options: [
+      { label: 'Featured — below text', value: 'featured-below' },
+      { label: 'Featured — above text', value: 'featured-above' },
+      { label: 'Article — image left, text right', value: 'inline-left' },
+      { label: 'Article — image right, text left', value: 'inline-right' },
+    ],
+  },
+];
+
 export interface ComponentDefinition {
   label: string;
   description?: string;
@@ -428,6 +447,25 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
     ],
   },
 
+  image_block: {
+    label: 'Image Block',
+    description: 'Standalone image section. Drop between other sections for a featured image with optional caption.',
+    fields: [
+      { name: 'image', label: 'Image', type: 'image', required: true, hint: 'Recommended: 1200x800px or wider' },
+      { name: 'alt', label: 'Alt Text', type: 'text', required: true },
+      { name: 'caption', label: 'Caption', type: 'text', hint: 'Optional caption below the image' },
+      {
+        name: 'background',
+        label: 'Background Color',
+        type: 'select',
+        options: [
+          { label: 'White', value: 'white' },
+          { label: 'Cream', value: 'cream' },
+        ],
+      },
+    ],
+  },
+
   services_approach: {
     label: 'Services Approach',
     description: 'Closing approach section on services page.',
@@ -445,6 +483,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaBody', label: 'CTA Body', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
+      ...sectionImageFields,
     ],
   },
 
@@ -490,6 +529,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       { name: 'body', label: 'Body', type: 'textarea', required: true },
       { name: 'detail', label: 'Additional Detail', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -585,6 +625,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
     fields: [
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       { name: 'body', label: 'Body', type: 'richtext', required: true },
+      ...sectionImageFields,
     ],
   },
 
@@ -742,6 +783,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         ],
       },
       { name: 'footer', label: 'Footer Text', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -784,6 +826,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Paragraph', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -899,6 +942,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Paragraph', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 

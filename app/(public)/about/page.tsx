@@ -3,6 +3,7 @@ import Image from "next/image";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getAboutContent } from "@/lib/content";
 import { getIcon } from "@/lib/icons";
 
@@ -36,18 +37,20 @@ export default async function AboutPage() {
       {content.mission && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-[1fr_0.9fr] gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-center">
-          <div className="text-center md:text-left">
-            <FadeUp>
-              <div className="w-12 sm:w-14 lg:w-[60px] h-[3px] bg-gold mx-auto md:mx-0 mb-4" />
-              <span className="eyebrow">Our Mission</span>
-              <h2 className="section-headline">{content.mission.heading}</h2>
-            </FadeUp>
-            <FadeUp delay={1}>
-              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
-                {content.mission.body}
-              </p>
-            </FadeUp>
-          </div>
+          <SectionImage image={(content.mission as any).sectionImage}>
+            <div className="text-center md:text-left">
+              <FadeUp>
+                <div className="w-12 sm:w-14 lg:w-[60px] h-[3px] bg-gold mx-auto md:mx-0 mb-4" />
+                <span className="eyebrow">Our Mission</span>
+                <h2 className="section-headline">{content.mission.heading}</h2>
+              </FadeUp>
+              <FadeUp delay={1}>
+                <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
+                  {content.mission.body}
+                </p>
+              </FadeUp>
+            </div>
+          </SectionImage>
           <FadeUp delay={2}>
             <div className="relative rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(20,57,43,0.12)] max-h-[280px] xs:max-h-[320px] sm:max-h-[360px] md:max-h-none">
               <Image
@@ -104,30 +107,32 @@ export default async function AboutPage() {
       {content.trustedPartner && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline">{content.trustedPartner.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-10 md:mb-14">
-              {content.trustedPartner.body}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.trustedPartner as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.trustedPartner.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mb-10 md:mb-14">
+                {content.trustedPartner.body}
+              </p>
+            </FadeUp>
 
-          {/* Feature badges */}
-          <FadeUp delay={1}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
-              {content.features.map((feature: string, i: number) => (
-                <div key={feature} className="flex flex-col items-center gap-3">
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-cream flex items-center justify-center shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
-                    <span className="w-6 h-6 md:w-7 md:h-7 text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
-                      {getIcon(defaultFeatureIcons[i])}
+            {/* Feature badges */}
+            <FadeUp delay={1}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
+                {content.features.map((feature: string, i: number) => (
+                  <div key={feature} className="flex flex-col items-center gap-3">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-cream flex items-center justify-center shadow-[0_2px_12px_rgba(20,57,43,0.06)]">
+                      <span className="w-6 h-6 md:w-7 md:h-7 text-gold [&>svg]:w-full [&>svg]:h-full [&>svg]:stroke-current [&>svg]:fill-none [&>svg]:stroke-[1.8] [&>svg]:[stroke-linecap:round] [&>svg]:[stroke-linejoin:round]">
+                        {getIcon(defaultFeatureIcons[i])}
+                      </span>
+                    </div>
+                    <span className="font-semibold text-sm md:text-[15px] text-navy text-center">
+                      {feature}
                     </span>
                   </div>
-                  <span className="font-semibold text-sm md:text-[15px] text-navy text-center">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
+                ))}
+              </div>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -136,15 +141,26 @@ export default async function AboutPage() {
       {content.tailored && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline">{content.tailored.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
-              {content.tailored.body}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.tailored as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.tailored.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8]">
+                {content.tailored.body}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
+
+      {/* Image blocks */}
+      {(content as any).imageBlocks?.map((block: any, i: number) => (
+        <ImageBlockSection
+          key={i}
+          image={{ url: block.image, alt: block.alt, caption: block.caption }}
+          background={block.background}
+        />
+      ))}
 
       <CtaBand pageSlug="about" />
     </main>

@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 
-const TOKEN_ENDPOINT =
-  "https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=80518000-d02e-f111-88b4-6045bd08b490";
+const BOT_ID = "80518000-d02e-f111-88b4-6045bd08b490";
+const SECRET =
+  "BViSbHcuBbLdabZIh7xUXkb15pGV0wPs4C2uM04HYyC17YJ84paqJQQJ99CDACYeBjFAArohAAABAZBS4M6n.2hEtfCgiW4eIHqUbHTcVIEYz6CoSRjnO4IRz6CIc7Pz3Bjxu4njvJQQJ99CDACYeBjFAArohAAABAZBS3ten";
+const TOKEN_ENDPOINT = `https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=${BOT_ID}`;
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +12,8 @@ export async function GET() {
     const res = await fetch(TOKEN_ENDPOINT, {
       method: "GET",
       headers: {
-        "Accept": "application/json",
+        Authorization: `Bearer ${SECRET}`,
+        Accept: "application/json",
       },
       cache: "no-store",
     });
@@ -20,7 +23,7 @@ export async function GET() {
     if (!res.ok) {
       console.error("[chat-token] Power VA returned", res.status, text);
       return NextResponse.json(
-        { error: "Failed to fetch token", status: res.status, detail: text },
+        { error: "Failed to fetch token", status: res.status },
         { status: res.status }
       );
     }
@@ -30,7 +33,7 @@ export async function GET() {
   } catch (err) {
     console.error("[chat-token] Fetch error:", err);
     return NextResponse.json(
-      { error: "Unable to connect to chat service", detail: String(err) },
+      { error: "Unable to connect to chat service" },
       { status: 502 }
     );
   }

@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import Script from "next/script";
 
-const POWER_VA_ENDPOINT =
-  "https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=80518000-d02e-f111-88b4-6045bd08b490";
-const PROXY_ENDPOINT = "/api/chat-token";
+const TOKEN_ENDPOINT = "/api/chat-token";
 
 declare global {
   interface Window {
@@ -24,36 +23,25 @@ export function ChatWidget() {
   const initChat = useCallback(async () => {
     if (initialized || !chatRef.current) return;
     if (!window.WebChat?.renderWebChat || !window.WebChat?.createDirectLine) {
-      setError("Chat SDK failed to load. Please refresh.");
+      setError("Chat is loading. Please try again in a moment.");
       return;
     }
 
-    setInitialized(true); // Mark immediately so we don't double-init
+    setInitialized(true);
 
     try {
-      // Try direct first (works when domain is whitelisted in Copilot Studio),
-      // fall back to server proxy
-      let token: string | null = null;
-      try {
-        const directRes = await fetch(POWER_VA_ENDPOINT);
-        if (directRes.ok) {
-          const directData = await directRes.json();
-          token = directData.token;
-        }
-      } catch {
-        // CORS blocked — try server proxy
+      const res = await fetch(TOKEN_ENDPOINT);
+      if (!res.ok) {
+        setError("Unable to connect. Please try again later.");
+        setInitialized(false);
+        return;
       }
-
-      if (!token) {
-        const proxyRes = await fetch(PROXY_ENDPOINT);
-        if (proxyRes.ok) {
-          const proxyData = await proxyRes.json();
-          token = proxyData.token;
-        }
-      }
+      const data = await res.json();
+      const token = data.token;
 
       if (!token) {
         setError("Unable to connect. Please try again later.");
+        setInitialized(false);
         return;
       }
 
@@ -63,7 +51,7 @@ export function ChatWidget() {
         {
           directLine,
           styleOptions: {
-            // Colors
+            // Colors — site aesthetic
             accent: "#C9A84C",
             backgroundColor: "#FFFFFF",
             bubbleBackground: "#F4F6F0",
@@ -107,7 +95,7 @@ export function ChatWidget() {
     } catch (err) {
       console.error("Chat connection issue:", err);
       setError("Unable to connect. Please try again later.");
-      setInitialized(false); // Allow retry
+      setInitialized(false);
     }
   }, [initialized]);
 
@@ -139,14 +127,18 @@ export function ChatWidget() {
         }`}
       >
         <div className="rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(11,42,30,0.2)] border border-border flex flex-col" style={{ height: "min(520px, calc(100dvh - 120px))" }}>
-          {/* Header */}
+          {/* Header with logo */}
           <div className="bg-navy px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">
-                PA
-              </div>
+              <Image
+                src="/images/single-logo-trimmed.png"
+                alt=""
+                width={429}
+                height={464}
+                className="h-8 w-auto object-contain"
+              />
               <div>
-                <p className="text-white text-sm font-semibold leading-tight">
+                <p className="text-white text-sm font-semibold leading-tight font-serif">
                   Prosperity Assistant
                 </p>
                 <p className="text-white/50 text-[11px]">Ask us anything</p>
@@ -169,7 +161,7 @@ export function ChatWidget() {
 
           {/* Error state */}
           {error && (
-            <div className="absolute inset-0 top-12 flex items-center justify-center bg-white">
+            <div className="absolute inset-0 top-[52px] flex items-center justify-center bg-white">
               <div className="flex flex-col items-center gap-3 px-6 text-center">
                 <p className="text-sm text-slate">{error}</p>
                 <button

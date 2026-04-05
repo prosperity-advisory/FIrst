@@ -1,19 +1,23 @@
 import { NextResponse } from "next/server";
 
-const BOT_ID = "80518000-d02e-f111-88b4-6045bd08b490";
+// Direct Line standard token endpoint (Bot Framework)
+// More universally accessible than the Power VA-specific endpoint
+const DIRECTLINE_TOKEN_URL =
+  "https://directline.botframework.com/v3/directline/tokens/generate";
+
 const SECRET =
   "BViSbHcuBbLdabZIh7xUXkb15pGV0wPs4C2uM04HYyC17YJ84paqJQQJ99CDACYeBjFAArohAAABAZBS4M6n.2hEtfCgiW4eIHqUbHTcVIEYz6CoSRjnO4IRz6CIc7Pz3Bjxu4njvJQQJ99CDACYeBjFAArohAAABAZBS3ten";
-const TOKEN_ENDPOINT = `https://unitedstates.api.powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=${BOT_ID}`;
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const res = await fetch(TOKEN_ENDPOINT, {
-      method: "GET",
+    // Use the standard Bot Framework Direct Line token generation endpoint
+    const res = await fetch(DIRECTLINE_TOKEN_URL, {
+      method: "POST",
       headers: {
         Authorization: `Bearer ${SECRET}`,
-        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       cache: "no-store",
     });
@@ -21,19 +25,22 @@ export async function GET() {
     const text = await res.text();
 
     if (!res.ok) {
-      console.error("[chat-token] Power VA returned", res.status, text);
+      console.error("[chat-token] Direct Line returned", res.status, text);
       return NextResponse.json(
-        { error: "Failed to fetch token", status: res.status },
+        { error: "Failed to fetch token", status: res.status, detail: text },
         { status: res.status }
       );
     }
 
     const data = JSON.parse(text);
-    return NextResponse.json({ token: data.token });
+    return NextResponse.json({
+      token: data.token,
+      conversationId: data.conversationId,
+    });
   } catch (err) {
     console.error("[chat-token] Fetch error:", err);
     return NextResponse.json(
-      { error: "Unable to connect to chat service" },
+      { error: "Unable to connect to chat service", detail: String(err) },
       { status: 502 }
     );
   }

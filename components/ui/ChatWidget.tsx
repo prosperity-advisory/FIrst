@@ -177,11 +177,12 @@ export function ChatWidget() {
     }
   }, [initialized]);
 
+  // Connect as soon as SDK loads so the greeting is ready when the user opens chat
   useEffect(() => {
-    if (open && sdkReady && !initialized) {
+    if (sdkReady && !initialized) {
       initChat();
     }
-  }, [open, sdkReady, initialized, initChat]);
+  }, [sdkReady, initialized, initChat]);
 
   function handleRetry() {
     setError(null);

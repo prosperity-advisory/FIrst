@@ -22,17 +22,13 @@ export function ChatWidget() {
   const chatRef = useRef<HTMLDivElement>(null);
   const tooltipDismissed = useRef(false);
 
-  // Show the attention tooltip after 4 seconds, hide after 12
+  // Show the attention tooltip after 4 seconds — stays until manually dismissed
   useEffect(() => {
     const showTimer = setTimeout(() => {
       if (!tooltipDismissed.current && !open) setShowTooltip(true);
     }, 4000);
-    const hideTimer = setTimeout(() => {
-      setShowTooltip(false);
-    }, 16000);
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(hideTimer);
     };
   }, [open]);
 

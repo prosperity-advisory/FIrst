@@ -373,16 +373,43 @@ export default async function ResourcesPage() {
           </FadeUp>
           <FadeUp delay={1}>
             <ul className="space-y-3 md:space-y-4">
-              {content.videos.items.map((item: string) => (
-                <li key={item} className="flex items-start gap-3">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 mt-0.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+              {content.videos.items.map((item: { title: string; url: string } | string, i: number) => {
+                const title = typeof item === "string" ? item : item.title;
+                const url = typeof item === "string" ? "" : item.url;
+                const icon = (
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
                     <polygon points="5 3 19 12 5 21 5 3" />
                   </svg>
-                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
+                );
+                return (
+                  <li key={i}>
+                    {url ? (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 group rounded-lg px-4 py-3 -mx-4 transition-colors hover:bg-white/60"
+                      >
+                        {icon}
+                        <span className="flex-1 text-[15px] md:text-base text-slate leading-relaxed group-hover:text-navy transition-colors">
+                          {title}
+                        </span>
+                        <span className="text-xs font-semibold text-gold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                          Watch
+                        </span>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3 px-4 py-3 -mx-4 opacity-60">
+                        {icon}
+                        <span className="flex-1 text-[15px] md:text-base text-slate leading-relaxed">
+                          {title}
+                        </span>
+                        <span className="text-xs text-slate-light italic shrink-0">Coming Soon</span>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </FadeUp>
         </div>

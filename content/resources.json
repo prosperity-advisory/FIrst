@@ -222,11 +222,11 @@
   "videos": {
     "heading": "Short Educational Videos",
     "items": [
-      "How Capital Gains Can Affect a Sale",
-      "Roth IRA Basics and When They May Matter",
-      "What Retirement Income Planning Really Means",
-      "College Planning Mistakes Families Should Avoid",
-      "Financial Planning Considerations for Small Business Owners"
+      { "title": "How Capital Gains Can Affect a Sale", "url": "" },
+      { "title": "Roth IRA Basics and When They May Matter", "url": "" },
+      { "title": "What Retirement Income Planning Really Means", "url": "" },
+      { "title": "College Planning Mistakes Families Should Avoid", "url": "" },
+      { "title": "Financial Planning Considerations for Small Business Owners", "url": "" }
     ]
   },
   "educationalNote": "These calculators and third-party resources are provided for general educational purposes only and are intended to help you explore financial concepts. They are not personalized recommendations, are not based on your individual circumstances, and should not be relied upon as the sole basis for any financial decision.\n\nResults are hypothetical estimates based on the assumptions entered and are not guarantees of future outcomes, investment performance, lending terms, tax treatment, insurance results, or eligibility for any program or benefit. Actual outcomes will vary.\n\nLinks to third-party websites are provided as a convenience only. They do not imply Prosperity Planning and Advisory's endorsement, approval, affiliation, or responsibility for the content, calculations, privacy practices, or accuracy of any external site.\n\nUse of these resources does not create an advisory relationship. Prosperity Planning and Advisory does not provide legal or tax advice. You should consult your CPA, attorney, or other qualified professional regarding tax, legal, or other specialized matters.",

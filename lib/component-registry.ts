@@ -1190,7 +1190,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
 
   video_list: {
     label: 'Video List',
-    description: 'List of upcoming video topics.',
+    description: 'Educational videos with links to YouTube or other platforms.',
     fields: [
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       {
@@ -1198,7 +1198,8 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         label: 'Video Topics',
         type: 'array',
         itemFields: [
-          { name: 'text', label: 'Video Title', type: 'text', required: true },
+          { name: 'title', label: 'Video Title', type: 'text', required: true },
+          { name: 'url', label: 'Video URL', type: 'url', hint: 'Link to YouTube, Vimeo, or other video platform' },
         ],
       },
       ...sectionImageFields,

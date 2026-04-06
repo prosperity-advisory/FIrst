@@ -409,13 +409,24 @@ function ImageInput({
         </button>
       </div>
       {value && (
-        <div className="mt-2">
+        <div className="mt-2 flex items-start gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={value}
             alt="Preview"
             className="h-24 rounded border border-gray-200 object-cover"
           />
+          <button
+            type="button"
+            onClick={() => onUpdate(path, "")}
+            className="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-red-50"
+            title="Remove image"
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
         </div>
       )}
       <MediaPickerModal

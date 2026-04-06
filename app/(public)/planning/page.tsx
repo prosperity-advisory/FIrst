@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage } from "@/components/ui/SectionImage";
 import { getPlanningContent } from "@/lib/content";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/planning' },
   };
 }
 
@@ -27,6 +29,7 @@ export default async function PlanningPage() {
   const content = await getPlanningContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Personal Prosperity Planning\u2122', path: '/planning' }]} />
       {content.hero && (
         <InteriorHero
           eyebrow={content.hero.eyebrow}

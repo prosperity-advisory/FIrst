@@ -5,6 +5,7 @@ import { ScenarioAccordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getCaseStudiesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/case-studies' },
   };
 }
 
@@ -365,6 +367,7 @@ export default async function CaseStudiesPage() {
 
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Planning Scenarios & Examples', path: '/case-studies' }]} />
       {/* Hero */}
       {content.hero && (
         <InteriorHero

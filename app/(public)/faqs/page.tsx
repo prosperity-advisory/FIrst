@@ -3,6 +3,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { BreadcrumbJsonLd, FaqPageJsonLd } from "@/components/seo/JsonLd";
 import { getFaqsContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/faqs' },
   };
 }
 
@@ -21,6 +23,8 @@ export default async function FaqsPage() {
   const content = await getFaqsContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'FAQs', path: '/faqs' }]} />
+      <FaqPageJsonLd questions={content.categories?.flatMap((cat: any) => cat.questions) ?? []} />
       {content.hero && (
         <InteriorHero
           eyebrow={content.hero.eyebrow}

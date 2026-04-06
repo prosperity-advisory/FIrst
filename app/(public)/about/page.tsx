@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getAboutContent } from "@/lib/content";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/about' },
   };
 }
 
@@ -25,6 +27,7 @@ export default async function AboutPage() {
   const content = await getAboutContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Our Mission & Who We Are', path: '/about' }]} />
       {content.hero && (
         <InteriorHero
           eyebrow={content.hero.eyebrow ?? "Our Mission & Who We Are"}

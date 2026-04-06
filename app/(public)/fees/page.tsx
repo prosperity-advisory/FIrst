@@ -3,6 +3,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getFeesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/fees' },
   };
 }
 
@@ -31,6 +33,7 @@ export default async function FeesPage() {
 
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Fees & How We\u2019re Paid', path: '/fees' }]} />
       {content.hero && (
         <InteriorHero
           eyebrow={content.hero.eyebrow}

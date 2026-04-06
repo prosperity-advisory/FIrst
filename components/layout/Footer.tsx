@@ -79,7 +79,7 @@ export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPo
             >
               <Image
                 src="/images/single-logo-trimmed.png"
-                alt=""
+                alt="Prosperity Planning & Advisory"
                 width={429}
                 height={464}
                 className="h-[1.4em] w-auto object-contain"

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getResourcesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/resources' },
   };
 }
 
@@ -42,6 +44,7 @@ export default async function ResourcesPage() {
   const content = await getResourcesContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Resources & Learning Center', path: '/resources' }]} />
       {/* Hero */}
       {content.hero && (
         <InteriorHero

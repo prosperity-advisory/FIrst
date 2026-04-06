@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CtaButtonGroup } from "@/components/ui/CtaButtonGroup";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getServicesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/services' },
   };
 }
 
@@ -27,6 +29,7 @@ export default async function ServicesPage() {
 
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Services', path: '/services' }]} />
       {content.hero && (
         <InteriorHero
           eyebrow={content.hero.eyebrow}

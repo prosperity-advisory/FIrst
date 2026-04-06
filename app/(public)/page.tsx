@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MissionSection } from "@/components/sections/MissionSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -6,6 +7,21 @@ import { BusinessOwnerAccordion } from "@/components/sections/BusinessOwnerAccor
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { getHomeContent } from "@/lib/content";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getHomeContent();
+  return {
+    title: content.meta?.title ?? "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
+    description: content.meta?.description ?? "Fee-only fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies.",
+    openGraph: {
+      title: content.meta?.ogTitle ?? content.meta?.title,
+      description: content.meta?.ogDescription ?? content.meta?.description,
+    },
+    alternates: {
+      canonical: "https://prosperityadvisory.net",
+    },
+  };
+}
 
 export default async function Home() {
   const content = await getHomeContent();

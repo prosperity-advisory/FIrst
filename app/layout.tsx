@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -43,15 +44,40 @@ export const metadata: Metadata = {
       "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
     description:
       "Fee-only fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies for individuals and business owners.",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Prosperity Planning & Advisory — Fiduciary Financial Planner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
+    description: "Fee-only fiduciary financial planning firm in Woodland Hills, CA.",
+    images: ["/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://prosperityadvisory.net",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
   },
+  verification: {},
 };
 
 export default function RootLayout({
@@ -62,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="min-h-screen antialiased">
+        <OrganizationJsonLd />
         {children}
       </body>
     </html>

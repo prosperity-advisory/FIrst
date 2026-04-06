@@ -4,6 +4,7 @@ import { PortfolioCard } from "@/components/sections/PortfolioCard";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getPortfoliosContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/portfolios' },
   };
 }
 
@@ -22,6 +24,7 @@ export default async function PortfoliosPage() {
   const content = await getPortfoliosContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Prosperity Pathways\u2122 Portfolios', path: '/portfolios' }]} />
       {content.hero && (
         <InteriorHero
           eyebrow="Prosperity Pathways™ Portfolios"

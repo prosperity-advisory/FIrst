@@ -4,6 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getWhoWeServeContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/who-we-serve' },
   };
 }
 
@@ -22,6 +24,7 @@ export default async function WhoWeServePage() {
   const content = await getWhoWeServeContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Who We Serve', path: '/who-we-serve' }]} />
       {/* Hero */}
       {content.hero && (
         <InteriorHero

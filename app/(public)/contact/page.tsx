@@ -5,6 +5,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { getContactContent } from "@/lib/content";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/contact' },
   };
 }
 
@@ -25,6 +27,7 @@ export default async function ContactPage() {
   const content = await getContactContent();
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Contact', path: '/contact' }]} />
       {content.hero && (
         <InteriorHero
           headline={content.hero.headline}

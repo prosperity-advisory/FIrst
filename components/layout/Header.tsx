@@ -148,7 +148,7 @@ export function Header({ navItems, ctaText, ctaMobileText, logoUrl }: HeaderProp
           <Link href="/" className="shrink-0 flex items-center gap-2 sm:gap-2.5 md:gap-3">
             <Image
               src={logoUrl ?? "/images/single-logo-trimmed.png"}
-              alt=""
+              alt="Prosperity Planning & Advisory"
               width={429}
               height={464}
               priority

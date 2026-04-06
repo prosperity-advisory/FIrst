@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getProcessContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
     },
+    alternates: { canonical: 'https://prosperityadvisory.net/process' },
   };
 }
 
@@ -42,6 +44,7 @@ export default async function ProcessPage() {
 
   return (
     <main>
+      <BreadcrumbJsonLd items={[{ name: 'Our Process', path: '/process' }]} />
       {/* Hero */}
       {content.hero && (
         <InteriorHero

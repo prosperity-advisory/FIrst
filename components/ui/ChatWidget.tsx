@@ -296,10 +296,10 @@ export function ChatWidget() {
             </svg>
           </button>
           <p className="text-[13px] text-navy font-medium leading-snug">
-            Have a question?
+            Have questions?
           </p>
           <p className="text-[12px] text-slate-light mt-0.5 leading-snug">
-            Chat with our AI assistant
+            Connect with our Prosperity Planning Concierge
           </p>
           {/* Arrow pointing to button */}
           <div className="absolute -bottom-[6px] right-4 w-3 h-3 bg-white border-r border-b border-border/60 rotate-45" />

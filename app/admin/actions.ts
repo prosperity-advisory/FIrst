@@ -157,6 +157,26 @@ export async function uploadImage(formData: FormData): Promise<string> {
 }
 
 // ---------------------------------------------------------------------------
+// Record a media entry after client-side upload (no file in payload)
+// ---------------------------------------------------------------------------
+
+export async function recordMediaUpload(data: {
+  filename: string;
+  url: string;
+  mime_type: string;
+  file_size: number;
+}) {
+  const supabase = await createSupabaseServerClient();
+  await supabase.from("media").insert({
+    filename: data.filename,
+    url: data.url,
+    alt_text: "",
+    mime_type: data.mime_type,
+    file_size: data.file_size,
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Media library CRUD
 // ---------------------------------------------------------------------------
 

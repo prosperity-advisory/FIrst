@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import type { FieldDefinition } from "@/lib/component-registry";
-import { uploadImage } from "@/app/admin/actions";
+import { recordMediaUpload } from "@/app/admin/actions";
+import { uploadFileDirect } from "@/lib/upload-client";
 import { MediaPickerModal } from "@/components/admin/MediaPickerModal";
 import { showToast } from "@/components/admin/Toast";
 import { UrlPicker } from "@/components/admin/UrlPicker";
@@ -359,9 +360,8 @@ function ImageInput({
     }
     setUploading(true);
     try {
-      const fd = new FormData();
-      fd.append("file", file);
-      const url = await uploadImage(fd);
+      const url = await uploadFileDirect(file);
+      await recordMediaUpload({ filename: file.name, url, mime_type: file.type, file_size: file.size });
       onUpdate(path, url);
       showToast("success", "Image uploaded");
     } catch (err) {
@@ -467,9 +467,8 @@ function FileInput({
     }
     setUploading(true);
     try {
-      const fd = new FormData();
-      fd.append("file", file);
-      const url = await uploadImage(fd);
+      const url = await uploadFileDirect(file);
+      await recordMediaUpload({ filename: file.name, url, mime_type: file.type, file_size: file.size });
       onUpdate(path, url);
       showToast("success", "File uploaded");
     } catch (err) {

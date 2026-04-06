@@ -3,10 +3,11 @@
 import { useState, useTransition, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
-  uploadImage,
+  recordMediaUpload,
   updateMediaAltText,
   deleteMediaItem,
 } from "@/app/admin/actions";
+import { uploadFileDirect } from "@/lib/upload-client";
 import { showToast } from "@/components/admin/Toast";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
@@ -38,10 +39,9 @@ export function MediaLibraryClient({
       startTransition(async () => {
         let uploaded = 0;
         for (const file of toUpload) {
-          const fd = new FormData();
-          fd.append("file", file);
           try {
-            await uploadImage(fd);
+            const url = await uploadFileDirect(file);
+            await recordMediaUpload({ filename: file.name, url, mime_type: file.type, file_size: file.size });
             uploaded++;
           } catch (err) {
             showToast("error", `Failed to upload ${file.name}: ${err instanceof Error ? err.message : "Unknown error"}`);

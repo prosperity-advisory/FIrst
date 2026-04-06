@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef, useTransition } from "react";
-import { getMediaItems, uploadImage } from "@/app/admin/actions";
+import { getMediaItems, recordMediaUpload } from "@/app/admin/actions";
+import { uploadFileDirect } from "@/lib/upload-client";
 import { showToast } from "@/components/admin/Toast";
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -43,10 +44,9 @@ export function MediaPickerModal({
       return;
     }
     startTransition(async () => {
-      const fd = new FormData();
-      fd.append("file", file);
       try {
-        const url = await uploadImage(fd);
+        const url = await uploadFileDirect(file);
+        await recordMediaUpload({ filename: file.name, url, mime_type: file.type, file_size: file.size });
         onSelect(url);
       } catch (err) {
         showToast("error", "Upload failed: " + (err instanceof Error ? err.message : err));

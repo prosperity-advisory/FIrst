@@ -71,20 +71,34 @@ export function ChatWidget() {
 
       const directLine = window.WebChat.createDirectLine({ token });
 
-      // Trigger the bot's Greeting topic as soon as the connection opens
-      directLine.activity$
-        .filter((act: { type: string }) => act.type === "conversationUpdate")
-        .subscribe(() => {
-          directLine.postActivity({
-            type: "event",
-            name: "startConversation",
-            from: { id: "user" },
-          }).subscribe();
-        });
+      // Store middleware: send startConversation event when Direct Line connects
+      // This triggers the bot's Greeting topic in Copilot Studio
+      const store = window.WebChat.createStore(
+        {},
+        ({ dispatch }: { dispatch: (action: unknown) => void }) =>
+          (next: (action: { type: string }) => unknown) =>
+          (action: { type: string }) => {
+            if (action.type === "DIRECT_LINE/CONNECT_FULFILLED") {
+              dispatch({
+                type: "DIRECT_LINE/POST_ACTIVITY",
+                meta: { method: "keyboard" },
+                payload: {
+                  activity: {
+                    channelData: { postBack: true },
+                    name: "startConversation",
+                    type: "event",
+                  },
+                },
+              });
+            }
+            return next(action);
+          }
+      );
 
       window.WebChat.renderWebChat(
         {
           directLine,
+          store,
           styleOptions: {
             // Colors
             accent: "#C9A84C",

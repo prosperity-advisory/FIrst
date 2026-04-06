@@ -1,20 +1,26 @@
 /**
- * Client-side file upload — sends files directly to Supabase Storage
- * from the browser, bypassing the serverless function body size limit.
+ * Client-side file upload — gets a signed URL from the server,
+ * then uploads directly to Supabase Storage from the browser.
+ * Bypasses Netlify's serverless function body size limit.
  */
 
-import { supabase } from '@/lib/supabase';
+import { createSignedUploadUrl } from '@/app/admin/actions';
 
 export async function uploadFileDirect(file: File): Promise<string> {
-  const ext = file.name.split('.').pop() ?? 'bin';
-  const storagePath = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  // 1. Get a signed upload URL from the server (tiny request, no file payload)
+  const { signedUrl, publicUrl } = await createSignedUploadUrl(file.name);
 
-  const { error: uploadError } = await supabase.storage
-    .from('media')
-    .upload(storagePath, file, { contentType: file.type, upsert: false });
+  // 2. Upload the file directly to Supabase Storage using the signed URL
+  const res = await fetch(signedUrl, {
+    method: 'PUT',
+    headers: { 'Content-Type': file.type },
+    body: file,
+  });
 
-  if (uploadError) throw new Error(uploadError.message);
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`Upload failed: ${res.status} ${text}`);
+  }
 
-  const { data } = supabase.storage.from('media').getPublicUrl(storagePath);
-  return data.publicUrl;
+  return publicUrl;
 }

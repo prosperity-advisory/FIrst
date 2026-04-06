@@ -157,6 +157,34 @@ export async function uploadImage(formData: FormData): Promise<string> {
 }
 
 // ---------------------------------------------------------------------------
+// Create a signed upload URL (client uploads directly to Supabase Storage)
+// ---------------------------------------------------------------------------
+
+export async function createSignedUploadUrl(filename: string): Promise<{
+  signedUrl: string;
+  storagePath: string;
+  publicUrl: string;
+}> {
+  const { supabaseAdmin } = await import("@/lib/supabase-admin");
+  const ext = filename.split(".").pop() ?? "bin";
+  const storagePath = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+
+  const { data, error } = await supabaseAdmin.storage
+    .from("media")
+    .createSignedUploadUrl(storagePath);
+
+  if (error || !data) throw new Error(error?.message ?? "Failed to create upload URL");
+
+  const { data: urlData } = supabaseAdmin.storage.from("media").getPublicUrl(storagePath);
+
+  return {
+    signedUrl: data.signedUrl,
+    storagePath,
+    publicUrl: urlData.publicUrl,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Record a media entry after client-side upload (no file in payload)
 // ---------------------------------------------------------------------------
 
@@ -166,8 +194,8 @@ export async function recordMediaUpload(data: {
   mime_type: string;
   file_size: number;
 }) {
-  const supabase = await createSupabaseServerClient();
-  await supabase.from("media").insert({
+  const { supabaseAdmin } = await import("@/lib/supabase-admin");
+  await supabaseAdmin.from("media").insert({
     filename: data.filename,
     url: data.url,
     alt_text: "",

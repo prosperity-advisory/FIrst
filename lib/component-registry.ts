@@ -1170,7 +1170,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
   },
 
   downloadable_guides: {
-    label: 'Downloadable Guides',
+    label: 'Featured Guides',
     description: 'Guides visitors can view as PDFs. Upload a PDF for each guide.',
     fields: [
       { name: 'heading', label: 'Heading', type: 'text', required: true },
@@ -1701,7 +1701,17 @@ export const footerSettingsFields: FieldDefinition[] = [
     ],
   },
   { name: 'insuranceDisclaimer', label: 'Insurance Disclaimer', type: 'textarea' },
-  { name: 'privacyPolicyHref', label: 'Privacy Policy URL', type: 'url' },
+  { name: 'privacyPolicyHref', label: 'Privacy Policy PDF', type: 'file', hint: 'Upload a PDF or paste a URL. Appears as "Privacy Policy" link at the bottom of the footer.' },
+  {
+    name: 'documents',
+    label: 'Footer Document Links',
+    type: 'array',
+    hint: 'Additional PDF links shown in the footer bottom row (e.g. Form ADV, Brochure)',
+    itemFields: [
+      { name: 'label', label: 'Link Label', type: 'text', required: true },
+      { name: 'fileUrl', label: 'PDF File', type: 'file', hint: 'Upload a PDF or paste a URL' },
+    ],
+  },
 ];
 
 /** Field definitions for the "company" site_settings entry */

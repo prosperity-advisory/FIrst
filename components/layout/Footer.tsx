@@ -33,11 +33,17 @@ const FOOTER_GROUPS = [
   },
 ];
 
+interface FooterDocument {
+  label: string;
+  fileUrl: string;
+}
+
 interface FooterProps {
   linkGroups?: { heading: string; links: { href: string; label: string }[] }[];
   disclosures?: ({ text: string } | string)[];
   insuranceDisclaimer?: string;
   privacyPolicyHref?: string;
+  documents?: FooterDocument[];
 }
 
 const DEFAULT_DISCLOSURES: { text: string }[] = [
@@ -50,7 +56,7 @@ const DEFAULT_DISCLOSURES: { text: string }[] = [
   { text: "Where insurance or annuity strategies are referenced, such discussion is for educational or planning-context purposes only unless otherwise stated. Separately, Marcus Mann, in his individual capacity as a licensed insurance agent, may offer certain fixed insurance or annuity products outside the advisory relationship. Clients are under no obligation to purchase any such product through him, and any such transaction would be separate from the firm\u2019s advisory services." },
 ];
 
-export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPolicyHref }: FooterProps = {}) {
+export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPolicyHref, documents }: FooterProps = {}) {
   const groups = linkGroups ?? FOOTER_GROUPS;
   // Normalize: DB may have plain strings or {text} objects
   const raw = disclosures && disclosures.length > 0 ? disclosures : DEFAULT_DISCLOSURES;
@@ -140,14 +146,29 @@ export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPo
           <span className="text-xs md:text-[13px] text-white/40">
             &copy; 2026 Prosperity Planning &amp; Advisory
           </span>
-          <a
-            href={policyHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"
-          >
-            Privacy Policy
-          </a>
+          <div className="flex flex-wrap justify-center sm:justify-end gap-x-4 gap-y-1">
+            <a
+              href={policyHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"
+            >
+              Privacy Policy
+            </a>
+            {documents?.map((doc, i) =>
+              doc.fileUrl ? (
+                <a
+                  key={i}
+                  href={doc.fileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"
+                >
+                  {doc.label}
+                </a>
+              ) : null
+            )}
+          </div>
         </div>
       </div>
     </footer>

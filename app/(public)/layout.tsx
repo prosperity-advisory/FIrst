@@ -24,6 +24,7 @@ export default async function PublicLayout({
         disclosures={settings?.footer?.disclosures}
         insuranceDisclaimer={settings?.footer?.insuranceDisclaimer}
         privacyPolicyHref={settings?.footer?.privacyPolicyHref}
+        documents={settings?.footer?.documents}
       />
       <ChatWidget />
     </>

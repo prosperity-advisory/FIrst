@@ -570,8 +570,8 @@ export const getResourcesContent = cache(async () => {
       items: ta(hw.items), closing: hw.closing, cta: hw.cta,
     } : resourcesJson.howAndWhy),
     resourceLibrary: vis(page, 'resource_library', rl ?? resourcesJson.resourceLibrary),
-    downloadableGuides: vis(page, 'downloadable_guides', dg ? { heading: dg.heading, items: ta(dg.items), cta: dg.cta } : resourcesJson.downloadableGuides),
-    videos: vis(page, 'video_list', vl ? { heading: vl.heading, items: ta(vl.items) } : resourcesJson.videos),
+    downloadableGuides: vis(page, 'downloadable_guides', dg ? { heading: dg.heading, items: dg.items ?? [], cta: dg.cta } : resourcesJson.downloadableGuides),
+    videos: vis(page, 'video_list', vl ? { heading: vl.heading, items: vl.items ?? [] } : resourcesJson.videos),
     educationalNote: vis(page, 'disclosure', disc?.text ?? resourcesJson.educationalNote),
     closing: vis(page, 'resources_closing', cl ? {
       heading: cl.heading, paragraphs: ta(cl.paragraphs),

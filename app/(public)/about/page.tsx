@@ -71,6 +71,7 @@ export default async function AboutPage() {
       {content.ourServices && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
+          <SectionImage image={(content.ourServices as any).sectionImage}>
           <FadeUp>
             <div className="text-center mb-8 md:mb-10">
               <span className="eyebrow">What We Offer</span>
@@ -99,6 +100,7 @@ export default async function AboutPage() {
               {content.ourServices.outro}
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

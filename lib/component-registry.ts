@@ -95,6 +95,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
       ctaButtonsField,
       { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
+      ...sectionImageFields,
     ],
   },
 
@@ -111,6 +112,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'cta2Href', label: 'Second Button Link', type: 'url', hint: 'Use #section-id for on-page links' },
       ctaButtonsField,
       { name: 'backgroundImage', label: 'Background Image', type: 'image', hint: 'Recommended: 1920x1080px, JPG, under 500KB' },
+      ...sectionImageFields,
     ],
   },
 
@@ -136,6 +138,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'label', label: 'Badge Label', type: 'text', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -162,6 +165,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       ctaButtonsField,
       { name: 'bannerImage', label: 'Banner Image', type: 'image', hint: 'Recommended: 1200x480px, JPG, wide landscape format' },
       { name: 'bannerAlt', label: 'Banner Image Alt Text', type: 'text' },
+      ...sectionImageFields,
     ],
   },
 
@@ -193,6 +197,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -257,6 +262,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -284,6 +290,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'href', label: 'Link URL', type: 'url' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -296,6 +303,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Button Link', type: 'url' },
       ctaButtonsField,
+      ...sectionImageFields,
     ],
   },
 
@@ -330,6 +338,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'href', label: 'Link URL', type: 'url', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -444,6 +453,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'transition', label: 'Transition Text', type: 'textarea' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -492,6 +502,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
     description: 'Simple disclosure or compliance text block.',
     fields: [
       { name: 'text', label: 'Disclosure Text', type: 'richtext', required: true },
+      ...sectionImageFields,
     ],
   },
 
@@ -519,6 +530,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'tagline', label: 'Tagline', type: 'text' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -550,6 +562,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'body', label: 'Body', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Link', type: 'url' },
+      ...sectionImageFields,
     ],
   },
 
@@ -565,6 +578,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Disclosure', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -591,6 +605,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'ctaHref', label: 'CTA Link', type: 'url' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -612,6 +627,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'body', label: 'Feature Description', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -644,6 +660,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         ],
       },
       { name: 'outro', label: 'Outro Text', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -660,6 +677,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'label', label: 'Feature Label', type: 'text', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -687,6 +705,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Disclosure', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -701,6 +720,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'heroBody', label: 'Hero Body Text', type: 'textarea' },
       { name: 'heading', label: 'Built Around You Heading', type: 'text' },
       { name: 'body', label: 'Built Around You Body', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -718,6 +738,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'desc', label: 'Short Description', type: 'text', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -754,6 +775,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'ctaHref', label: 'CTA Link', type: 'url' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -764,6 +786,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       { name: 'body1', label: 'Body Paragraph 1', type: 'textarea', required: true },
       { name: 'body2', label: 'Body Paragraph 2', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -796,6 +819,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'body2', label: 'Additional Body', type: 'textarea' },
       { name: 'ctaText', label: 'CTA Text', type: 'text' },
       { name: 'ctaHref', label: 'CTA Link', type: 'url' },
+      ...sectionImageFields,
     ],
   },
 
@@ -847,6 +871,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'description', label: 'Description', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -891,6 +916,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'cta', label: 'Step CTA Text', type: 'text' },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -926,6 +952,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'body', label: 'Body', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -960,6 +987,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'answer', label: 'Answer', type: 'richtext', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1005,6 +1033,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1042,6 +1071,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         ],
       },
       { name: 'disclosures', label: 'Disclosures Text', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -1065,6 +1095,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'href', label: 'Link URL', type: 'url', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1084,6 +1115,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         ],
       },
       { name: 'footnote', label: 'Footnote', type: 'textarea' },
+      ...sectionImageFields,
     ],
   },
 
@@ -1114,6 +1146,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1131,6 +1164,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'description', label: 'Description', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1148,6 +1182,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         ],
       },
       { name: 'cta', label: 'CTA Text', type: 'text' },
+      ...sectionImageFields,
     ],
   },
 
@@ -1164,6 +1199,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Video Title', type: 'text', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1183,6 +1219,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaText', label: 'CTA Text', type: 'text' },
       { name: 'ctaPrefix', label: 'CTA Prefix', type: 'text' },
       { name: 'ctaHref', label: 'CTA Link', type: 'url' },
+      ...sectionImageFields,
     ],
   },
 
@@ -1236,6 +1273,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'body', label: 'Body', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1263,6 +1301,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'body', label: 'Body', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1307,6 +1346,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'href', label: 'Link URL', type: 'url', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1516,6 +1556,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'disclosure', label: 'Disclosure', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1529,6 +1570,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
     fields: [
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       { name: 'body', label: 'Body', type: 'richtext', required: true },
+      ...sectionImageFields,
     ],
   },
 
@@ -1547,6 +1589,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'ctaText', label: 'CTA Text', type: 'text' },
       { name: 'ctaPrefix', label: 'CTA Prefix', type: 'text' },
       { name: 'ctaHref', label: 'CTA Link', type: 'url' },
+      ...sectionImageFields,
     ],
   },
 
@@ -1563,6 +1606,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
           { name: 'text', label: 'Paragraph', type: 'textarea', required: true },
         ],
       },
+      ...sectionImageFields,
     ],
   },
 
@@ -1590,6 +1634,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       },
       { name: 'closing', label: 'Closing Text', type: 'textarea' },
       { name: 'cta', label: 'CTA Text', type: 'text' },
+      ...sectionImageFields,
     ],
   },
 };

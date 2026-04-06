@@ -112,6 +112,7 @@ export default async function ProcessPage() {
       {content.roadmap && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.roadmap as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.roadmap.heading}</h2>
             <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-3">
@@ -160,6 +161,7 @@ export default async function ProcessPage() {
               </FadeUp>
             ))}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -391,6 +393,7 @@ export default async function ProcessPage() {
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.closing as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline text-white">{content.closing.heading}</h2>
           </FadeUp>
@@ -406,6 +409,7 @@ export default async function ProcessPage() {
               {content.closing.cta.text}
             </Link>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

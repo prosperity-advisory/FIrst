@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { ImageBlockSection } from "@/components/ui/SectionImage";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getResourcesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -81,6 +81,7 @@ export default async function ResourcesPage() {
       {content.startHere && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={(content.startHere as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.startHere.heading}</h2>
             <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
@@ -103,6 +104,7 @@ export default async function ResourcesPage() {
               ))}
             </ul>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -111,6 +113,7 @@ export default async function ResourcesPage() {
       {content.howToUse && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={(content.howToUse as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.howToUse.heading}</h2>
             <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
@@ -137,6 +140,7 @@ export default async function ResourcesPage() {
               {content.howToUse.footnote}
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -396,6 +400,7 @@ export default async function ResourcesPage() {
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.closing as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline text-white">{content.closing.heading}</h2>
           </FadeUp>
@@ -417,6 +422,7 @@ export default async function ResourcesPage() {
               </Link>
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

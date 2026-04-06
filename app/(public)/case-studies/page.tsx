@@ -4,7 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { ScenarioAccordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
-import { ImageBlockSection } from "@/components/ui/SectionImage";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getCaseStudiesContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -483,6 +483,7 @@ export default async function CaseStudiesPage() {
       {content.planningProcess && (
       <section className={`${bg()} ${sectionPad}`}>
         <div className="mx-auto max-w-[900px]">
+          <SectionImage image={(content.planningProcess as any)?.sectionImage}>
           <FadeUp>
             <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-2">
               {content.planningProcess.heading}
@@ -528,6 +529,7 @@ export default async function CaseStudiesPage() {
               )
             )}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -733,6 +735,7 @@ export default async function CaseStudiesPage() {
       {content.closingCta && (
       <section className="bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.closingCta as any)?.sectionImage}>
           <FadeUp>
             <div className="space-y-4 md:space-y-5 mb-8 md:mb-10">
               {content.closingCta.paragraphs.map(
@@ -752,6 +755,7 @@ export default async function CaseStudiesPage() {
               {content.closingCta.cta.text}
             </CalendlyButton>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

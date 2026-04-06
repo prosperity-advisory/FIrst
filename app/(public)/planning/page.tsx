@@ -4,6 +4,7 @@ import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { SectionImage } from "@/components/ui/SectionImage";
 import { getPlanningContent } from "@/lib/content";
 import { getIcon } from "@/lib/icons";
 
@@ -120,6 +121,7 @@ export default async function PlanningPage() {
       {content.portal && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
+          <SectionImage image={(content.portal as any).sectionImage}>
           <FadeUp>
             <div className="text-center mb-10 md:mb-12 lg:mb-14">
               <span className="eyebrow">Client Portal</span>
@@ -175,6 +177,7 @@ export default async function PlanningPage() {
               );
             })}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}

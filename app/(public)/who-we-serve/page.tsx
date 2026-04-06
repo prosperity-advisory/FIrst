@@ -3,7 +3,7 @@ import Link from "next/link";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
-import { ImageBlockSection } from "@/components/ui/SectionImage";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getWhoWeServeContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -51,12 +51,14 @@ export default async function WhoWeServePage() {
       {content.builtAroundYou && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.builtAroundYou as any)?.sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.builtAroundYou.heading}</h2>
             <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
               {content.builtAroundYou.body}
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -65,6 +67,7 @@ export default async function WhoWeServePage() {
       {content.quickOverview && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
+          <SectionImage image={(content.quickOverview as any)?.sectionImage}>
           <FadeUp>
             <h2 className="section-headline text-center">{content.quickOverview.heading}</h2>
           </FadeUp>
@@ -81,6 +84,7 @@ export default async function WhoWeServePage() {
               </FadeUp>
             ))}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -199,6 +203,7 @@ export default async function WhoWeServePage() {
       {content.connectsEverything && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.connectsEverything as any)?.sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.connectsEverything.heading}</h2>
             <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
@@ -225,6 +230,7 @@ export default async function WhoWeServePage() {
               {content.connectsEverything.footer}
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -242,6 +248,7 @@ export default async function WhoWeServePage() {
       {content.closingCta && (
       <section className="bg-linear-to-br from-gold to-gold-light py-12 md:py-16 lg:py-[clamp(56px,6vw,88px)] px-4 md:px-6 text-center">
         <div className="mx-auto max-w-[680px]">
+          <SectionImage image={(content.closingCta as any)?.sectionImage}>
           <h2 className="font-serif text-[24px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[42px] text-navy mb-3.5">
             {content.closingCta.heading}
           </h2>
@@ -254,6 +261,7 @@ export default async function WhoWeServePage() {
           <CalendlyButton url={content.closingCta.cta.href} className="btn btn-navy">
             {content.closingCta.cta.text}
           </CalendlyButton>
+          </SectionImage>
         </div>
       </section>
       )}

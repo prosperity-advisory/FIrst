@@ -40,6 +40,7 @@ export default async function ServicesPage() {
       {intro && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={intro?.sectionImage}>
           {intro.paragraphs.map((p: string, i: number) => (
             <FadeUp key={i} delay={Math.min(i, 5) as 0 | 1 | 2 | 3 | 4 | 5}>
               <p className="text-[15px] sm:text-base md:text-[17px] text-slate leading-[1.8] mb-6 md:mb-8">
@@ -96,6 +97,7 @@ export default async function ServicesPage() {
                 : [{ text: "Explore Planning Examples →", href: "/case-studies", style: "gold" as const }]}
             />
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

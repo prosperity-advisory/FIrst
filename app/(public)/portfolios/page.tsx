@@ -92,6 +92,7 @@ export default async function PortfoliosPage() {
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
 
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
+          <SectionImage image={(content.foundation as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline text-white">
               {content.foundation.heading}
@@ -122,6 +123,7 @@ export default async function PortfoliosPage() {
               {content.foundation.cta.text} →
             </a>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

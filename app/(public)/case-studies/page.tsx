@@ -394,6 +394,7 @@ export default async function CaseStudiesPage() {
       {/* Hero Intro */}
       {content.heroIntro && (
       <section className={`${bg()} ${sectionPad}`}>
+        <SectionImage image={(content.heroIntro as any)?.sectionImage}>
         <div className="mx-auto max-w-[900px]">
           {content.heroIntro.paragraphs.map((p: string, i: number) => (
             <FadeUp key={i} delay={(i % 5) as 0 | 1 | 2 | 3 | 4}>
@@ -408,6 +409,7 @@ export default async function CaseStudiesPage() {
             </p>
           </FadeUp>
         </div>
+        </SectionImage>
       </section>
       )}
 
@@ -537,6 +539,7 @@ export default async function CaseStudiesPage() {
       {/* Scenarios Intro */}
       {content.scenariosIntro && (
       <section id="scenarios" className={`${bg()} ${sectionPad}`}>
+        <SectionImage image={(content.scenariosIntro as any)?.sectionImage}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
             <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-6 md:mb-8">
@@ -581,6 +584,7 @@ export default async function CaseStudiesPage() {
             </div>
           </FadeUp>
         </div>
+        </SectionImage>
       </section>
       )}
 
@@ -681,6 +685,7 @@ export default async function CaseStudiesPage() {
       {/* Who This Is For */}
       {content.whoThisIsFor && (
       <section className={`${bg()} ${sectionPad}`}>
+        <SectionImage image={(content.whoThisIsFor as any)?.sectionImage}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
             <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-4 md:mb-6">
@@ -694,12 +699,14 @@ export default async function CaseStudiesPage() {
             <BulletList items={content.whoThisIsFor.items} />
           </FadeUp>
         </div>
+        </SectionImage>
       </section>
       )}
 
       {/* Why Hypothetical */}
       {content.whyHypothetical && (
       <section className={`${bg()} ${sectionPad}`}>
+        <SectionImage image={(content.whyHypothetical as any)?.sectionImage}>
         <div className="mx-auto max-w-[900px]">
           <FadeUp>
             <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-6 md:mb-8">
@@ -719,6 +726,7 @@ export default async function CaseStudiesPage() {
             )
           )}
         </div>
+        </SectionImage>
       </section>
       )}
 

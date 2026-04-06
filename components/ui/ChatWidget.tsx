@@ -71,6 +71,17 @@ export function ChatWidget() {
 
       const directLine = window.WebChat.createDirectLine({ token });
 
+      // Trigger the bot's Greeting topic as soon as the connection opens
+      directLine.activity$
+        .filter((act: { type: string }) => act.type === "conversationUpdate")
+        .subscribe(() => {
+          directLine.postActivity({
+            type: "event",
+            name: "startConversation",
+            from: { id: "user" },
+          }).subscribe();
+        });
+
       window.WebChat.renderWebChat(
         {
           directLine,

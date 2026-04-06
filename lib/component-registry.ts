@@ -9,6 +9,7 @@ export type FieldType =
   | 'textarea'
   | 'richtext'
   | 'image'
+  | 'file'
   | 'url'
   | 'boolean'
   | 'number'
@@ -1170,7 +1171,7 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
 
   downloadable_guides: {
     label: 'Downloadable Guides',
-    description: 'List of upcoming downloadable guides.',
+    description: 'Guides visitors can view as PDFs. Upload a PDF for each guide.',
     fields: [
       { name: 'heading', label: 'Heading', type: 'text', required: true },
       {
@@ -1178,10 +1179,11 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
         label: 'Guide Items',
         type: 'array',
         itemFields: [
-          { name: 'text', label: 'Guide Title', type: 'text', required: true },
+          { name: 'title', label: 'Guide Title', type: 'text', required: true },
+          { name: 'pdfUrl', label: 'PDF File', type: 'file', hint: 'Upload a PDF or paste a URL. Opens in a new tab for visitors.' },
         ],
       },
-      { name: 'cta', label: 'CTA Text', type: 'text' },
+      { name: 'cta', label: 'CTA Text', type: 'text', hint: 'Button text shown on hover (e.g. "View PDF")' },
       ...sectionImageFields,
     ],
   },

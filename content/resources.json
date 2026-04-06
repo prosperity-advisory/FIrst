@@ -208,16 +208,16 @@
     ]
   },
   "downloadableGuides": {
-    "heading": "Featured Downloadable Guides",
+    "heading": "Featured Guides",
     "items": [
-      "Retirement Readiness Checklist",
-      "Budgeting & Cash Flow Guide",
-      "Small Business Financial Planning Guide",
-      "College Funding Planning Guide",
-      "Tax Planning Questions to Discuss With Your CPA",
-      "Estate Planning Starter Checklist"
+      { "title": "Retirement Readiness Checklist", "pdfUrl": "/documents/privacy-notice.pdf" },
+      { "title": "Budgeting & Cash Flow Guide", "pdfUrl": "/documents/privacy-notice.pdf" },
+      { "title": "Small Business Financial Planning Guide", "pdfUrl": "/documents/privacy-notice.pdf" },
+      { "title": "College Funding Planning Guide", "pdfUrl": "/documents/privacy-notice.pdf" },
+      { "title": "Tax Planning Questions to Discuss With Your CPA", "pdfUrl": "/documents/privacy-notice.pdf" },
+      { "title": "Estate Planning Starter Checklist", "pdfUrl": "/documents/privacy-notice.pdf" }
     ],
-    "cta": "Download the Guide"
+    "cta": "View PDF"
   },
   "videos": {
     "heading": "Short Educational Videos",

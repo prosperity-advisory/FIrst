@@ -310,7 +310,7 @@ export default async function ResourcesPage() {
       </section>
       )}
 
-      {/* Featured Downloadable Guides */}
+      {/* Featured Guides */}
       {content.downloadableGuides && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
@@ -318,26 +318,47 @@ export default async function ResourcesPage() {
             <h2 className="section-headline">{content.downloadableGuides.heading}</h2>
           </FadeUp>
           <FadeUp delay={1}>
-            <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10">
-              {content.downloadableGuides.items.map((item: string) => (
-                <li key={item} className="flex items-start gap-3">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 mt-0.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+            <ul className="space-y-3 md:space-y-4">
+              {content.downloadableGuides.items.map((item: { title: string; pdfUrl: string } | string, i: number) => {
+                const title = typeof item === "string" ? item : item.title;
+                const pdfUrl = typeof item === "string" ? "" : item.pdfUrl;
+                const icon = (
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold shrink-0 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
                     <line x1="16" y1="13" x2="8" y2="13" />
                     <line x1="16" y1="17" x2="8" y2="17" />
                   </svg>
-                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
+                );
+                return (
+                  <li key={i}>
+                    {pdfUrl ? (
+                      <a
+                        href={pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 group rounded-lg px-4 py-3 -mx-4 transition-colors hover:bg-cream"
+                      >
+                        {icon}
+                        <span className="flex-1 text-[15px] md:text-base text-slate leading-relaxed group-hover:text-navy transition-colors">
+                          {title}
+                        </span>
+                        <span className="text-xs font-semibold text-gold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                          {content.downloadableGuides?.cta || "View PDF"}
+                        </span>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3 px-4 py-3 -mx-4 opacity-60">
+                        {icon}
+                        <span className="flex-1 text-[15px] md:text-base text-slate leading-relaxed">
+                          {title}
+                        </span>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
-          </FadeUp>
-          <FadeUp delay={2}>
-            <span className="btn btn-gold opacity-60 cursor-default">
-              {content.downloadableGuides.cta} — Coming Soon
-            </span>
           </FadeUp>
         </div>
       </section>

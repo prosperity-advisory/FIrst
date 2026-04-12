@@ -29,6 +29,8 @@ const FOOTER_GROUPS = [
       { href: "/resources", label: "Learning Center" },
       { href: "/case-studies", label: "Planning Scenarios & Examples" },
       { href: "/contact", label: "Contact Us" },
+      { href: "/disclosures", label: "Disclosures" },
+      { href: "/documents/privacy-notice.pdf", label: "Privacy Policy" },
     ],
   },
 ];
@@ -106,19 +108,27 @@ export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPo
                 {group.heading}
               </h3>
               <div className="flex flex-col gap-2.5">
-                {group.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`text-sm transition-colors duration-300 hover:text-gold ${
-                      pathname === link.href
-                        ? "text-gold"
-                        : "text-white/60"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {group.links.map((link) => {
+                  const isExternal = /^https?:\/\//.test(link.href) || link.href.endsWith(".pdf");
+                  const className = `text-sm transition-colors duration-300 hover:text-gold ${
+                    pathname === link.href ? "text-gold" : "text-white/60"
+                  }`;
+                  return isExternal ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={className}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link key={link.href} href={link.href} className={className}>
+                      {link.label}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -155,6 +165,12 @@ export function Footer({ linkGroups, disclosures, insuranceDisclaimer, privacyPo
             >
               Privacy Policy
             </a>
+            <Link
+              href="/disclosures"
+              className="text-xs md:text-[13px] text-white/40 transition-colors duration-300 hover:text-gold"
+            >
+              Disclosures
+            </Link>
             {documents?.map((doc, i) =>
               doc.fileUrl ? (
                 <a

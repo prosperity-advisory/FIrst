@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
       changeFrequency: "monthly" as const,
     },
+    { path: "/disclosures", priority: 0.4, changeFrequency: "yearly" as const },
   ];
 
   return pages.map((page) => ({

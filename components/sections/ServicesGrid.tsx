@@ -12,6 +12,7 @@ interface ServiceCategory {
   description: string;
   href: string;
   items: ServiceItem[];
+  note?: string;
 }
 
 interface ServicesGridProps {
@@ -94,6 +95,12 @@ export function ServicesGrid({
                     Learn More
                     <ArrowIcon />
                   </Link>
+
+                  {category.note && (
+                    <p className="text-[12px] lg:text-[13px] text-slate-light italic leading-relaxed mt-4 pt-4 border-t border-border">
+                      {category.note}
+                    </p>
+                  )}
                 </div>
               </FadeUp>
             );

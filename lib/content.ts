@@ -42,6 +42,7 @@ import feesJson from '@/content/fees.json';
 import faqsJson from '@/content/faqs.json';
 import resourcesJson from '@/content/resources.json';
 import caseStudiesJson from '@/content/case-studies.json';
+import disclosuresJson from '@/content/disclosures.json';
 import sharedJson from '@/content/shared.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -647,12 +648,44 @@ export const getSharedContent = cache(async () => {
 });
 
 // ---------------------------------------------------------------------------
+// DISCLOSURES
+// ---------------------------------------------------------------------------
+
+export const getDisclosuresContent = cache(async () => {
+  const page = await getPage('disclosures');
+  if (!page) { console.warn('[content] Falling back to JSON for /disclosures'); return disclosuresJson; }
+
+  const hero = page.section('interior_hero');
+  const bodySections = page.sectionsOfType('paragraphs_section');
+
+  // Treat sections without a heading as intro; those with a heading as body sections.
+  const intro = bodySections.find((s: A) => !s.heading);
+  const sections = bodySections.filter((s: A) => !!s.heading);
+
+  return {
+    meta: page.meta,
+    hero: vis(page, 'interior_hero', {
+      ...disclosuresJson.hero,
+      eyebrow: hero?.eyebrow,
+      headline: hero?.headline,
+      subheadline: hero?.subtitle,
+      backgroundImage: (hero?.backgroundImage as string | undefined) ?? disclosuresJson.hero.backgroundImage,
+    }),
+    intro: intro ? { paragraphs: ta(intro.paragraphs) } : disclosuresJson.intro,
+    sections: sections.length > 0
+      ? sections.map((s: A) => ({ heading: s.heading, paragraphs: ta(s.paragraphs) }))
+      : disclosuresJson.sections,
+  };
+});
+
+// ---------------------------------------------------------------------------
 // Page metadata helper
 // ---------------------------------------------------------------------------
 
 type PageKey =
   | 'home' | 'services' | 'portfolios' | 'planning' | 'about' | 'contact'
-  | 'who-we-serve' | 'process' | 'fees' | 'faqs' | 'resources' | 'case-studies';
+  | 'who-we-serve' | 'process' | 'fees' | 'faqs' | 'resources' | 'case-studies'
+  | 'disclosures';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const loaderMap: Record<PageKey, () => Promise<{ meta: any }>> = {
@@ -668,6 +701,7 @@ const loaderMap: Record<PageKey, () => Promise<{ meta: any }>> = {
   faqs: getFaqsContent,
   resources: getResourcesContent,
   'case-studies': getCaseStudiesContent,
+  disclosures: getDisclosuresContent,
 };
 
 export async function getPageMeta(page: PageKey) {

@@ -943,6 +943,35 @@ async function seed() {
   });
 
   // ========================================================================
+  // DISCLOSURES
+  // ========================================================================
+  console.log('\n=== Seeding page: /disclosures ===');
+  const disclosures = loadJson('disclosures.json');
+  const discId = await insertPage('disclosures', disclosures.meta, 13);
+  s = 0;
+
+  await insertSection(discId, 'interior_hero', ++s, {
+    eyebrow: disclosures.hero.eyebrow,
+    headline: disclosures.hero.headline,
+    subtitle: disclosures.hero.subheadline,
+    backgroundImage: disclosures.hero.backgroundImage,
+  });
+
+  // Intro — a paragraphs_section with no heading
+  await insertSection(discId, 'paragraphs_section', ++s, {
+    heading: '',
+    paragraphs: disclosures.intro.paragraphs.map((t: string) => ({ text: t })),
+  });
+
+  // One paragraphs_section per titled disclosure topic
+  for (const section of disclosures.sections) {
+    await insertSection(discId, 'paragraphs_section', ++s, {
+      heading: section.heading,
+      paragraphs: section.paragraphs.map((t: string) => ({ text: t })),
+    });
+  }
+
+  // ========================================================================
   // SUMMARY
   // ========================================================================
   console.log('\n=== Seed complete ===');

@@ -20,6 +20,7 @@ export const SITE_ROUTES: RouteOption[] = [
   { label: "Resources & Learning Center", value: "/resources", group: "Pages" },
   { label: "Planning Scenarios & Examples", value: "/case-studies", group: "Pages" },
   { label: "Contact", value: "/contact", group: "Pages" },
+  { label: "Disclosures", value: "/disclosures", group: "Pages" },
 
   // Page anchors
   { label: "Home — Services Grid", value: "/#services", group: "Page Anchors" },

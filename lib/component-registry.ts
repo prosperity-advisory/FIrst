@@ -196,6 +196,12 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
               { name: 'description', label: 'Item Description', type: 'textarea' },
             ],
           },
+          {
+            name: 'note',
+            label: 'Disclosure Note (italic)',
+            type: 'textarea',
+            hint: 'Optional compliance/disclosure note shown in italic beneath this card.',
+          },
         ],
       },
       ...sectionImageFields,

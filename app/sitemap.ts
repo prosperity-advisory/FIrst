@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/process", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/fees", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/faqs", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/clarity-session", priority: 0.95, changeFrequency: "monthly" as const },
     { path: "/resources", priority: 0.6, changeFrequency: "weekly" as const },
     {
       path: "/case-studies",

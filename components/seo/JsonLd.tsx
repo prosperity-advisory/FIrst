@@ -94,6 +94,43 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; path: strin
   return <LdJson data={data} />;
 }
 
+/** Service / Offer structured data for a landing page CTA */
+export function ServiceJsonLd({
+  name,
+  description,
+  url,
+  serviceType,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  serviceType?: string;
+  areaServed?: string[];
+}) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url,
+    serviceType: serviceType ?? 'Financial Planning',
+    provider: { '@id': `${BASE_URL}/#organization` },
+    areaServed: (areaServed ?? ['California', 'United States']).map((a) => ({
+      '@type': 'AdministrativeArea',
+      name: a,
+    })),
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      description: 'Complimentary introductory Clarity Session — no obligation.',
+    },
+  };
+  return <LdJson data={data} />;
+}
+
 /** FAQ page structured data — enables rich results in Google */
 export function FaqPageJsonLd({
   questions,

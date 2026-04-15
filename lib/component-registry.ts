@@ -1646,6 +1646,227 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       ...sectionImageFields,
     ],
   },
+
+  // ==========================================================================
+  // CLARITY SESSION LANDING PAGE (/clarity-session)
+  // ==========================================================================
+
+  clarity_split_hero: {
+    label: 'Clarity Hero (Split)',
+    description: 'Asymmetric hero with text left, image right. Supports CTA microcopy, qualification line, and trust strip.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow Text', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      { name: 'ctaText', label: 'Primary CTA Text', type: 'text' },
+      { name: 'ctaHref', label: 'Primary CTA Link', type: 'url', hint: 'Leave blank to use the default Calendly URL' },
+      { name: 'ctaMicrocopy', label: 'CTA Microcopy (below button)', type: 'textarea' },
+      { name: 'qualificationLine', label: 'Qualification Line', type: 'textarea' },
+      { name: 'secondaryLinkText', label: 'Secondary Link Text', type: 'text' },
+      { name: 'secondaryLinkHref', label: 'Secondary Link Href', type: 'text', hint: 'Use #anchor for in-page' },
+      { name: 'image', label: 'Hero Image (right side)', type: 'image', required: true },
+      { name: 'imageAlt', label: 'Image Alt Text', type: 'text' },
+      {
+        name: 'trustItems',
+        label: 'Trust Strip Items',
+        type: 'array',
+        itemFields: [
+          { name: 'text', label: 'Trust Item', type: 'text', required: true },
+        ],
+      },
+    ],
+  },
+
+  clarity_audience_cards: {
+    label: 'Clarity — Who We Help (Two Cards)',
+    description: 'Two clickable cards that scroll to anchor sections below.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      {
+        name: 'cards',
+        label: 'Audience Cards',
+        type: 'array',
+        itemFields: [
+          { name: 'label', label: 'Card Label (small text top)', type: 'text' },
+          { name: 'title', label: 'Card Title', type: 'text', required: true },
+          { name: 'body', label: 'Card Body Paragraph', type: 'textarea' },
+          {
+            name: 'bullets',
+            label: 'Bullets',
+            type: 'array',
+            itemFields: [
+              { name: 'text', label: 'Bullet', type: 'text', required: true },
+            ],
+          },
+          { name: 'anchorId', label: 'Anchor ID to scroll to', type: 'text', required: true, hint: 'e.g. "business-owners" or "pre-retirees"' },
+          { name: 'linkText', label: 'Link Text', type: 'text' },
+        ],
+      },
+    ],
+  },
+
+  clarity_why_list: {
+    label: 'Clarity — Why Prosperity (Icon Bullet List)',
+    description: 'Styled bullet grid highlighting the firm approach.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      {
+        name: 'items',
+        label: 'Items',
+        type: 'array',
+        itemFields: [
+          { name: 'title', label: 'Title', type: 'text', required: true },
+          { name: 'body', label: 'Supporting Text', type: 'textarea' },
+        ],
+      },
+    ],
+  },
+
+  clarity_detail_block: {
+    label: 'Clarity — Detail Block (Text + Image)',
+    description: 'Long-form section for Business Owner or Pre-Retiree. Supports grouped bullets, compliance notes, and a CTA.',
+    fields: [
+      { name: 'anchorId', label: 'Anchor ID', type: 'text', required: true, hint: 'e.g. "business-owners"' },
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'intro', label: 'Intro Paragraph', type: 'textarea' },
+      {
+        name: 'groups',
+        label: 'Bullet Groups',
+        type: 'array',
+        hint: 'Optional sub-headings with bullets underneath. Use a single group with empty heading for a flat list.',
+        itemFields: [
+          { name: 'heading', label: 'Group Heading', type: 'text' },
+          {
+            name: 'bullets',
+            label: 'Bullets',
+            type: 'array',
+            itemFields: [
+              { name: 'text', label: 'Bullet', type: 'text', required: true },
+            ],
+          },
+        ],
+      },
+      { name: 'closing', label: 'Closing Paragraph', type: 'textarea' },
+      {
+        name: 'notes',
+        label: 'Compliance / Suitability Notes (small italic)',
+        type: 'array',
+        itemFields: [
+          { name: 'text', label: 'Note', type: 'textarea', required: true },
+        ],
+      },
+      { name: 'ctaText', label: 'CTA Button Text', type: 'text' },
+      { name: 'ctaHref', label: 'CTA Link', type: 'url' },
+      { name: 'image', label: 'Section Image', type: 'image' },
+      { name: 'imageAlt', label: 'Image Alt Text', type: 'text' },
+      {
+        name: 'imageSide',
+        label: 'Image Side',
+        type: 'select',
+        options: [
+          { label: 'Right', value: 'right' },
+          { label: 'Left', value: 'left' },
+        ],
+      },
+    ],
+  },
+
+  clarity_scenarios_grid: {
+    label: 'Clarity — Planning Scenarios (Dark Grid)',
+    description: 'Dark section with interactive grid of scenario cards.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      { name: 'body', label: 'Intro Body', type: 'textarea' },
+      {
+        name: 'scenarios',
+        label: 'Scenarios',
+        type: 'array',
+        itemFields: [
+          { name: 'title', label: 'Scenario Title', type: 'text', required: true },
+          { name: 'body', label: 'Short Description', type: 'textarea' },
+        ],
+      },
+      { name: 'footnote', label: 'Educational Footnote (small italic)', type: 'textarea' },
+      { name: 'disclaimer', label: 'Educational Disclaimer', type: 'textarea' },
+      { name: 'ctaText', label: 'Secondary CTA Text', type: 'text' },
+      { name: 'ctaHref', label: 'Secondary CTA Link', type: 'url' },
+      { name: 'image', label: 'Background/Accent Image', type: 'image' },
+      { name: 'imageAlt', label: 'Image Alt Text', type: 'text' },
+    ],
+  },
+
+  clarity_services_overview: {
+    label: 'Clarity — Services Overview (3-col grid)',
+    description: 'Compact services grid for the landing page.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      {
+        name: 'services',
+        label: 'Services',
+        type: 'array',
+        itemFields: [
+          { name: 'title', label: 'Title', type: 'text', required: true },
+          { name: 'body', label: 'Body', type: 'textarea' },
+        ],
+      },
+      { name: 'linkText', label: 'View-all Link Text', type: 'text' },
+      { name: 'linkHref', label: 'View-all Link URL', type: 'url' },
+    ],
+  },
+
+  clarity_process_steps: {
+    label: 'Clarity — Process Steps',
+    description: 'Simplified "what happens after you book" steps.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      {
+        name: 'steps',
+        label: 'Steps',
+        type: 'array',
+        itemFields: [
+          { name: 'title', label: 'Step Title', type: 'text', required: true },
+          { name: 'body', label: 'Step Body', type: 'textarea' },
+        ],
+      },
+      { name: 'note', label: 'Callout Note', type: 'textarea' },
+      { name: 'filterNote', label: 'Filter/Not-ideal Note', type: 'textarea' },
+      { name: 'scopeNote', label: 'Scope Clarifier (small italic)', type: 'textarea' },
+    ],
+  },
+
+  clarity_final_cta: {
+    label: 'Clarity — Final CTA (Centered)',
+    description: 'Closing CTA with primary button, supporting links, and small-print notes.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'headline', label: 'Headline', type: 'text', required: true },
+      { name: 'subheadline', label: 'Subheadline', type: 'textarea' },
+      { name: 'ctaText', label: 'Primary CTA Text', type: 'text' },
+      { name: 'ctaHref', label: 'Primary CTA Link', type: 'url' },
+      {
+        name: 'secondaryLinks',
+        label: 'Secondary Text Links',
+        type: 'array',
+        itemFields: [
+          { name: 'text', label: 'Text', type: 'text', required: true },
+          { name: 'href', label: 'Href', type: 'text', required: true },
+        ],
+      },
+      { name: 'subtext', label: 'Subtext (below links)', type: 'textarea' },
+      { name: 'noObligationNote', label: 'No-Obligation Note (small)', type: 'textarea' },
+      { name: 'urgencyNote', label: 'Urgency Note (small italic)', type: 'textarea' },
+    ],
+  },
 };
 
 // ==========================================================================

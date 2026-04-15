@@ -25,6 +25,7 @@ const FOOTER_GROUPS = [
   {
     heading: "Resources",
     links: [
+      { href: "/clarity-session", label: "Clarity Session" },
       { href: "/faqs", label: "FAQs" },
       { href: "/resources", label: "Learning Center" },
       { href: "/case-studies", label: "Planning Scenarios & Examples" },

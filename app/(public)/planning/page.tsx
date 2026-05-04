@@ -59,10 +59,12 @@ export default async function PlanningPage() {
       )}
 
       {/* Service Cards */}
-      {content.serviceCards && content.serviceCards.cards?.length > 0 && (
+      {content.serviceCards && (content.serviceCards as any).cards?.length > 0 && (() => {
+        const sc = content.serviceCards as any;
+        return (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
-          <SectionImage image={(content.serviceCards as any).sectionImage}>
+          <SectionImage image={sc.sectionImage}>
           <FadeUp>
             <div className="text-center mb-10 md:mb-12">
               <span className="eyebrow">Our Planning Services</span>
@@ -73,7 +75,7 @@ export default async function PlanningPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-            {content.serviceCards.cards.map((card: { title: string; body: string; tagline?: string; cta?: { text: string; href: string } }, i: number) => {
+            {sc.cards.map((card: { title: string; body: string; tagline?: string; cta?: { text: string; href: string } }, i: number) => {
               const delay = ((i % 3) + 1) as 1 | 2 | 3;
               return (
                 <FadeUp key={card.title} delay={delay} className="group">
@@ -120,7 +122,8 @@ export default async function PlanningPage() {
           </SectionImage>
         </div>
       </section>
-      )}
+        );
+      })()}
 
       {/* Financial Planning Portal */}
       {content.portal && (

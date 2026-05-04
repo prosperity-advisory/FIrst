@@ -295,10 +295,15 @@ export const getPlanningContent = cache(async () => {
       cta: { text: hero?.ctaText ?? planningJson.hero.cta.text, href: hero?.ctaHref ?? planningJson.hero.cta.href },
       sectionImage: simg(hero),
     }),
-    serviceCards: vis(page, 'service_cards', sc ? sc.cards.map((c: A) => ({
-      title: c.title, body: c.body, tagline: c.tagline,
-      cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
-    })) : planningJson.serviceCards),
+    serviceCards: vis(page, 'service_cards', sc ? {
+      cards: sc.cards.map((c: A) => ({
+        title: c.title, body: c.body, tagline: c.tagline,
+        cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
+      })),
+      heading: sc.heading as string | undefined,
+      body: sc.body as string | undefined,
+      sectionImage: simg(sc),
+    } : { cards: planningJson.serviceCards }),
     portal: vis(page, 'client_portal', { ...planningJson.portal, ...(cp ?? {}), image: cp?.image as string | undefined, sectionImage: simg(cp) }),
   };
 });

@@ -3,6 +3,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Accordion } from "@/components/ui/Accordion";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { ImageBlockSection } from "@/components/ui/SectionImage";
 import { BreadcrumbJsonLd, FaqPageJsonLd } from "@/components/seo/JsonLd";
 import { getFaqsContent } from "@/lib/content";
 
@@ -47,6 +48,11 @@ export default async function FaqsPage() {
           ))}
         </div>
       </section>
+      )}
+
+      {/* FAQ categories shared image */}
+      {content.categories && content.categories.length > 0 && (content as any).categoriesImage?.url && (
+        <ImageBlockSection image={(content as any).categoriesImage} background="white" />
       )}
 
       {/* FAQ Categories */}

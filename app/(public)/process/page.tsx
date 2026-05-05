@@ -169,6 +169,11 @@ export default async function ProcessPage() {
       </section>
       )}
 
+      {/* Detailed Steps shared image */}
+      {content.steps && content.steps.length > 0 && (content as any).stepsImage?.url && (
+        <ImageBlockSection image={(content as any).stepsImage} background="white" />
+      )}
+
       {/* Detailed Steps */}
       {content.steps && content.steps.length > 0 && content.steps.map((step: StepData, i: number) => {
         const isEven = i % 2 === 0;
@@ -272,24 +277,26 @@ export default async function ProcessPage() {
       {content.whoIsFor && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.whoIsFor.heading}</h2>
-            <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
-              {content.whoIsFor.listHeading}
-            </p>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <ul className="space-y-3 md:space-y-4">
-              {content.whoIsFor.items.map((item: string) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
-                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </FadeUp>
+          <SectionImage image={(content.whoIsFor as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.whoIsFor.heading}</h2>
+              <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
+                {content.whoIsFor.listHeading}
+              </p>
+            </FadeUp>
+            <FadeUp delay={1}>
+              <ul className="space-y-3 md:space-y-4">
+                {content.whoIsFor.items.map((item: string) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                    <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -298,27 +305,29 @@ export default async function ProcessPage() {
       {content.whatItAddresses && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.whatItAddresses.heading}</h2>
-            <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
-              {content.whatItAddresses.listHeading}
-            </p>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-              {content.whatItAddresses.items.map((item: string) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
-                  <span className="text-[15px] md:text-base text-slate leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8]">
-              {content.whatItAddresses.footnote}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.whatItAddresses as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.whatItAddresses.heading}</h2>
+              <p className="text-[15px] sm:text-base md:text-[17px] font-medium text-navy mb-4">
+                {content.whatItAddresses.listHeading}
+              </p>
+            </FadeUp>
+            <FadeUp delay={1}>
+              <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                {content.whatItAddresses.items.map((item: string) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="w-[7px] h-[7px] bg-gold rounded-full shrink-0 mt-[9px]" />
+                    <span className="text-[15px] md:text-base text-slate leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[15px] sm:text-base md:text-[17px] text-slate-light italic leading-[1.8]">
+                {content.whatItAddresses.footnote}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -327,23 +336,25 @@ export default async function ProcessPage() {
       {content.whatToExpect && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.whatToExpect.heading}</h2>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <div className="space-y-5 md:space-y-6">
-              {content.whatToExpect.items.map((item: ExpectItem) => (
-                <div key={item.title} className="bg-cream rounded-lg p-5 md:p-6">
-                  <h3 className="font-sans text-[15px] md:text-base font-semibold text-navy mb-1.5">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-[15px] text-slate leading-relaxed">
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
+          <SectionImage image={(content.whatToExpect as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.whatToExpect.heading}</h2>
+            </FadeUp>
+            <FadeUp delay={1}>
+              <div className="space-y-5 md:space-y-6">
+                {content.whatToExpect.items.map((item: ExpectItem) => (
+                  <div key={item.title} className="bg-cream rounded-lg p-5 md:p-6">
+                    <h3 className="font-sans text-[15px] md:text-base font-semibold text-navy mb-1.5">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm md:text-[15px] text-slate leading-relaxed">
+                      {item.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -372,12 +383,14 @@ export default async function ProcessPage() {
       {content.faq && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h2 className="section-headline">{content.faq.heading}</h2>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <Accordion items={content.faq.questions} />
-          </FadeUp>
+          <SectionImage image={(content.faq as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.faq.heading}</h2>
+            </FadeUp>
+            <FadeUp delay={1}>
+              <Accordion items={content.faq.questions} />
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -421,11 +434,13 @@ export default async function ProcessPage() {
       {content.compliance && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
-              {content.compliance}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content as any).complianceImage}>
+            <FadeUp>
+              <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
+                {content.compliance}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

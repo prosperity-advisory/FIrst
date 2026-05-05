@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { ImageBlockSection } from "@/components/ui/SectionImage";
+import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getFeesContent } from "@/lib/content";
 
@@ -41,6 +41,11 @@ export default async function FeesPage() {
           subtitle={content.hero.subheadline}
           backgroundImage={content.hero.backgroundImage ?? "/images/tree jpg.JPG"}
         />
+      )}
+
+      {/* Fee sections shared image */}
+      {content.sections && content.sections.length > 0 && (content as any).sectionsImage?.url && (
+        <ImageBlockSection image={(content as any).sectionsImage} background="white" />
       )}
 
       {/* Content Sections */}
@@ -103,14 +108,16 @@ export default async function FeesPage() {
       {content.disclosure && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
-              Important Disclosure
-            </h3>
-            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
-              {content.disclosure}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content as any).disclosureImage}>
+            <FadeUp>
+              <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
+                Important Disclosure
+              </h3>
+              <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
+                {content.disclosure}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

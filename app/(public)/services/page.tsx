@@ -109,7 +109,9 @@ export default async function ServicesPage() {
       {sections && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[900px]">
-          <ServiceAccordion sections={sections as any} />
+          <SectionImage image={(content as any).sectionsImage}>
+            <ServiceAccordion sections={sections as any} />
+          </SectionImage>
         </div>
       </section>
       )}
@@ -153,14 +155,16 @@ export default async function ServicesPage() {
       {disclosures && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
-              Important Disclosures
-            </h3>
-            <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
-              {disclosures}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content as any).disclosureImage}>
+            <FadeUp>
+              <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
+                Important Disclosures
+              </h3>
+              <p className="text-xs md:text-[13px] text-slate-light italic leading-relaxed">
+                {disclosures}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

@@ -38,21 +38,23 @@ export default async function PortfoliosPage() {
       {content.portfolios && content.portfolios.length > 0 && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
-          <FadeUp>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] max-w-[780px] mx-auto text-center mb-10 md:mb-12 lg:mb-14">
-              {content.hero?.body}
-            </p>
-          </FadeUp>
+          <SectionImage image={content.portfoliosSectionImage}>
+            <FadeUp>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] max-w-[780px] mx-auto text-center mb-10 md:mb-12 lg:mb-14">
+                {content.hero?.body}
+              </p>
+            </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
-            {content.portfolios.map((portfolio: { id: string; name: string; summary: string; goal: string; purpose: string; description: string; tagline: string }, i: number) => (
-              <PortfolioCard
-                key={portfolio.id}
-                portfolio={portfolio}
-                index={i}
-              />
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7">
+              {content.portfolios.map((portfolio: { id: string; name: string; summary: string; goal: string; purpose: string; description: string; tagline: string }, i: number) => (
+                <PortfolioCard
+                  key={portfolio.id}
+                  portfolio={portfolio}
+                  index={i}
+                />
+              ))}
+            </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -135,14 +137,16 @@ export default async function PortfoliosPage() {
       {content.disclosures && content.disclosures.length > 0 && (
       <section className="bg-cream py-8 sm:py-10 md:py-12 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          {content.disclosures.map((disclosure, i) => (
-            <p
-              key={i}
-              className="text-xs text-slate-light leading-relaxed mb-3 last:mb-0"
-            >
-              {disclosure}
-            </p>
-          ))}
+          <SectionImage image={(content as any).disclosuresImage}>
+            {content.disclosures.map((disclosure, i) => (
+              <p
+                key={i}
+                className="text-xs text-slate-light leading-relaxed mb-3 last:mb-0"
+              >
+                {disclosure}
+              </p>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}

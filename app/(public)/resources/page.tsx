@@ -152,6 +152,7 @@ export default async function ResourcesPage() {
       {content.calculators && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1000px]">
+          <SectionImage image={(content as any).calculatorsImage}>
           <FadeUp>
             <div className="text-center mb-10 md:mb-14">
               <h2 className="section-headline">{content.calculators.heading}</h2>
@@ -214,6 +215,7 @@ export default async function ResourcesPage() {
               </div>
             </div>
           ))}
+          </SectionImage>
         </div>
       </section>
       )}
@@ -223,16 +225,18 @@ export default async function ResourcesPage() {
       <section className="relative bg-linear-[160deg] from-navy to-navy-deep py-14 xs:py-16 sm:py-[72px] md:py-20 px-4 sm:px-6 overflow-hidden">
         <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] border border-gold/[0.06] rounded-full pointer-events-none" />
         <div className="relative z-[1] mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline text-white">{content.prosperityInsight.heading}</h2>
-          </FadeUp>
-          {content.prosperityInsight.paragraphs.map((p: string, i: number) => (
-            <FadeUp key={i} delay={1}>
-              <p className="text-[15px] sm:text-base md:text-[17px] text-cream/80 leading-[1.8] mb-5 last:mb-0">
-                {p}
-              </p>
+          <SectionImage image={(content.prosperityInsight as any).sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline text-white">{content.prosperityInsight.heading}</h2>
             </FadeUp>
-          ))}
+            {content.prosperityInsight.paragraphs.map((p: string, i: number) => (
+              <FadeUp key={i} delay={1}>
+                <p className="text-[15px] sm:text-base md:text-[17px] text-cream/80 leading-[1.8] mb-5 last:mb-0">
+                  {p}
+                </p>
+              </FadeUp>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}
@@ -241,6 +245,7 @@ export default async function ResourcesPage() {
       {content.howAndWhy && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={(content.howAndWhy as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.howAndWhy.heading}</h2>
           </FadeUp>
@@ -281,6 +286,7 @@ export default async function ResourcesPage() {
               .
             </p>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -289,6 +295,7 @@ export default async function ResourcesPage() {
       {content.resourceLibrary && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1000px]">
+          <SectionImage image={(content as any).resourceLibraryImage}>
           <FadeUp>
             <div className="text-center mb-10 md:mb-12">
               <h2 className="section-headline">{content.resourceLibrary.heading}</h2>
@@ -309,6 +316,7 @@ export default async function ResourcesPage() {
               </FadeUp>
             ))}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -317,6 +325,7 @@ export default async function ResourcesPage() {
       {content.downloadableGuides && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={(content.downloadableGuides as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.downloadableGuides.heading}</h2>
           </FadeUp>
@@ -363,6 +372,7 @@ export default async function ResourcesPage() {
               })}
             </ul>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -371,6 +381,7 @@ export default async function ResourcesPage() {
       {content.videos && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
+          <SectionImage image={(content.videos as any).sectionImage}>
           <FadeUp>
             <h2 className="section-headline">{content.videos.heading}</h2>
           </FadeUp>
@@ -415,6 +426,7 @@ export default async function ResourcesPage() {
               })}
             </ul>
           </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -423,16 +435,18 @@ export default async function ResourcesPage() {
       {content.educationalNote && (
       <section className="bg-white py-10 md:py-14 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <FadeUp>
-            <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
-              Important Educational Note
-            </h3>
-            {content.educationalNote.split("\n\n").map((p: string, i: number) => (
-              <p key={i} className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-3 last:mb-0">
-                {p}
-              </p>
-            ))}
-          </FadeUp>
+          <SectionImage image={(content as any).educationalNoteImage}>
+            <FadeUp>
+              <h3 className="font-sans text-sm md:text-[15px] font-semibold text-navy mb-3">
+                Important Educational Note
+              </h3>
+              {content.educationalNote.split("\n\n").map((p: string, i: number) => (
+                <p key={i} className="text-xs md:text-[13px] text-slate-light italic leading-relaxed mb-3 last:mb-0">
+                  {p}
+                </p>
+              ))}
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

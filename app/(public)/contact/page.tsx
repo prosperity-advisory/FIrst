@@ -4,6 +4,7 @@ import { InteriorHero } from "@/components/sections/InteriorHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { SectionImage } from "@/components/ui/SectionImage";
 import { getContactContent } from "@/lib/content";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
@@ -74,6 +75,7 @@ export default async function ContactPage() {
       {content.serviceCards && content.serviceCards.length > 0 && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-[100px] xl:py-[120px] px-4 sm:px-6">
         <div className="mx-auto max-w-[1200px]">
+          <SectionImage image={(content as any).serviceCardsImage}>
           <FadeUp>
             <div className="text-center mb-10 md:mb-12">
               <span className="eyebrow">Our Services</span>
@@ -120,6 +122,7 @@ export default async function ContactPage() {
               );
             })}
           </div>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -128,14 +131,16 @@ export default async function ContactPage() {
       {content.location?.disclosures && content.location.disclosures.length > 0 && (
       <section className="bg-white py-6 sm:py-8 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          {content.location.disclosures.map((d, i) => (
-            <p
-              key={i}
-              className="text-xs text-slate-light leading-relaxed mb-1 last:mb-0"
-            >
-              {d}
-            </p>
-          ))}
+          <SectionImage image={(content.location as any).sectionImage}>
+            {content.location.disclosures.map((d, i) => (
+              <p
+                key={i}
+                className="text-xs text-slate-light leading-relaxed mb-1 last:mb-0"
+              >
+                {d}
+              </p>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}

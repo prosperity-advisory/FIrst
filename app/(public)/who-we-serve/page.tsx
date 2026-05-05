@@ -92,6 +92,11 @@ export default async function WhoWeServePage() {
       </section>
       )}
 
+      {/* Audiences shared section image (rendered above the first audience block) */}
+      {content.audiences && content.audiences.length > 0 && (content as any).audiencesImage?.url && (
+        <ImageBlockSection image={(content as any).audiencesImage} background="cream" />
+      )}
+
       {/* Individual Audience Sections */}
       {content.audiences && content.audiences.length > 0 && content.audiences.map((audience: any, i: number) => {
         const isEven = i % 2 === 0;
@@ -172,15 +177,17 @@ export default async function WhoWeServePage() {
       {content.taxAware && (
       <section className="bg-cream py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline">{content.taxAware.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
-              {content.taxAware.body1}
-            </p>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
-              {content.taxAware.body2}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.taxAware as any)?.sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.taxAware.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
+                {content.taxAware.body1}
+              </p>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
+                {content.taxAware.body2}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}
@@ -189,15 +196,17 @@ export default async function WhoWeServePage() {
       {content.noOneCategory && (
       <section className="bg-white py-14 xs:py-16 sm:py-[72px] md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <FadeUp>
-            <h2 className="section-headline">{content.noOneCategory.heading}</h2>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
-              {content.noOneCategory.body1}
-            </p>
-            <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
-              {content.noOneCategory.body2}
-            </p>
-          </FadeUp>
+          <SectionImage image={(content.noOneCategory as any)?.sectionImage}>
+            <FadeUp>
+              <h2 className="section-headline">{content.noOneCategory.heading}</h2>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
+                {content.noOneCategory.body1}
+              </p>
+              <p className="text-base sm:text-[17px] md:text-lg text-slate leading-[1.8] mt-4">
+                {content.noOneCategory.body2}
+              </p>
+            </FadeUp>
+          </SectionImage>
         </div>
       </section>
       )}

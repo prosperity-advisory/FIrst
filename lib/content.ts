@@ -19,13 +19,21 @@ function vis<T>(page: PageData, type: string, data: T): T | null {
 
 /** Extract section image data from a DB section content object */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function simg(section: Record<string, any> | null) {
+function simg(section: Record<string, any> | null | undefined): {
+  url: string;
+  alt: string;
+  caption: string;
+  layout: 'featured-below' | 'featured-above' | 'inline-left' | 'inline-right';
+} | undefined {
   if (!section?.sectionImage) return undefined;
+  const validLayouts = ['featured-below', 'featured-above', 'inline-left', 'inline-right'] as const;
+  const raw = section.sectionImageLayout as string | undefined;
+  const layout = validLayouts.find((l) => l === raw) ?? 'featured-below';
   return {
     url: section.sectionImage as string,
     alt: (section.sectionImageAlt as string) || '',
     caption: (section.sectionImageCaption as string) || '',
-    layout: (section.sectionImageLayout as string) || 'featured-below',
+    layout,
   };
 }
 
@@ -228,6 +236,7 @@ export const getServicesContent = cache(async () => {
       relevanceItems: ta(s.relevanceItems),
       whyItems: ta(s.whyItems),
     })) : servicesJson.sections),
+    sectionsImage: simg(sa),
     approach: vis(page, 'services_approach', ap ? {
       heading: ap.heading,
       paragraphs: ta(ap.paragraphs),
@@ -235,6 +244,7 @@ export const getServicesContent = cache(async () => {
       sectionImage: simg(ap),
     } : servicesJson.approach),
     disclosures: vis(page, 'disclosure', disc?.text ?? servicesJson.disclosures),
+    disclosureImage: simg(disc),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });
@@ -245,7 +255,7 @@ export const getServicesContent = cache(async () => {
 
 export const getPortfoliosContent = cache(async () => {
   const page = await getPage('portfolios');
-  if (!page) { console.warn('[content] Falling back to JSON for /portfolios'); return portfoliosJson; }
+  if (!page) { console.warn('[content] Falling back to JSON for /portfolios'); return { ...portfoliosJson, portfoliosSectionImage: undefined as ReturnType<typeof simg>, portfoliosIntroDetail: undefined as string | undefined, disclosuresImage: undefined as ReturnType<typeof simg>, imageBlocks: [] as Record<string, unknown>[] }; }
 
   const hero = page.section('interior_hero');
   const pc = page.section('portfolio_cards');
@@ -257,6 +267,8 @@ export const getPortfoliosContent = cache(async () => {
     meta: page.meta,
     hero: vis(page, 'interior_hero', { ...portfoliosJson.hero, headline: hero?.headline, intro: hero?.subtitle, body: pc?.introBody ?? portfoliosJson.hero.body, backgroundImage: hero?.backgroundImage as string | undefined, sectionImage: simg(hero) }),
     portfolios: vis(page, 'portfolio_cards', pc?.portfolios ?? portfoliosJson.portfolios),
+    portfoliosSectionImage: simg(pc),
+    portfoliosIntroDetail: pc?.introDetail as string | undefined,
     management: vis(page, 'text_section', { ...portfoliosJson.management, ...(textSections[0] ?? {}), sectionImage: simg(textSections[0]) }),
     fiduciary: vis(page, 'text_section', { ...portfoliosJson.fiduciary, ...(textSections[1] ?? {}), sectionImage: simg(textSections[1]) }),
     foundation: vis(page, 'foundation_section', fs ? {
@@ -265,6 +277,7 @@ export const getPortfoliosContent = cache(async () => {
       sectionImage: simg(fs),
     } : portfoliosJson.foundation),
     disclosures: vis(page, 'disclosure_list', dl ? ta(dl.items) : portfoliosJson.disclosures),
+    disclosuresImage: simg(dl),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });
@@ -333,8 +346,9 @@ export const getAboutContent = cache(async () => {
     } : aboutJson.ourServices),
     trustedPartner: vis(page, 'text_section', { ...aboutJson.trustedPartner, ...(textSections[0] ?? {}), sectionImage: simg(textSections[0]) }),
     features: vis(page, 'feature_badges', badges ? badges.features.map((f: A) => f.label) : aboutJson.features),
+    featuresImage: simg(badges),
     tailored: vis(page, 'text_section', { ...aboutJson.tailored, ...(textSections[1] ?? {}), sectionImage: simg(textSections[1]) }),
-    ctaBand: vis(page, 'cta_band', ctaBand ? { heading: ctaBand.headline, body: ctaBand.subtext } : aboutJson.ctaBand),
+    ctaBand: vis(page, 'cta_band', ctaBand ? { heading: ctaBand.headline, body: ctaBand.subtext, sectionImage: simg(ctaBand) } : aboutJson.ctaBand),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });
@@ -378,6 +392,7 @@ export const getContactContent = cache(async () => {
       title: c.title, body: c.body,
       cta: c.ctaText ? { text: c.ctaText, href: c.ctaHref } : undefined,
     })) : contactJson.serviceCards),
+    serviceCardsImage: simg(sc),
   };
 });
 
@@ -412,8 +427,9 @@ export const getWhoWeServeContent = cache(async () => {
     audiences: vis(page, 'audience_profiles', ap ? ap.audiences.map((a: A) => ({
       ...a, focusedOn: ta(a.focusedOn), planningAreas: ta(a.planningAreas),
     })) : whoWeServeJson.audiences),
-    taxAware: vis(page, 'two_column_text', twoCol[0] ?? whoWeServeJson.taxAware),
-    noOneCategory: vis(page, 'two_column_text', twoCol[1] ?? whoWeServeJson.noOneCategory),
+    audiencesImage: simg(ap),
+    taxAware: vis(page, 'two_column_text', twoCol[0] ? { ...whoWeServeJson.taxAware, ...twoCol[0], sectionImage: simg(twoCol[0]) } : { ...whoWeServeJson.taxAware, sectionImage: undefined as ReturnType<typeof simg> }),
+    noOneCategory: vis(page, 'two_column_text', twoCol[1] ? { ...whoWeServeJson.noOneCategory, ...twoCol[1], sectionImage: simg(twoCol[1]) } : { ...whoWeServeJson.noOneCategory, sectionImage: undefined as ReturnType<typeof simg> }),
     connectsEverything: vis(page, 'connects_everything', ce ? {
       heading: ce.heading, body: ce.body, subheading: ce.subheading, items: ta(ce.items), footer: ce.footer,
       sectionImage: simg(ce),
@@ -468,19 +484,21 @@ export const getProcessContent = cache(async () => {
       body: ta(s.body), listHeading: s.listHeading, items: ta(s.items),
       whyMatters: s.whyMatters, whatYouLeaveWith: ta(s.whatYouLeaveWith), cta: s.cta,
     })) : processJson.steps),
-    whoIsFor: vis(page, 'bullet_list_section', bls[0] ? { heading: bls[0].heading, listHeading: bls[0].listHeading, items: ta(bls[0].items) } : processJson.whoIsFor),
+    stepsImage: simg(ds),
+    whoIsFor: vis(page, 'bullet_list_section', bls[0] ? { heading: bls[0].heading, listHeading: bls[0].listHeading, items: ta(bls[0].items), sectionImage: simg(bls[0]) } : processJson.whoIsFor),
     whatItAddresses: vis(page, 'bullet_list_section', bls[1] ? {
-      heading: bls[1].heading, listHeading: bls[1].listHeading, items: ta(bls[1].items), footnote: bls[1].footnote,
+      heading: bls[1].heading, listHeading: bls[1].listHeading, items: ta(bls[1].items), footnote: bls[1].footnote, sectionImage: simg(bls[1]),
     } : processJson.whatItAddresses),
-    whatToExpect: vis(page, 'titled_list_section', tls ?? processJson.whatToExpect),
+    whatToExpect: vis(page, 'titled_list_section', tls ? { ...processJson.whatToExpect, ...tls, sectionImage: simg(tls) } : { ...processJson.whatToExpect, sectionImage: undefined as ReturnType<typeof simg> }),
     planningExperience: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs), sectionImage: simg(ps) } : processJson.planningExperience),
-    faq: vis(page, 'faq_accordion', faq ?? processJson.faq),
+    faq: vis(page, 'faq_accordion', faq ? { ...processJson.faq, ...faq, sectionImage: simg(faq) } : { ...processJson.faq, sectionImage: undefined as ReturnType<typeof simg> }),
     closing: vis(page, 'closing_cta', cc ? {
       heading: cc.heading, paragraphs: cc.body?.split('\n\n') ?? [],
       cta: { text: cc.ctaText, href: cc.ctaHref },
       sectionImage: simg(cc),
     } : processJson.closing),
     compliance: vis(page, 'disclosure', disc?.text ?? processJson.compliance),
+    complianceImage: simg(disc),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });
@@ -505,8 +523,10 @@ export const getFeesContent = cache(async () => {
       id: s.id, heading: s.heading, paragraphs: ta(s.paragraphs),
       listHeading: s.listHeading, items: ta(s.items), footnotes: ta(s.footnotes),
     })) : feesJson.sections),
+    sectionsImage: simg(fs),
     disclosure: vis(page, 'disclosure', disc?.text ?? feesJson.disclosure),
-    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext } : feesJson.ctaBand),
+    disclosureImage: simg(disc),
+    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext, sectionImage: simg(cb) } : feesJson.ctaBand),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });
@@ -528,8 +548,9 @@ export const getFaqsContent = cache(async () => {
     hero: vis(page, 'interior_hero', { ...faqsJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline, subheadline: hero?.subtitle, backgroundImage: hero?.backgroundImage as string | undefined, sectionImage: simg(hero) }),
     intro: vis(page, 'faq_categories', { paragraphs: fc ? ta(fc.introParagraphs) : faqsJson.intro.paragraphs }),
     categories: vis(page, 'faq_categories', fc?.categories ?? faqsJson.categories),
+    categoriesImage: simg(fc),
     disclosures: vis(page, 'faq_categories', fc?.disclosures ?? faqsJson.disclosures),
-    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext } : faqsJson.ctaBand),
+    ctaBand: vis(page, 'cta_band', cb ? { heading: cb.headline, body: cb.subtext, sectionImage: simg(cb) } : faqsJson.ctaBand),
   };
 });
 
@@ -570,15 +591,18 @@ export const getResourcesContent = cache(async () => {
       sectionImage: simg(htu),
     } : resourcesJson.howToUse),
     calculators: vis(page, 'calculator_groups', cg ?? resourcesJson.calculators),
-    prosperityInsight: vis(page, 'prosperity_insight', pi ? { heading: pi.heading, paragraphs: ta(pi.paragraphs) } : resourcesJson.prosperityInsight),
+    calculatorsImage: simg(cg),
+    prosperityInsight: vis(page, 'prosperity_insight', pi ? { heading: pi.heading, paragraphs: ta(pi.paragraphs), sectionImage: simg(pi) } : resourcesJson.prosperityInsight),
     howAndWhy: vis(page, 'how_and_why', hw ? {
       heading: hw.heading, paragraphs: ta(hw.paragraphs), listHeading: hw.listHeading,
-      items: ta(hw.items), closing: hw.closing, cta: hw.cta,
+      items: ta(hw.items), closing: hw.closing, cta: hw.cta, sectionImage: simg(hw),
     } : resourcesJson.howAndWhy),
     resourceLibrary: vis(page, 'resource_library', rl ?? resourcesJson.resourceLibrary),
-    downloadableGuides: vis(page, 'downloadable_guides', dg ? { heading: dg.heading, items: dg.items ?? [], cta: dg.cta } : resourcesJson.downloadableGuides),
-    videos: vis(page, 'video_list', vl ? { heading: vl.heading, items: vl.items ?? [] } : resourcesJson.videos),
+    resourceLibraryImage: simg(rl),
+    downloadableGuides: vis(page, 'downloadable_guides', dg ? { heading: dg.heading, items: dg.items ?? [], cta: dg.cta, sectionImage: simg(dg) } : resourcesJson.downloadableGuides),
+    videos: vis(page, 'video_list', vl ? { heading: vl.heading, items: vl.items ?? [], sectionImage: simg(vl) } : resourcesJson.videos),
     educationalNote: vis(page, 'disclosure', disc?.text ?? resourcesJson.educationalNote),
+    educationalNoteImage: simg(disc),
     closing: vis(page, 'resources_closing', cl ? {
       heading: cl.heading, paragraphs: ta(cl.paragraphs),
       cta: { text: cl.ctaText, href: cl.ctaHref, prefix: cl.ctaPrefix },
@@ -631,7 +655,7 @@ export const getCaseStudiesContent = cache(async () => {
       sectionImage: simg(si),
     } : caseStudiesJson.scenariosIntro),
     quickLinks: vis(page, 'scenarios_intro', si?.quickLinks ?? caseStudiesJson.quickLinks),
-    categories: vis(page, 'scenario_category', cats.length > 0 ? cats : caseStudiesJson.categories),
+    categories: vis(page, 'scenario_category', cats.length > 0 ? cats.map((c: A) => ({ ...c, sectionImage: simg(c) })) : caseStudiesJson.categories),
     whoThisIsFor: vis(page, 'bullet_list_section', bls[0] ? { heading: bls[0].heading, body: bls[0].listHeading, items: ta(bls[0].items), sectionImage: simg(bls[0]) } : caseStudiesJson.whoThisIsFor),
     whyHypothetical: vis(page, 'paragraphs_section', ps ? { heading: ps.heading, paragraphs: ta(ps.paragraphs), sectionImage: simg(ps) } : caseStudiesJson.whyHypothetical),
     closingCta: vis(page, 'closing_cta', cc ? {
@@ -639,7 +663,7 @@ export const getCaseStudiesContent = cache(async () => {
       cta: { text: cc.ctaText, href: cc.ctaHref },
       sectionImage: simg(cc),
     } : caseStudiesJson.closingCta),
-    compliance: vis(page, 'disclosure', disc ? { heading: 'Important Disclosures', paragraphs: disc.text?.split('\n\n') ?? [] } : caseStudiesJson.compliance),
+    compliance: vis(page, 'disclosure', disc ? { heading: 'Important Disclosures', paragraphs: disc.text?.split('\n\n') ?? [], sectionImage: simg(disc) } : caseStudiesJson.compliance),
     imageBlocks: page.sectionsOfType('image_block'),
   };
 });

@@ -6,6 +6,7 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { BusinessOwnerAccordion } from "@/components/sections/BusinessOwnerAccordion";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { SectionImage } from "@/components/ui/SectionImage";
 import { getHomeContent } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -74,28 +75,46 @@ export default async function Home() {
       )}
 
       {content.services && (
-        <ServicesGrid
-          eyebrow={content.services.eyebrow}
-          headline={content.services.heading}
-          body={content.services.body}
-          categories={content.services.categories}
-          nextSteps={content.services.nextSteps}
-          ctaButtons={(content.services as { ctaButtons?: { text: string; href: string; style?: "gold" | "navy" | "outline" }[] }).ctaButtons}
-        />
+        <>
+          {(content.services as any).sectionImage?.url && (
+            <section className="bg-white px-4 sm:px-6 pt-8">
+              <div className="mx-auto max-w-[1200px]">
+                <SectionImage image={(content.services as any).sectionImage}>{null}</SectionImage>
+              </div>
+            </section>
+          )}
+          <ServicesGrid
+            eyebrow={content.services.eyebrow}
+            headline={content.services.heading}
+            body={content.services.body}
+            categories={content.services.categories}
+            nextSteps={content.services.nextSteps}
+            ctaButtons={(content.services as { ctaButtons?: { text: string; href: string; style?: "gold" | "navy" | "outline" }[] }).ctaButtons}
+          />
+        </>
       )}
 
       {content.businessOwner && (
-        <BusinessOwnerAccordion
-          heading={content.businessOwner.heading}
-          body={content.businessOwner.body}
-          ctaText={content.businessOwner.ctaText}
-          ctaHref={content.businessOwner.ctaHref}
-          learnMoreText={content.businessOwner.learnMoreText}
-          learnMoreHref={content.businessOwner.learnMoreHref}
-          relevanceItemsOverride={content.businessOwner.relevanceItems?.length ? content.businessOwner.relevanceItems : undefined}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          sectionsOverride={content.businessOwner.sections?.length ? content.businessOwner.sections as any : undefined}
-        />
+        <>
+          {(content.businessOwner as any).sectionImage?.url && (
+            <section className="bg-cream px-4 sm:px-6 pt-8">
+              <div className="mx-auto max-w-[1200px]">
+                <SectionImage image={(content.businessOwner as any).sectionImage}>{null}</SectionImage>
+              </div>
+            </section>
+          )}
+          <BusinessOwnerAccordion
+            heading={content.businessOwner.heading}
+            body={content.businessOwner.body}
+            ctaText={content.businessOwner.ctaText}
+            ctaHref={content.businessOwner.ctaHref}
+            learnMoreText={content.businessOwner.learnMoreText}
+            learnMoreHref={content.businessOwner.learnMoreHref}
+            relevanceItemsOverride={content.businessOwner.relevanceItems?.length ? content.businessOwner.relevanceItems : undefined}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            sectionsOverride={content.businessOwner.sections?.length ? content.businessOwner.sections as any : undefined}
+          />
+        </>
       )}
 
       {content.contact && (

@@ -629,6 +629,7 @@ export default async function CaseStudiesPage() {
           className={`${bg()} ${sectionPad}`}
         >
           <div className="mx-auto max-w-[900px]">
+            <SectionImage image={category.sectionImage}>
             {/* Category header */}
             <FadeUp>
               <h2 className="font-serif text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-navy mb-4 md:mb-6">
@@ -681,6 +682,7 @@ export default async function CaseStudiesPage() {
                 </CalendlyButton>
               </div>
             </FadeUp>
+            </SectionImage>
           </div>
         </section>
       ))}
@@ -775,17 +777,19 @@ export default async function CaseStudiesPage() {
       {content.compliance && (
       <section className="bg-cream py-10 sm:py-12 px-4 sm:px-6">
         <div className="mx-auto max-w-[800px]">
-          <h3 className="font-sans text-sm font-semibold text-navy uppercase tracking-[0.1em] mb-4">
-            {content.compliance.heading}
-          </h3>
-          {content.compliance.paragraphs.map((p: string, i: number) => (
-            <p
-              key={i}
-              className="text-xs md:text-[13px] text-slate-light leading-relaxed mb-3 last:mb-0"
-            >
-              {p}
-            </p>
-          ))}
+          <SectionImage image={(content.compliance as any).sectionImage}>
+            <h3 className="font-sans text-sm font-semibold text-navy uppercase tracking-[0.1em] mb-4">
+              {content.compliance.heading}
+            </h3>
+            {content.compliance.paragraphs.map((p: string, i: number) => (
+              <p
+                key={i}
+                className="text-xs md:text-[13px] text-slate-light leading-relaxed mb-3 last:mb-0"
+              >
+                {p}
+              </p>
+            ))}
+          </SectionImage>
         </div>
       </section>
       )}

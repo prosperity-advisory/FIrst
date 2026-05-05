@@ -121,6 +121,7 @@ export default async function AboutPage() {
             </FadeUp>
 
             {/* Feature badges */}
+            <SectionImage image={(content as any).featuresImage}>
             <FadeUp delay={1}>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
                 {content.features.map((feature: string, i: number) => (
@@ -137,6 +138,7 @@ export default async function AboutPage() {
                 ))}
               </div>
             </FadeUp>
+            </SectionImage>
           </SectionImage>
         </div>
       </section>

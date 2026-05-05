@@ -700,9 +700,9 @@ export const getDisclosuresContent = cache(async () => {
       subheadline: hero?.subtitle,
       backgroundImage: (hero?.backgroundImage as string | undefined) ?? disclosuresJson.hero.backgroundImage,
     }),
-    intro: intro ? { paragraphs: ta(intro.paragraphs) } : disclosuresJson.intro,
+    intro: intro ? { paragraphs: ta(intro.paragraphs), sectionImage: simg(intro) } : disclosuresJson.intro,
     sections: sections.length > 0
-      ? sections.map((s: A) => ({ heading: s.heading, paragraphs: ta(s.paragraphs) }))
+      ? sections.map((s: A) => ({ heading: s.heading, paragraphs: ta(s.paragraphs), sectionImage: simg(s) }))
       : disclosuresJson.sections,
   };
 });

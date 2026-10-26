@@ -5,18 +5,23 @@ import { NextResponse } from "next/server";
 const DIRECTLINE_TOKEN_URL =
   "https://directline.botframework.com/v3/directline/tokens/generate";
 
-const SECRET =
-  "BViSbHcuBbLdabZIh7xUXkb15pGV0wPs4C2uM04HYyC17YJ84paqJQQJ99CDACYeBjFAArohAAABAZBS4M6n.2hEtfCgiW4eIHqUbHTcVIEYz6CoSRjnO4IRz6CIc7Pz3Bjxu4njvJQQJ99CDACYeBjFAArohAAABAZBS3ten";
-
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  const secret = process.env.DIRECT_LINE_SECRET;
+  if (!secret) {
+    return NextResponse.json(
+      { error: "Chat service is temporarily unavailable" },
+      { status: 500 }
+    );
+  }
+
   try {
     // Use the standard Bot Framework Direct Line token generation endpoint
     const res = await fetch(DIRECTLINE_TOKEN_URL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${SECRET}`,
+        Authorization: `Bearer ${secret}`,
         "Content-Type": "application/json",
       },
       cache: "no-store",

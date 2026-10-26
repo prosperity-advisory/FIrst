@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+import { adminAuthorizationGranted } from './lib/admin-authorization';
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
@@ -29,18 +30,23 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  const { data: adminResult, error: adminError } = user
+    ? await supabase.rpc('is_prosperity_press_admin')
+    : { data: false, error: null };
+  const isAdmin = adminAuthorizationGranted(user, adminResult, adminError);
+
   // Protect /admin routes (except /admin/login)
   if (
     request.nextUrl.pathname.startsWith('/admin') &&
-    !request.nextUrl.pathname.startsWith('/admin/login') &&
-    !user
+    request.nextUrl.pathname !== '/admin/login' &&
+    !isAdmin
   ) {
     const loginUrl = new URL('/admin/login', request.url);
     return NextResponse.redirect(loginUrl);
   }
 
   // Redirect logged-in users away from login page
-  if (request.nextUrl.pathname === '/admin/login' && user) {
+  if (request.nextUrl.pathname === '/admin/login' && isAdmin) {
     const adminUrl = new URL('/admin', request.url);
     return NextResponse.redirect(adminUrl);
   }

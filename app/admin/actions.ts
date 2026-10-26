@@ -1,6 +1,6 @@
 "use server";
 
-import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { requireProsperityPressAdmin } from "@/lib/admin-auth";
 import { revalidatePath } from "next/cache";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve } from "path";
@@ -17,7 +17,7 @@ export async function updatePageMeta(
     og_image: string;
   }
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("pages")
     .update({
@@ -40,7 +40,7 @@ export async function toggleSectionVisibility(
   sectionId: string,
   isVisible: boolean
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("sections")
     .update({ is_visible: isVisible, updated_at: new Date().toISOString() })
@@ -58,7 +58,7 @@ export async function swapSectionOrder(
   sectionA: { id: string; sort_order: number },
   sectionB: { id: string; sort_order: number }
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
 
   const { error: errA } = await supabase
     .from("sections")
@@ -91,7 +91,7 @@ export async function addSection(
   componentType: string,
   sortOrder: number
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase.from("sections").insert({
     page_id: pageId,
     component_type: componentType,
@@ -113,7 +113,7 @@ export async function updateSectionContent(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: Record<string, any>
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("sections")
     .update({ content, updated_at: new Date().toISOString() })
@@ -128,10 +128,9 @@ export async function updateSectionContent(
 // ---------------------------------------------------------------------------
 
 export async function uploadImage(formData: FormData): Promise<string> {
+  const supabase = await requireProsperityPressAdmin();
   const file = formData.get("file") as File;
   if (!file) throw new Error("No file provided");
-
-  const supabase = await createSupabaseServerClient();
   const ext = file.name.split(".").pop() ?? "png";
   const storagePath = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
@@ -165,6 +164,7 @@ export async function createSignedUploadUrl(filename: string): Promise<{
   storagePath: string;
   publicUrl: string;
 }> {
+  await requireProsperityPressAdmin();
   const { supabaseAdmin } = await import("@/lib/supabase-admin");
   const ext = filename.split(".").pop() ?? "bin";
   const storagePath = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
@@ -194,6 +194,7 @@ export async function recordMediaUpload(data: {
   mime_type: string;
   file_size: number;
 }) {
+  await requireProsperityPressAdmin();
   const { supabaseAdmin } = await import("@/lib/supabase-admin");
   await supabaseAdmin.from("media").insert({
     filename: data.filename,
@@ -209,7 +210,7 @@ export async function recordMediaUpload(data: {
 // ---------------------------------------------------------------------------
 
 export async function getMediaItems() {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { data, error } = await supabase
     .from("media")
     .select("*")
@@ -220,7 +221,7 @@ export async function getMediaItems() {
 }
 
 export async function updateMediaAltText(id: string, altText: string) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("media")
     .update({ alt_text: altText })
@@ -230,7 +231,7 @@ export async function updateMediaAltText(id: string, altText: string) {
 }
 
 export async function deleteMediaItem(id: string, url: string) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
 
   // Extract storage path from public URL
   const match = url.match(/\/storage\/v1\/object\/public\/media\/(.+)$/);
@@ -251,7 +252,7 @@ export async function updateSiteSettings(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: Record<string, any>
 ) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("site_settings")
     .update({ value, updated_at: new Date().toISOString() })
@@ -266,7 +267,7 @@ export async function updateSiteSettings(
 // ---------------------------------------------------------------------------
 
 export async function deleteSection(sectionId: string) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
   const { error } = await supabase
     .from("sections")
     .delete()
@@ -283,7 +284,7 @@ export async function deleteSection(sectionId: string) {
 const SNAPSHOT_PATH = resolve(process.cwd(), "supabase", "snapshot.json");
 
 export async function takeSnapshot() {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await requireProsperityPressAdmin();
 
   const { data: pages } = await supabase
     .from("pages").select("*").order("sort_order");
@@ -314,6 +315,7 @@ export async function takeSnapshot() {
 }
 
 export async function getSnapshotInfo() {
+  await requireProsperityPressAdmin();
   if (!existsSync(SNAPSHOT_PATH)) return null;
   try {
     const raw = JSON.parse(readFileSync(SNAPSHOT_PATH, "utf-8"));
@@ -330,13 +332,12 @@ export async function getSnapshotInfo() {
 }
 
 export async function restoreSnapshot() {
+  const supabase = await requireProsperityPressAdmin();
   if (!existsSync(SNAPSHOT_PATH)) {
     throw new Error("No snapshot found. Take a snapshot first.");
   }
 
   const snapshot = JSON.parse(readFileSync(SNAPSHOT_PATH, "utf-8"));
-  const supabase = await createSupabaseServerClient();
-
   // Clear in order (sections first due to FK)
   await supabase.from("sections").delete().gte("sort_order", -1);
   await supabase.from("pages").delete().neq("id", "00000000-0000-0000-0000-000000000000");

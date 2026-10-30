@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-export function ChatWidget() {
+export function ChatWidget({ tooltipClassName = "" }: { tooltipClassName?: string } = {}) {
   const [open, setOpen] = useState(false);
   const [initialized, setInitialized] = useState(false);
   const [sdkReady, setSdkReady] = useState(false);
@@ -279,7 +279,7 @@ export function ChatWidget() {
 
       {/* Attention tooltip */}
       <div
-        className={`fixed bottom-[88px] right-[76px] sm:right-[84px] z-[998] transition-all duration-500 ${
+        className={`fixed bottom-[88px] right-[76px] sm:right-[84px] z-[998] transition-all duration-500 ${tooltipClassName} ${
           showTooltip && !open
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-2 pointer-events-none"

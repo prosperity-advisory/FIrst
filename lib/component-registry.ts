@@ -1863,6 +1863,146 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
       { name: 'urgencyNote', label: 'Urgency Note (small italic)', type: 'textarea' },
     ],
   },
+
+  // Affordable Planning page-specific registrations. These extend the existing
+  // editor vocabulary while keeping its generic editing and save behavior intact.
+  affordable_planning_hero: {
+    label: 'Affordable Planning — Hero',
+    description: 'Hero copy, CTA, and family planning image for the Affordable Planning page.',
+    fields: [
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'title', label: 'Headline', type: 'text', required: true },
+      { name: 'subtitle', label: 'Supporting Headline', type: 'textarea' },
+      { name: 'body', label: 'Description', type: 'textarea' },
+      { name: 'firm', label: 'Firm Description', type: 'textarea' },
+      { name: 'cta', label: 'CTA Label', type: 'text' },
+      { name: 'ctaHref', label: 'CTA Destination', type: 'url' },
+      { name: 'reassurance', label: 'Supporting CTA Text', type: 'textarea' },
+      { name: 'imageSrc', label: 'Hero Image', type: 'image' },
+      { name: 'imageAlt', label: 'Hero Image Alternative Text', type: 'text' },
+    ],
+  },
+  affordable_planning_why: {
+    label: 'Affordable Planning — Why Planning',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'paragraphs', label: 'Descriptions', type: 'array', itemFields: [{ name: 'text', label: 'Paragraph', type: 'textarea', required: true }] },
+    ],
+  },
+  affordable_planning_coverage: {
+    label: 'Affordable Planning — Planning Priorities',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'intro', label: 'Introductory Label', type: 'text' },
+      { name: 'items', label: 'Planning Priorities', type: 'array', itemFields: [
+        { name: 'title', label: 'Priority', type: 'text', required: true },
+        { name: 'text', label: 'Description', type: 'textarea', required: true },
+      ] },
+      { name: 'note', label: 'Scope Note', type: 'textarea' },
+    ],
+  },
+  affordable_planning_packages: {
+    label: 'Affordable Planning — Packages',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'eyebrow', label: 'Eyebrow', type: 'text' },
+      { name: 'options', label: 'Packages', type: 'array', itemFields: [
+        { name: 'name', label: 'Package Name', type: 'text', required: true },
+        { name: 'price', label: 'Proposed Price', type: 'text', required: true },
+        { name: 'fee', label: 'Fee Description', type: 'text' },
+        { name: 'text', label: 'Description', type: 'textarea' },
+        { name: 'includes', label: 'Included Services', type: 'textarea' },
+        { name: 'imageSrc', label: 'Supporting Image', type: 'image' },
+        { name: 'imageAlt', label: 'Image Alternative Text', type: 'text' },
+      ] },
+      { name: 'scopeTitle', label: 'Scope Heading', type: 'text' },
+      { name: 'scopeText', label: 'Scope Description', type: 'textarea' },
+      { name: 'status', label: 'Offer Status Notice', type: 'textarea' },
+    ],
+  },
+  affordable_planning_deliverables: {
+    label: 'Affordable Planning — Deliverables',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'paragraphs', label: 'Descriptions', type: 'array', itemFields: [{ name: 'text', label: 'Paragraph', type: 'textarea', required: true }] },
+      { name: 'note', label: 'Projection Note', type: 'textarea' },
+      { name: 'clarification', label: 'Proposed Clarification Period', type: 'group', fields: [
+        { name: 'title', label: 'Heading', type: 'text' },
+        { name: 'text', label: 'Description', type: 'textarea' },
+        { name: 'approval', label: 'Approval Notice', type: 'text' },
+      ] },
+    ],
+  },
+  affordable_planning_process: {
+    label: 'Affordable Planning — Process',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'steps', label: 'Steps', type: 'array', itemFields: [
+        { name: 'title', label: 'Step Heading', type: 'text', required: true },
+        { name: 'text', label: 'Step Description', type: 'textarea', required: true },
+      ] },
+      { name: 'note', label: 'Process Note', type: 'textarea' },
+    ],
+  },
+  affordable_planning_adviser: {
+    label: 'Affordable Planning — Adviser',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'imageSrc', label: 'Adviser Photograph', type: 'image' },
+      { name: 'imageAlt', label: 'Photograph Alternative Text', type: 'text' },
+      { name: 'paragraphs', label: 'Biography and Supporting Text', type: 'array', itemFields: [{ name: 'text', label: 'Paragraph', type: 'textarea', required: true }] },
+      { name: 'closing', label: 'Closing Statement', type: 'text' },
+    ],
+  },
+  affordable_planning_faq: {
+    label: 'Affordable Planning — FAQs',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'items', label: 'Questions and Answers', type: 'array', itemFields: [
+        { name: 'question', label: 'Question', type: 'text', required: true },
+        { name: 'answer', label: 'Answer', type: 'textarea', required: true },
+      ] },
+    ],
+  },
+  affordable_planning_final_cta: {
+    label: 'Affordable Planning — Final CTA',
+    fields: [
+      { name: 'title', label: 'Heading', type: 'text', required: true },
+      { name: 'paragraphs', label: 'Supporting Text', type: 'array', itemFields: [{ name: 'text', label: 'Paragraph', type: 'textarea', required: true }] },
+      { name: 'cta', label: 'CTA Label', type: 'text' },
+      { name: 'ctaHref', label: 'CTA Destination', type: 'url' },
+      { name: 'note', label: 'Supporting CTA Text', type: 'textarea' },
+    ],
+  },
+  affordable_planning_disclosures: {
+    label: 'Affordable Planning — Disclosures',
+    fields: [
+      { name: 'firm', label: 'Firm Description', type: 'textarea' },
+      { name: 'advisory', label: 'Advisory Disclosure', type: 'textarea' },
+      { name: 'insurance', label: 'Insurance Disclosure', type: 'textarea' },
+      { name: 'footer', label: 'Page Footer Link Groups', type: 'array', itemFields: [
+        { name: 'heading', label: 'Group Heading', type: 'text', required: true },
+        { name: 'links', label: 'Links', type: 'array', itemFields: [
+          { name: 'label', label: 'Link Label', type: 'text', required: true },
+          { name: 'href', label: 'Link Destination', type: 'url', required: true },
+        ] },
+      ] },
+    ],
+  },
+  affordable_planning_illustrations: {
+    label: 'Affordable Planning — Plan and Budget Illustrations',
+    description: 'References and alternative text for the three sample plan pages and budget workbook image.',
+    fields: [
+      { name: 'planCoverSrc', label: 'Financial Plan Cover Image', type: 'image' },
+      { name: 'planCoverAlt', label: 'Cover Image Alternative Text', type: 'text' },
+      { name: 'financialOverviewSrc', label: 'Financial Overview Image', type: 'image' },
+      { name: 'financialOverviewAlt', label: 'Financial Overview Alternative Text', type: 'text' },
+      { name: 'roadmapSrc', label: 'Recommendations and Roadmap Image', type: 'image' },
+      { name: 'roadmapAlt', label: 'Roadmap Image Alternative Text', type: 'text' },
+      { name: 'budgetSrc', label: 'Budget Workbook Image', type: 'image' },
+      { name: 'budgetAlt', label: 'Budget Image Alternative Text', type: 'text' },
+    ],
+  },
 };
 
 // ==========================================================================

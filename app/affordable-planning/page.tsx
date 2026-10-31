@@ -15,9 +15,29 @@ export async function generateMetadata(): Promise<Metadata> {
   const copy = await getAffordablePlanningPageContent();
   if (!copy) notFound();
   return {
-    title: copy.meta.title,
+    title: { absolute: "Affordable Comprehensive Financial Planning | Prosperity Planning & Advisory" },
     description: copy.meta.description,
-    robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
+    keywords: [
+      "comprehensive financial planning",
+      "flat-fee financial planning",
+      "household financial planning",
+      "business-owner financial planning",
+      "retirement planning",
+      "non-discretionary investment guidance",
+      "financial planning Woodland Hills CA",
+      "Prosperity Planning Advisory",
+    ],
+    alternates: { canonical: "https://prosperityadvisory.net/affordable-planning" },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+    openGraph: {
+      title: "Affordable Comprehensive Financial Planning | Prosperity Planning & Advisory",
+      description: "Explore $600 household and $1,000 business-owner financial planning. Clear written scope, adviser-reviewed recommendations, and practical next steps.",
+      url: "https://prosperityadvisory.net/affordable-planning",
+    },
+    twitter: {
+      title: "Affordable Comprehensive Financial Planning | Prosperity Planning & Advisory",
+      description: "Explore $600 household and $1,000 business-owner financial planning. Clear written scope, adviser-reviewed recommendations, and practical next steps.",
+    },
   };
 }
 
@@ -40,9 +60,6 @@ export default async function AffordablePlanningPage() {
         <section id="hero" className="relative overflow-hidden bg-[radial-gradient(ellipse_at_78%_38%,rgba(201,168,76,.14),transparent_34%),radial-gradient(ellipse_at_8%_94%,rgba(31,93,67,.5),transparent_42%),linear-gradient(135deg,#0b2a1e_0%,#0f3d2e_52%,#14392b_100%)] px-4 pb-16 pt-24 text-white sm:px-6 sm:pb-20 sm:pt-28 md:pb-24 md:pt-32 lg:pt-36">
           <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
             <div className="order-1">
-              <p className="mb-5 max-w-[600px] border-l-4 border-[#F4C050] bg-[#fff7df] px-3 py-2 text-[10px] font-bold uppercase leading-5 tracking-[.11em] text-[#57471e] sm:text-xs">
-                {copy.internalNotice}
-              </p>
               <p className="mb-5 font-sans text-xs font-semibold uppercase tracking-[.25em] text-[#F4C050] md:text-[13px]">{copy.hero.eyebrow}</p>
               <h1 className="mb-5 max-w-[680px] font-serif text-[32px] font-bold leading-[1.1] text-white xs:text-[38px] sm:text-[44px] md:text-[52px] lg:text-[56px] xl:text-[64px]">
                 {copy.hero.title}
@@ -133,13 +150,17 @@ export default async function AffordablePlanningPage() {
                   </div>
                   <p className="mt-6 text-sm leading-7 text-[#4d5a51] sm:text-base">{option.text}</p>
                   <p className="mt-4 border-t border-[#e5e9e5] pt-4 text-sm leading-6 text-[#4d5a51]">{option.includes}</p>
-                  <p className="mt-6 rounded-md bg-[#fff5d8] px-3 py-2 text-[11px] font-bold uppercase tracking-[.1em] text-[#57471e]">{copy.packages.status}</p>
                 </article>
               ))}
             </div>
             <div className="mt-6 rounded-xl border-l-4 border-[#F4C050] bg-[#f7f8f5] px-5 py-5 sm:px-7">
               <h3 className="font-serif text-xl font-semibold text-[#0F3D2E]">{copy.packages.scopeTitle}</h3>
               <p className="mt-2 text-sm leading-6 text-[#536057]">{copy.packages.scopeText}</p>
+            </div>
+            <div className="mt-5 rounded-xl border border-[#dce3dc] bg-white px-5 py-6 text-center sm:px-7">
+              <h3 className="font-serif text-xl font-semibold text-[#0F3D2E]">Not Sure Which Plan Fits Your Needs?</h3>
+              <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-[#536057]">We’ll help you understand the options during a complimentary Clarity Session.</p>
+              <div className="mt-4"><BookingButton url="https://calendly.com/prosperityplanningandadvisory/clarity-session">Schedule Your Complimentary Clarity Session</BookingButton></div>
             </div>
           </div>
         </section>

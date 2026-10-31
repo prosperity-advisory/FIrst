@@ -162,6 +162,10 @@ export function createAffordablePlanningCmsFixture(
     } },
     { component_type: 'affordable_planning_disclosures', sort_order: 9, is_visible: true, content: source.disclosures },
     { component_type: 'affordable_planning_illustrations', sort_order: 10, is_visible: true, content: {
+      galleryTitle: source.illustrations.gallery.title,
+      galleryIntroduction: source.illustrations.gallery.introduction,
+      galleryCompletenessNotice: source.illustrations.gallery.completenessNotice,
+      galleryItems: source.illustrations.gallery.items,
       planCoverSrc: source.illustrations.planPages[0].src,
       planCoverAlt: source.illustrations.planPages[0].alt,
       financialOverviewSrc: source.illustrations.planPages[1].src,
@@ -208,8 +212,8 @@ export function mapAffordablePlanningCmsContent(
   const adviser = section('affordable_planning_adviser');
   const faqs = section('affordable_planning_faq');
   const finalCta = section('affordable_planning_final_cta');
-  const disclosures = section('affordable_planning_disclosures');
   const illustrations = section('affordable_planning_illustrations');
+  const disclosures = section('affordable_planning_disclosures');
   const clarification = typeof deliverables.clarification === 'object' && deliverables.clarification !== null
     ? deliverables.clarification as Record<string, unknown>
     : {};
@@ -332,6 +336,37 @@ export function mapAffordablePlanningCmsContent(
         ...fallback.illustrations.budgetPreview,
         src: imagePath(illustrations.budgetSrc, fallback.illustrations.budgetPreview.src),
         alt: text(illustrations.budgetAlt, fallback.illustrations.budgetPreview.alt),
+      },
+      gallery: {
+        title: text(illustrations.galleryTitle, fallback.illustrations.gallery.title),
+        introduction: text(illustrations.galleryIntroduction, fallback.illustrations.gallery.introduction),
+        completenessNotice: text(illustrations.galleryCompletenessNotice, fallback.illustrations.gallery.completenessNotice),
+        items: records(illustrations.galleryItems).length
+          ? records(illustrations.galleryItems).map((item, index) => ({
+            ...fallback.illustrations.gallery.items[index],
+            src: imagePath(item.src, fallback.illustrations.gallery.items[index]?.src ?? ''),
+            alt: text(item.alt, fallback.illustrations.gallery.items[index]?.alt ?? ''),
+            title: text(item.title, fallback.illustrations.gallery.items[index]?.title ?? ''),
+            label: text(item.label, fallback.illustrations.gallery.items[index]?.label ?? ''),
+            description: text(item.description, fallback.illustrations.gallery.items[index]?.description ?? ''),
+            ...(text(item.projectionLimitation, fallback.illustrations.gallery.items[index]?.projectionLimitation ?? '')
+              ? { projectionLimitation: text(item.projectionLimitation, fallback.illustrations.gallery.items[index]?.projectionLimitation ?? '') }
+              : {}),
+          }))
+          : fallback.illustrations.gallery.items.map((item, index) => {
+            const legacyImage = index === 0
+              ? { src: illustrations.planCoverSrc, alt: illustrations.planCoverAlt, fallback: fallback.illustrations.planPages[0] }
+              : index === 2
+                ? { src: illustrations.financialOverviewSrc, alt: illustrations.financialOverviewAlt, fallback: fallback.illustrations.planPages[1] }
+                : index === 4
+                  ? { src: illustrations.roadmapSrc, alt: illustrations.roadmapAlt, fallback: fallback.illustrations.planPages[2] }
+                  : index === 5
+                    ? { src: illustrations.budgetSrc, alt: illustrations.budgetAlt, fallback: fallback.illustrations.budgetPreview }
+                    : null;
+            return legacyImage
+              ? { ...item, src: imagePath(legacyImage.src, legacyImage.fallback.src), alt: text(legacyImage.alt, legacyImage.fallback.alt) }
+              : item;
+          }),
       },
       // This disclosure is rendered by the page component and remains code-controlled;
       // the existing CMS section schema intentionally stays unchanged.

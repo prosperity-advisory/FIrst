@@ -122,6 +122,68 @@ export const affordablePlanningContent = {
       alt: "Fictional Rivera household editable Excel budget example, shown as a static image preview.",
       label: "Example Excel budget",
     },
+    gallery: {
+      title: "A Look Inside Your Financial Plan",
+      introduction:
+        "Explore selected examples of the financial analysis, projections, recommendations, and planning tools that may be included in a personalized financial plan.",
+      completenessNotice:
+        "These illustrations are examples—not a complete financial plan. Your actual plan is tailored to your goals, financial circumstances, and agreed planning scope. The content, depth of analysis, and number of pages will vary.",
+      items: [
+        {
+          src: "/images/affordable/plan-page-01.webp",
+          alt: "Illustrative cover of a fictional Rivera household financial plan.",
+          title: "Financial Plan Cover",
+          label: "Fictional illustration",
+          description: "An example of how a personalized planning report may be presented.",
+        },
+        {
+          src: "/images/affordable/gallery/02-financial-plan-snapshot.webp",
+          alt: "Fictional Rivera household snapshot with assets, liabilities, net worth, reserves, and a hypothetical retirement outlook.",
+          title: "Your Financial Plan at a Glance",
+          label: "Fictional illustration · Hypothetical projections",
+          description: "An illustrative snapshot of financial position, goals, and a hypothetical retirement outlook.",
+          projectionLimitation:
+            "Hypothetical figures for illustration only. These figures are not a verified personal forecast, do not represent actual client results, and are not guaranteed.",
+        },
+        {
+          src: "/images/affordable/plan-page-02.webp",
+          alt: "Illustrative Rivera household overview of finances and cash flow.",
+          title: "Financial Overview & Analysis",
+          label: "Fictional illustration",
+          description: "An example of reviewing assets, liabilities, net worth, and household cash flow.",
+        },
+        {
+          src: "/images/affordable/gallery/04-goals-scenario-comparison.webp",
+          alt: "Fictional Rivera comparison of retirement at age 62 with an unselected age-64 alternative and hypothetical portfolio values.",
+          title: "Financial Goals & Scenario Comparison",
+          label: "Fictional illustration · Hypothetical scenarios",
+          description: "A sample comparison of retirement timing and the trade-offs between different approaches.",
+          projectionLimitation:
+            "Hypothetical figures for illustration only. These figures are not a verified personal forecast, do not represent actual client results, and are not guaranteed.",
+        },
+        {
+          src: "/images/affordable/plan-page-03.webp",
+          alt: "Fictional Rivera planning roadmap showing financial priorities and client-directed next steps.",
+          title: "Recommendations & Action Roadmap",
+          label: "Fictional illustration",
+          description: "An example of organizing planning priorities into practical, client-directed decisions.",
+        },
+        {
+          src: "/images/affordable/budget-preview.webp",
+          alt: "Illustrative Rivera household budget worksheet showing income, spending, savings and cash flow.",
+          title: "Budget & Cash Flow Worksheet",
+          label: "Fictional illustration",
+          description: "A sample worksheet showing how income, spending, and savings may be reviewed.",
+        },
+        {
+          src: "/images/affordable/gallery/07-business-owner-overview.webp",
+          alt: "Fictional Mitchell household financial planning overview separating business revenue, owner compensation, and personal reserves.",
+          title: "Business-Owner Planning Overview",
+          label: "Fictional illustration · Separate household",
+          description: "A sample of coordinating business finances with household goals and retirement priorities.",
+        },
+      ],
+    },
     disclosure:
       "The Rivera household examples are fictional and for educational purposes only. Actual planning illustrations and budget workbooks depend on your circumstances, available information, and the agreed scope of services; clients may receive different materials.",
   },

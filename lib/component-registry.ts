@@ -1991,8 +1991,19 @@ export const componentRegistry: Record<string, ComponentDefinition> = {
   },
   affordable_planning_illustrations: {
     label: 'Affordable Planning — Plan and Budget Illustrations',
-    description: 'References and alternative text for the three sample plan pages and budget workbook image.',
+    description: 'Four retained illustrations plus the page-specific seven-item gallery, captions, and alternative text.',
     fields: [
+      { name: 'galleryTitle', label: 'Gallery Heading', type: 'text' },
+      { name: 'galleryIntroduction', label: 'Gallery Introduction', type: 'textarea' },
+      { name: 'galleryCompletenessNotice', label: 'Selected-Examples Disclosure', type: 'textarea' },
+      { name: 'galleryItems', label: 'Ordered Gallery Items', type: 'array', itemFields: [
+        { name: 'src', label: 'Image URL', type: 'image', required: true },
+        { name: 'alt', label: 'Alternative Text', type: 'text', required: true },
+        { name: 'title', label: 'Card Title', type: 'text', required: true },
+        { name: 'label', label: 'Fictional / Hypothetical Label', type: 'text', required: true },
+        { name: 'description', label: 'Card Description', type: 'textarea', required: true },
+        { name: 'projectionLimitation', label: 'Projection Limitation (optional)', type: 'textarea' },
+      ] },
       { name: 'planCoverSrc', label: 'Financial Plan Cover Image', type: 'image' },
       { name: 'planCoverAlt', label: 'Cover Image Alternative Text', type: 'text' },
       { name: 'financialOverviewSrc', label: 'Financial Overview Image', type: 'image' },

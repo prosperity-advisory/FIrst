@@ -120,6 +120,25 @@ test('blank and legacy illustration references resolve to packaged page assets',
   assert.equal(mapped.illustrations.planPages[0].src, '/images/affordable/plan-page-01.webp');
 });
 
+test('legacy illustration CMS records preserve their live images in the expanded gallery', () => {
+  const records = createAffordablePlanningCmsFixture();
+  const section = records.find((record) => record.component_type === 'affordable_planning_illustrations')!;
+  delete section.content.galleryItems;
+  section.content.planCoverSrc = 'https://media.example.test/live-cover.webp';
+  section.content.planCoverAlt = 'Live cover alt';
+  section.content.financialOverviewSrc = 'https://media.example.test/live-overview.webp';
+  section.content.roadmapSrc = 'https://media.example.test/live-roadmap.webp';
+  section.content.budgetSrc = 'https://media.example.test/live-budget.webp';
+
+  const mapped = mapAffordablePlanningCmsContent(records);
+  assert.equal(mapped.illustrations.gallery.items.length, 7);
+  assert.equal(mapped.illustrations.gallery.items[0].src, 'https://media.example.test/live-cover.webp');
+  assert.equal(mapped.illustrations.gallery.items[0].alt, 'Live cover alt');
+  assert.equal(mapped.illustrations.gallery.items[2].src, 'https://media.example.test/live-overview.webp');
+  assert.equal(mapped.illustrations.gallery.items[4].src, 'https://media.example.test/live-roadmap.webp');
+  assert.equal(mapped.illustrations.gallery.items[5].src, 'https://media.example.test/live-budget.webp');
+});
+
 test('local CMS reads reject the production Supabase project and allow isolated targets only', () => {
   assert.equal(
     isAffordablePlanningCmsTargetAllowed('isolated', 'https://ealafgyzpvgphdkhtqkv.supabase.co', 'development', 'ealafgyzpvgphdkhtqkv'),

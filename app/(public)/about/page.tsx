@@ -2,20 +2,46 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { AdvisorProfile } from "@/components/sections/AdvisorProfile";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getAboutContent } from "@/lib/content";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
 
+/*
+ * About-route-only SEO overrides (code only; CMS meta is read, never written).
+ * Replaces outdated "fee-only" wording inherited from CMS/site-wide defaults.
+ */
+const ABOUT_META_DESCRIPTION =
+  "Meet Prosperity Planning & Advisory, a Woodland Hills, CA firm providing advice-only financial planning and non-discretionary investment guidance for individuals, families, and business owners.";
+const ABOUT_TWITTER_DESCRIPTION =
+  "Advice-only financial planning and non-discretionary investment guidance in Woodland Hills, CA.";
+const ABOUT_KEYWORDS = [
+  "fiduciary financial planner",
+  "Woodland Hills financial advisor",
+  "advice-only financial planning",
+  "non-discretionary investment guidance",
+  "retirement planning",
+  "financial planning Woodland Hills CA",
+  "Prosperity Planning Advisory",
+];
+
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getAboutContent();
   return {
     title: content.meta.title,
-    description: content.meta.description,
+    description: ABOUT_META_DESCRIPTION,
+    keywords: ABOUT_KEYWORDS,
     openGraph: {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.meta.ogTitle ?? content.meta.title,
+      description: ABOUT_TWITTER_DESCRIPTION,
+      images: ["/images/og-default.jpg"],
     },
     alternates: { canonical: 'https://prosperityadvisory.net/about' },
   };
@@ -23,8 +49,34 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const defaultFeatureIcons = ["shield", "star", "target", "users", "bar-chart", "target"];
 
+/*
+ * About-route-only rendering overrides for approved copy updates.
+ * Applied in code at render time; CMS/Supabase data is read-only and never written.
+ */
+const TRUSTED_PARTNER_BODY =
+  "We connect your goals with practical financial planning and investment guidance, helping you evaluate choices as your circumstances evolve.";
+const TAILORED_BODY =
+  "Prosperity offers financial planning and non-discretionary investment guidance tailored to clients' goals. Services include retirement planning, portfolio review and investment recommendations, estate and legacy coordination, and small-business planning.";
+const TAILORED_QUALIFIER =
+  "Tax, legal, estate, and insurance matters are discussed in a general and educational manner and, where appropriate, in coordination with outside professionals.";
+const SERVICE_ITEM_RENAMES: Record<string, string> = {
+  "Portfolio Management": "Portfolio Review & Investment Guidance",
+};
+
+function applyAboutCopyOverrides<T extends Awaited<ReturnType<typeof getAboutContent>>>(content: T): T {
+  return {
+    ...content,
+    ourServices: content.ourServices && {
+      ...content.ourServices,
+      items: content.ourServices.items.map((item: string) => SERVICE_ITEM_RENAMES[item.trim()] ?? item),
+    },
+    trustedPartner: content.trustedPartner && { ...content.trustedPartner, body: TRUSTED_PARTNER_BODY },
+    tailored: content.tailored && { ...content.tailored, body: `${TAILORED_BODY} ${TAILORED_QUALIFIER}` },
+  };
+}
+
 export default async function AboutPage() {
-  const content = await getAboutContent();
+  const content = applyAboutCopyOverrides(await getAboutContent());
   return (
     <main>
       <BreadcrumbJsonLd items={[{ name: 'Our Mission & Who We Are', path: '/about' }]} />
@@ -69,6 +121,9 @@ export default async function AboutPage() {
         </div>
       </section>
       )}
+
+      {/* Principal Adviser profile (static, approved copy) */}
+      <AdvisorProfile />
 
       {/* Services List */}
       {content.ourServices && (

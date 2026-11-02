@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     template: "%s | Prosperity Planning & Advisory",
   },
   description:
-    "Prosperity Planning & Advisory is a fee-only fiduciary financial planning firm in Woodland Hills, CA serving individuals and business owners with investment management, retirement planning, and comprehensive financial strategies.",
+    "Prosperity Planning & Advisory is a Woodland Hills, CA firm providing advice-only financial planning and non-discretionary investment guidance to individuals and business owners, including retirement planning and comprehensive financial strategies.",
   keywords: [
     "fiduciary financial planner",
     "Woodland Hills financial advisor",
-    "fee-only financial planner",
+    "advice-only financial planning",
     "retirement planning",
-    "investment management",
+    "non-discretionary investment guidance",
     "financial planning Woodland Hills CA",
     "Prosperity Planning Advisory",
   ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title:
       "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
     description:
-      "Fee-only fiduciary financial planning firm in Woodland Hills, CA. Comprehensive financial planning, investment management, and retirement strategies for individuals and business owners.",
+      "Advice-only financial planning and non-discretionary investment guidance in Woodland Hills, CA. Comprehensive financial planning and retirement strategies for individuals and business owners.",
     images: [
       {
         url: "/images/og-default.jpg",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Prosperity Planning & Advisory — Fiduciary Financial Planner in Woodland Hills, CA",
-    description: "Fee-only fiduciary financial planning firm in Woodland Hills, CA.",
+    description: "Advice-only financial planning and non-discretionary investment guidance in Woodland Hills, CA.",
     images: ["/images/og-default.jpg"],
   },
   alternates: {

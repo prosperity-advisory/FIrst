@@ -20,7 +20,7 @@ const CANONICAL = "https://prosperityadvisory.net/clarity-session";
 const KEYWORDS = [
   "financial clarity session",
   "fiduciary financial advisor",
-  "fee-only financial planner",
+  "advice-only financial planning",
   "Woodland Hills financial advisor",
   "California financial planner",
   "pre-retirement planning",

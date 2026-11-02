@@ -21,18 +21,18 @@
   },
   "ourServices": {
     "heading": "Our Services",
-    "body": "At Prosperity Planning & Advisory, we provide a comprehensive suite of services designed to support every stage of your financial life. As a fiduciary, our guidance is rooted in clarity, integrity, and a commitment to helping you build lasting prosperity with confidence and intention.",
+    "body": "At Prosperity Planning & Advisory, we provide a comprehensive suite of services designed to support every stage of your financial life. In providing investment advisory services, we act as a fiduciary and deliver guidance rooted in clarity, integrity, and a commitment to helping you pursue lasting prosperity with confidence and intention.",
     "items": [
       "Comprehensive Financial Planning",
       "Retirement Planning",
-      "Portfolio Management",
+      "Portfolio Review & Investment Guidance",
       "Family Financial Planning",
       "Education Planning",
       "Cash Flow & Budgeting",
-      "Risk Management & Insurance Planning",
+      "Insurance Planning & Coverage Review",
       "Investment Strategies",
-      "Tax-Efficient Strategies",
-      "Estate & Legacy Planning",
+      "Tax-Aware / Tax-Efficient Investment Strategies",
+      "Estate & Legacy Planning Strategy & Coordination",
       "Small Business & Entrepreneur Planning",
       "One-Time Consultations & Second Opinions",
       "ESG / Values-Based Investing"
@@ -41,7 +41,7 @@
   },
   "trustedPartner": {
     "heading": "Your Trusted Financial Partner",
-    "body": "As your financial partner, we combine professional insight with genuine care. We're here with strategies designed to provide clarity, confidence, and a plan that adapts as life and markets change — so you can focus on what matters most."
+    "body": "We connect your goals with practical financial planning and investment guidance, helping you evaluate choices as your circumstances evolve."
   },
   "features": [
     "Our Fiduciary Duty to Clients",
@@ -53,11 +53,11 @@
   ],
   "tailored": {
     "heading": "Tailored Financial Solutions for You",
-    "body": "Prosperity Planning and Advisory offers professional insights tailored specifically to your financial situation. As a fiduciary, we prioritize your interests and provide transparent advice. Our services include investment management, retirement planning strategies, estate and legacy strategies, and small business planning strategies."
+    "body": "Prosperity offers financial planning and non-discretionary investment guidance tailored to clients' goals. Services include retirement planning, portfolio review and investment recommendations, estate and legacy coordination, and small-business planning. Tax, legal, estate, and insurance matters are discussed in a general and educational manner and, where appropriate, in coordination with outside professionals."
   },
   "ctaBand": {
     "heading": "Start Your Financial Journey Today",
-    "body": "Contact us for personalized advice & planning.",
+    "body": "Contact us to discuss your goals and learn whether our advisory services may be a fit.",
     "cta": {
       "text": "Schedule Your Complimentary Strategy Review",
       "href": "https://calendly.com/prosperityplanningandadvisory/clarity-session"

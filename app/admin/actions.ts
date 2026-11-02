@@ -4,6 +4,7 @@ import { requireProsperityPressAdmin } from "@/lib/admin-auth";
 import { revalidatePath } from "next/cache";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve } from "path";
+import { componentRegistry } from "@/lib/component-registry";
 
 // ---------------------------------------------------------------------------
 // Page metadata
@@ -92,12 +93,13 @@ export async function addSection(
   sortOrder: number
 ) {
   const supabase = await requireProsperityPressAdmin();
+  const content = componentRegistry[componentType]?.defaultContent ?? {};
   const { error } = await supabase.from("sections").insert({
     page_id: pageId,
     component_type: componentType,
     sort_order: sortOrder,
     is_visible: true,
-    content: {},
+    content,
   });
 
   if (error) throw new Error(error.message);

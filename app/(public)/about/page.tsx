@@ -2,20 +2,46 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { AdvisorProfile, type AdviserProfileContent } from "@/components/sections/AdvisorProfile";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getAboutContent } from "@/lib/content";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getIcon } from "@/lib/icons";
 
+/*
+ * About-route-only SEO overrides (code only; CMS meta is read, never written).
+ * Replaces outdated "fee-only" wording inherited from CMS/site-wide defaults.
+ */
+const ABOUT_META_DESCRIPTION =
+  "Meet Prosperity Planning & Advisory, a Woodland Hills, CA firm providing advice-only financial planning and non-discretionary investment guidance for individuals, families, and business owners.";
+const ABOUT_TWITTER_DESCRIPTION =
+  "Advice-only financial planning and non-discretionary investment guidance in Woodland Hills, CA.";
+const ABOUT_KEYWORDS = [
+  "fiduciary financial planner",
+  "Woodland Hills financial advisor",
+  "advice-only financial planning",
+  "non-discretionary investment guidance",
+  "retirement planning",
+  "financial planning Woodland Hills CA",
+  "Prosperity Planning Advisory",
+];
+
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getAboutContent();
   return {
     title: content.meta.title,
-    description: content.meta.description,
+    description: ABOUT_META_DESCRIPTION,
+    keywords: ABOUT_KEYWORDS,
     openGraph: {
       title: content.meta.ogTitle,
       description: content.meta.ogDescription,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.meta.ogTitle ?? content.meta.title,
+      description: ABOUT_TWITTER_DESCRIPTION,
+      images: ["/images/og-default.jpg"],
     },
     alternates: { canonical: 'https://prosperityadvisory.net/about' },
   };
@@ -25,6 +51,7 @@ const defaultFeatureIcons = ["shield", "star", "target", "users", "bar-chart", "
 
 export default async function AboutPage() {
   const content = await getAboutContent();
+  const adviserProfile = content.adviserProfile as AdviserProfileContent | null;
   return (
     <main>
       <BreadcrumbJsonLd items={[{ name: 'Our Mission & Who We Are', path: '/about' }]} />
@@ -69,6 +96,8 @@ export default async function AboutPage() {
         </div>
       </section>
       )}
+
+      {adviserProfile && <AdvisorProfile profile={adviserProfile} />}
 
       {/* Services List */}
       {content.ourServices && (

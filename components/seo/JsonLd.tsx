@@ -12,7 +12,7 @@ const ORGANIZATION = {
   url: BASE_URL,
   logo: `${BASE_URL}/images/single-logo-trimmed.png`,
   description:
-    'Fee-only fiduciary financial planning firm in Woodland Hills, CA serving individuals and business owners.',
+    'Woodland Hills, CA firm providing advice-only financial planning and non-discretionary investment guidance to individuals and business owners.',
   telephone: '888-427-5240',
   email: 'help@prosperityadvisory.net',
   address: {
@@ -48,13 +48,13 @@ export function OrganizationJsonLd() {
           { '@type': 'City', name: 'Woodland Hills' },
           { '@type': 'State', name: 'California' },
         ],
-        priceRange: 'Fee-Only',
+        priceRange: 'Hourly or agreed flat fees',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Financial Planning Services',
           itemListElement: [
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comprehensive Financial Planning' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Investment Management' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Portfolio Review & Investment Guidance' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Retirement Planning' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tax-Efficient Strategies' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Estate & Legacy Planning' } },

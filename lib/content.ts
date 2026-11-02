@@ -7,6 +7,7 @@
 
 import { cache } from 'react';
 import { getPage, type PageData } from './content-db';
+import { componentRegistry } from './component-registry';
 
 /**
  * Return `null` if the section is hidden in the admin, otherwise return `data`.
@@ -59,6 +60,21 @@ type A = Record<string, any>;
 /** Reverse the seed script's textArray helper: {text}[] → string[] */
 function ta(arr: { text: string }[] | undefined | null): string[] {
   return (arr ?? []).map((i) => i.text);
+}
+
+/** Normalize the generic sections.content shape used by Prosperity Press. */
+export function mapAboutAdviserProfile(section: A | null | undefined) {
+  if (!section) return null;
+
+  const defaults = componentRegistry.about_adviser_profile.defaultContent ?? {};
+  return {
+    heading: typeof section.heading === 'string' ? section.heading : String(defaults.heading ?? ''),
+    subtitle: typeof section.subtitle === 'string' ? section.subtitle : String(defaults.subtitle ?? ''),
+    tagline: typeof section.tagline === 'string' ? section.tagline : String(defaults.tagline ?? ''),
+    paragraphs: ta(Array.isArray(section.paragraphs) ? section.paragraphs as { text: string }[] : []),
+    image: typeof section.image === 'string' ? section.image : String(defaults.image ?? ''),
+    imageAlt: typeof section.imageAlt === 'string' ? section.imageAlt : String(defaults.imageAlt ?? ''),
+  };
 }
 
 /** Recursively normalize accordion sections from DB: convert {text}[] items to string[] */
@@ -327,7 +343,13 @@ export const getPlanningContent = cache(async () => {
 
 export const getAboutContent = cache(async () => {
   const page = await getPage('about');
-  if (!page) { console.warn('[content] Falling back to JSON for /about'); return aboutJson; }
+  if (!page) {
+    console.warn('[content] Falling back to JSON for /about');
+    return {
+      ...aboutJson,
+      adviserProfile: mapAboutAdviserProfile(componentRegistry.about_adviser_profile.defaultContent as A),
+    };
+  }
 
   const hero = page.section('interior_hero');
   const mission = page.section('about_mission');
@@ -335,11 +357,13 @@ export const getAboutContent = cache(async () => {
   const textSections = page.sectionsOfType('text_section');
   const badges = page.section('feature_badges');
   const ctaBand = page.section('cta_band');
+  const adviser = page.section('about_adviser_profile');
 
   return {
     meta: page.meta,
     hero: vis(page, 'interior_hero', { ...aboutJson.hero, eyebrow: hero?.eyebrow, headline: hero?.headline ?? aboutJson.hero.headline, backgroundImage: hero?.backgroundImage as string | undefined, sectionImage: simg(hero) }),
     mission: vis(page, 'about_mission', { ...aboutJson.mission, ...(mission ?? {}), image: mission?.image as string | undefined, sectionImage: simg(mission) }),
+    adviserProfile: vis(page, 'about_adviser_profile', mapAboutAdviserProfile(adviser)),
     ourServices: vis(page, 'about_services', services ? {
       heading: services.heading, body: services.body, items: ta(services.items), outro: services.outro,
       sectionImage: simg(services),

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { InteriorHero } from "@/components/sections/InteriorHero";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { AdvisorProfile } from "@/components/sections/AdvisorProfile";
+import { AdvisorProfile, type AdviserProfileContent } from "@/components/sections/AdvisorProfile";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { SectionImage, ImageBlockSection } from "@/components/ui/SectionImage";
 import { getAboutContent } from "@/lib/content";
@@ -49,34 +49,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const defaultFeatureIcons = ["shield", "star", "target", "users", "bar-chart", "target"];
 
-/*
- * About-route-only rendering overrides for approved copy updates.
- * Applied in code at render time; CMS/Supabase data is read-only and never written.
- */
-const TRUSTED_PARTNER_BODY =
-  "We connect your goals with practical financial planning and investment guidance, helping you evaluate choices as your circumstances evolve.";
-const TAILORED_BODY =
-  "Prosperity offers financial planning and non-discretionary investment guidance tailored to clients' goals. Services include retirement planning, portfolio review and investment recommendations, estate and legacy coordination, and small-business planning.";
-const TAILORED_QUALIFIER =
-  "Tax, legal, estate, and insurance matters are discussed in a general and educational manner and, where appropriate, in coordination with outside professionals.";
-const SERVICE_ITEM_RENAMES: Record<string, string> = {
-  "Portfolio Management": "Portfolio Review & Investment Guidance",
-};
-
-function applyAboutCopyOverrides<T extends Awaited<ReturnType<typeof getAboutContent>>>(content: T): T {
-  return {
-    ...content,
-    ourServices: content.ourServices && {
-      ...content.ourServices,
-      items: content.ourServices.items.map((item: string) => SERVICE_ITEM_RENAMES[item.trim()] ?? item),
-    },
-    trustedPartner: content.trustedPartner && { ...content.trustedPartner, body: TRUSTED_PARTNER_BODY },
-    tailored: content.tailored && { ...content.tailored, body: `${TAILORED_BODY} ${TAILORED_QUALIFIER}` },
-  };
-}
-
 export default async function AboutPage() {
-  const content = applyAboutCopyOverrides(await getAboutContent());
+  const content = await getAboutContent();
+  const adviserProfile = content.adviserProfile as AdviserProfileContent | null;
   return (
     <main>
       <BreadcrumbJsonLd items={[{ name: 'Our Mission & Who We Are', path: '/about' }]} />
@@ -122,8 +97,7 @@ export default async function AboutPage() {
       </section>
       )}
 
-      {/* Principal Adviser profile (static, approved copy) */}
-      <AdvisorProfile />
+      {adviserProfile && <AdvisorProfile profile={adviserProfile} />}
 
       {/* Services List */}
       {content.ourServices && (

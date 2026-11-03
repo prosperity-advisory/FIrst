@@ -28,6 +28,18 @@ export function AdvisorProfile({ profile }: { profile: AdviserProfileContent }) 
               className="object-cover object-[50%_35%]"
             />
           </div>
+          <div className="relative z-10 -mt-5 mr-3 flex justify-end">
+            <div className="rounded-lg border border-border bg-white px-2.5 py-1.5 shadow-md">
+              <Image
+                src="/images/chfc-official-purple-shield.png"
+                alt="Chartered Financial Consultant (ChFC) designation shield"
+                width={132}
+                height={106}
+                className="h-auto w-[112px] sm:w-[124px]"
+                sizes="124px"
+              />
+            </div>
+          </div>
         </FadeUp>
 
         <div>

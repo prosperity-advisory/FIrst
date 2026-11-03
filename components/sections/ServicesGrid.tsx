@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { CtaButtonGroup, type CtaButton } from "@/components/ui/CtaButtonGroup";
@@ -62,15 +63,36 @@ export function ServicesGrid({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-7 text-left">
           {categories.map((category, i) => {
             const delayGroup = ((i % 2) + 1) as 1 | 2;
+            const hasChfcCredential = category.title === "Comprehensive Financial Planning";
             return (
               <FadeUp key={category.title} delay={delayGroup} className="group">
                 <div className="bg-white p-6 sm:p-7 lg:p-9 rounded-lg border border-border border-t-[3px] border-t-transparent transition-all duration-[400ms] hover:-translate-y-1.5 hover:shadow-[0_16px_48px_rgba(20,57,43,0.1)] hover:border-t-gold h-full flex flex-col">
                   <h3 className="font-serif text-[19px] sm:text-[21px] lg:text-[23px] font-semibold text-navy mb-2.5">
                     {category.title}
                   </h3>
-                  <p className="text-sm lg:text-[15px] text-slate leading-relaxed mb-5 lg:mb-6">
+                  <p className={`text-sm lg:text-[15px] text-slate leading-relaxed${hasChfcCredential ? " mb-2" : " mb-5 lg:mb-6"}`}>
                     {category.description}
                   </p>
+
+                  {hasChfcCredential && (
+                    <Link
+                      href="/about#meet-marcus"
+                      aria-label="Planning guided by a ChFC® professional. Learn more about Marcus Mann"
+                      className="mb-4 inline-flex max-w-full self-start items-center gap-2 rounded-md border border-border/70 bg-cream/40 px-2.5 py-1.5 text-left transition-colors hover:border-gold hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2"
+                    >
+                      <Image
+                        src="/images/chfc-official-purple-shield.png"
+                        alt="ChFC® shield"
+                        width={1402}
+                        height={1122}
+                        sizes="44px"
+                        className="h-auto w-9 shrink-0 sm:w-11"
+                      />
+                      <span className="text-xs leading-snug text-slate-light">
+                        Planning guided by a ChFC® professional.
+                      </span>
+                    </Link>
+                  )}
 
                   <div className="space-y-3 mb-5 lg:mb-6 flex-1">
                     {category.items.map((item) => (

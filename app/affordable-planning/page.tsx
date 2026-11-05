@@ -205,14 +205,28 @@ export default async function AffordablePlanningPage() {
 
         <section id="why-prosperity" className="bg-[#f3f6f2] px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
           <div className="mx-auto grid max-w-[1080px] items-center gap-9 md:grid-cols-[.82fr_1.18fr] md:gap-14">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-xl border border-[#d9dfda] shadow-[0_18px_45px_rgba(15,61,46,.14)] md:mx-0">
-              <Image
-                src={copy.prosperity.image}
-                alt={copy.prosperity.imageAlt}
-                fill
-                sizes="(min-width: 768px) 34vw, 90vw"
-                className="object-cover object-[50%_35%]"
-              />
+            <div className="mx-auto w-full max-w-[360px] md:mx-0">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-[#d9dfda] shadow-[0_18px_45px_rgba(15,61,46,.14)]">
+                <Image
+                  src={copy.prosperity.image}
+                  alt={copy.prosperity.imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 34vw, 90vw"
+                  className="object-cover object-[50%_35%]"
+                />
+              </div>
+              <div className="relative z-10 -mt-5 mr-3 flex justify-end">
+                <div className="rounded-lg border border-border bg-white px-2.5 py-1.5 shadow-md">
+                  <Image
+                    src="/images/chfc-official-purple-shield.png"
+                    alt="Chartered Financial Consultant (ChFC) designation shield"
+                    width={132}
+                    height={106}
+                    className="h-auto w-[112px] sm:w-[124px]"
+                    sizes="124px"
+                  />
+                </div>
+              </div>
             </div>
             <div>
               <p className="mb-3 text-xs font-bold uppercase tracking-[.18em] text-[#84691c]">Why Prosperity?</p>
